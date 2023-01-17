@@ -484,12 +484,46 @@ height: 38rem;
 
 /* -----------------------------video player sectin ---------------------------------- */
 #vps-main{
-  height: 50rem;
-  
+  height: 68rem;
+  background-color: #EDF2F8;  
 }
+
 #vps-videoPlayer{
- height: 50rem;
- 
+  padding: 3% 3% 1% 3% ;
+  /* width: 94%; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+}
+
+#vps-multi-video{
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  margin-top: 1%;
+  height: 12rem;
+  justify-content: center;
+}
+
+#multi-video-btn{
+  display: flex;
+  flex-direction: row;
+  
+  width: 25%;
+  height: 10rem;
+  border: none;
+}
+
+#vns-btn-image{
+  height: 100%;
+  width: 33%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.5%;
+}
+
+#vns-btn-text{
+  margin-top: 7%;
+  bottom: 7%;
 }
 
 /* -----------------------------health news section------------------------- */
