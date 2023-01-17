@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+
+
+
+#forgot{
+  
+  font: "small-caption" ;
+  font-family: 'Zilla Slab', serif
+}
+.bordert {
+  border-top: 1px solid #aaa;
+  position: relative;
+}
+
+.bordert:after {
+  content: "OR";
+  position: absolute;
+  top: -13px;
+  left: 42%;
+  background-color: #fff;
+  padding: 0px 8px;
+}
+.ModalContent5{
+    width: 56%;
+}
+
+.ModalWrapper {
+  min-width: 680px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  background: rgb(255, 255, 255);
+  color: #000;
+
+}
+.Background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(185, 151, 151, 0.115); */
+  filter: blur(5px);
+}
+
+.ModalImg3 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  background: #000;
+}
+.my-2 {
+  margin-top: -2.5rem !important;
+}
+
+.ModelHeader {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  height: 32px;
+  z-index: 10;
+}
+.form {
+  position: relative;
+
+  left: 20px;
+  height: 32px;
+  padding: 20px;
+  z-index: 10;
+
+}
+
+
+.footer {
+  text-align: center;
+  font: small-caption;
+  padding: 10px;
+}
+.password-icon {
+  position: relative;
+  bottom: 50px;
+  float: right;
+  right: 10px;
+  cursor: pointer;
+}
+.Cpassword-icon{
+    position: relative;
+    bottom: 50px;
+    float: right;
+    right: 10px;
+    cursor: pointer;   
+}
+#loginbutton {
+  color: #ffffff;
+  background: #1b2d51;
+}
+.error-msg{
+  font-size: smaller;
+  color: rgb(250, 50, 50);
+  text-align: justify;
+  margin-left: 0.5rem;
+}
+

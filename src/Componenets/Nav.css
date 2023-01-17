@@ -1,0 +1,226 @@
+
+/* desktop mode */
+/* Newsbar css */
+
+.Newsbar{
+    width: 100%;
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 10rem 4fr 6fr ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+   
+}
+
+
+/* News logo */
+.News-logo{
+    display: grid;
+    grid-column: 2/3;
+    justify-content: start;
+    align-items: center;
+
+}
+
+/* manu-links and buttons */
+.Manu-links{
+    grid-column: 3/4;
+}
+
+.hamburger-manu {
+    display: none;
+}
+
+.mobile-manu{
+     display: none;   
+}
+
+.Manu-links ul {
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    /* grid-template-columns: 4fr ,repeat(2,1fr); */
+    align-items: center;
+}
+
+.Manu-links ul li{
+    list-style-type: none;
+    align-items: right;    
+}
+.Manu-links ul a{
+    text-decoration: none;
+}
+
+@media (max-width: 1260px) {
+    .Newsbar {
+        height: 4rem;
+        grid-template-columns: 2rem 1fr 3fr 1rem ;
+    }
+}
+/* mobile mode */
+@media (max-width: 980px) {
+    .Newsbar {
+        height: 4rem;
+        grid-template-columns: 2rem 1fr 2fr 1fr 1rem ;
+    }
+
+    .Manu-links{
+        display: none;
+    }
+    .hamburger-manu {
+        display: contents;
+        grid-column: 4/5;
+        display: flex;
+    justify-content: right;
+    align-items: center;
+    }
+   
+}
+
+
+/* ---------------------- Navbar css -------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+/* News main nave */
+
+#navbarSupportedContent {
+    font-family: 'Zilla Slab', serif;
+}
+
+#NewsNav {
+ width: 100%;
+ height: 6rem;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    
+}
+
+
+
+
+#NewsLogo{
+    margin-left: 110px;
+}
+
+/* nav buttons */
+
+#btnSignIn{ 
+    color: #ffffff; 
+    background:#EE2934;
+    
+    
+}
+
+#btnNotification{
+    color: #EE2934;
+     background: #edf2f8;
+}
+
+#btnSerch{
+    color: #EE2934;
+    background: #edf2f8;
+    margin-right: 110px;
+}
+
+
+/* button logo */
+
+#btnLogo{
+    margin-bottom: 2px;
+    margin-right: 7px;
+   
+}
+
+/* ---------------------- respons Navbar css -------------------------- */
+
+/* @media (max-width: 1240px) {
+    .Navbar {
+        height: 4rem;
+        
+    }
+}
+
+@media (max-width: 980px) {
+    .Newsbar {
+        height: 4rem;
+        grid-template-columns: 2rem 1fr 2fr 1fr 1rem ;
+    }
+
+    .Manu-links{
+        display: none;
+    }
+    .hamburger-manu {
+        display: contents;
+        grid-column: 4/5;
+        display: flex;
+    justify-content: right;
+    align-items: center;
+    }
+   
+} */
+
+/* ---------------------- Header css -------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+
+
+#Header{
+    height: 3rem;
+    background-color: #1B2D51 ;
+    color: #ffffff;
+    font-family: 'Zilla Slab', serif;
+}
+
+.left-head{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.right-head{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+#head-trend-news{
+    margin-top: 20px;
+    background:  #101D38;
+    
+    
+}
+
+/* header buttons */
+
+#btncalendar{
+    
+    color: #ffffff; 
+    background:#EE2934;
+    justify-content: center;
+}
+
+
+/* logos */
+#logoCalendar{
+    margin-bottom: 4px;
+    margin-right: 7px;
+}
+
+#line-head{
+    height: 35px;
+    width: 0.5px;
+    color: #909090;
+    background-color: #909090;
+}
+#btnHead-Socials{
+    color: #ffffff; 
+    background:#EE2934;
+}
+
+#drop-head-lang{
+    color: #ffffff;
+    outline-color: #ffffff;
+}

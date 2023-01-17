@@ -1,0 +1,74 @@
+.img-fluid {
+   
+    max-width: 100%;
+    height: 100%; 
+    border-radius: 10px 10px 10px 10px;
+   
+
+}
+
+.mx-5{
+    margin-top: 40px;
+}
+.A{
+    text-decoration-color:#1b2d51;
+}
+p{
+    text-decoration-color:#1b2d51;
+    font-size:larger;
+}
+/* .-company{
+padding-top: 8pc ;
+padding-bottom: 8pc;
+
+} */
+.A3{
+width: 50%;
+/* padding-top: 8pc;
+padding-bottom 8pc; */
+margin: auto;
+
+}
+#our{
+    background-color: #d6e9ff;
+   height: fit-content;
+   width: auto;
+}
+.img-thumbnail{
+    width: 200px;
+    height: auto;
+}
+.img-wrapper{
+    padding-top: 18pc;
+    /* padding-top: 8%;
+    padding-bottom: 80px; */
+    width: 50%;
+    height: 40%;
+    margin-left: 10%;
+   
+}
+#i1{
+       /* margin: auto; */
+       position: relative;
+       left: 9.5pc;
+       top: 4pc;
+       height: 233px;
+       width: 210px;
+
+   }
+
+#i2{
+    height: 300px;
+    width: auto;
+    position:relative;
+    right: 8pc;
+    bottom: 170px;
+}
+
+#i3{
+    position: relative;
+    /* top: 0; */
+    width: 390px;
+    bottom: 13.5pc;
+    left: 4pc;
+}

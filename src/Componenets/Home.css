@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+/* ----------------------------------- first section-----------------------------------  */
+
+#first-section{
+  font-family: 'Zilla Slab', serif;
+    background-color: #EDF2F8;
+    height: 45rem;
+}
+
+#Left-first-section{
+  width: 40rem;
+  /* height: 45rem;   */
+}
+
+#right-first-section{
+ width: 35rem;
+ display: flex;
+ flex-direction: row;
+  /* height: 45rem; */
+}
+
+
+#fs-Newscard-image{
+  height: 35rem;
+  width: 35rem;
+}
+
+#fs-Radios{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-left: 4rem;
+}
+ 
+#fs-Radiobtn{
+  width: 23px;
+  height: 23px;
+  accent-color: #EE2934;
+} 
+
+/* buttons */
+#btnCatagory{
+    color: #ffffff; 
+    background:#EE2934;
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+/* -------------------------------------top-news-section------------------------------------- */
+
+
+#tns-head-main{
+  margin-top: 3rem;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: 2rem;
+} 
+
+
+#tns-logo{
+  /* margin: 100px auto; */
+  text-align: center;
+  /* font-size: 20px ; */
+  
+  max-width: 2000px;
+  position: relative;
+}
+
+#tns-logo::after{
+  content: "";
+  display: block;
+  width: 1350px;
+  height: 3px;
+  background: #EE2934;
+  position: absolute;
+  left: 130px;
+  top: 50%;
+  z-index: -2;
+}
+
+#tns-Viewmore{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  
+}
+
+#top-news-section{
+  font-family: 'Zilla Slab', serif;
+  height: 52rem;
+}
+
+#tns-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+
+}
+
+#tns-left-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#top-news-card1{
+  width: 46rem;
+  height: 46rem;
+}
+
+#tns-news-image1{
+  object-fit: cover;
+  height: 46rem;
+    width: 46rem;
+}
+
+#top-news-card{
+  height: 22rem;
+  width: 22rem;
+}
+
+#tns-news-image{
+  height: 22rem;
+  width: 22rem;
+}
+
+#tns-Title{
+  background-color: rgba(0, 0, 0, 0.50) ;
+  color: #ffffff;
+}
+
+#tns-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+#btnTnsCatagory{
+  color: #ffffff; 
+  background:#EE2934;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+/* ------------------------------Breaking News section -------------------------------------*/
+
+#bns-main{
+  font-family: 'Zilla Slab', serif;
+  padding-top: 2%;
+  background-color: #EDF2F8;
+  height: 30rem;
+}
+
+#bns-allCards{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+}
+
+#bns-main-card{ 
+  
+  height: 20rem;
+  width: 20%;
+  background: black;
+  overflow: hidden;
+}
+
+#bns-main-image{
+  object-fit: cover;
+   opacity: 0.3;
+  height: 20rem;
+  width: 20rem;
+}
+
+#bns-main-text{
+  justify-content: center;
+  margin-top: 20%;
+  color: #ffffff;
+  margin-left: 10% ;
+}
+
+#bns-card{
+  border-color: #ffffff;
+  width: 20%;
+  height: 20rem;
+}
+
+#bns-image{
+  height: 60%;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
+  border-radius: 3%;
+}
+
+#bns-card-text{
+  margin-top: 2%;
+}
+
+#btnbnsCatagory{
+  color: #ffffff; 
+  background:#EE2934;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+#bns-np-btns{
+  margin-top: 3%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+}
+
+#btnbnsNP{
+  
+  color:#EE2934; 
+  background:#EDF2F8;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+/* ------------------------------ Recent news section -------------------------------------*/
+
+#rns-main{
+  display: grid;
+  grid-template-columns: 6% 6fr 3% 3fr 6%;
+  font-family: 'Zilla Slab', serif;
+  padding-top: 2%;
+  height: 123rem;
+}
+
+#rns-head-main{
+  display: flex;
+  flex-direction: row;
+  gap: 78%
+}
+
+#rns-main-logo{
+  margin-top: 2%;
+  max-width: 1500px;
+  position: relative;
+}
+
+#rns-main-logo::after{
+  content: "";
+  display: block;
+  width: 540%;
+  height: 1px;
+  background: #EE2934;
+  position: absolute;
+  left: 115%;
+  top: 50%;
+  z-index: -2;
+}
+
+#rns-Viewmore{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-top: 2.2%;
+}
+
+#rns-left-main{
+  display: grid;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  
+}
+
+#card-pair{
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  
+}
+
+#rns-card{
+  width: 49%;
+  height: 33rem;
+}
+
+#rns-image{
+  height: 55%;
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 96%;
+  
+}
+
+
+#btnrnsCatagory{
+  color: #ffffff; 
+  background:#EE2934;
+  width: fit-content;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+
+#btnrnsRead{
+  color:#EE2934; 
+  background:#ffffff00;
+  border: none;
+  
+}
+
+#rns-right-main{
+  display: grid;
+  grid-column: 4/5;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+
+#rns-Catagory-main{
+border: 1px solid #C0C5D0;
+
+border-radius: 1%;
+height: 40rem;
+}
+
+#rns-cat-nav{
+  border: 2px solid #EE2934;
+  border-radius: 3%;
+  color: #ffffff;
+  background-color: #EE2934;
+  /* padding-top: 2%; */
+  justify-content: center;
+  height: 3rem;
+}
+
+
+
+
+
+#rns-cat-card{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 3%;
+  background: black;
+  overflow: hidden;
+  border: none;
+}
+
+#rns-cat-image{
+  object-fit: cover;
+   opacity: 0.5;
+  height: 5rem;
+  width: 100%;
+}
+
+#rns-cat-text{
+  display: grid;
+  grid-template-columns: 2% 7fr 1fr;
+  color: #ffffff;
+}
+
+#cat-text{
+  grid-column: 2/3;
+  margin-top: 2%;
+}
+
+#btnrns-cat-more{
+  grid-column: 3/4;
+  color: #ffffff;
+  background-color: #00000000;
+  border: none;
+  
+}
+
+/* ---------------------------------- rns weather card ------------------------------------ */
+
+#rns-weather-card{
+  height: 20rem;
+  background: black;
+  overflow: hidden;
+  border: none;
+}
+
+#rns-weather-image{
+  object-fit: cover;
+   opacity: 0.4;
+  height: 20rem;
+  
+}
+
+#weather-main-text{
+  color: #ffffff;
+}
+
+#weather-logo{
+  position: relative;
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+#wcard-body{
+display: grid;
+grid-template-columns: 1% 6fr 1fr;
+margin-top: 6%;
+}
+
+#wcard-left-body{
+  display: grid;
+  grid-column: 2/3;
+}
+
+#wcard-footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 33%;
+  width: 100%;
+  background-color: #ffffff49;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5%;
+  justify-content: center;
+  padding-top: 4%;
+}
+
+/* ----------------------------------------- Popular News --------------------------------------- */
+
+#rns-PNews-main{
+border: 1px solid #C0C5D0;
+border-radius: 1%;
+height: 38rem;
+}
+
+#rns-PNews-card{
+  width: 96%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 3%;
+  background: #ffffff;
+  overflow: hidden;
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#rns-PNews-image{
+ object-fit: cover;
+ height: 7rem;
+ width: 30%;
+ border-radius: 3%;
+}
+
+#PNews-card-body{
+  /* padding: 5%; */
+  padding-left: 2%;
+}
+
+#rns-PNews-card-text{
+  margin: 4%;
+}
+
+/* -------------------------------------------- tags ----------------------------------------- */
+
+#rns-tags-main{
+  border: 1px solid #C0C5D0;
+  border-radius: 1%;
+  height: 15rem;
+
+}
+
+#tags-tag{
+  margin-top: 2%;
+}
+
+#btnTags{
+ margin-left: 3%;
+ margin-top: 2%;
+}
+
+
+
+/* -----------------------------video player sectin ---------------------------------- */
+#vps-main{
+  height: 50rem;
+  
+}
+#vps-videoPlayer{
+ height: 50rem;
+ 
+}
+
+/* -----------------------------health news section------------------------- */
+
+#hns-head{
+  font-family: 'Zilla Slab', serif;
+  display: grid;
+  grid-template-columns: 6rem 1fr 6rem;
+  margin: 1%;
+}
+
+#hns-head-main{
+  display: grid;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: row;
+  gap: 78%
+}
+
+#hns-main-logo{
+  margin-top: 2%;
+  max-width: 2000px;
+  position: relative;
+}
+
+#hns-main-logo::after{
+  content: "";
+  display: block;
+  width: 900%;
+  height: 1px;
+  background: #EE2934;
+  position: absolute;
+  left: 115%;
+  top: 50%;
+  z-index: -2;
+}
+
+#hns-Viewmore{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-top: 2.2%;
+}
+
+#hns-main{
+  margin-top: 2%;
+  font-family: 'Zilla Slab', serif;
+  height: 40rem;
+  display: grid;
+  grid-template-columns: 6rem 1fr 1fr 1fr 6rem;
+  gap: 1%;
+}
+
+#hns-main-card{
+  display: grid;
+  grid-column: 2/3;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+  border: none;
+}
+
+#hns-main-image{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#hns-center-col{
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+#hns-right-col{
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+#hns-main-body{
+  margin: 1%;
+  margin-top: 65%;
+  color: #ffffff;
+}
+
+#hns-main-text{
+  margin-top: 1%;
+}
+
+#hns-card{
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#hns-card-image{
+  object-fit: cover;
+ height: 6rem;
+ width: 28%;
+ border-radius: 5%;
+}
+
+#hns-card-body{
+  /* padding: 5%; */
+  padding-left: 2%;
+}
+
+#bns-card-text{
+  margin: 4%;
+}

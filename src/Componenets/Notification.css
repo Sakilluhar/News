@@ -1,0 +1,15 @@
+
+#card-noti{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+#flexCheckChecked{
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    margin-top: 15px;
+    background-color: #EE2934;
+     
+  
+}
