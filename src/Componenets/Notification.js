@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { AiOutlineLike, AiFillLike} from 'react-icons/ai';
 import  { FiTrash2 } from 'react-icons/fi';
-
 import './Notification.css'
-export default function Notification() {
+
+ function Notification() {
    const handleDeleteAll=()=>{
 
    }
@@ -46,4 +46,4 @@ export default function Notification() {
             </div>
         </div>
     )
-}
+} export default Notification
