@@ -1,8 +1,8 @@
 import React from 'react'
 import './Home.css'
-import food_jpg from '../images/food.jpg'
-import travel_jpg from '../images/travel.jpg'
-import tech_jpg from '../images/tech.jpg'
+// import food_jpg from '../images/food.jpg'
+// import travel_jpg from '../images/travel.jpg'
+// import tech_jpg from '../images/tech.jpg'
 
 function topNewsSlider() {
   return (

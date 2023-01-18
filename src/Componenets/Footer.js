@@ -55,7 +55,7 @@ function Footer() {
 
                         <div className='row g-3'>
 
-                            <input type="text" className="col-auto form-control" name='email' id="floatingInput" placeholder="Enter Email" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
+                            <input type="text" className="col-auto form-control" name='email' id="e-f" placeholder="Enter Email" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
                             <button className='col-auto btn ' style={{ color: "#ffffff", background: "#EE2934" }} id='ES' onClick={handleSubcribe}>SUBCRIBE</button>
 
 

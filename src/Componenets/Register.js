@@ -1,5 +1,5 @@
 import './Register.css';
-import photo from '../1.jpg'
+import photo from '../images/tech.jpg'
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
