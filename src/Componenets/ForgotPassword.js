@@ -47,7 +47,8 @@ export const ForgotModal = () => {
 
     return (
         <>
-            <div className="modal fade" id="staticBackdrop2" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+            {/* <div className="modal fade" id="staticBackdrop2" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true"> */}
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div className="modal-dialog modal-dialog-centered justify-content-center">
                     <div className="modal-content ModalWrapper1">
                         <div style={{ width: "70%" }}>

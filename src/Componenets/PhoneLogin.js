@@ -3,6 +3,7 @@ import photo from '../images/tech.jpg'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import React,{useState} from 'react'
+import { OtpModal } from './OtpModal';
 
 
 
@@ -49,6 +50,7 @@ export const PhoneLoginModal = () => {
                         </div>
                     </div>
                 </div>
+                <OtpModal/>
             </div>
 
         </>
