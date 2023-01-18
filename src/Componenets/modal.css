@@ -23,7 +23,7 @@
 }
 
 .ModalWrapper {
-  min-width: 680px;
+  min-width: 830px;
   height: fit-content;
   display: flex;
   flex-direction: row;

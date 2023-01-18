@@ -1,5 +1,5 @@
 import './modal.css';
-import photo from '../1.jpg'
+import photo from '../images/tech.jpg'
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
@@ -70,8 +70,8 @@ export const Modal = () => {
                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content ModalWrapper">
-                            <div>
-                                <img className="ModalImg" src={photo} alt='' />
+                            <div >
+                                <img className="ModalImg" src={photo} alt=''/>
                             </div>
                             <div className="ModalContent">
                                 <div>

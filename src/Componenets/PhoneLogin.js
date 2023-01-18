@@ -1,5 +1,5 @@
 import './PhoneLogin.css';
-import photo from '../1.jpg'
+import photo from '../images/tech.jpg'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import React,{useState} from 'react'

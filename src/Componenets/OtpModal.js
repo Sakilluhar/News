@@ -1,5 +1,5 @@
 import './OtpModal.css';
-import photo from '../1.jpg'
+import photo from '../images/tech.jpg'
 // import React, { useState, useEffect } from 'react';
 import React, { useState } from 'react'
 
