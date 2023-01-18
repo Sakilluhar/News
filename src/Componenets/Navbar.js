@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import './Nav.css';
 import { BiBell,BiSearch,BiUserCircle } from 'react-icons/bi';
 import { Modal } from './Modal';
-import { PhoneLoginModal } from './PhoneLogin';
-import { ForgotModal } from './ForgotPassword';
-import { OtpModal } from './OtpModal';
-import { RagisterModal } from './Register';
+
+
 
 function Navbar() {
     const [Search, setSearch ] = useState(false);
@@ -42,7 +40,7 @@ function Navbar() {
                                     <a className="nav-link active me-4" aria-current="page" href="/">CONTACT US</a>
                                 </li>
                                 <li>
-                                    <button id='btnSignIn' className='btn me-3' type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><BiUserCircle size={23} id='btnLogo'/>Sign In</button>
+                                    <button id='btnSignIn' className='btn me-3' type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" ><BiUserCircle size={23} id='btnLogo'/>Sign In</button>
                                 </li>
                                 <li>
                                     <button id='btnNotification' type="button" className="btn me-3"><BiBell size={23}/></button>
@@ -63,15 +61,12 @@ function Navbar() {
 
                     </div>
                  </div> 
-                 {/* <Modal/> */}
-                 {/* <PhoneLoginModal/>
-                 <ForgotModal/>
-                 <OtpModal/>
-                 <RagisterModal/> */}
+                 <Modal/>
+                
             </nav>
            
         </div>
     )
-}
+  }
 
 export default Navbar

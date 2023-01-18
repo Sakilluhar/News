@@ -67,7 +67,8 @@ export const Modal = () => {
     return (
         <>
             <div className="fonton">
-                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                {/* <div className="modal fade" id="staticBackdrop" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> */}
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content ModalWrapper">
                             <div >
@@ -96,7 +97,7 @@ export const Modal = () => {
                                             <label for="floatingPassword">Password</label>
                                             <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
                                             <p className='error-msg'> {formErrors.password}
-                                                <a href="/" id="forgot" style={{ float: "right" }} data-bs-toggle="modal" data-bs-target="#staticBackdrop2" > Forgot Password? </a></p>
+                                                <a href="/" id="forgot" style={{ float: "right" }} data-bs-toggle="modal" data-bs-target="#exampleModalToggle2" > Forgot Password? </a></p>
 
                                         </div>
                                         <div className='py-3'>
@@ -113,7 +114,7 @@ export const Modal = () => {
 
                                 </div>
                                 <div className="footer  ">
-                                    <h7 className="">Don't have an account?<a href="/" data-bs-toggle="modal" data-bs-target="#exampleModalToggle5">Register </a></h7>
+                                    <h7 className="">Don't have an account?<a href="/" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">Register </a></h7>
                                 </div>
 
                             </div>
@@ -122,6 +123,7 @@ export const Modal = () => {
                         </div>
                     </div>
                 </div>
+               
 
             </div>
         </>
