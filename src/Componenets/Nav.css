@@ -13,6 +13,8 @@
 }
 
 
+
+
 /* News logo */
 .News-logo{
     display: grid;
@@ -120,6 +122,26 @@
     color: #EE2934;
     background: #edf2f8;
     margin-right: 110px;
+}
+
+#serchModal{
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #C0C5D0;
+    padding: 1%;
+    top: 90%;
+    right: 5%;
+    
+}
+
+
+#inputSerchForm{
+    /* border-color: #EE2934; */
+}
+
+#btnSerchForm{
+    color: #EE2934;
+    background: #edf2f8;
 }
 
 

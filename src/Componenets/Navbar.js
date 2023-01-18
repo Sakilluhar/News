@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Nav.css';
 import { BiBell,BiSearch,BiUserCircle } from 'react-icons/bi';
 import { Modal } from './Modal';
@@ -8,6 +8,11 @@ import { OtpModal } from './OtpModal';
 import { RagisterModal } from './Register';
 
 function Navbar() {
+    const [Search, setSearch ] = useState(false);
+
+    const handleSearchModel = ()=> {
+        setSearch(!Search)
+    };
     return (
         <div>
              
@@ -43,14 +48,19 @@ function Navbar() {
                                     <button id='btnNotification' type="button" className="btn me-3"><BiBell size={23}/></button>
                                 </li>
                                 <li>
-                                <button id='btnSerch' type="button" className="btn"><BiSearch size={23}/></button>
+                                <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23}/></button>
                                 </li>
-                            </ul>
-                            {/* <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form> */}
+                            </ul>      
                         </div>
+
+                        {Search ? 
+                                (<form id='serchModal' className="d-flex" role="search">
+                                    <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                    <button id='btnSerchForm' className="btn" type="submit">Search</button>
+                                </form>)
+                                :null
+                                }
+
                     </div>
                  </div> 
                  {/* <Modal/> */}
