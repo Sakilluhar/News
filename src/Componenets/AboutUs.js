@@ -1,10 +1,10 @@
 import React from 'react'
-import about from '../image/About.png'
-import about1 from '../image/image 1.png'
-import about2 from '../image/image 2.png'
-import about3 from 'D:/React js/react/newss/src/image/image  3.png'
+import about from '../images/About.png'
+import about1 from '../images/image 1.png'
+import about2 from '../images/image 2.png'
+import about3 from '../images/image  3.png'
 import './AboutUs.css'
-export default function AboutUs() {
+function AboutUs() {
   return (
     <div >
       <div className="mx-5">
@@ -40,4 +40,4 @@ export default function AboutUs() {
       </div>
     </div>
   )
-}
+} export default AboutUs

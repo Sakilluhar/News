@@ -97,7 +97,8 @@ export const RagisterModal = () => {
     return (
         <>
             <div className="fonton">
-                <div className="modal fade" id="staticBackdrop5" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal fade" id="staticBbackdrop5" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                {/* <div class="modal fade" id="staticBackdrop5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> */}
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content ModalWrapper">
                             <div style={{ width: "55%" }}>
