@@ -20,68 +20,68 @@ function HealthNewsSection() {
         </div>
 
         <div id='hns-center-col'>
-        <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+        <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
         </div>
         <div id='hns-right-col'>
-        <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+        <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
 
-                <div id='hns-card' class="card">
-                    <img  id='hns-card-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-                    <div class="hns-card-body">
+                <div id='hns-card' className="card">
+                    <img  id='hns-card-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                    <div className="hns-card-body">
                         <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+                        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
                     </div>
                 </div>
         </div>

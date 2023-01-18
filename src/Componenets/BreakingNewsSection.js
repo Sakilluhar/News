@@ -19,27 +19,27 @@ function BreakingNewsSection() {
             </div>
     </div>
 
-    <div id='bns-card' class="card">
-        <img  id='bns-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-        <div class="card-body">
+    <div id='bns-card' className="card">
+        <img  id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+        <div className="card-body">
         <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-        <h5 id='bns-card-text' class="card-text">What we know about apple watch series 8</h5>
+        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
         </div>
     </div>
 
-    <div id='bns-card' class="card">
-        <img id='bns-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-        <div class="card-body">
+    <div id='bns-card' className="card">
+        <img id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+        <div className="card-body">
         <button id='btnbnsCatagory' className='btn btn-sm' type="button" >News</button>
-        <h5 id='bns-card-text' class="card-text">NFTs and cryptos are 100% based on greater fool theory</h5>
+        <h5 id='bns-card-text' className="card-text">NFTs and cryptos are 100% based on greater fool theory</h5>
         </div>
     </div>
 
-    <div id='bns-card' class="card">
-        <img id='bns-image' src={entertainment1_jpg} class="card-img-top" alt="..."/>
-        <div class="card-body">
+    <div id='bns-card' className="card">
+        <img id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+        <div className="card-body">
         <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Earth</button>
-        <h5 id='bns-card-text' class="card-text">Working hours may change in mumbai due to global warming</h5>
+        <h5 id='bns-card-text' className="card-text">Working hours may change in mumbai due to global warming</h5>
         </div>
     </div>
     </div>

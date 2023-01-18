@@ -13,9 +13,9 @@ export const PhoneLoginModal = () => {
 
     return (
         <>
-            <div class="modal fade" id="exampleModalToggle3" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalToggleLabel3" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered justify-content-center">
-                    <div class="modal-content ModalWrapper1">
+            <div className="modal fade" id="exampleModalToggle3" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalToggleLabel3" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered justify-content-center">
+                    <div className="modal-content ModalWrapper1">
                         <div style={{ width: "55%" }}>
                             <img className="ModalImg1" src={photo} alt='' />
                         </div>

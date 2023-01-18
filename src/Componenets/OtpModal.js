@@ -41,7 +41,7 @@ export const OtpModal = () => {
                                 }}>
                                     <div className="mb-3">
 
-                                        <div class="userInput">
+                                        <div className="userInput">
                                             {otp.map((data, index) => {
                                                 return (
                                                     <input
