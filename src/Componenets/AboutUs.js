@@ -5,8 +5,38 @@ import about2 from '../images/image 2.png'
 import about3 from '../images/image  3.png'
 import './AboutUs.css'
 function AboutUs() {
+//   const [Data,setData]=useState([]);
+//   const [Description,setDescription] = useState([]);
+
+//   useEffect(()=>{
+//   var myHeaders = new Headers();
+// myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
+// myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+
+// var requestOptions = {
+//   method: 'POST',
+//   headers: myHeaders,
+//   redirect: 'follow'
+// };
+
+// fetch("https://news.wrteam.in/Api/get_pages?access_key=5670&language_id=14", requestOptions)
+//   .then(response => response.json())
+//   .then(result => {
+//     setData(result.data)
+//     setDescription(result.data[2].page_content)
+    // console.log(result)
+//   })
+//   .catch(error => console.log('error', error));
+  
+// },[])
+// console.log(Data);
+
+
   return (
+
     <div >
+    {/* <p>{Description}</p> */}
+
       <div className="mx-5">
         <div id="about" >
           <img src={about} className="img-fluid" alt="..." />

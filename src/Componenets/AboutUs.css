@@ -1,6 +1,6 @@
 .img-fluid {
    
-    max-width: 100%;
+    max-width: 130%;
     height: 100%; 
     border-radius: 10px 10px 10px 10px;
    
@@ -39,7 +39,7 @@ margin: auto;
     height: auto;
 }
 .img-wrapper{
-    padding-top: 18pc;
+    padding-top: 10pc;
     /* padding-top: 8%;
     padding-bottom: 80px; */
     width: 50%;

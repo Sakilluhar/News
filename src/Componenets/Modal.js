@@ -5,6 +5,10 @@ import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import { FaFacebookF, FaGoogle, FaMobileAlt, } from 'react-icons/fa';
+import { ForgotModal } from './ForgotPassword';
+import { PhoneLoginModal } from './PhoneLogin';
+import { RagisterModal } from './Register';
+import { OtpModal } from './OtpModal';
 
 export const Modal = () => {
     const initialValues = { email: "", password: "" };
@@ -67,8 +71,8 @@ export const Modal = () => {
     return (
         <>
             <div className="fonton">
-                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                {/* <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1"> */}
+                {/* <div className="modal fade" id="staticBackdrop" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> */}
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content ModalWrapper">
                             <div >
@@ -78,6 +82,7 @@ export const Modal = () => {
                                 <div>
                                     <div className="ModelHeader">
                                         <h1> <strong>Login</strong> </h1>
+                                        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
                                     </div>
                                     <div className="my-5 mx-4">
                                         <h5> <strong>Welcome back!</strong></h5>
@@ -97,7 +102,7 @@ export const Modal = () => {
                                             <label for="floatingPassword">Password</label>
                                             <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
                                             <p className='error-msg'> {formErrors.password}
-                                                <a href="/" id="forgot" style={{ float: "right" }} data-bs-toggle="modal" data-bs-target="#exampleModalToggle2" > Forgot Password? </a></p>
+                                                <a href="/" id="forgot" style={{ float: "right" }} data-bs-toggle="modal" data-bs-target="#exampleModalToggle2"  > Forgot Password? </a></p>
 
                                         </div>
                                         <div className='py-3'>
@@ -123,7 +128,10 @@ export const Modal = () => {
                         </div>
                     </div>
                 </div>
-               
+               <ForgotModal/>
+               <PhoneLoginModal/>
+               <RagisterModal/>
+               <OtpModal/>
 
             </div>
         </>
