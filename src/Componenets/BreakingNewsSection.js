@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
-import entertainment1_jpg from '../images/entertainment1.jpg';
 import breakingNews2_jpg from '../images/earthImage.png';
 import { IoIosArrowDropleftCircle,IoIosArrowDroprightCircle } from 'react-icons/io';
+import { useEffect } from 'react';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
 
 
 function BreakingNewsSection() {
+
+  const [Data, setData] = useState([]);
+
+useEffect(()=>{
+  var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=14", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    setData(result.data);
+  })
+  
+  .catch(error => console.log('error', error));
+},[])
+console.log(Data)
   return (
     <>  
     <div id='bns-main'>  
@@ -19,30 +44,23 @@ function BreakingNewsSection() {
             </div>
     </div>
 
+    <div id='bns-rest-cards'>
+
+      
+    {Data && Data.map((element)=>(
     <div id='bns-card' className="card">
-        <img  id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+        <img  id='bns-image' src={element.image} className="card-img-top" alt="..."/>
         <div className="card-body">
         <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
         <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
         </div>
     </div>
-
-    <div id='bns-card' className="card">
-        <img id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-        <div className="card-body">
-        <button id='btnbnsCatagory' className='btn btn-sm' type="button" >News</button>
-        <h5 id='bns-card-text' className="card-text">NFTs and cryptos are 100% based on greater fool theory</h5>
-        </div>
+    ))}
     </div>
 
-    <div id='bns-card' className="card">
-        <img id='bns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-        <div className="card-body">
-        <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Earth</button>
-        <h5 id='bns-card-text' className="card-text">Working hours may change in mumbai due to global warming</h5>
-        </div>
     </div>
-    </div>
+
+
     <div id='bns-np-btns'>
     <button id='btnbnsNP' className='btn btn-sm' type="button" ><IoIosArrowDropleftCircle  size={40}/></button>
     <button id='btnbnsNP' className='btn btn-sm' type="button" ><IoIosArrowDroprightCircle size={40}/></button>

@@ -13,6 +13,7 @@ function Navbar() {
     const handleSearchModel = ()=> {
         setSearch(!Search)
     };
+    
     return (
         <div>
              

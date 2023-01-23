@@ -1,41 +1,76 @@
 import React, { useState } from 'react'
 import './Home.css'
 import food_jpg from '../images/food.jpg'
-import travel_jpg from '../images/travel.jpg'
-import tech_jpg from '../images/tech.jpg'
+import { useEffect } from 'react'
+import { BsPlayCircle } from 'react-icons/bs';
+
+
 
 function NewsCardFS() {
-
-    const [Title, setTitle] = useState('Understimating the challange of raising Series a Funding');
-    const [Description, setDescription] = useState("here are many variations of pasages of Lorem ipsum available, but the majority have suffored alteration in some form, by injection humour, or randomised words which dont't look even slightly believable.");
+    const [Data, setData] = useState([]);
+    const [Title, setTitle] = useState();
+    const [Description, setDescription] = useState();
     const [Category, setCategory] = useState('Food');
-    const [Image, setImage] = useState(food_jpg);
+    const [Image, setImage] = useState();
+    const [Video_url, setVideo_url] = useState();
 
+
+    useEffect(()=>{
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
+
+        var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+        };
+
+        fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=14", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            setData(result.data)
+            setTitle(result.data[0].title);
+            setDescription(result.data[0].description.slice(0, 350));
+            setCategory('Food');
+            setImage (result.data[0].image);
+            // setVideo_url(result.data[0].content_value);
+        })
+        .catch(error => console.log('error', error));
+    },[]);
+    
     const handleRad = (event)=>{
 
         const value = event.target.value
-
+       
         if(value === 'rad1'){
-            setTitle("Understimating the challange of raising Series a Funding");
-            setDescription("There are many variations of pasages of Lorem ipsum available, but the majority have suffored alteration in some form, by injection humour, or randomised words which dont't look even slightly believable.");
+            setTitle(Data[0].title);
+            setDescription(Data[0].description.slice(0, 350));
             setCategory('Food');
-            setImage (food_jpg);
+            setImage (Data[0].image);
+            setVideo_url(Data[0].content_value);
+
+            
         }
         else if(value === 'rad2'){
-            setTitle("travel the challange of raising Series a Funding");
-            setDescription("There are many variations of pasages of Lorem ipsum available, but the majority have suffored alteration in some form, by injection humour, or randomised words which dont't look even slightly believable.");
-            setCategory('Travel');
-            setImage (travel_jpg);
+            setTitle(Data[1].title);
+            setDescription(Data[1].description.slice(0, 350));
+            setCategory('Food');
+            setImage (Data[1].image);
+            setVideo_url(Data[1].content_value);
+
         }
         else if(value === 'rad3'){
-            setTitle("technology the challange of raising Series a Funding");
-            setDescription("There are many variations of pasages of Lorem ipsum available, but the majority have suffored alteration in some form, by injection humour, or randomised words which dont't look even slightly believable.");
-            setCategory('Technology');
-            setImage (tech_jpg);
+            setTitle(Data[2].title);
+            setDescription(Data[2].description.slice(0, 350));
+            setCategory('Food');
+            setImage (Data[2].image);
+            setVideo_url(Data[2].content_value);
+
         }
         
     
     }
+    
 
     
  
@@ -45,14 +80,22 @@ function NewsCardFS() {
     // }
     
   return (
+
+    
     
         <div  className="d-flex justify-content-around h-100">
+{/* 
+{Data && Data.map((element,index)=>(
+    <div><p>{element.description}</p></div>    
+    ))} */}
 
             <div id='Left-first-section' className='my-auto'>
                 <button id='btnCatagory' className='btn' type="button" >{Category}</button>
                 <h1 id='Top-Title'><b>{Title}</b></h1>
-                <p id='Top-Description'>{Description}</p>
+                <p id='Top-Description'>{Description}...</p>
                 <button id='btnCatagory' className='btn' type="button" ><b>READ MORE</b></button>
+                <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
+
 
             </div>
 
@@ -64,9 +107,9 @@ function NewsCardFS() {
 
             {/* toogle button */}
             <div id='fs-Radios' className='my-auto'>
-            <input type="radio" id='fs-Radiobtn' value="rad1" name="radFS" onChange={handleRad} defaultChecked/> 
-            <input type="radio" id='fs-Radiobtn' value="rad2" name="radFS" onChange={handleRad} /> 
-            <input type="radio" id='fs-Radiobtn' value="rad3" name="radFS" onChange={handleRad} /> 
+            <input type="radio" id='fs-Radiobtn' value="rad1" name="radFS" onClick={handleRad} defaultChecked/> 
+            <input type="radio" id='fs-Radiobtn' value="rad2" name="radFS" onClick={handleRad} /> 
+            <input type="radio" id='fs-Radiobtn' value="rad3" name="radFS" onClick={handleRad} /> 
                 </div>
             </div>
 
