@@ -4,13 +4,15 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
-
-
-
-export const RagisterModal = () => {
-    const initialValues = { username:"", email: "", password: "" ,confirmpassword:""};
+import { useNavigate } from 'react-router';
+function Register() {
+  
+    const initialValues = { username: "", email: "", password: "", confirmpassword: "" };
     const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
+    const [formErrors, setFormErrors] = useState("", setTimeout(() => {
+        if (formErrors !== "")
+        setFormErrors("")
+    }, 5000));
     const [isSubmit, setIsSubmit] = useState(false);
     const [type, setType] = useState("password");
     const [icon, setIcon] = useState(eyeSlash);
@@ -30,7 +32,7 @@ export const RagisterModal = () => {
     };
 
 
-
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
@@ -43,10 +45,10 @@ export const RagisterModal = () => {
         const errors = {};
         const regex = /^[^\s@]+@[^s\@]+\.[^\s@]{2,}$/i;
         const password_pattern = /^(?=.*\d)(?=.*\[a-z])(?=.*\[A-Z])[a-zA-Z0-9]{8,}$/
-        if(!values.username){
+        if (!values.username) {
             errors.username = " User Name is reqired! ";
         }
-        
+
         if (!values.email) {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
@@ -59,13 +61,16 @@ export const RagisterModal = () => {
         } else if (values.password.length > 12) {
             errors.password = "Password cannot exceed then 12 charchaters";
         }
-        if(!values.confirmpassword){
-            errors.confirmPassword=" ConfirmPassword is required!";
+        if (!values.confirmpassword) {
+            errors.confirmPassword = " ConfirmPassword is required!";
         }
-        else if(values.confirmpassword === ""|| values.confirmpassword !== values.password){
-            errors.confirmPassword="Password is not Matched!";
-        }
-      
+        else if (values.confirmpassword === "" || values.confirmpassword !== values.password) {
+            errors.confirmPassword = "Password is not Matched!";
+        }else {
+            navigate("/");
+    
+            }
+
         return errors;
     };
 
@@ -97,14 +102,13 @@ export const RagisterModal = () => {
     return (
         <>
             <div className="fonton">
-                <div className="modal fade" id="staticBbackdrop5" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                {/* <div class="modal fade" id="staticBackdrop5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> */}
+                <div className="container justify-content-center" id='mainmodal'>
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content ModalWrapper">
-                            <div style={{ width: "55%" }}>
+                            <div style={{ width: "50%" }}>
                                 <img className="ModalImg3" src={photo} alt='' />
                             </div>
-                            <div className="ModalContent5">
+                            <div className="ModalContent5"  style={{width:'50%'}}>
                                 <div>
                                     <div className="ModelHeader">
                                         <h1> <strong>Create an Account</strong> </h1>
@@ -115,44 +119,44 @@ export const RagisterModal = () => {
                                     </div>
                                     <form className="my-2 mx-4" onSubmit={handleSubmit}>
                                         <div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control" name='username'
-                                                id="floatingInput" placeholder="User Name" aria-describedby="Username" value={formValues.username} onChange={handleChange} />
-                                            <p className='error-msg'> {formErrors.username}</p>
-                                            <label for="floatingInput">User Name</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control" name='email'
-                                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
-                                            <p className='error-msg'> {formErrors.email}</p>
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='password' value={formValues.password}
-                                                onChange={handleChange}
-                                            />
-                                            <label for="floatingPassword">Password</label>
-                                            <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
-                                            <p className='error-msg'> {formErrors.password}</p>
+                                            <div className="form-floating mb-3">
+                                                <input type="text" className="form-control" name='username'
+                                                    id="floatingInput" placeholder="User Name" aria-describedby="Username" value={formValues.username} onChange={handleChange} />
+                                                <p className='error-msg'> {formErrors.username}</p>
+                                                <label for="floatingInput">User Name</label>
+                                            </div>
+                                            <div className="form-floating mb-3">
+                                                <input type="text" className="form-control" name='email'
+                                                    id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
+                                                <p className='error-msg'> {formErrors.email}</p>
+                                                <label for="floatingInput">Email address</label>
+                                            </div>
+                                            <div className="form-floating mb-3">
+                                                <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='password' value={formValues.password}
+                                                    onChange={handleChange}
+                                                />
+                                                <label for="floatingPassword">Password</label>
+                                                <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
+                                                <p className='error-msg'> {formErrors.password}</p>
 
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
-                                                onChange={handleConfirmpassword}
-                                            />
-                                            <label for="floatingConfirmPassword"> Confirm Password</label>
-                                            <span onClick={handleCtoggle} className="Cpassword-icon"><Icon icon={icon2} size={19} /></span>
-                                            <p className='error-msg'> {formErrors.confirmPassword}
-                                            </p>
+                                            </div>
+                                            <div className="form-floating mb-3">
+                                                <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
+                                                    onChange={handleConfirmpassword}
+                                                />
+                                                <label for="floatingConfirmPassword"> Confirm Password</label>
+                                                <span onClick={handleCtoggle} className="Cpassword-icon"><Icon icon={icon2} size={19} /></span>
+                                                <p className='error-msg'> {formErrors.confirmPassword}
+                                                </p>
 
-                                        </div>
-                                        <div className='py-3'>
-                                            <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' >Sign Up</button>
-                                        </div>
+                                            </div>
+                                            <div className='py-3'>
+                                                <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' >Sign Up</button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
-                               
+
 
                             </div>
 
@@ -160,8 +164,8 @@ export const RagisterModal = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     )
 }
+export default Register

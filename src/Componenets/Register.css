@@ -71,12 +71,9 @@
   z-index: 10;
 
 }
-
-
-.footer {
-  text-align: center;
-  font: small-caption;
-  padding: 10px;
+.mx-5 {
+  margin-right: 37rem!important;
+  margin-left: 20rem!important;
 }
 .password-icon {
   position: relative;

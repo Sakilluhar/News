@@ -8,7 +8,10 @@ function Footer() {
 
     const initialValues = { email: "" };
     const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
+    const [formErrors, setFormErrors] = useState("", setTimeout(() => {
+        if (formErrors !== "")
+        setFormErrors("")
+    }, 5000))
     const [isSubcribe, setIsSubcribe] = useState(false);
 
     const handleChange = (e) => {

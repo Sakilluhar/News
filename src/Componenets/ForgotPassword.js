@@ -1,12 +1,17 @@
 import './ForgotPassword.css';
 import photo from '../images/tech.jpg'
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 
-export const ForgotModal = () => {
+function ForgotPassword() {
+
     const initialValues = { email: "", password: "" };
     const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
+    const [formErrors, setFormErrors] = useState("", setTimeout(() => {
+        if (formErrors !== "")
+        setFormErrors("")
+    }, 5000));
     const [isSubmit, setIsSubmit] = useState(false);
     const [type, setType] = useState("password");
 
@@ -19,11 +24,13 @@ export const ForgotModal = () => {
     };
 
 
-
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+       
+ 
     };
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit);
@@ -35,29 +42,26 @@ export const ForgotModal = () => {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
             errors.email = "Enter a Valid EMail";
+        } else {
+        navigate("/");
+
         }
 
         return errors;
     };
-
-
-
-
-
-
     return (
         <>
-            {/* <div className="modal fade" id="staticBackdrop2" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true"> */}
-            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div className="container justify-content-center" id='mainmodal'>
                 <div className="modal-dialog modal-dialog-centered justify-content-center">
                     <div className="modal-content ModalWrapper1">
-                        <div style={{ width: "70%" }}>
+                        <div style={{ width: "50%" }}>
                             <img className="ModalImg1" src={photo} alt='' />
                         </div>
-                        <div div className="ModalContent">
+                        <div div className="ModalContent"  style={{width:'50%'}}>
 
                             <div className="ModelHeader">
                                 <h2> <strong>Forgot Password</strong> </h2>
+                                {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
                             </div>
                             <div className='AC'>
                                 <div className="h my-5 mx-3">
@@ -72,7 +76,7 @@ export const ForgotModal = () => {
                                     </div>
 
                                     <div className='py-3'>
-                                        <button type="submit" className="btn   btn-lg  w-100" id='submitbutton' >Submit</button>
+                                        <button type="submit" className="btn   btn-lg  w-100" id='submitbutton'>Submit</button>
                                     </div>
 
                                 </form>
@@ -88,3 +92,11 @@ export const ForgotModal = () => {
         </>
     )
 }
+
+
+
+
+
+
+
+export default ForgotPassword

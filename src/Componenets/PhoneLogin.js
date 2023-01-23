@@ -2,25 +2,48 @@ import './PhoneLogin.css';
 import photo from '../images/tech.jpg'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import React,{useState} from 'react'
-import { OtpModal } from './OtpModal';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import validator from 'validator'
 
 
 
+function PhoneLogin(props) {
 
-export const PhoneLoginModal = () => {
+    const navigate = useNavigate();
+
     const [value, setValue] = useState()
+    const [error, setError] = useState("", setTimeout(() => {
+        if (error !== "")
+            setError("")
+    }, 5000))
+   
+    const handleGetOtp=(e)=>{
+        e.preventDefault();
+        if (value === undefined) {
+            setError("Please enter phone number!")
+        }
+        else if (validator.isMobilePhone(value)){
+            props.setPhonenum(value)
+            navigate('/Get_otp')
+        }
+        else{
+            setError("Enter a valid phone number")
+        }
+
+
+    }
 
 
     return (
         <>
-            <div className="modal fade" id="exampleModalToggle3" data-bs-backdrop="modal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalToggleLabel3" aria-hidden="true">
+            <div className="container justify-content-center" id='mainmodal'>
                 <div className="modal-dialog modal-dialog-centered justify-content-center">
                     <div className="modal-content ModalWrapper1">
-                        <div style={{ width: "55%" }}>
+                        <div style={{ width: "50%" }}>
                             <img className="ModalImg1" src={photo} alt='' />
                         </div>
-                        <div div className="ModalContent">
+                        <div div className="ModalContent" style={{ width: "50%" }}>
 
                             <div className="ModelHeader">
                                 <h2> <strong> Login </strong> </h2>
@@ -40,8 +63,12 @@ export const PhoneLoginModal = () => {
                                     </div>
 
                                     <div className='py-3'>
-                                        <button type="button" className="btn   btn-lg  w-100" id="submitbutton" data-bs-toggle="modal" data-bs-target="#exampleModalToggle4">Get OTP</button>
+                                    
+                                    <p className='error-msg'>{error}</p>
+                                       <button type='submit' className="btn   btn-lg  w-100" id="submitbutton" onClick={handleGetOtp}>Get OTP</button>
+                                        
                                     </div>
+                                    
                                 </form>
                             </div>
 
@@ -50,9 +77,9 @@ export const PhoneLoginModal = () => {
                         </div>
                     </div>
                 </div>
-                <OtpModal/>
-            </div>
 
+            </div>
         </>
     )
 }
+export default PhoneLogin
