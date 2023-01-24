@@ -13,6 +13,7 @@ function NewsCardFS() {
     const [Category, setCategory] = useState('Food');
     const [Image, setImage] = useState();
     const [Video_url, setVideo_url] = useState();
+    
 
 
     useEffect(()=>{

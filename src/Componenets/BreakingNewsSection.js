@@ -30,7 +30,7 @@ fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=
   
   .catch(error => console.log('error', error));
 },[])
-console.log(Data)
+
   return (
     <>  
     <div id='bns-main'>  
@@ -46,13 +46,38 @@ console.log(Data)
 
     <div id='bns-rest-cards'>
 
-      
-    {Data && Data.map((element)=>(
-    <div id='bns-card' className="card">
+    {/* <Swiper id='bns-swiper'
+        slidesPerView={3}
+        spaceBetween={30}
+        slidesPerGroup={3}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+
+      >{Data && Data.map((element)=>(
+        <SwiperSlide><div id='bns-card' className="card">
         <img  id='bns-image' src={element.image} className="card-img-top" alt="..."/>
         <div className="card-body">
+          <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+          <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
+          </div>
+        </div>
+        </SwiperSlide>
+        ))}
+      </Swiper> */}
+
+      
+    {Data && Data.map((element)=>(
+    <div id='bns-card' className="card" key={element.id}>
+        <img  id='bns-image' src={element.image} className="card-img-top" alt="..."/>
+        <div id='bns-card-body' className="card-body">
         <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-        <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
+        <h5 id='bns-card-text' className="">{element.title.slice(0, 30)}...</h5>
         </div>
     </div>
     ))}

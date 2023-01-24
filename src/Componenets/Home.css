@@ -80,11 +80,11 @@
 #tns-logo::after{
   content: "";
   display: block;
-  width: 1350px;
+  width: 1335%;
   height: 3px;
   background: #EE2934;
   position: absolute;
-  left: 130px;
+  left: 120%;
   top: 50%;
   z-index: -2;
 }
@@ -132,6 +132,7 @@
 }
 
 #tns-news-image{
+  object-fit: cover;
   height: 22rem;
   width: 22rem;
 }
@@ -174,8 +175,15 @@
   display: flex;
   flex-direction: row;
   gap: 3%;
-  overflow-y: hidden;
+  height: 22rem;
+  /* overflow-y: hidden; */
  overflow-x: scroll;  
+
+}
+
+#bns-swiper{
+  width: 80%;
+  height: 20rem;
 }
 
 #bns-main-card{ 
@@ -183,8 +191,13 @@
   height: 20rem;
   width: 20%;
   min-width: 20%;
+  margin-left: 6rem;
   background: black;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+#bns-card-body{
+  height: 40%;
 }
 
 #bns-main-image{
@@ -210,6 +223,9 @@
 
 #bns-image{
   height: 60%;
+  min-width: 60%;
+  max-height: 60%;
+  object-fit: cover;
   margin-top: 3%;
   margin-left: 3%;
   width: 94%;
@@ -228,7 +244,7 @@
 }
 
 #bns-np-btns{
-  margin-top: 3%;
+  margin-top: 1%;
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -598,7 +614,7 @@ height: 38rem;
 #hns-main{
   margin-top: 2%;
   font-family: 'Zilla Slab', serif;
-  height: 40rem;
+  height: 30rem;
   display: grid;
   grid-template-columns: 6rem 1fr 1fr 1fr 6rem;
   gap: 1%;
@@ -622,13 +638,13 @@ height: 38rem;
 #hns-center-col{
   display: flex;
   flex-direction: column;
-  gap: 2%;
+  gap: 6%;
 }
 
 #hns-right-col{
   display: flex;
   flex-direction: column;
-  gap: 2%;
+  gap: 6%;
 }
 
 #hns-main-body{
@@ -638,6 +654,7 @@ height: 38rem;
 }
 
 #hns-main-text{
+  background-color: rgba(0, 0, 0, 0.50) ;
   margin-top: 1%;
 }
 
@@ -652,14 +669,19 @@ height: 38rem;
   object-fit: cover;
  height: 6rem;
  width: 28%;
+ min-width: 28%;
  border-radius: 5%;
 }
 
 #hns-card-body{
   /* padding: 5%; */
+  width: 70%;
   padding-left: 2%;
 }
 
-#bns-card-text{
-  margin: 4%;
+#hns-card-text{
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 4%;
+
 }
