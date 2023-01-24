@@ -13,6 +13,7 @@ import PhoneLogin from './Componenets/PhoneLogin';
 import OtpModal from './Componenets/OtpModal';
 import { useState } from 'react';
 import ContactUs from './Componenets/Contact_Us';
+import NewsNotification from './Componenets/NewsNotification';
 
 
 
@@ -42,6 +43,8 @@ function App() {
         <Route exact path='/phone_login'  element={<PhoneLogin setPhonenum={setPhonenum}/>} ></Route>
         <Route exact path='/Get_otp'  element={<OtpModal phonenum={phonenum}/>} ></Route>
         <Route exact path='/Contact_us'  element={<ContactUs/>}></Route>
+        <Route exact path='/News_Notification' element={<NewsNotification/>}></Route>
+        <Route exact path='/Persnol_Notification' element={<Notification/>}></Route>
       </Routes>
       
       <Footer />
