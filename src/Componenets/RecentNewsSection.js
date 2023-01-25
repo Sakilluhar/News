@@ -9,9 +9,13 @@ import technology3_static_jpg from '../images/technology3_static.jpg';
 import politics3_static_jpg from '../images/politics3_static.jpg';
 import cars3_static_jpg from '../images/cars3_static.jpg';
 import { BsSun } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 
 function RecentNewsSection() {
+
+    
+
   return (
     <div id='rns-main'>
 
@@ -33,8 +37,9 @@ function RecentNewsSection() {
                 <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
                     <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
                 
-                </div>    
-                    <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
+                </div>
+                <Link className="nav-link active me-4" aria-current="page" to="/NewsView">CONTACT US</Link>    
+                    {/* <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button> */}
             </div>
 
             <div id='rns-card' className="card">

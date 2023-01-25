@@ -15,7 +15,6 @@ function NewsCardFS() {
     const [Video_url, setVideo_url] = useState();
     
 
-
     useEffect(()=>{
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
@@ -31,7 +30,7 @@ function NewsCardFS() {
         .then(result => {
             setData(result.data)
             setTitle(result.data[0].title);
-            setDescription(result.data[0].description.slice(0, 350));
+            setDescription(result.data[0].description.slice(0, 350)+"...");
             setCategory('Food');
             setImage (result.data[0].image);
             // setVideo_url(result.data[0].content_value);
@@ -45,7 +44,7 @@ function NewsCardFS() {
        
         if(value === 'rad1'){
             setTitle(Data[0].title);
-            setDescription(Data[0].description.slice(0, 350));
+            setDescription(Data[0].description.slice(0, 350)+"...");
             setCategory('Food');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
@@ -54,7 +53,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad2'){
             setTitle(Data[1].title);
-            setDescription(Data[1].description.slice(0, 350));
+            setDescription(Data[1].description.slice(0, 350)+"...");
             setCategory('Food');
             setImage (Data[1].image);
             setVideo_url(Data[1].content_value);
@@ -62,7 +61,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad3'){
             setTitle(Data[2].title);
-            setDescription(Data[2].description.slice(0, 350));
+            setDescription(Data[2].description.slice(0, 350)+"...");
             setCategory('Food');
             setImage (Data[2].image);
             setVideo_url(Data[2].content_value);
@@ -83,17 +82,14 @@ function NewsCardFS() {
   return (
 
     
-    
         <div  className="d-flex justify-content-around h-100">
-{/* 
-{Data && Data.map((element,index)=>(
-    <div><p>{element.description}</p></div>    
-    ))} */}
+
+{/* <div className="col-12 " dangerouslySetInnerHTML={{__html: data}}></div> */}
 
             <div id='Left-first-section' className='my-auto'>
                 <button id='btnCatagory' className='btn' type="button" >{Category}</button>
                 <h1 id='Top-Title'><b>{Title}</b></h1>
-                <p id='Top-Description'>{Description}...</p>
+                <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <button id='btnCatagory' className='btn' type="button" ><b>READ MORE</b></button>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
 
@@ -115,6 +111,7 @@ function NewsCardFS() {
             </div>
 
         </div>
+        
    
   )
 }
