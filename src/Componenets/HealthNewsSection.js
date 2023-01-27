@@ -117,11 +117,6 @@ function HealthNewsSection() {
                         </div>
                     </div>
             </div>
-        
-
-        <div id=''>
-
-        </div>
 
     </div>}
     </div>

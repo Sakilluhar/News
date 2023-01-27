@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+#nv-main{
+    display: grid;
+    grid-template-columns: 10rem 1fr 10rem;
+    /* width: 100%; */
+    height: 70rem;
+  font-family: 'Zilla Slab', serif;
+}
+
+#nv-page{
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2%;
+    margin-top: 5rem;
+}
+
+#nv-right-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+#nv-title{
+    
+}
+
+#nv-image{
+    margin-top: 5%;
+    object-fit: cover;
+    width: 100%;
+    height: 30rem;
+}
+
+#nv-functions{
+    background-color: #EE2934;
+    padding-left: 2%;
+    padding: 1%;
+}
+
+#nv-function{
+    color: #ffffff;
+    text-decoration: none;
+    margin: 1%;
+}
+
+#nv-description{
+    margin-top: 5%;
+}

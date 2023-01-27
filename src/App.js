@@ -9,6 +9,7 @@ import Notification from './Componenets/Notification';
 import ContactUs from './Componenets/Contact_Us';
 import NewsNotification from './Componenets/NewsNotification';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NewsView from './Componenets/NewsView';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={<HomePage />}></Route>
+        <Route exact path='/NewsView' element={<NewsView />}></Route>
         <Route exact path='/about_us' element={<AboutUs />}></Route>
         <Route exact path='/notification' element={<Notification />}></Route>
         <Route exact path='/Contact_us'  element={<ContactUs/>}></Route>
