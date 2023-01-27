@@ -6,6 +6,10 @@ import Footer from './Componenets/Footer';
 import { Route, Routes } from 'react-router';
 import AboutUs from './Componenets/AboutUs';
 import Notification from './Componenets/Notification';
+<<<<<<< HEAD
+=======
+import { useState } from 'react';
+>>>>>>> 19cd2ec (27/01/23)
 import ContactUs from './Componenets/Contact_Us';
 import NewsNotification from './Componenets/NewsNotification';
 import 'bootstrap/dist/css/bootstrap.min.css';
