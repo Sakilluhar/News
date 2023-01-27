@@ -10,11 +10,11 @@ function ContactUs() {
             <div className="fonton">
                 <div>
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
-                        <div className="modal-content ModalWrapper12">
+                        <div className="modal-content flex-row ModalWrapper12">
                             <div style={{ width: '50%' }}>
                                 <img className="ModalImg" src={photo} alt='' />
                             </div>
-                            <div className="ModalContent" style={{ width: '50%' }}>
+                            <div className="ModalContent" style={{ width: '50%', padding: '8%', fontSize: '150%', backgroundColor:"#1B2D51", color: "#fff"}}>
 
                                 <div className='container p1'>
                                     <h2 className=" my-4" style={{ color: "#fff" }}><strong> Contact Us </strong></h2>

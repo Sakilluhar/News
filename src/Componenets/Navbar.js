@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './Nav.css';
 import { BiBell,BiSearch,BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import SignIn_Modal from './SignIn_Modal';
 
 
 
@@ -13,6 +15,7 @@ function Navbar() {
     const handleSearchModel = ()=> {
         setSearch(!Search)
     };
+    const [modalShow, setModalShow] = React.useState(false);
     
     return (
         <div>
@@ -43,7 +46,8 @@ function Navbar() {
                                     <Link className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link>
                                 </li>
                                 <li>
-                                    <Link id='btnSignIn'  className='btn me-3' type="button" to="/Login"><BiUserCircle size={23} id='btnLogo'/>Sign In</Link>
+                                    {/* <Link id='btnSignIn'  className='btn me-3' type="button" to="/Login"><BiUserCircle size={23} id='btnLogo'/>Sign In</Link> */}
+                                    <Button  variant="danger" onClick={() => setModalShow(true)} id='btnSignIn'  className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo'/>Sign In</Button>
                                 </li>
                                 <li>
                                     <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23}/></Link>
@@ -68,7 +72,7 @@ function Navbar() {
                
                 
             </nav>
-           
+           <SignIn_Modal show={modalShow} onHide={() => setModalShow(false)}/>
         </div>
     )
   }
