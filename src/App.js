@@ -6,14 +6,11 @@ import Footer from './Componenets/Footer';
 import { Route, Routes } from 'react-router';
 import AboutUs from './Componenets/AboutUs';
 import Notification from './Componenets/Notification';
-<<<<<<< HEAD
-=======
-import { useState } from 'react';
->>>>>>> 19cd2ec (27/01/23)
 import ContactUs from './Componenets/Contact_Us';
 import NewsNotification from './Componenets/NewsNotification';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewsView from './Componenets/NewsView';
+import Categories from './Componenets/Categories';
 
 function App() {
 
@@ -23,12 +20,12 @@ function App() {
     <>
       <Header />
       <Navbar />
-      
 
       <Routes>
 
         <Route exact path='/' element={<HomePage />}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>
+        <Route exact path='/Categories' element={<Categories />}></Route>
         <Route exact path='/about_us' element={<AboutUs />}></Route>
         <Route exact path='/notification' element={<Notification />}></Route>
         <Route exact path='/Contact_us'  element={<ContactUs/>}></Route>

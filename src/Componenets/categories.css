@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+#cat-main{
+    font-family: 'Zilla Slab', serif;
+   
+}
+
+#cat-section-card{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 3%;
+    background: black;
+    overflow: hidden;
+    border: none;
+}
+
+#cat-section-card-image{
+    object-fit: cover;
+   opacity: 0.5;
+  height: 5rem;
+  width: 100%;
+}
+
+#cat-section-card-body{
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 2% 7fr 1fr;
+}
+
+#cat-card-text{
+    grid-column: 2/3;
+    margin-top: 2%;
+}
+
+#btn-cat-more{
+    color: #ffffff;
+  background-color: #00000000;
+  border: none; 
+}

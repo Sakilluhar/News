@@ -407,8 +407,7 @@ height: 40rem;
   grid-column: 3/4;
   color: #ffffff;
   background-color: #00000000;
-  border: none;
-  
+  border: none; 
 }
 
 /* ---------------------------------- rns weather card ------------------------------------ */

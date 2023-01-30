@@ -56,7 +56,7 @@ function Footer() {
             <div className='full_fotter'>
 
                 <section id="footer">
-                    <div className="card container" id="cB">
+                    <div className="card" id="cB">
                         <div className="card-body d-flex justify-content-between" id='card-noti'>
                             <div className='newsLetter'>
                                 <strong><h3> Subcribe our news Letter</h3></strong>
@@ -81,7 +81,7 @@ function Footer() {
                     <div className="container mx-5">
 
                     </div>
-                    < div className="container news_footer ">
+                    < div className="news_footer ">
 
                         <div className="row">
 

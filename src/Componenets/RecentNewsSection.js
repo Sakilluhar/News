@@ -38,8 +38,8 @@ function RecentNewsSection() {
                     <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
                 
                 </div>
-                <Link className="nav-link active me-4" aria-current="page" to="/NewsView">CONTACT US</Link>    
-                    {/* <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button> */}
+                
+                    <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
             </div>
 
             <div id='rns-card' className="card">
@@ -126,7 +126,8 @@ function RecentNewsSection() {
                             <img id='rns-cat-image' src={travel3_static_jpg} className="card-img" alt="..."/>
                         <div id='rns-cat-text' className="card-img-overlay">
                             <h3 id='cat-text' className="card-text">Travel</h3>
-                            <button id='btnrns-cat-more' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></button>
+                            {/* <button id='btnrns-cat-more' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></button> */}
+                            <Link id='btnrns-cat-more' to='/NewsView' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></Link>
                         </div>
                     </div>
                 </div>

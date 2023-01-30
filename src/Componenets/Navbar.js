@@ -3,7 +3,9 @@ import './Nav.css';
 import { BiBell,BiSearch,BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import SignIn_Modal from './SignIn_Modal';
+import Categories from './Categories';
 
 
 
@@ -11,6 +13,32 @@ import SignIn_Modal from './SignIn_Modal';
 
 
 function Navbar() {
+
+    function OffCanvasExample({ name, ...props }) {
+        const [show, setShow] = useState(false);
+      
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+      
+        return (
+          <>
+            <Link variant="primary" className='nav-link active me-4' onClick={handleShow} >
+            CATEGORIES
+            </Link>
+            <Offcanvas show={show} onHide={handleClose} {...props}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                Some text as placeholder. In real life you can have the elements you
+                have chosen. Like, text, images, lists, etc.
+              </Offcanvas.Body>
+            </Offcanvas>
+          </>
+        );
+      }
+      
+
     const [Search, setSearch ] = useState(false);
     const handleSearchModel = ()=> {
         setSearch(!Search)
@@ -37,7 +65,11 @@ function Navbar() {
                                     <Link className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active me-4" aria-current="page" to="/">CATEGORIES</Link>
+                                    {/* <Link className="nav-link active me-4" aria-current="page" to="/Categories">CATEGORIES</Link> */}
+                                    {['end'].map((placement, idx) => (
+                                        <Categories key={idx} placement={placement} name={placement} />
+                                    ))}
+                                   
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link>
@@ -65,6 +97,10 @@ function Navbar() {
                                 </form>)
                                 :null
                                 }
+
+                                
+
+                                
 
                     </div>
                  </div> 
