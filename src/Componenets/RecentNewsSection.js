@@ -136,8 +136,9 @@ function RecentNewsSection() {
                     <div id='rns-cat-card' className="card" >
                             <img id='rns-cat-image' src={sports3_ronaldo_jpg} className="card-img" alt="..."/>
                         <div id='rns-cat-text' className="card-img-overlay">
-                            <h3 id='cat-text' className="card-text">Sports</h3>
-                            <button id='btnrns-cat-more' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></button>
+                            <h3 id='cat-text' className="card-text">Sports</h3> 
+                            {/* <button id='btnrns-cat-more' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></button> */}
+                            <Link id='btnrns-cat-more' to='/CategoryView' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></Link>
                         </div>
                     </div>
                 </div>

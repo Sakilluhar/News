@@ -11,6 +11,7 @@ import NewsNotification from './Componenets/NewsNotification';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewsView from './Componenets/NewsView';
 import Categories from './Componenets/Categories';
+import CategoryView from './Componenets/CategoryView';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
 
         <Route exact path='/' element={<HomePage />}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>
+        <Route exact path='/CategoryView' element={<CategoryView />}></Route>
         <Route exact path='/Categories' element={<Categories />}></Route>
         <Route exact path='/about_us' element={<AboutUs />}></Route>
         <Route exact path='/notification' element={<Notification />}></Route>
