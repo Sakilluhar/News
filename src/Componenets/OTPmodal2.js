@@ -19,17 +19,17 @@ function OTPmodal2(props) {
             setError("")
     }, 5000))
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    const handleChange = (element, index) => {
-        if (isNaN(element.value)) return false;
+    // const handleChange = (element, index) => {
+    //     if (isNaN(element.value)) return false;
 
-        // setOtp([...otp.map((d, idx) => (idx === index) ? element.value : d)]);
+    //     // setOtp([...otp.map((d, idx) => (idx === index) ? element.value : d)]);
 
-        if (element.nextSibling) {
-            element.nextSibling.focus()
-        }
-    };
+    //     if (element.nextSibling) {
+    //         element.nextSibling.focus()
+    //     }
+    // };
 
 
     const generateRecaptcha = () => {
@@ -43,7 +43,7 @@ function OTPmodal2(props) {
 
 
     const generateOTP = (phonenum) => {
-        console.log(props.phonenum)
+        console.log(phonenum)
         //OTP Generation
         generateRecaptcha();
         let appVerifier = window.recaptchaVerifier;
@@ -51,6 +51,7 @@ function OTPmodal2(props) {
             .then(confirmationResult => {
                 window.confirmationResult = confirmationResult;
             }).catch((error) => {
+               
                 console.log(error)
             })
     }
@@ -60,10 +61,10 @@ function OTPmodal2(props) {
         if (props.phonenum !== null) {
             generateOTP(props.phonenum)
         }
-   
+
     }, [props.phonenum])
 
-
+    
     const submitOTP = (e) => {
         e.preventDefault()
 
@@ -74,7 +75,9 @@ function OTPmodal2(props) {
             const countrycode = parsePhoneNumber(props.phonenum).countryCallingCode;
             const num = parsePhoneNumber(props.phonenum).nationalNumber;
 
-            navigate('/')
+            props.onHide();
+            props.onPhonenumHide()
+            // navigate('/')
 
 
         }).catch((error) => {
@@ -84,53 +87,54 @@ function OTPmodal2(props) {
         });
     }
     return (
-    <>
-        <div>
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <div className='d-flex ModalWrapper'>
-                    <div style={{ width: '80%' }}>
-                        <img className="ModalImg" src={photo} alt="" />
-                    </div>
+        <>
+            <div>
+                <Modal
+                    {...props}
+                    size="xl"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <div className='d-flex ModalWrapper'>
+                        <div style={{ width: '100%', height: "auto", objectFit: "cover"}}>
+                            <img className="ModalImg" src={photo} alt="" />
+                        </div>
 
-                    <div style={{ width: '100%' }}>
-                        <Modal.Header closeButton>
-                            <Modal.Title id="contained-modal-title-vcenter">
-                                Login
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <div className='AC'>
-                                <div className="h my-5 mx-3">
-                                    <h5> <strong> OTP has been sent to </strong></h5>
-                                    <div id="Welcom" style={{ fontSize: "14px" }}> {props.phonenum} </div>
+                        <div style={{ width: '100%' }}>
+                            <Modal.Header closeButton>
+                                <Modal.Title id="contained-modal-title-vcenter">
+                                    Login
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <div className='AC'>
+                                    <div className="h my-5 mx-3">
+                                        <h5> <strong> OTP has been sent to </strong></h5>
+                                        <div id="Welcom" style={{ fontSize: "14px" }}> {props.phonenum} </div>
+                                    </div>
+                                    <form className="my-3 mx-4" onSubmit={(e) => {
+                                        e.preventDefault()
+                                    }}>
+                                        <div className="mb-3">
+                                            <OTPInput className='otp-container' value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false} secure />
+                                        </div>
+
+                                        <div className='py-3'>
+                                            <p className='error-msg'>{error}</p>
+                                            <button type="submit" className="btn   btn-lg  w-100" id='submitbutton' onClick={submitOTP} >Submit</button>
+                                        </div>
+
+                                    </form>
                                 </div>
-                                <form className="my-3 mx-4" onSubmit={(e) => {
-                                    e.preventDefault()
-                                }}>
-                                    <div className="mb-3">
-                                        <OTPInput className='otp-container' value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false} secure />
-                                    </div>
-
-                                    <div className='py-3'>
-                                        <p className='error-msg'>{error}</p>
-                                        <button type="submit" className="btn   btn-lg  w-100" id='submitbutton' onClick={submitOTP}>Submit</button>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </Modal.Body>
-                    </div>
-                </div >
+                            </Modal.Body>
+                        </div>
+                    </div >
 
 
 
-            </Modal >
-        </div >
+                </Modal >
+                <div id='recaptcha-container' style={{ display: "none" }} ></div>
+            </div >
         </>
     )
 }

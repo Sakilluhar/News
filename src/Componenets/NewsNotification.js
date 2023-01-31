@@ -45,7 +45,7 @@ function NewsNotification() {
     }, [])
 
     return (
-        <div className="container mx-5">
+        <div id="main-Noticard" className='my-3'>
             <div className="d-flex bd-highlight mb-3">
                 <Link to='/Persnol_Notification' style={{ width: "10%", color: "#ffffff", background: "#EE2934" }} id='btnNotification' className="btn mx-1 bd-highlight" > Personal </Link>
                 <Link to='/News_Notification' style={{ width: "10%", color: "#000000", background: "#EDF2F8" }} id='btnNotification' className="btn mx-1 bd-highlight" > News</Link>

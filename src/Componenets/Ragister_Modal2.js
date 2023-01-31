@@ -7,7 +7,7 @@ import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function Ragister_Modal2(props) {
     const initialValues = { username: "", email: "", password: "", confirmpassword: "" };
@@ -36,9 +36,31 @@ function Ragister_Modal2(props) {
 
 
     const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
+
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user)
+                // alert("Login Succesfully")
+                // ...
+                props.setIsLogout(true)
+                props.onHide()
+                props.setLoginModalShow(true)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorCode)
+                // ..
+            });
+        
+
         setIsSubmit(true);
     };
     const handletoggle = () => {
@@ -101,19 +123,19 @@ function Ragister_Modal2(props) {
         <div>
             <Modal
                 {...props}
-                size="lg"
+                size="xl"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
                 <div className='d-flex ModalWrapper'>
-                    <div style={{ width: '80%' }}>
+                    <div style={{ width: '100%', height: "auto", objectFit: "cover" }}>
                         <img className="ModalImg" src={photo} alt="" />
                     </div>
 
                     <div style={{ width: '100%' }}>
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
-                            Create an Account
+                                Create an Account
                             </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
@@ -128,19 +150,19 @@ function Ragister_Modal2(props) {
                                             <input type="text" className="form-control" name='username'
                                                 id="floatingInput" placeholder="User Name" aria-describedby="Username" value={formValues.username} onChange={handleChange} />
                                             <p className='error-msg'> {formErrors.username}</p>
-                                            <label for="floatingInput">User Name</label>
+                                            <label htmlFor="floatingInput">User Name</label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input type="text" className="form-control" name='email'
                                                 id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
                                             <p className='error-msg'> {formErrors.email}</p>
-                                            <label for="floatingInput">Email address</label>
+                                            <label htmlFor="floatingInput">Email address</label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='password' value={formValues.password}
                                                 onChange={handleChange}
                                             />
-                                            <label for="floatingPassword">Password</label>
+                                            <label htmlFor="floatingPassword">Password</label>
                                             <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
                                             <p className='error-msg'> {formErrors.password}</p>
 
@@ -149,7 +171,7 @@ function Ragister_Modal2(props) {
                                             <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
                                                 onChange={handleConfirmpassword}
                                             />
-                                            <label for="floatingConfirmPassword"> Confirm Password</label>
+                                            <label htmlFor="floatingConfirmPassword"> Confirm Password</label>
                                             <span onClick={handleCtoggle} className="Cpassword-icon"><Icon icon={icon2} size={19} /></span>
                                             <p className='error-msg'> {formErrors.confirmPassword}
                                             </p>
