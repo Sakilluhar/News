@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import photo from '../images/tech.jpg'
@@ -7,14 +7,14 @@ import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import { FaFacebookF, FaGoogle, FaMobileAlt, } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router';
-import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, getAuth} from 'firebase/auth';
 import { authentication } from '../Firebase';
 import Forgot_Password2 from './Forgot_Password2';
 import Ragister_Modal2 from './Ragister_Modal2';
 import Phone_Login2 from './Phone_Login2';
 function SignIn_Modal(props) {
+
+    
 
     const [modalShow, setModalShow] = React.useState(false);
     const [ForgotModalShow, setForgotModalShow] = React.useState(false);
@@ -100,23 +100,44 @@ function SignIn_Modal(props) {
                 console.log(err.message);
             })
     }
+    const [islogout, setIsLogout] = useState(false)
     const [phonenum,setPhonenum] = useState(null);
+    const auth = getAuth();
+    const Signin = () => {
+        signInWithEmailAndPassword(auth, formValues.email, formValues.password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          // ...
+        //   alert("Login Succesfully")
+        props.setIsLogout(true)
+          props.onHide()
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorCode)
+        });
+    }
+    
 
     return (<>
         <div>
             <Modal
                 {...props}
-                size="lg"
+                size="xl"
                 aria-labelledby="contained-modal-title-vcenter"
+                // style={{width: "60%"}}
                 centered
+                
             >
                 <div className='d-flex ModalWrapper'>
-                    <div style={{ width: '80%' }}>
+                    <div style={{ width: '100%', height: "auto", objectFit: "cover"}}>
                         <img className="ModalImg" src={photo} alt="" />
                     </div>
                     
                     <div style={{ width: '100%' }}>
-                        <Modal.Header closeButton>
+                        <Modal.Header closeButton >
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Login
                             </Modal.Title>
@@ -146,11 +167,11 @@ function SignIn_Modal(props) {
                                                     props.onHide()
                                                     setModalShow(false)
                                                     setPhoneModalShow(false)
-                                                    setForgotModalShow(true)}} id="forgot" style={{ float: "right" }}> Forgot Password? </p></p>
+                                                    setForgotModalShow(true)}} id="forgot" style={{ float: "right", cursor: "pointer" }}> Forgot Password? </p></p>
 
                                         </div>
                                         <div className='py-3'>
-                                            <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' >Login</button>
+                                            <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' onClick={Signin} >Login</button>
                                         </div>
 
                                     </form>
@@ -171,7 +192,7 @@ function SignIn_Modal(props) {
 
                         </Modal.Body>
                         <div className="footer">
-                                        <h6 className="">Don't have an account?<a onClick={() => {
+                                        <h6 className="">Don't have an account?<a  style={{ cursor: "pointer" }} onClick={() => {
                                                     props.onHide()
                                                     setModalShow(true)}}> Register </a></h6>
                                     </div>
@@ -187,9 +208,9 @@ function SignIn_Modal(props) {
 
             </Modal >
         </div >
-        <Forgot_Password2 show={ForgotModalShow} onHide={() => setForgotModalShow(false)} />
-        <Ragister_Modal2 show={modalShow} onHide={() => setModalShow(false)} />
-        <Phone_Login2 setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
+        <Forgot_Password2 setLoginModalShow={props.setLoginModalShow} show={ForgotModalShow} onHide={() => setForgotModalShow(false)} />
+        <Ragister_Modal2  setIsLogout={setIsLogout} setLoginModalShow={props.setLoginModalShow} show={modalShow} onHide={() => setModalShow(false)} />
+        <Phone_Login2 setLoginModalShow={props.setLoginModalShow} setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
     </>
     )
 }
