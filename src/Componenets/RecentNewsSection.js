@@ -1,15 +1,14 @@
 import React from 'react'
 import entertainment1_jpg from '../images/entertainment1.jpg'
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
-import breakingNews2_jpg from '../images/earthImage.png';
 import travel3_static_jpg from '../images/travel3_static.jpg';
 import sports3_ronaldo_jpg from '../images/sports3_static.jpg';
 import fashion3_static_jpg from '../images/fashion3_static.jpg';
 import technology3_static_jpg from '../images/technology3_static.jpg';
 import politics3_static_jpg from '../images/politics3_static.jpg';
 import cars3_static_jpg from '../images/cars3_static.jpg';
-import { BsSun } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import WeatherCard from './WeatherCard';
 
 
 function RecentNewsSection() {
@@ -187,48 +186,7 @@ function RecentNewsSection() {
 
             {/* ------------------------------- Weather forcast -------------------------------- */}
 
-            <div id='rns-weather-card' className="card" >
-                    <img id='rns-weather-image' src={breakingNews2_jpg} className="card-img" alt="..."/>
-                <div id='weather-main-text' className="card-img-overlay">
-                    <h4 id='weather-logo' className="card-text">Weather Forecast</h4>
-                    <div id='wcard-body'>
-                        <div id='wcard-left-body'>
-                            <h1 id='temp-wcard'><b>32'c</b></h1>
-                            <h4 id='location-wcard'>Bhuj, Gujrat, India</h4>
-                            <h6 id='day-Wtype-wcard'>Wednesday, sunny</h6>
-                        </div>
-                        <h1><BsSun size={70}/></h1>
-                    </div>
-                    <div id='wcard-footer' className="card-footer">
-                        <div id='wcard-footer-pairs'><h5>thursday</h5>
-                        <div>
-                        <h5>27'C <BsSun/></h5>
-                        </div></div>
-                        <div><h5>friday</h5>
-                        <div>
-                        <h5>27'C <BsSun/></h5>
-                        </div></div>
-                        <div><h5>saturday</h5>
-                        <div></div>
-                        <h5>27'C <BsSun/></h5>
-                        </div>
-                        <div><h5>sunday</h5>
-                        <div></div>
-                        <h5>27'C <BsSun/></h5>
-                        </div>
-                        <div><h5>monday</h5>
-                        <div></div>
-                        <h5>27'C <BsSun/></h5>
-                        </div>
-                        <div><h5>tuseday</h5>
-                        <div>
-                        <h5>27'C <BsSun/></h5>
-                        </div></div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
+            <WeatherCard/>
 
             <div id='rns-PNews-main'>
                 <nav id='rns-cat-nav' className="navbar">  
