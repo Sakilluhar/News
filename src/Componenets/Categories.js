@@ -47,10 +47,10 @@ function Categories(props) {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 {Data && Data.map((element)=>(
-               <div id='cat-section-card' key={Data.id} className="card" >
-                            <img id='cat-section-card-image' src={Data.image} className="card-img" alt="..."/>
+               <div id='cat-section-card' key={element.id} className="card" >
+                            <img id='cat-section-card-image' src={element.image} className="card-img" alt="..."/>
                             <div id='cat-section-card-body' className="card-img-overlay">
-                            <h3 id='cat-card-text'  className="card-text">{Data.category_name}</h3>
+                            <h3 id='cat-card-text'  className="card-text">{element.category_name}</h3>
                             <button id='btn-cat-more' className='btn' type="button" ><IoArrowForwardCircleSharp size={40}/></button>
                         </div>
                     </div>

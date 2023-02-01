@@ -2,9 +2,13 @@ import React from 'react'
 import './weathercard.css';
 import { BsSun } from 'react-icons/bs';
 import breakingNews2_jpg from '../images/earthImage.png';
+import DetailedWeatherCard from './DetailedWeatherCard';
 
 
 function WeatherCard() {
+
+    // const handleOnSearchChange(serachData)
+
   return (
     <div>
       <div id='rns-weather-card' className="card" >
@@ -18,6 +22,7 @@ function WeatherCard() {
                             <h6 id='day-Wtype-wcard'>Wednesday, sunny</h6>
                         </div>
                         <h1><BsSun size={70}/></h1>
+                        {/* <DetailedWeatherCard onSearchchange={handleOnSearchChange}/> */}
                     </div>
                     <div id='wcard-footer' className="card-footer">
                         <div id='wcard-footer-pairs'><h5>thursday</h5>
