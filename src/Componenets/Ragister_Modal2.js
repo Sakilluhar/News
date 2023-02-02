@@ -6,9 +6,12 @@ import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "firebase/auth";
 
 function Ragister_Modal2(props) {
+    const actionCodeSettings = {
+        url: 'https://fir-auth-82fbe.firebaseapp.com',
+    }
     const initialValues = { username: "", email: "", password: "", confirmpassword: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState("", setTimeout(() => {
@@ -37,63 +40,74 @@ function Ragister_Modal2(props) {
 
     const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
-
+        setIsSubmit(true);
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
+
+
+
+        await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
             .then((userCredential) => {
-                // Signed in 
+                // send verification mail.
+
                 const user = userCredential.user;
                 console.log(user)
-                console.log(formValues.username)
-                // alert("Login Succesfully")
-                // ..
-                // const image = e.target.image.value;
-                const name = formValues.username;
-                const Email = formValues.email;
+                sendEmailVerification(auth.currentUser)
+                    .then(() => {
 
-                
-                var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
-                myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+                            alert("Email sent");
+                            // ..
+                            
+                            const name = formValues.username;
+                            const Email = formValues.email;
 
-                var formdata = new FormData();
-                formdata.append("access_key", "5670");
-                formdata.append("firebase_id", user.uid);
-                formdata.append("name", name);
-                formdata.append("email", Email);
-                formdata.append("profile", file);
-                formdata.append("type", "email");
-                formdata.append("status", "1");
 
-                var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: formdata,
-                    redirect: 'follow'
-                };
+                            var myHeaders = new Headers();
+                            myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
+                            myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
-                fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
-                    .then(response => response.text())
-                    .then(result => {
-                        console.log(result)
-                        props.setIsLogout(true)
-                        props.onHide()
-                        props.setLoginModalShow(true)
+                            var formdata = new FormData();
+                            formdata.append("access_key", "5670");
+                            formdata.append("firebase_id", user.uid);
+                            formdata.append("name", name);
+                            formdata.append("email", Email);
+                            formdata.append("profile", file);
+                            formdata.append("type", "email");
+                            formdata.append("status", "1");
+
+                            var requestOptions = {
+                                method: 'POST',
+                                headers: myHeaders,
+                                body: formdata,
+                                redirect: 'follow'
+                            };
+
+                            fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
+                                // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
+                                .then(response => response.text())
+                                .then(result => {
+                                    console.log(result)
+                                    props.setIsLogout(true)
+                                    props.onHide()
+                                    props.setLoginModalShow(true)
+                                })
+                                .catch(error => console.log('error', error));
+
+                        
+
+
+
+
                     })
-                    .catch(error => console.log('error', error));
-
-
-
+                    .catch((error) => {
+                        console.log(error)
+                        // ..
+                        alert("Error");
+                    });
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorCode)
-                // ..
-            });
+            .catch((error)=>console.log(error))
 
         setIsSubmit(true);
     };
@@ -153,7 +167,7 @@ function Ragister_Modal2(props) {
 
         return errors;
     };
-    
+
     function handleChange1(e) {
         // console.log(URL.createObjectURL(e.target.files[0]));
         setFile(URL.createObjectURL(e.target.files[0]));
@@ -179,16 +193,23 @@ function Ragister_Modal2(props) {
                         </Modal.Header>
                         <Modal.Body>
                             <div className="">
-                                <div className="my-5 mx-4">
-                                    <h5> <strong>Welcome</strong></h5>
-                                    <div id="Welcom" style={{ fontSize: "14px" }}> Enter the details above and Register for Daily News</div>
-                                </div>
-                                <div className="App">
-                                    <h2>Add Image:</h2>
-                                    <input type="file" name="image" onChange={handleChange1} required/>
-                                    <img src={file} />
+                                <div className="my-5 mx-4" >
+                                    <div>
+                                        <h5> <strong>Welcome</strong></h5>
+                                        <div id="Welcom" style={{ fontSize: "14px" }}> Enter the details above and Register for Daily News</div>
+                                    </div>
+                                    <div id='textwithimage'>
+                                        <div className="my-3">
+                                            <h5>Add Profile:</h5>
+                                            <input className='input mx-1' type="file" name="image" onChange={handleChange1} required />
 
+                                        </div>
+                                        <div>
+                                            <img src={file} className="imageInput rounded float-end" alt="..."></img>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <form className="my-2 mx-4" onSubmit={handleSubmit}>
                                     <div>
                                         <div className="form-floating mb-3">

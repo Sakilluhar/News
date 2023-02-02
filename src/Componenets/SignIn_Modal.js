@@ -7,7 +7,7 @@ import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import { FaFacebookF, FaGoogle, FaMobileAlt, } from 'react-icons/fa';
-import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, getAuth} from 'firebase/auth';
+import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, getAuth, sendEmailVerification} from 'firebase/auth';
 import { authentication } from '../Firebase';
 import Forgot_Password2 from './Forgot_Password2';
 import Ragister_Modal2 from './Ragister_Modal2';
@@ -109,8 +109,15 @@ function SignIn_Modal(props) {
           // Signed in 
           const user = userCredential.user;
           // ...
-        //   alert("Login Succesfully")
-        props.setIsLogout(true)
+          console.log(user.emailVerified);
+        if(user.emailVerified) {
+            alert("Verified")
+            props.setIsLogout(true)
+        } else {
+            alert("Not Verified")
+            sendEmailVerification(auth.currentUser)
+        }
+        // props.setIsLogout(true)
           props.onHide()
         })
         .catch((error) => {
