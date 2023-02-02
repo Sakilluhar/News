@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import entertainment1_jpg from '../images/entertainment1.jpg'
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import travel3_static_jpg from '../images/travel3_static.jpg';
 import sports3_ronaldo_jpg from '../images/sports3_static.jpg';
@@ -10,6 +9,8 @@ import cars3_static_jpg from '../images/cars3_static.jpg';
 import { Link } from 'react-router-dom';
 import WeatherCard from './WeatherCard';
 import { useEffect } from 'react';
+import PopularNewsSection from './PopularNewsSection';
+import TagsSection from './TagsSection';
 
 
 function RecentNewsSection() {
@@ -63,11 +64,11 @@ function RecentNewsSection() {
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[0].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
                 </div>
-                <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
+                <div id='rns-card-body' className="card-body">
+                <h4 className="card-title">{Data[0].title.slice(0,70)}...</h4>
+                <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[0].description.slice(0,1000)}}></h7>
                 
                 </div>
                 
@@ -77,11 +78,11 @@ function RecentNewsSection() {
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[1].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[1].category_name}</button>
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
+                <h4 className="card-title">{Data[1].title.slice(0,70)}...</h4>
+                    <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[1].description.slice(0,100)}}></h7>
                 
                 </div>    
                     <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
@@ -92,52 +93,52 @@ function RecentNewsSection() {
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[2].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[2].category_name}</button>
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
-                
+                <h4 className="card-title">{Data[2].title.slice(0,70)}...</h4>
+                    <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[2].description.slice(0,160)}}></h7>
                 </div>    
                     <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
             </div>
+            
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[3].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[3].category_name}</button>
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
-                
+                <h4 className="card-title">{Data[3].title.slice(0,70)}...</h4>
+                    <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[3].description.slice(0,230)}}></h7>
                 </div>    
                     <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
             </div>
+            
             </div>
 
             <div id='card-pair'>
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[4].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[4].category_name}</button>
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
+                <h4 className="card-title">{Data[4].title.slice(0,70)}...</h4>
+                    <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[4].description.slice(0,160)}}></h7>
                 
                 </div>    
                     <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
             </div>
 
             <div id='rns-card' className="card">
-                <img  id='rns-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
+                <img  id='rns-image' src={Data[5].image} className="card-img-top" alt="..."/>
                 <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[5].category_name}</button>
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">Traveling makes you more inteligent and more Energetic</h4>
-                    <p id='rns-text' className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna non neque dignissim sollicitudin. In convallis enim at est tristique, vitae tincidunt metus bibendum. Pellentesque id imperdiet magna...</p>
+                <h4 className="card-title">{Data[5].title.slice(0,70)}...</h4>
+                    <h7 id='rns-text' className="card-text" dangerouslySetInnerHTML={{__html: Data[5].description.slice(0,160)}}></h7>
                 
                 </div>    
                     <button id='btnrnsRead' className='btn overlay' type="button" ><IoArrowForwardCircleSharp size={50}/></button>
@@ -223,64 +224,9 @@ function RecentNewsSection() {
 
             <WeatherCard/>
 
-            <div id='rns-PNews-main'>
-                <nav id='rns-cat-nav' className="navbar">  
-                       <h4 id='rns-nav-logo' ><b>Popular News</b></h4> 
-                </nav>
+           <PopularNewsSection/>
 
-                
-                <div id='rns-PNews-card' className="card">
-                    <img  id='rns-PNews-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-                    <div className="PNews-card-body">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                    <h4 id='rns-PNews-card-text' className="card-text">What we know about apple watch series 8</h4>
-                    </div>
-                </div>
-                
-
-                <div id='rns-PNews-card' className="card">
-                    <img  id='rns-PNews-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-                    <div className="PNews-card-body">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                    <h4 id='rns-PNews-card-text' className="card-text">What we know about apple watch series 8</h4>
-                    </div>
-                </div>
-
-                <div id='rns-PNews-card' className="card">
-                    <img  id='rns-PNews-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-                    <div className="PNews-card-body">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                    <h4 id='rns-PNews-card-text' className="card-text">What we know about apple watch series 8</h4>
-                    </div>
-                </div>
-
-                <div id='rns-PNews-card' className="card">
-                    <img  id='rns-PNews-image' src={entertainment1_jpg} className="card-img-top" alt="..."/>
-                    <div className="PNews-card-body">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                    <h4 id='rns-PNews-card-text' className="card-text">What we know about apple watch series 8</h4>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id='rns-tags-main'>
-                <nav id='rns-cat-nav' className="navbar">  
-                       <h4 id='rns-nav-logo' ><b>Tags</b></h4> 
-                </nav>
-                <div id='tags-tag'>
-                <button id='btnTags' className='btn btn-outline-dark'>Fashion</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Corona</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Business</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Sports</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Nature</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Story</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Horror</button>
-                <button id='btnTags' className='btn btn-outline-dark'>Knowledgebase</button>
-                </div>
-                
-            </div>
-
+            <TagsSection/>
 
         </div>
     </div>

@@ -12,23 +12,27 @@ function BreakingNewsSection() {
 
   const [Data, setData] = useState([]);
 
-useEffect(()=>{
-  var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
+  useEffect(()=>{
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
+    var formdata = new FormData();
+    formdata.append("access_key", "5670");
+    formdata.append("language_id", "14");
 
-fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=14", requestOptions)
-  .then(response => response.json())
-  .then(result => {
-    setData(result.data);
-  })
-  
-  .catch(error => console.log('error', error));
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: formdata,
+    redirect: 'follow'
+    };
+
+    fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setData(result.data)
+    })
+    .catch(error => console.log('error', error));
 },[])
 
   return (
@@ -46,37 +50,11 @@ fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=
 
     <div id='bns-rest-cards'>
 
-    {/* <Swiper id='bns-swiper'
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-
-      >{Data && Data.map((element)=>(
-        <SwiperSlide><div id='bns-card' className="card">
-        <img  id='bns-image' src={element.image} className="card-img-top" alt="..."/>
-        <div className="card-body">
-          <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-          <h5 id='bns-card-text' className="card-text">What we know about apple watch series 8</h5>
-          </div>
-        </div>
-        </SwiperSlide>
-        ))}
-      </Swiper> */}
-
-      
     {Data && Data.map((element)=>(
     <div id='bns-card' className="card" key={element.id}>
         <img  id='bns-image' src={element.image} className="card-img-top" alt="..."/>
         <div id='bns-card-body' className="card-body">
-        <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Technology</button>
+        <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Breaking News</button>
         <h5 id='bns-card-text' className="">{element.title.slice(0, 30)}...</h5>
         </div>
     </div>

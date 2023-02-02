@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Home.css'
-import food_jpg from '../images/food.jpg'
 import { useEffect } from 'react'
 import { BsPlayCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -11,7 +10,7 @@ function NewsCardFS() {
     const [Data, setData] = useState([]);
     const [Title, setTitle] = useState();
     const [Description, setDescription] = useState();
-    const [Category, setCategory] = useState('Food');
+    const [Category, setCategory] = useState('Breaking News');
     const [Image, setImage] = useState();
     const [Video_url, setVideo_url] = useState();
     
@@ -20,13 +19,18 @@ function NewsCardFS() {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
 
+        var formdata = new FormData();
+        formdata.append("access_key", "5670");
+        formdata.append("language_id", "14");
+
         var requestOptions = {
-        method: 'GET',
+        method: 'POST',
         headers: myHeaders,
+        body: formdata,
         redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_breaking_news?access_key=5670&language_id=14", requestOptions)
+        fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)
@@ -34,7 +38,6 @@ function NewsCardFS() {
             setDescription(result.data[0].description.slice(0, 350)+"...");
             setCategory('Food');
             setImage (result.data[0].image);
-            // setVideo_url(result.data[0].content_value);
         })
         .catch(error => console.log('error', error));
     },[]);
@@ -46,7 +49,7 @@ function NewsCardFS() {
         if(value === 'rad1'){
             setTitle(Data[0].title);
             setDescription(Data[0].description.slice(0, 350)+"...");
-            setCategory('Food');
+            setCategory('Breaking News');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
 
@@ -55,7 +58,7 @@ function NewsCardFS() {
         else if(value === 'rad2'){
             setTitle(Data[1].title);
             setDescription(Data[1].description.slice(0, 350)+"...");
-            setCategory('Food');
+            setCategory('Breaking News');
             setImage (Data[1].image);
             setVideo_url(Data[1].content_value);
 
@@ -63,7 +66,7 @@ function NewsCardFS() {
         else if(value === 'rad3'){
             setTitle(Data[2].title);
             setDescription(Data[2].description.slice(0, 350)+"...");
-            setCategory('Food');
+            setCategory('Breaking News');
             setImage (Data[2].image);
             setVideo_url(Data[2].content_value);
 

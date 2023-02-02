@@ -324,10 +324,16 @@
 
 #rns-image{
   height: 55%;
+  min-width: 55%;
+  max-height: 55%;
   margin-top: 2%;
   margin-left: 2%;
   width: 96%;
-  
+  object-fit: cover;
+}
+
+#rns-card-body{
+  height: 40%;
 }
 
 
@@ -344,7 +350,7 @@
   color:#EE2934; 
   background:#ffffff00;
   border: none;
-  
+  height: 5%;
 }
 
 #rns-right-main{

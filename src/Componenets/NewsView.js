@@ -10,9 +10,6 @@ import cars3_static_jpg from '../images/cars3_static.jpg';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike } from 'react-icons/ai';
 import { MdOutlineComment } from 'react-icons/md';
-
-import { BsSun } from 'react-icons/bs';
-import breakingNews2_jpg from '../images/earthImage.png';
 import WeatherCard from './WeatherCard';
 
 
