@@ -99,4 +99,27 @@
   text-align: justify;
   margin-left: 0.5rem;
 }
+.imageInput{
+  height: 8rem;
+  width: 100%;
+  object-fit: cover;
+  /* border-radius: 50%; */
+  
 
+}
+.input{
+  /* height: 50%; */
+  /* width: 34%; */
+  /* min-width: 34%; */
+  /* border-radius: 50%;
+  object-fit: cover;
+  justify-content: center; */
+
+}
+#textwithimage{
+  display: grid;
+  grid-template-columns: 3fr 1fr ;
+  gap: 5%;
+  max-height: 10%;
+  margin-top: 5%;
+}
