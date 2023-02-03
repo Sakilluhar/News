@@ -1,6 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import './OtpModal.css';
-import photo from '../images/tech.jpg';
+import photo from '../images/Login.jpg'
+import Logo from '../images/Logo.png'
 import React, { useEffect, useState } from 'react'
 import { parsePhoneNumber } from 'react-phone-number-input';
 //otp
@@ -51,7 +52,7 @@ function OTPmodal2(props) {
             .then(confirmationResult => {
                 window.confirmationResult = confirmationResult;
             }).catch((error) => {
-               
+
                 console.log(error)
             })
     }
@@ -64,7 +65,7 @@ function OTPmodal2(props) {
 
     }, [props.phonenum])
 
-    
+
     const submitOTP = (e) => {
         e.preventDefault()
 
@@ -94,19 +95,27 @@ function OTPmodal2(props) {
                     size="xl"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
+                    dialogClassName="border-radius-2"
                 >
-                    <div className='d-flex ModalWrapper'>
-                        <div style={{ width: '100%', height: "auto", objectFit: "cover"}}>
-                            <img className="ModalImg" src={photo} alt="" />
+                    <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
+                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                            <img className="ModalImg5" src={photo} alt="" />
+                            <div className="logo-img-overlay">
+                                <img src={Logo} alt="" id='logo5' />
+                            </div>
+                            <div className='logo-text5'>
+                            <h4> This beautiful theam yours!</h4>
+                            <p> " Best investment i made for a long time. Can recommend for other users."</p>
+                        </div>
                         </div>
 
-                        <div style={{ width: '100%' }}>
+                        <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
                             <Modal.Header closeButton>
                                 <Modal.Title id="contained-modal-title-vcenter">
                                     Login
                                 </Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>
+                            <Modal.Body style={{marginTop: "5%"}}>
                                 <div className='AC'>
                                     <div className="h my-5 mx-3">
                                         <h5> <strong> OTP has been sent to </strong></h5>

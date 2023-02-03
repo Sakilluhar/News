@@ -7,6 +7,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import SignIn_Modal from './SignIn_Modal';
 import Categories from './Categories';
 import { getAuth, signOut } from 'firebase/auth';
+import { confirm } from "react-confirm-box";
 
 
 
@@ -16,11 +17,15 @@ import { getAuth, signOut } from 'firebase/auth';
 
 function Navbar() {
 
+      
+      
     const auth = getAuth();
     const logout =()=>{
+       
         signOut(auth).then(() => {
             // Sign-out successful.
             // alert("Sign-out successful.")
+            
             setIsLogout(false)
           }).catch((error) => {
             alert(error)
