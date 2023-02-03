@@ -26,7 +26,7 @@ function VideoPlayerSection() {
     .then((response) => response.json())
     .then((result) => {
       setData(result.data)
-      setVideo_url(result.data[0].content_value)
+      setVideo_url(result.data[1].content_value)
     })
     .catch(error => console.log('error', error));
   }, []);

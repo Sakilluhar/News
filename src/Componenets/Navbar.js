@@ -3,14 +3,10 @@ import './Nav.css';
 import { BiBell, BiSearch, BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import SignIn_Modal from './SignIn_Modal';
 import Categories from './Categories';
 import { getAuth, signOut } from 'firebase/auth';
-
-
-
-
+import News_main_Logo from '../images/News_main_Logo.png';
 
 
 
@@ -41,7 +37,10 @@ function Navbar() {
 
             <nav id='NewsNav' className="navbar navbar-expand-lg bg-link">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" id='NewsLogo' to="/"><h2>News</h2></Link>
+                    {/* <Link className="navbar-brand" id='NewsLogo' to="/"><h2>News</h2></Link> */}
+                    {/* <Link className="navbar-brand"  to="/"><img id='NewsLogo' src={News_main_Logo} alt="" /></Link> */}
+                    <img id='NewsLogo' src={News_main_Logo} alt="" />
+
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

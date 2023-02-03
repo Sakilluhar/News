@@ -9,7 +9,6 @@
     grid-template-columns: 10rem 4fr 6fr ;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-   
 }
 
 
@@ -97,11 +96,10 @@
     
 }
 
-
-
-
 #NewsLogo{
     margin-left: 110px;
+    width: 11%;
+    /* height: 25%; */
 }
 
 /* nav buttons */
@@ -109,19 +107,34 @@
 #btnSignIn{ 
     color: #ffffff; 
     background:#EE2934;
-    
-    
+    border: none;   
+}
+
+#btnSignIn:hover{
+    background: #1A2E51;
 }
 
 #btnNotification{
     color: #EE2934;
-     background: #edf2f8;
+     background: #F5F5F5;
+     border: none;
+}
+
+#btnNotification:hover{
+    color: #ffffff;
+    background: #1A2E51;
 }
 
 #btnSerch{
     color: #EE2934;
-    background: #edf2f8;
+    background: #F5F5F5;
     margin-right: 110px;
+    border: none;
+}
+
+#btnSerch:hover{
+    color: #ffffff;
+    background: #1A2E51;
 }
 
 #serchModal{
@@ -141,7 +154,7 @@
 
 #btnSerchForm{
     color: #EE2934;
-    background: #edf2f8;
+    background: #F5F5F5;
 }
 
 
@@ -187,10 +200,12 @@
 
 
 #Header{
+    
     height: 3rem;
-    background-color: #1B2D51 ;
+    background-color: #1A2E51 ;
     color: #ffffff;
     font-family: 'Zilla Slab', serif;
+    gap: 32%;
 }
 
 .left-head{
@@ -199,6 +214,15 @@
     gap: 20px;
     align-items: center;
     
+}
+
+#header-city-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    text-align: 'justify';
+    line-height: 1%;
+    margin-top: 5%;
 }
 
 .right-head{

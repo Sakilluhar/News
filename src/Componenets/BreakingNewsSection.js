@@ -64,10 +64,10 @@ function BreakingNewsSection() {
     </div>
 
 
-    <div id='bns-np-btns'>
+    {/* <div id='bns-np-btns'>
     <button id='btnbnsNP' className='btn btn-sm' type="button" ><IoIosArrowDropleftCircle  size={40}/></button>
     <button id='btnbnsNP' className='btn btn-sm' type="button" ><IoIosArrowDroprightCircle size={40}/></button>
-    </div>
+    </div> */}
     </div>
     
     </>

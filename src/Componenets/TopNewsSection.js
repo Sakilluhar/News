@@ -35,12 +35,12 @@ function TopNewsSection() {
   },[])
 
   const tnshandleReadMore = () => {
-    console.log('Read More');
+    // console.log('Read More');
 
   };
 
   const tnshandleCatagory = () => {
-    console.log('Catagory');
+    // console.log('Catagory');
   };
 
   return (
@@ -78,7 +78,7 @@ function TopNewsSection() {
           </div>
         </div>
 
-        <div id='tns-left-cards'>
+        <div id='tns-right-cards'>
           <div id='top-news-card' className="card" onClick={tnshandleReadMore}>
             <img id='tns-news-image' src={Data[3].image} className="card-img" alt="..." />
             <div id='tns-text' className="card-img-overlay">
