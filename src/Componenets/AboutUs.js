@@ -5,43 +5,43 @@ import about2 from '../images/image 2.png'
 import about3 from '../images/image  3.png'
 import './AboutUs.css'
 function AboutUs() {
-//   const [Data,setData]=useState([]);
-//   const [Description,setDescription] = useState([]);
+  //   const [Data,setData]=useState([]);
+  //   const [Description,setDescription] = useState([]);
 
-//   useEffect(()=>{
-//   var myHeaders = new Headers();
-// myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
-// myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+  //   useEffect(()=>{
+  //   var myHeaders = new Headers();
+  // myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
+  // myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
-// var requestOptions = {
-//   method: 'POST',
-//   headers: myHeaders,
-//   redirect: 'follow'
-// };
+  // var requestOptions = {
+  //   method: 'POST',
+  //   headers: myHeaders,
+  //   redirect: 'follow'
+  // };
 
-// fetch("https://news.wrteam.in/Api/get_pages?access_key=5670&language_id=14", requestOptions)
-//   .then(response => response.json())
-//   .then(result => {
-//     setData(result.data)
-//     setDescription(result.data[2].page_content)
-    // console.log(result)
-//   })
-//   .catch(error => console.log('error', error));
-  
-// },[])
-// console.log(Data);
+  // fetch("https://news.wrteam.in/Api/get_pages?access_key=5670&language_id=14", requestOptions)
+  //   .then(response => response.json())
+  //   .then(result => {
+  //     setData(result.data)
+  //     setDescription(result.data[2].page_content)
+  // console.log(result)
+  //   })
+  //   .catch(error => console.log('error', error));
+
+  // },[])
+  // console.log(Data);
 
 
   return (
 
     <div >
-    {/* <p>{Description}</p> */}
+      {/* <p>{Description}</p> */}
 
       <div className="mx-5">
         <div id="about" >
           <img src={about} className="img-fluid" alt="..." />
         </div>
-        <div>
+        <div id="about">
           <h2 className="A my-4" style={{ color: "#1B2D51" }}><strong> About Us </strong></h2>
           <p> Most people wouldn't even consider getting a physical morning newspaper anymore,so we depend on digital source for our news. Finding an app that helps your get the news you want in a timely manner is essential.<br /><br /><br />
             Now all are in your handy. The Web contains so many polupar categories of news. Such as breaking news, top news, travels, sports, health,entaintainment,world etc. You can read,bookmark,like,comment and share the news with others
