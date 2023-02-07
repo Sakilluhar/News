@@ -1,5 +1,6 @@
 import './Register.css';
-import photo from '../images/tech.jpg'
+import photo from '../images/Login.jpg'
+import Logo from '../images/Logo.png'
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'react-icons-kit';
 import { eye } from 'react-icons-kit/fa/eye';
@@ -179,13 +180,21 @@ function Ragister_Modal2(props) {
                 size="xl"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
+                dialogClassName="border-radius-2"
             >
-                <div className='d-flex ModalWrapper'>
-                    <div style={{ width: '100%', height: "auto", objectFit: "cover" }}>
-                        <img className="ModalImg" src={photo} alt="" />
+                  <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
+                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                        <img className="ModalImg3" src={photo} alt="" />
+                        <div className="logo-img-overlay">
+                            <img src={Logo} alt="" id='logo3' />
+                        </div>
+                        <div className='logo-text3'>
+                            <h4> This beautiful theam yours!</h4>
+                            <p> " Best investment i made for a long time. Can recommend for other users."</p>
+                        </div>
                     </div>
 
-                    <div style={{ width: '100%' }}>
+                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Create an Account

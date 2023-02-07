@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NewsView from './Componenets/NewsView';
 import Categories from './Componenets/Categories';
 import CategoryView from './Componenets/CategoryView';
+import CatNav from './Componenets/CatNav';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <>
       <Header />
       <Navbar />
+      <CatNav/>
 
       <Routes>
 

@@ -94,7 +94,7 @@ function NewsCardFS() {
                 <button id='btnCatagory' className='btn' type="button" >{Category}</button>
                 <h1 id='Top-Title'><b>{Title}</b></h1>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
-                <Link id='btnCatagory' className='btn' type="button" to="/NewsView" ><b>READ MORE</b></Link>
+                <Link id='btnReadMore' className='btn' type="button" to="/NewsView" ><b>READ MORE</b></Link>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
 
 

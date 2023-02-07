@@ -147,6 +147,11 @@
     
 }
 
+#nav-links:hover{
+    color: #ffffff;
+    background-color: #EE2934;
+}
+
 
 #inputSerchForm{
     /* border-color: #EE2934; */
@@ -269,4 +274,16 @@
 #drop-head-lang{
     color: #ffffff;
     outline-color: #ffffff;
+}
+
+/* ---------------------------------- cat nav --------------------------- */
+
+#cn-main{
+    font-family: 'Zilla Slab', serif;
+    border-top: 0.1px solid #00000063;
+    border-bottom: 0.1px solid #00000063;
+}
+
+#catNav-links{
+    color: #000000;
 }

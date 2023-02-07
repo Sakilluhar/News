@@ -12,7 +12,7 @@ function ContactUs() {
                     <div className="modal-dialog modal-dialog-centered justify-content-center">
                         <div className="modal-content flex-row ModalWrapper12">
                             <div style={{ width: '50%' }}>
-                                <img className="ModalImg" src={photo} alt='' />
+                                <img className="ModalImg" id='ModalImg' src={photo} alt='' />
                             </div>
                             <div className="ModalContent" style={{ width: '50%', padding: '8%', fontSize: '150%', backgroundColor:"#1B2D51", color: "#fff"}}>
 

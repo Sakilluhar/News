@@ -1,5 +1,6 @@
 import './ForgotPassword.css';
-import photo from '../images/tech.jpg'
+import photo from '../images/Login.jpg'
+import Logo from '../images/Logo.png'
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
@@ -67,19 +68,28 @@ console.log(error)
                 size="xl"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-            >
-                <div className='d-flex ModalWrapper'>
-                    <div style={{ width: '100%', height: "auto", objectFit: "cover" }}>
-                        <img className="ModalImg" src={photo} alt="" />
-                    </div>
+                dialogClassName="border-radius-2"
 
-                    <div style={{ width: '100%' }}>
+            >
+               <div className='ModalWrapper' id='ModalWrapper11' style={{backgroundColor:"#EE2934", borderRadius: "20px" }}>
+                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px"}}>
+                        <img className="ModalImg" id='ModalImg2' src={photo} alt="" />
+                        <div className="logo-img-overlay">
+                            <img src={Logo} alt="" id='logo2' />
+                        </div>
+                        <div className='logo-text2'>
+                            <h4> This beautiful theam yours!</h4>
+                            <p> " Best investment i made for a long time. Can recommend for other users."</p>
+                        </div>
+                    </div>
+                    
+                    <div style={{ width: '100%', backgroundColor:"#ffffff", borderRadius:"0 20px 20px 0" }}>
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Forgot Password
                             </Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
+                        <Modal.Body style={{marginTop: "12%"}}>
                             <div className="">
                                 <div className='AC'>
                                     <div className="h my-5 mx-3">

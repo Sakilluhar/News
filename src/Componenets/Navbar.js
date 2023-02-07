@@ -49,23 +49,26 @@ function Navbar() {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <li className="nav-item">
-                                    <Link className="nav-link active me-4" aria-current="page" to="/">HOME</Link>
+                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link>
+                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link>
                                 </li>
                                 <li className="nav-item">
-                                    {/* <Link className="nav-link active me-4" aria-current="page" to="/Categories">CATEGORIES</Link> */}
+                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">LIVE NEWS</Link>
+                                </li>
+                                {/* <li className="nav-item">
+                                    
                                     {['end'].map((placement, idx) => (
                                         <Categories key={idx} placement={placement} name={placement} />
                                     ))}
 
+                                </li> */}
+                                <li className="nav-item">
+                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link>
+                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link>
                                 </li>
                                 <li>
                                     {/* <Link id='btnSignIn'  className='btn me-3' type="button" to="/Login"><BiUserCircle size={23} id='btnLogo'/>Sign In</Link> */}
