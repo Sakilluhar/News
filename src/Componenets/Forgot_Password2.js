@@ -94,7 +94,7 @@ console.log(error)
                                 <div className='AC'>
                                     <div className="h my-5 mx-3">
                                         <h5> <strong>Enter the email address associated with your account </strong></h5>
-                                        <div id="Welcom" style={{ fontSize: "14px" }}> Enter your email address and password to access your account. </div>
+                                        <div id="Welcom" style={{ fontSize: "14px" }}>Enter your email for create new password. </div>
                                     </div>
                                     <form className="my-2 mx-4" onSubmit={handleSubmit}>
                                         <div className="mb-3">

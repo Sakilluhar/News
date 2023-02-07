@@ -181,9 +181,10 @@ function Ragister_Modal2(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 dialogClassName="border-radius-2"
+                
             >
-                  <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                  <div className='ModalWrapper' id='ModalWrapper22' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
+                    <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }}>
                         <img className="ModalImg3" src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo3' />
