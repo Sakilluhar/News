@@ -11,8 +11,6 @@ import OTPInput from 'otp-input-react';
 import { authentication } from '../Firebase';
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { useNavigate } from 'react-router';
-
 function OTPmodal2(props) {
     const [OTP, setOTP] = useState("");
     const [error, setError] = useState("", setTimeout(() => {
@@ -64,8 +62,6 @@ function OTPmodal2(props) {
         }
 
     }, [props.phonenum])
-
-
     const submitOTP = (e) => {
         e.preventDefault()
 
@@ -104,9 +100,9 @@ function OTPmodal2(props) {
                                 <img src={Logo} alt="" id='logo5' />
                             </div>
                             <div className='logo-text5'>
-                            <h4> This beautiful theam yours!</h4>
-                            <p> " Best investment i made for a long time. Can recommend for other users."</p>
-                        </div>
+                                <h4> This beautiful theam yours!</h4>
+                                <p> " Best investment i made for a long time. Can recommend for other users."</p>
+                            </div>
                         </div>
 
                         <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
@@ -115,7 +111,7 @@ function OTPmodal2(props) {
                                     Login
                                 </Modal.Title>
                             </Modal.Header>
-                            <Modal.Body style={{marginTop: "5%"}}>
+                            <Modal.Body style={{ marginTop: "5%" }}>
                                 <div className='AC'>
                                     <div className="h my-5 mx-3">
                                         <h5> <strong> OTP has been sent to </strong></h5>

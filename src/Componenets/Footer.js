@@ -3,6 +3,8 @@ import './Footer.css';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import Terms_Condition from './Terms_Condition';
 import Privacy_Policy from './Privacy_Policy';
+import { Link } from 'react-router-dom';
+
 
 
 function Footer() {
@@ -69,7 +71,7 @@ function Footer() {
                                 <div className='row g-3'>
 
                                     <input type="text" className="col-auto form-control" name='email' id="e-f" placeholder="Enter Email" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
-                                    <button className='col-auto btn ' style={{ color: "#ffffff", background: "#EE2934" }} id='ES' onClick={handleSubcribe}>SUBCRIBE</button>
+                                    <button className='col-auto btn' id='ES' onClick={handleSubcribe}>SUBCRIBE</button>
 
 
 
@@ -98,18 +100,18 @@ function Footer() {
                             <div className="col-xs-3 col-sm-3 col-md-3" >
                                 <h5> News Cbategories</h5>
                                 <ul className='newscate'>
-                                    <li><a href="/">Politics</a></li>
-                                    <li><a href="/">Technology</a></li>
-                                    <li><a href="/">Business</a></li>
-                                    <li><a href="/">Health</a></li>
-                                    <li><a href="/">Entertainment</a></li>
+                                    <li><Link to="/">Politics</Link></li>
+                                    <li><Link to="/">Technology</Link></li>
+                                    <li><Link to="/">Business</Link></li>
+                                    <li><Link to="/">Health</Link></li>
+                                    <li><Link to="/">Entertainment</Link></li>
 
 
-                                    <li><a href="/">Education</a></li>
-                                    <li><a href="/">Obituaries</a></li>
-                                    <li><a href="/">Corrections</a></li>
-                                    <li><a href="/">Foods</a></li>
-                                    <li><a href="/">Soprts</a></li>
+                                    <li><Link to="/">Education</Link></li>
+                                    <li><Link to="/">Obituaries</Link></li>
+                                    <li><Link to="/">Corrections</Link></li>
+                                    <li><Link to="/">Foods</Link></li>
+                                    <li><Link to="/">Soprts</Link></li>
 
 
                                 </ul>
@@ -120,11 +122,11 @@ function Footer() {
                             <div className="col-xs-3 col-sm-3 col-md-">
                                 <h5>useful links</h5>
                                 <ul className="useL">
-                                    <li><a href={'/'}>Home</a></li>
-                                    <li><a href={'/about'}>About</a></li>
-                                    <li><a href={'/live_news'}>Live News</a></li>
-                                    <li><a href={'/breaking_news'}>Breaking News</a></li>
-                                    <li><a href={'/contact_us'}>Contact Us</a></li>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/about_us">About</Link></li>
+                                    <li><Link to="/">Live News</Link></li>
+                                    <li><Link to="/">Breaking News</Link></li>
+                                    <li><Link to="/Contact_us">Contact Us</Link></li>
                                 </ul>
                             </div>
 
@@ -135,10 +137,10 @@ function Footer() {
                                     <div>
                                         <h5>Follow us </h5>
                                         <div className='d-flex flex-column gap-4 row'>
-                                            <button style={{ color: "#ffffff", background: "#1B2D51" }} className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
-                                            <button style={{ color: "#ffffff", background: "#1B2D51" }} className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
-                                            <button style={{ color: "#ffffff", background: "#1B2D51" }} className='btn btn-outline-white text-start'><FaLinkedin /> Link in</button>
-                                            <button style={{ color: "#ffffff", background: "#1B2D51" }} className='btn btn-outline-white text-start'><FaTwitterSquare /> Twitter</button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /> Link in</button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> Twitter</button>
                                         </div>
                                     </div>
 
