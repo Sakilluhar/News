@@ -35,8 +35,9 @@ function App() {
         <Route exact path='/Contact_us'  element={<ContactUs/>}></Route>
         <Route exact path='/News_Notification' element={<NewsNotification/>}></Route>
         <Route exact path='/Persnol_Notification' element={<Notification/>}></Route>
+        
       </Routes>
-      
+
       <Footer />
     </>
   );
