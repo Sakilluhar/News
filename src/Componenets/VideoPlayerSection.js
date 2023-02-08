@@ -40,43 +40,48 @@ function VideoPlayerSection() {
 
   return (
         
+        <div id="vps-main">
+          <div id='vps-head-main' className=''>
+            <h4 id='vps-main-logo'>Video News To Explore</h4>
+            <a href='/' id='vps-Viewmore'>View More</a>
+            </div>
+        </div>
+    //  <div id="vps-main">
         
-     <div id="vps-main">
-        
-       <div id="vps-videoPlayer">
-        <ReactPlayer
-          width="100%"
-          height="50rem"
-          controls
-          url={Video_url}
-        />
-      </div>
+    //    <div id="vps-videoPlayer">
+    //     <ReactPlayer
+    //       width="100%"
+    //       height="50rem"
+    //       controls
+    //       url={Video_url}
+    //     />
+    //   </div>
        
-     <div id="vps-multi-video">
-        {Data && Data.map((element,index)=>(
+    //  <div id="vps-multi-video">
+    //     {Data && Data.map((element,index)=>(
         
         
-        <button key={element.id} id="multi-video-btn" className="btn btn-outline-dark" onClick={()=>handleVideoUrl(element,index)}>
-          <img
-            id="vns-btn-image"
-            src={
-              element.image
-            }
-            className="card-img-top"
-            alt="..."
-          />
-          <div>
-          <h5 id="vns-btn-text" className="">
-            {element.title}
-          </h5>
-          <p id="vns-btn-date"><FaCalendarAlt size={17} id='logoCalendar'/>{element.date}</p>
-          </div>
-        </button>
-    ))}
+    //     <button key={element.id} id="multi-video-btn" className="btn btn-outline-dark" onClick={()=>handleVideoUrl(element,index)}>
+    //       <img
+    //         id="vns-btn-image"
+    //         src={
+    //           element.image
+    //         }
+    //         className="card-img-top"
+    //         alt="..."
+    //       />
+    //       <div>
+    //       <h5 id="vns-btn-text" className="">
+    //         {element.title}
+    //       </h5>
+    //       <p id="vns-btn-date"><FaCalendarAlt size={17} id='logoCalendar'/>{element.date}</p>
+    //       </div>
+    //     </button>
+    // ))}
     
 
-      </div> 
-    </div> 
+    //   </div> 
+    // </div> 
        
    
   );

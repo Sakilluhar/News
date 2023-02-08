@@ -47,7 +47,7 @@ function CatNav() {
           <Nav className="me-auto">
 
           {Data && Data.map((element)=>(
-            <Nav.Link id='catNav-links'  href="#home">{element.category_name}</Nav.Link>
+            <Nav.Link id='catNav-links'  href="#home"><b>{element.category_name}</b></Nav.Link>
             // <Link id='catNav-links' to="/">{element.category_name}</Link>
             ))}
             

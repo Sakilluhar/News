@@ -80,13 +80,13 @@ function Navbar() {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <li className="nav-item">
-                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link></b>
                                 </li>
                                 <li className="nav-item">
-                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link></b>
                                 </li>
                                 <li className="nav-item">
-                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">LIVE NEWS</Link>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">LIVE NEWS</Link></b>
                                 </li>
                                 {/* <li className="nav-item">
                                     
@@ -96,10 +96,10 @@ function Navbar() {
 
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link></b>
                                 </li>
                                 <li className="nav-item">
-                                    <Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
                                 </li>
                                 <li>
                                     {/* <Link id='btnSignIn'  className='btn me-3' type="button" to="/Login"><BiUserCircle size={23} id='btnLogo'/>Sign In</Link> */}

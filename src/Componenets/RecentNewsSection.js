@@ -64,7 +64,7 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[1].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[1].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -76,7 +76,7 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[2].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[2].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -90,7 +90,7 @@ function RecentNewsSection() {
             <div id='rns-card-row'>
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[3].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[3].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -102,7 +102,7 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[4].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[4].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -114,21 +114,22 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[5].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[5].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[5].title.slice(0,70)}...</h4>
                 </div>
+                <div id='rns-card-footer'>
                 <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
-
+                </div>
             </div>
             </div>
 
             <div id='rns-card-row'>
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[6].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[6].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -140,7 +141,7 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[7].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[7].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
@@ -152,7 +153,7 @@ function RecentNewsSection() {
 
             <div id='rns-card' className="card">
                 <img  id='rns-image' src={Data[8].image} className="card-img-top" alt="..."/>
-                <div id='' className="card-img-overlay">
+                <div id='rns-img-overlay' className="card-img-overlay">
                     <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[8].category_name}</button>
                 </div>
                 <div id='rns-card-body' className="card-body">
