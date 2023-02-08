@@ -1,36 +1,61 @@
-
-#card-noti{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    /* width: 50%; */
-    /* margin-left: 20%;
+#card-noti {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* width: 50%; */
+  /* margin-left: 20%;
     margin-right: 20%; */
 }
-#main-Noticard{
-     width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+#main-Noticard {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
-#flexCheckChecked{
-    height: 30px;
-    width: 30px;
-    border-radius: 50px;
-    margin-top: 15px;
-    background-color: #EE2934;
-     
-  
+#flexCheckChecked {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  margin-top: 15px;
+  background-color: #ee2934;
 }
-#noti_img{
-    width: 15%;
-    height: 8rem;
-    border-radius: 3%;
-    
+#btnNotification1 {
+  width: 10%;
+  color: #ffffff;
+  background-color: #EE2934;
 }
-#noti_profile{
-    object-fit: cover;
-    width: 13%;
-    height: 8rem;
-    border-radius: 3%;
-    
+#btnNotification1:hover{
+    background-color: #1A2E51;
+}
+#btnNewsnoti{
+    width: 10%;
+    color: #000000;
+    background-color: #EDF2F8;
+}
+#btnNewsnoti:hover{
+    color: #ffffff;
+    background-color: #1A2E51;
+}
+#noti_img {
+  width: 15%;
+  height: 8rem;
+  border-radius: 3%;
+}
+#noti_profile {
+  object-fit: cover;
+  width: 13%;
+  height: 8rem;
+  border-radius: 3%;
+}
+#btntrash{
+    color: #000000;
+    border: 1px solid #EE2934;
+    background-color: rgba(230, 113, 92, 0.345);
+    width: 8rem;
+    height: 2.1rem;
+    padding: 1%
+}
+#btntrash:hover{
+    border: 1px solid #1A2E51;
+    background-color: #1A2E51;
+    color: #ffffff;
 }

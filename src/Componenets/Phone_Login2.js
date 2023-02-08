@@ -101,7 +101,7 @@ function Phone_Login2(props) {
             </div >
 
             {phonenum !== null ?
-                <OTPmodal2 phonenum={phonenum} onPhonenumHide={props.onHide()} show={PhoneOTPModalShow} onHide={() => setPhoneOTPModalShow(false)} />
+                <OTPmodal2 setIsLogout={props.setIsLogout} phonenum={phonenum} onPhonenumHide={props.onHide()} show={PhoneOTPModalShow} onHide={() => setPhoneOTPModalShow(false)} />
                 : null
             }
 

@@ -19,6 +19,8 @@ function Ragister_Modal2(props) {
         if (formErrors !== "")
             setFormErrors("")
     }, 5000));
+
+    const [isValidForm, setIsValidForm] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false);
     const [type, setType] = useState("password");
     const [icon, setIcon] = useState(eyeSlash);
@@ -41,26 +43,28 @@ function Ragister_Modal2(props) {
 
     const navigate = useNavigate()
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-        const auth = getAuth();
+    useEffect(() => {
+
+        if (isValidForm) {
+
+
+            setIsSubmit(true);
+            const auth = getAuth();
 
 
 
-        await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
-            .then((userCredential) => {
-                // send verification mail.
+            createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
+                .then((userCredential) => {
+                    // send verification mail.
 
-                const user = userCredential.user;
-                console.log(user)
-                sendEmailVerification(auth.currentUser)
-                    .then(() => {
+                    const user = userCredential.user;
+                    console.log(user)
+                    sendEmailVerification(auth.currentUser)
+                        .then(() => {
 
                             alert("Email sent");
                             // ..
-                            
+
                             const name = formValues.username;
                             const Email = formValues.email;
 
@@ -90,27 +94,102 @@ function Ragister_Modal2(props) {
                                 .then(response => response.text())
                                 .then(result => {
                                     console.log(result)
-                                    props.setIsLogout(true)
+                                    // props.setIsLogout(true)
                                     props.onHide()
                                     props.setLoginModalShow(true)
                                 })
                                 .catch(error => console.log('error', error));
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                            // ..
+                            alert("Error");
+                        });
+                })
+                .catch((error) => console.log(error))
+        }
 
-                        
+
+    }, [isValidForm])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
 
 
 
 
-                    })
-                    .catch((error) => {
-                        console.log(error)
-                        // ..
-                        alert("Error");
-                    });
-            })
-            .catch((error)=>console.log(error))
 
-        setIsSubmit(true);
+        // if (isValidForm) {
+
+
+        //     setIsSubmit(true);
+        //     const auth = getAuth();
+
+
+
+        //     await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
+        //         .then((userCredential) => {
+        //             // send verification mail.
+
+        //             const user = userCredential.user;
+        //             console.log(user)
+        //             sendEmailVerification(auth.currentUser)
+        //                 .then(() => {
+
+        //                     alert("Email sent");
+        //                     // ..
+
+        //                     const name = formValues.username;
+        //                     const Email = formValues.email;
+
+
+        //                     var myHeaders = new Headers();
+        //                     myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
+        //                     myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+
+        //                     var formdata = new FormData();
+        //                     formdata.append("access_key", "5670");
+        //                     formdata.append("firebase_id", user.uid);
+        //                     formdata.append("name", name);
+        //                     formdata.append("email", Email);
+        //                     formdata.append("profile", file);
+        //                     formdata.append("type", "email");
+        //                     formdata.append("status", "1");
+
+        //                     var requestOptions = {
+        //                         method: 'POST',
+        //                         headers: myHeaders,
+        //                         body: formdata,
+        //                         redirect: 'follow'
+        //                     };
+
+        //                     fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
+        //                         // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
+        //                         .then(response => response.text())
+        //                         .then(result => {
+        //                             console.log(result)
+        //                             // props.setIsLogout(true)
+        //                             props.onHide()
+        //                             props.setLoginModalShow(true)
+        //                         })
+        //                         .catch(error => console.log('error', error));
+
+
+
+
+
+
+        //                 })
+        //                 .catch((error) => {
+        //                     console.log(error)
+        //                     // ..
+        //                     alert("Error");
+        //                 });
+        //         })
+        //         .catch((error) => console.log(error))
+        // } 
+
     };
     const handletoggle = () => {
         if (type === "password") {
@@ -136,6 +215,8 @@ function Ragister_Modal2(props) {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit);
     }, [formErrors])
+
+
     const validate = (values) => {
         const errors = {};
         const regex = /^[^\s@]+@[^s\@]+\.[^\s@]{2,}$/i;
@@ -162,8 +243,9 @@ function Ragister_Modal2(props) {
         else if (values.confirmpassword === "" || values.confirmpassword !== values.password) {
             errors.confirmPassword = "Password is not Matched!";
         } else {
+            console.log("wdjlfbsdchiwSD")
+            setIsValidForm(true)
             navigate("/");
-
         }
 
         return errors;
@@ -181,9 +263,9 @@ function Ragister_Modal2(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 dialogClassName="border-radius-2"
-                
+
             >
-                  <div className='ModalWrapper' id='ModalWrapper22' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
+                <div className='ModalWrapper' id='ModalWrapper22' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
                     <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }}>
                         <img className="ModalImg3" src={photo} alt="" />
                         <div className="logo-img-overlay">
@@ -253,8 +335,8 @@ function Ragister_Modal2(props) {
                                             </p>
 
                                         </div>
-                                        <div className='py-3'>
-                                            <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' >Sign Up</button>
+                                        <div className='py-5'>
+                                            <button type="submit" className="btn   btn-lg" id='loginbutton2' >Sign Up</button>
                                         </div>
                                     </div>
                                 </form>
@@ -263,6 +345,7 @@ function Ragister_Modal2(props) {
                             </div>
 
                         </Modal.Body>
+                        
                     </div>
                 </div >
 

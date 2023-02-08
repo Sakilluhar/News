@@ -47,9 +47,9 @@ function NewsNotification() {
     return (
         <div id="main-Noticard" className='my-3'>
             <div className="d-flex bd-highlight mb-3">
-                <Link to='/Persnol_Notification' style={{ width: "10%", color: "#ffffff", background: "#EE2934" }} id='btnNotification' className="btn mx-1 bd-highlight" > Personal </Link>
-                <Link to='/News_Notification' style={{ width: "10%", color: "#000000", background: "#EDF2F8" }} id='btnNotification' className="btn mx-1 bd-highlight" > News</Link>
-                <button style={{ width: "10%", color: "#EE2934", background: "" }} id='btnNotification' className="btn  btn mx-1 ms-auto bd-highlight" onClick={handleDeleteAll} > Delete All</button>
+                <Link to='/Persnol_Notification'id='btnNotification1' className="btn mx-1 bd-highlight" > Personal </Link>
+                <Link to='/News_Notification' id='btnNewsnoti' className="btn mx-1 bd-highlight" > News</Link>
+                {/* <button  id='btnNotification1' className="btn  btn mx-1 ms-auto bd-highlight" onClick={handleDeleteAll} > Delete All</button> */}
             </div>
             <div className='my-3'>
                 {Data.length === 0
@@ -70,7 +70,8 @@ function NewsNotification() {
                                     </div>
 
                                     <div className='iconTrash ms-auto bd-highlight'>
-                                        <button className="btn  btn m-2 " style={{ color: "#EE2934", background: "" }} id='btntrash' onClick={handleDeleteComment}><FiTrash2 size={25} /></button>
+                                    <button className="btn  btn m-2 " id='btntrash' onClick={handleDeleteComment}>Delete</button>
+
                                     </div>
                                 </div>
                             </div>
