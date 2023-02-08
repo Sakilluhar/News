@@ -85,6 +85,8 @@ function SignIn_Modal(props) {
         signInWithPopup(authentication, provider)
             .then((re) => {
                 console.log(re);
+                props.onHide()
+                props.setIsLogout(true)
             })
             .catch((err) => {
                 console.log(err.message);
@@ -96,12 +98,14 @@ function SignIn_Modal(props) {
         signInWithPopup(authentication, provider)
             .then((re) => {
                 console.log(re);
+                props.onHide()
+                props.setIsLogout(true)
             })
             .catch((err) => {
                 console.log(err.message);
             })
     }
-    const [islogout, setIsLogout] = useState(false)
+    
     const [phonenum, setPhonenum] = useState(null);
     const auth = getAuth();
     const Signin = () => {
@@ -112,7 +116,7 @@ function SignIn_Modal(props) {
                 // ...
                 console.log(user.emailVerified);
                 if (user.emailVerified) {
-                    alert("Verified")
+                    // alert("Verified")
                     props.setIsLogout(true)
                 } else {
                     alert("Not Verified")
@@ -187,15 +191,15 @@ function SignIn_Modal(props) {
                                                 }} id="forgot" style={{ float: "right", cursor: "pointer" }}> Forgot Password? </p></p>
 
                                         </div>
-                                        <div className='py-3'>
+                                        <div className='py-3' id='login'>
                                             <button type="submit" className="btn   btn-lg  w-100" id='loginbutton' onClick={Signin} >Login</button>
                                         </div>
 
                                     </form>
-                                    <div className="bordert mx-5 my-3 py-2"></div>
+                                    <div className="bordert mx-3 my-3 py-2"></div>
 
                                 </div>
-                                <div className="conatiner mx-4 d-flex justify-content-between">
+                                <div className="conatiner mx-4 d-flex justify-content-between" id='social_buttons'>
                                     <button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#3B5998" }} type="button" className=" btn mx-1" onClick={signInWithFacebook}><FaFacebookF /> Login with Facebook</button>
                                     <button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#EA4335" }} type="button" className=" btn mx-1" onClick={signInWithGoogle}><FaGoogle /> Sign in with Google</button>
                                     <Button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#1B2D51" }} type="button" className=" btn mx-1" onClick={() => {
@@ -235,8 +239,8 @@ function SignIn_Modal(props) {
             </Modal >
         </div >
         <Forgot_Password2 setLoginModalShow={props.setLoginModalShow} show={ForgotModalShow} onHide={() => setForgotModalShow(false)} />
-        <Ragister_Modal2 setIsLogout={setIsLogout} setLoginModalShow={props.setLoginModalShow} show={modalShow} onHide={() => setModalShow(false)} />
-        <Phone_Login2 setLoginModalShow={props.setLoginModalShow} setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
+        <Ragister_Modal2 setIsLogout={props.setIsLogout} setLoginModalShow={props.setLoginModalShow} show={modalShow} onHide={() => setModalShow(false)} />
+        <Phone_Login2 setIsLogout={props.setIsLogout} setLoginModalShow={props.setLoginModalShow} setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
     </>
     )
 }

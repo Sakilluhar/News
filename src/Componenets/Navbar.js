@@ -8,20 +8,50 @@ import Categories from './Categories';
 import { getAuth, signOut } from 'firebase/auth';
 import News_main_Logo from '../images/News_main_Logo.png';
 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 function Navbar() {
 
     const auth = getAuth();
     const logout =()=>{
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            // alert("Sign-out successful.")
-            setIsLogout(false)
-          }).catch((error) => {
-            alert(error)
-            // An error happened.
+        // setislogoutalert(true)
+        // signOut(auth).then(() => {
+        //     // Sign-out successful.
+        //     // alert("Sign-out successful.")
+        //     setIsLogout(false)
+           
+        //   }).catch((error) => {
+        //     alert(error)
+        //     // An error happened.
+        //   });
+
+        confirmAlert({
+            title: 'Logout',
+            message: 'Are you sure to do this.',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => {
+                    signOut(auth).then(() => {
+                        // Sign-out successful.
+                        // alert("Sign-out successful.")
+                        setIsLogout(false)
+                       
+                      }).catch((error) => {
+                        alert(error)
+                        // An error happened.
+                      });
+                }
+              },
+              {
+                label: 'No',
+                onClick: () => {}
+              }
+            ]
           });
+
     }
 
 
@@ -31,6 +61,7 @@ function Navbar() {
     };
     const [modalShow, setModalShow] = React.useState(false);
     const [islogout, setIsLogout] = useState(false)
+    // const [islogoutalert,setislogoutalert] = useState(false)
 
     return (
         <div>

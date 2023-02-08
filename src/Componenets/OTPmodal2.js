@@ -71,7 +71,7 @@ function OTPmodal2(props) {
 
             const countrycode = parsePhoneNumber(props.phonenum).countryCallingCode;
             const num = parsePhoneNumber(props.phonenum).nationalNumber;
-
+            props.setIsLogout(true)
             props.onHide();
             props.onPhonenumHide()
             // navigate('/')
