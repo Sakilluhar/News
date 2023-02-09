@@ -89,13 +89,15 @@ function NewsCardFS() {
         <div id='fs-main' className="h-100">
 
 {/* <div className="col-12 " dangerouslySetInnerHTML={{__html: data}}></div> */}
-            <div id='body-first-section' className='my-auto'>
+            <div id='body-first-section' className=''>
             <div id='Left-first-section' className='my-auto'>
                 <button id='btnCatagory' className='btn' type="button" >{Category}</button>
                 <h1 id='Top-Title'><b>{Title}</b></h1>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
+                <div>
                 <Link id='btnReadMore' className='btn' type="button" to="/NewsView" ><b>READ MORE</b></Link>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
+                </div>
             </div>
 
             <div>
@@ -103,7 +105,7 @@ function NewsCardFS() {
             </div>
 
             </div>
-            <div id='fs-Radios' className='my-auto'>
+            <div id='fs-Radios' className=''>
             <input type="radio" id='fs-Radiobtn' value="rad1" name="radFS" onClick={handleRad} defaultChecked/> 
             <input type="radio" id='fs-Radiobtn' value="rad2" name="radFS" onClick={handleRad} /> 
             <input type="radio" id='fs-Radiobtn' value="rad3" name="radFS" onClick={handleRad} /> 
