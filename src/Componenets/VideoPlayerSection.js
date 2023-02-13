@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { IoMdArrowDroprightCircle } from 'react-icons/io';
+import { BsFillPlayFill } from "react-icons/bs";
 import ReactPlayer from "react-player";
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 import { FaCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function VideoPlayerSection() {
   const [Data, setData] = useState([]);
@@ -33,9 +34,6 @@ function VideoPlayerSection() {
         setVideo_url(result.data[1].content_value);
       })
       .catch((error) => console.log("error", error));
-
-
-  
   }, []);
 
   function handleVideoUrl(element, index) {
@@ -52,33 +50,45 @@ function VideoPlayerSection() {
         </a>
       </div>
 
-      
-      {Data.length === 0 ? "loading":
-      <div id="vps-body">
-      <div id="vps-body-left">
-        <img id="vps-main-image" src={Data[0].image} alt="" />
-        <h1>{Data[0].title}</h1>
-      </div>
-      <div id="vps-body-right">
-      {/* <IoMdArrowDroprightCircle/> */}
-      <Card id="vps-image-cards" className="text-black">
-      <Card.Img id="vps-secondry-images" src={Data[1].image} alt="Card image" />
-      <Card.ImgOverlay>
-      
-      <h4 id="vps-card-title">{Data[1].title}</h4>
-      </Card.ImgOverlay>
-    </Card>
+      {Data.length === 0 ? (
+        "loading"
+      ) : (
+        <div id="vps-body">
+          <div id="vps-body-left">
+            <img id="vps-main-image" src={Data[0].image} alt="" />
+            <h1>{Data[0].title}</h1>
+          </div>
+          <div id="vps-body-right">
+            <Card id="vps-image-cards" className="text-black">
+              <Card.Img
+                id="vps-secondry-images"
+                src={Data[1].image}
+                alt="Card image"
+              />
+              <Card.ImgOverlay>
+                <Link id="vps-btnVideo">
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
+                </Link>
+                <h4 id="vps-card-title"><b>{Data[1].title}</b></h4>
+              </Card.ImgOverlay>
+            </Card>
 
-    <Card id="vps-image-cards" className="text-black">
-      <Card.Img id="vps-secondry-images" src={Data[2].image} alt="Card image" />
-      <Card.ImgOverlay>
-        <h4 id="vps-card-title">{Data[2].title}</h4>
-      </Card.ImgOverlay>
-    </Card>
+            <Card id="vps-image-cards" className="text-black">
+              <Card.Img
+                id="vps-secondry-images"
+                src={Data[2].image}
+                alt="Card image"
+              />
+              <Card.ImgOverlay>
+                <Link id="vps-btnVideo">
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
+                </Link>
+                <h4 id="vps-card-title"><b>{Data[2].title}</b></h4>
+              </Card.ImgOverlay>
+            </Card>
+          </div>
 
-      </div>
-       
-        {/* <ReactPlayer
+          {/* <ReactPlayer
           width="40%"
           height="20rem"
           url={Data[0].content_value}
@@ -94,9 +104,8 @@ function VideoPlayerSection() {
           url={Data[2].content_value}
           controls={true}
         /> */}
-     </div>
-    }
-
+        </div>
+      )}
     </div>
 
     //  <div id="vps-main">

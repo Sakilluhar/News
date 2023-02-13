@@ -655,6 +655,7 @@ height: 38rem;
 }
 
 #vps-main-image{
+  box-shadow: 3px 3px 15px 15px #0F1F40;
   object-fit: cover;
   border-radius: 10px;
   height: 70%;
@@ -670,14 +671,42 @@ height: 38rem;
 }
 
 #vps-image-cards{
+  /* box-shadow: 3px 3px 15px 15px #0F1F40; */
   background-color: #00000000;
 }
 
 #vps-secondry-images{
+  box-shadow: 3px 3px 15px 15px #0F1F40;
+  /* box-shadow: inset 3px 4px 5px 6px #000; */
   object-fit: cover;
   border-radius: 10px;
   height: 20rem;
   width: 100%;
+} 
+
+#vps-card-title{
+  position: relative;
+  top: 80%;
+  color: #ffffff;
+}
+
+#vps-btnVideo{
+  float: inline-end;
+  color: #ffffff;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  position: absolute;
+  right: 3%;  
+}
+
+#vps-btnVideo:hover {
+  /* transform: rotate(45deg); */
+  box-shadow: 0 0 1px 10px rgba(255, 255, 255, 0.4), 0 0 1px 20px rgba(255, 255, 255, 0.1), 0 0 1px 30px rgba(255, 255, 255, 0.1);
+}
+
+#vps-btnVideo-logo{
+  margin-left: 10%;
 }
 
 #vps-videoPlayer{
