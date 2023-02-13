@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Nav.css';
 import { BiBell, BiSearch, BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import SignIn_Modal from './SignIn_Modal';
-import Categories from './Categories';
+// import Categories from './Categories';
 import { getAuth, signOut } from 'firebase/auth';
 import News_main_Logo from '../images/News_main_Logo.png';
 
@@ -15,13 +15,21 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 function Navbar() {
 
     const auth = getAuth();
-    const logout =()=>{
+
+    useEffect(() => {
+        if (localStorage.getItem('token') !== undefined) {
+            setIsLogout(true)
+        }
+    }, [])
+
+
+    const logout = () => {
         // setislogoutalert(true)
         // signOut(auth).then(() => {
         //     // Sign-out successful.
         //     // alert("Sign-out successful.")
         //     setIsLogout(false)
-           
+
         //   }).catch((error) => {
         //     alert(error)
         //     // An error happened.
@@ -31,26 +39,28 @@ function Navbar() {
             title: 'Logout',
             message: 'Are you sure to do this.',
             buttons: [
-              {
-                label: 'Yes',
-                onClick: () => {
-                    signOut(auth).then(() => {
-                        // Sign-out successful.
-                        // alert("Sign-out successful.")
-                        setIsLogout(false)
-                       
-                      }).catch((error) => {
-                        alert(error)
-                        // An error happened.
-                      });
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        signOut(auth).then(() => {
+                            // Sign-out successful.
+                            // alert("Sign-out successful.")
+                            setIsLogout(false)
+                            localStorage.removeItem('token')
+                            localStorage.removeItem('user')
+
+                        }).catch((error) => {
+                            alert(error)
+                            // An error happened.
+                        });
+                    }
+                },
+                {
+                    label: 'No',
+                    onClick: () => { }
                 }
-              },
-              {
-                label: 'No',
-                onClick: () => {}
-              }
             ]
-          });
+        });
 
     }
 
@@ -126,14 +136,8 @@ function Navbar() {
                             : null
                         }
 
-
-
-
-
                     </div>
                 </div>
-
-
 
             </nav>
             <SignIn_Modal setIsLogout={setIsLogout} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />

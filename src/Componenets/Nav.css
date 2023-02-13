@@ -94,7 +94,7 @@
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    
 }
 
-#{
+#nav-link{
 color: #1A2E51;
 }
 
@@ -159,9 +159,9 @@ color: #1A2E51;
 }
 
 
-#inputSerchForm{
+/* #inputSerchForm{
     /* border-color: #EE2934; */
-}
+/* } */ 
 
 #btnSerchForm{
     color: #EE2934;
