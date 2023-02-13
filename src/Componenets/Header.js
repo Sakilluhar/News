@@ -5,18 +5,35 @@ import { BsSun } from 'react-icons/bs';
 
 
 export default function Header() {
-  const currDate = new Date().toDateString()
+  const day={
+    0:"Sunday",
+    1:"Monday",
+    2:"Tuesday",
+    3:"Wednesday",
+    4:"Thursday",
+    5:"Friday",
+    6:"Saturnday",
+  }
+  
+  const currDate = new Date()
+  const curdate= currDate.toDateString()
+  const currDay = currDate.getDay()
+  
+  // const currloc = geolocation.getCurrentPosition()
+
+
+
   return (
     <>
     <div id='Header' className=' d-flex justify-content-around'>
 
     <div className='left-head'>
-        <button id='btncalendar' className='btn btn-sm '><FaCalendarAlt size={17} id='logoCalendar'/><strong>{currDate}</strong></button>
+        <button id='btncalendar' className='btn btn-sm '><FaCalendarAlt size={17} id='logoCalendar'/>{curdate}</button>
         <h3><BsSun/></h3>
         <h3 id=''><b>32'c</b></h3>
         <div id='header-city-section'>
         <h5 id=''>Bhuj</h5>
-        <h7 id='' >Wednesday, sunny</h7>
+        <h7 id='' >{day[currDay]}, Sunny</h7>
         </div>
         {/* <label>Trending News</label>
         <ul>

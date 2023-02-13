@@ -7,7 +7,11 @@ import { eye } from 'react-icons-kit/fa/eye';
 import { eyeSlash } from 'react-icons-kit/fa/eyeSlash';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router';
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+// import { BsCheckLg } from 'react-icons/bs';
+
+
+
 
 function Ragister_Modal2(props) {
     const actionCodeSettings = {
@@ -31,13 +35,13 @@ function Ragister_Modal2(props) {
         const { name, value } = e.target;
 
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        // console.log(formValues);
     };
     const handleConfirmpassword = (e) => {
         const { name, value } = e.target;
 
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        // console.log(formValues);
     };
 
 
@@ -50,7 +54,7 @@ function Ragister_Modal2(props) {
 
             setIsSubmit(true);
             const auth = getAuth();
-
+           
 
 
             createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
@@ -58,15 +62,16 @@ function Ragister_Modal2(props) {
                     // send verification mail.
 
                     const user = userCredential.user;
-                    console.log(user)
+                    
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
 
-                            alert("Email sent");
+                            alert("Email sent");  
                             // ..
 
                             const name = formValues.username;
                             const Email = formValues.email;
+                            // const Id = formValues.id;
 
 
                             var myHeaders = new Headers();
@@ -76,6 +81,7 @@ function Ragister_Modal2(props) {
                             var formdata = new FormData();
                             formdata.append("access_key", "5670");
                             formdata.append("firebase_id", user.uid);
+                            // formdata.append("user_id", user.Id);
                             formdata.append("name", name);
                             formdata.append("email", Email);
                             formdata.append("profile", file);
@@ -93,10 +99,24 @@ function Ragister_Modal2(props) {
                                 // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
                                 .then(response => response.text())
                                 .then(result => {
-                                    console.log(result)
+
+                                    console.log(user)
+
+                                    updateProfile(user, {
+                                        displayName: result.id
+                                      }).then(() => {
+                                        // Profile updated!
+                                        // ...
+                                        console.log(user)
+                                      }).catch((error) => {
+                                         // An error occurred
+                                        // ...
+                                      });
+                                    
                                     // props.setIsLogout(true)
                                     props.onHide()
                                     props.setLoginModalShow(true)
+                                   
                                 })
                                 .catch(error => console.log('error', error));
                         })
@@ -220,7 +240,7 @@ function Ragister_Modal2(props) {
     const validate = (values) => {
         const errors = {};
         const regex = /^[^\s@]+@[^s\@]+\.[^\s@]{2,}$/i;
-        const password_pattern = /^(?=.*\d)(?=.*\[a-z])(?=.*\[A-Z])[a-zA-Z0-9]{8,}$/
+        // const password_pattern = /^(?=.*\d)(?=.*\[a-z])(?=.*\[A-Z])[a-zA-Z0-9]{8,}$/
         if (!values.username) {
             errors.username = " User Name is reqired! ";
         }
@@ -243,7 +263,7 @@ function Ragister_Modal2(props) {
         else if (values.confirmpassword === "" || values.confirmpassword !== values.password) {
             errors.confirmPassword = "Password is not Matched!";
         } else {
-            console.log("wdjlfbsdchiwSD")
+            // console.log("wdjlfbsdchiwSD")
             setIsValidForm(true)
             navigate("/");
         }

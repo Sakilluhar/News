@@ -75,7 +75,7 @@ function Notification() {
 
         // fetch("https://news.wrteam.in/Api/delete_comment?access_key=5670&user_id=1&comment_id=1", requestOptions)
         fetch("http://news.thewrteam.in/Api/get_comment_by_news?access_key=5670&news_id=1&user_id=1&offset=0&limit=10", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }, [])
