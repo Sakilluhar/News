@@ -82,9 +82,9 @@
   border: none ;
  }
 
- #btnpaly:hover{
+ /* #btnpaly:hover{
   /* color: #0F1F40; */
- }
+ /* } */ 
 
 
 /* ------------------------------------- top-news-section ------------------------------------- */
@@ -249,11 +249,10 @@
   background: black;
   /* overflow: hidden; */
 }
-
+/* 
 #bns-card-body{
   /* height: 40%; */
-}
-
+/* } */ 
 #bns-main-image{
   object-fit: cover;
    opacity: 0.3;

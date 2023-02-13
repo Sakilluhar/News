@@ -105,7 +105,7 @@ function SignIn_Modal(props) {
                 console.log(err.message);
             })
     }
-    
+
     const [phonenum, setPhonenum] = useState(null);
     const auth = getAuth();
     const Signin = () => {
@@ -114,7 +114,8 @@ function SignIn_Modal(props) {
                 // Signed in 
                 const user = userCredential.user;
                 // ...
-                console.log(user.emailVerified);
+                console.log(user);
+
                 if (user.emailVerified) {
                     // alert("Verified")
                     props.setIsLogout(true)
@@ -124,6 +125,48 @@ function SignIn_Modal(props) {
                 }
                 // props.setIsLogout(true)
                 props.onHide()
+
+
+
+        
+
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTI5MDUsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDQ5MDUsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.BR2kPD21Tc-z4Ye7JnS6CvHtNKf3KOR2EsZUdN9ljSo");
+                myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    redirect: 'follow'
+                };
+
+                fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                    .then(response => response.text())
+                    .then(result => {
+
+                        localStorage.setItem('token', result)
+
+                        var formdata2 = new FormData();
+                        formdata2.append("access_key", "5670");
+                        formdata2.append("firebase_id", "2QLzifDNG1aDGah45l6om3C9OSi2");
+                        formdata2.append("email", formValues.email);
+                        formdata2.append("type", "email");
+
+
+                        var requestOptions2 = {
+                            method: 'POST',
+                            headers: myHeaders,
+                            body: formdata2,
+                            redirect: 'follow'
+                        };
+
+                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                            .then(response => response.text())
+                            .then(result => localStorage.setItem('user',result))
+                            .catch(error => console.log('error', error));
+
+                    })
+                    .catch(error => console.log('error', error));
             })
             .catch((error) => {
                 const errorCode = error.code;
