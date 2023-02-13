@@ -605,7 +605,7 @@ height: 38rem;
 
 /* -----------------------------video player sectin ---------------------------------- */
 #vps-main{
-  height: 30rem;
+  height: 50rem;
   font-family: 'Zilla Slab', serif;
   color: #ffffff;
   background-color: #1A2E51;  
@@ -642,6 +642,43 @@ height: 38rem;
   text-decoration: none;
   color: #ffffff;
   margin-top: 2.1%; 
+}
+
+#vps-body{
+  display: grid;
+  grid-template-columns: 4.5% 1fr 1fr 4.5%;
+  gap: 1.5%;
+}
+
+#vps-body-left{
+  display: grid;
+  grid-column: 2/3;
+}
+
+#vps-main-image{
+  object-fit: cover;
+  border-radius: 10px;
+  height: 70%;
+  width: 100%;
+}
+
+#vps-body-right{
+  display: grid;
+  grid-column: 3/4;
+  display: flex ;
+  flex-direction: column;
+  gap: 4%;
+}
+
+#vps-image-cards{
+  background-color: #00000000;
+}
+
+#vps-secondry-images{
+  object-fit: cover;
+  border-radius: 10px;
+  height: 20rem;
+  width: 100%;
 }
 
 #vps-videoPlayer{
