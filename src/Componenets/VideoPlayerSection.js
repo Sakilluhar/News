@@ -4,10 +4,13 @@ import ReactPlayer from "react-player";
 import Card from "react-bootstrap/Card";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import VideoPlayerModal from "./VideoPlayerModal";
 
 function VideoPlayerSection() {
   const [Data, setData] = useState([]);
   const [Video_url, setVideo_url] = useState();
+  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
     var myHeaders = new Headers();
@@ -31,14 +34,13 @@ function VideoPlayerSection() {
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
-        setVideo_url(result.data[1].content_value);
       })
       .catch((error) => console.log("error", error));
   }, []);
 
-  function handleVideoUrl(element, index) {
-    console.log(index);
-    setVideo_url(element.content_value);
+  function handleVideoUrl(url) {
+    setModalShow(true)
+    setVideo_url(url)
   }
 
   return (
@@ -55,9 +57,27 @@ function VideoPlayerSection() {
       ) : (
         <div id="vps-body">
           <div id="vps-body-left">
-            <img id="vps-main-image" src={Data[0].image} alt="" />
-            <h1>{Data[0].title}</h1>
+            <Card id="vps-main-card" className="text-black">
+              <Card.Img
+                id="vps-main-image"
+                src={Data[0].image}
+                alt="Card image"
+              />
+              <Card.ImgOverlay>
+                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[0].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
+                </Link>
+              </Card.ImgOverlay>
+            </Card>
+            <h1 id="vps-main-title">{Data[0].title}</h1>
+
+            <h6 id="vps-main-date">
+              <FaCalendarAlt size={18} id="logoCalendar" />
+              {Data[0].date.slice(0, 10)}
+            </h6>
+            
           </div>
+
           <div id="vps-body-right">
             <Card id="vps-image-cards" className="text-black">
               <Card.Img
@@ -66,10 +86,12 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link id="vps-btnVideo">
-                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
+                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[1].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
                 </Link>
-                <h4 id="vps-card-title"><b>{Data[1].title}</b></h4>
+                <h4 id="vps-card-title">
+                  <b>{Data[1].title}</b>
+                </h4>
               </Card.ImgOverlay>
             </Card>
 
@@ -80,13 +102,24 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link id="vps-btnVideo">
-                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
+                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[2].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
                 </Link>
-                <h4 id="vps-card-title"><b>{Data[2].title}</b></h4>
+                <h4 id="vps-card-title">
+                  <b>{Data[2].title}</b>
+                </h4>
               </Card.ImgOverlay>
             </Card>
           </div>
+
+          <VideoPlayerModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                  backdrop="static"
+                  keyboard={false}
+                  url={Video_url}
+                  // title={Data[0].title}
+                />
 
           {/* <ReactPlayer
           width="40%"

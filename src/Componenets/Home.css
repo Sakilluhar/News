@@ -604,7 +604,7 @@ height: 38rem;
 
 /* -----------------------------video player sectin ---------------------------------- */
 #vps-main{
-  height: 50rem;
+  height: 55rem;
   font-family: 'Zilla Slab', serif;
   color: #ffffff;
   background-color: #1A2E51;  
@@ -621,7 +621,7 @@ height: 38rem;
   max-width: 2000%;
   position: relative;
   margin-top: 2%;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
 }
 
 #vps-main-logo::after{
@@ -654,12 +654,29 @@ height: 38rem;
   grid-column: 2/3;
 }
 
+#vps-main-card{
+  height: 80%;
+  width: 100%;
+  background-color: #000000;
+}
+
 #vps-main-image{
   box-shadow: 3px 3px 15px 15px #0F1F40;
   object-fit: cover;
+  opacity: 0.8;
   border-radius: 10px;
-  height: 70%;
+  height: 100%;
   width: 100%;
+}
+
+#vps-main-title{
+  position: relative;
+  bottom: 30%;
+}
+
+#vps-main-date{
+  position: relative;
+  bottom: 50%;
 }
 
 #vps-body-right{
@@ -671,16 +688,17 @@ height: 38rem;
 }
 
 #vps-image-cards{
-  /* box-shadow: 3px 3px 15px 15px #0F1F40; */
-  background-color: #00000000;
+  background-color: #000000;
+  border-radius: 10px;
+  border: none;
 }
 
 #vps-secondry-images{
   box-shadow: 3px 3px 15px 15px #0F1F40;
-  /* box-shadow: inset 3px 4px 5px 6px #000; */
+  opacity: 0.8;
   object-fit: cover;
   border-radius: 10px;
-  height: 20rem;
+  height: 22rem;
   width: 100%;
 } 
 
@@ -688,6 +706,41 @@ height: 38rem;
   position: relative;
   top: 80%;
   color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.50) ;
+}
+/* -----------------------------modal css -------------------------------------------------- */
+#vps-modal-btnclose{
+  background-color: #00000000;
+  border: none;
+  position: absolute;
+  background: #0F1F40;
+  box-shadow: 1px 1px 5px 0px #000000;
+  top: -15%;
+  right: -10%;
+}
+
+#vps-modal-btnclose:hover {
+  box-shadow: 0 0 1px 8px #0f1f405e, 0 0 1px 16px #0f1f4023;
+}
+
+#btnClose-logo{
+  color: #ffffff;
+  /* opacity: 0.8; */
+  
+  border-radius: 10px;
+}
+
+#vps-modal-header{
+  border: none;
+}
+
+
+.vps-modal-title{
+  /* background-color: #9eb633; */
+}
+
+#vps-modal-body{
+  padding: 0;
 }
 
 #vps-btnVideo{
@@ -697,12 +750,12 @@ height: 38rem;
   border-radius: 50%;
   display: inline-flex;
   position: absolute;
-  right: 3%;  
+  right: 3%;
 }
 
 #vps-btnVideo:hover {
-  /* transform: rotate(45deg); */
-  box-shadow: 0 0 1px 10px rgba(255, 255, 255, 0.4), 0 0 1px 20px rgba(255, 255, 255, 0.1), 0 0 1px 30px rgba(255, 255, 255, 0.1);
+  /* transform: rotate(360deg); */
+  box-shadow: 0 0 1px 8px rgba(255, 255, 255, 0.4), 0 0 1px 16px rgba(255, 255, 255, 0.1);
 }
 
 #vps-btnVideo-logo{
@@ -736,6 +789,7 @@ height: 38rem;
 
 #vns-btn-image{
   height: 100%;
+  opacity: 0.3;
   width: 33%;
   border-radius: 50%;
   object-fit: cover;

@@ -23,7 +23,6 @@ function App() {
       <Header />
       <Navbar />
       <CatNav/>
-
       <Routes>
 
         <Route exact path='/' element={<HomePage />}></Route>
