@@ -17,9 +17,12 @@ function Navbar() {
     const auth = getAuth();
 
     useEffect(() => {
-        if (localStorage.getItem('token') !== undefined) {
+        if (localStorage.getItem('token') !== null) {
             setIsLogout(true)
+        } else {
+            setIsLogout(false)
         }
+
     }, [])
 
 
@@ -57,7 +60,8 @@ function Navbar() {
                 },
                 {
                     label: 'No',
-                    onClick: () => { }
+                    onClick: () => {
+                    }
                 }
             ]
         });

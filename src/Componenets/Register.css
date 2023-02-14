@@ -111,8 +111,8 @@
     cursor: pointer;   
 }
 #loginbutton2 {
-  position: fixed;
-  bottom: 8%;
+  position: absolute;
+  bottom: 2%;
   color: #ffffff;
   background: #1b2d51;
   width: 30rem;
