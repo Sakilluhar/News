@@ -288,8 +288,11 @@ color: #1A2E51;
     font-family: 'Zilla Slab', serif;
     border-top: 0.1px solid #00000063;
     border-bottom: 0.1px solid #00000063;
+    background-color: #ffffff;
 }
 
 #catNav-links{
     color: #1A2E51;
+    text-decoration: none;
+    margin-right: 1rem;
 }

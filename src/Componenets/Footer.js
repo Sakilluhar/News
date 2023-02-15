@@ -162,8 +162,8 @@ function Footer() {
                     </div>
                 </section>
             </div>
-            <Terms_Condition show={show} setShow={setShow} />
-            <Privacy_Policy Privacy={Privacy} setPrivacy={setPrivacy} />
+            {/* <Terms_Condition show={show} setShow={setShow} />
+            <Privacy_Policy Privacy={Privacy} setPrivacy={setPrivacy} /> */}
         </>
     );
 }

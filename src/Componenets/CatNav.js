@@ -35,11 +35,11 @@ function CatNav() {
           })
           .catch(error => console.log('error', error));
         },[])
-
+// const url = "/CategoryView?id=7&uid=1"
   return (
     <div>
 
-<Navbar id='cn-main' bg="light" expand="lg">
+<Navbar id='cn-main' expand="lg">
       <Container>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -47,8 +47,8 @@ function CatNav() {
           <Nav className="me-auto">
 
           {Data && Data.map((element)=>(
-            <Nav.Link id='catNav-links'  href="#home"><b>{element.category_name}</b></Nav.Link>
-            // <Link id='catNav-links' to="/">{element.category_name}</Link>
+            
+            <b><Link Link id='catNav-links'  to={"/CategoryView?id="+element.id+"&uid=1"}>{element.category_name}</Link></b>
             ))}
             
           </Nav>
