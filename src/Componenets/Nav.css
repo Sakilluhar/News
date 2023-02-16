@@ -115,6 +115,24 @@ color: #1A2E51;
 #btnSignIn:hover{
     background: #1A2E51;
 }
+#btnLogout{ 
+    color: #ffffff; 
+    /* background:#1A2E51; */
+    border: none;   
+}
+
+#btnLogout:hover{
+    background: #EE2934;
+}
+.btnSignIn{ 
+    color: #ffffff; 
+    background:#EE2934;
+    border: none;   
+} 
+
+.btnSignIn:hover{
+    background: #1A2E51;
+}
 
 #btnNotification{
     color: #EE2934;

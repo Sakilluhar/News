@@ -87,8 +87,10 @@ function SignIn_Modal(props) {
                 console.log(re);
                 props.onHide()
                 props.setIsLogout(true)
+
+
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTI5MDUsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDQ5MDUsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.BR2kPD21Tc-z4Ye7JnS6CvHtNKf3KOR2EsZUdN9ljSo");
+                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -102,6 +104,30 @@ function SignIn_Modal(props) {
                     .then(result => {
 
                         localStorage.setItem('token', result)
+                        // console.log(re.user.uid);
+                        var formdata2 = new FormData();
+                        formdata2.append("access_key", "5670");
+                        formdata2.append("firebase_id", re.user.uid);
+                        formdata2.append("email", formValues.email);
+                        formdata2.append("type", "Facebook");
+                        // console.log(re);
+
+
+                        var requestOptions2 = {
+                            method: 'POST',
+                            headers: myHeaders,
+                            body: formdata2,
+                            redirect: 'follow'
+                        };
+
+                       fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                            .then(response => response.json())
+                            .then(result => {
+                                localStorage.setItem('user', JSON.stringify(result))
+                                props.setisloginloading(false)
+                                console.log(result)
+                            })
+                            .catch(error => console.log('error', error));
                     })
                     .catch(error => console.log('error', error));
             })
@@ -118,7 +144,7 @@ function SignIn_Modal(props) {
                 props.onHide()
                 props.setIsLogout(true)
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTI5MDUsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDQ5MDUsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.BR2kPD21Tc-z4Ye7JnS6CvHtNKf3KOR2EsZUdN9ljSo");
+                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -132,9 +158,33 @@ function SignIn_Modal(props) {
                     .then(result => {
 
                         localStorage.setItem('token', result)
+                        // console.log(re.user.uid);
+                        var formdata2 = new FormData();
+                        formdata2.append("access_key", "5670");
+                        formdata2.append("firebase_id", re.user.uid);
+                        formdata2.append("email", formValues.email);
+                        formdata2.append("type", "Google");
+                        // console.log(re);
+
+
+                        var requestOptions2 = {
+                            method: 'POST',
+                            headers: myHeaders,
+                            body: formdata2,
+                            redirect: 'follow'
+                        };
+
+                       fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                            .then(response => response.json())
+                            .then(result => {
+                                localStorage.setItem('user', JSON.stringify(result))
+                                props.setisloginloading(false)
+                                console.log(result)
+                            })
+                            .catch(error => console.log('error', error));
                     })
                     .catch(error => console.log('error', error));
-            })
+            })  
             .catch((err) => {
                 console.log(err.message);
             })
@@ -142,9 +192,9 @@ function SignIn_Modal(props) {
 
     const [phonenum, setPhonenum] = useState(null);
     const auth = getAuth();
-    const Signin = () => {
-        signInWithEmailAndPassword(auth, formValues.email, formValues.password)
-            .then((userCredential) => {
+    const Signin = async () => {
+        await signInWithEmailAndPassword(auth, formValues.email, formValues.password)
+            .then(async (userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
                 // ...
@@ -165,7 +215,7 @@ function SignIn_Modal(props) {
 
 
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTI5MDUsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDQ5MDUsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.BR2kPD21Tc-z4Ye7JnS6CvHtNKf3KOR2EsZUdN9ljSo");
+                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -174,9 +224,9 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                     .then(response => response.text())
-                    .then(result => {
+                    .then(async result => {
 
                         localStorage.setItem('token', result)
 
@@ -194,9 +244,12 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
-                            .then(result => localStorage.setItem('user', JSON.stringify(result)))
+                            .then(result => {
+                                localStorage.setItem('user', JSON.stringify(result))
+                                props.setisloginloading(false)
+                            })
                             .catch(error => console.log('error', error));
 
                     })
@@ -317,7 +370,7 @@ function SignIn_Modal(props) {
         </div >
         <Forgot_Password2 setLoginModalShow={props.setLoginModalShow} show={ForgotModalShow} onHide={() => setForgotModalShow(false)} />
         <Ragister_Modal2 setIsLogout={props.setIsLogout} setLoginModalShow={props.setLoginModalShow} show={modalShow} onHide={() => setModalShow(false)} />
-        <Phone_Login2 setIsLogout={props.setIsLogout} setLoginModalShow={props.setLoginModalShow} setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
+        <Phone_Login2 setisloginloading={props.setisloginloading} setIsLogout={props.setIsLogout} setLoginModalShow={props.setLoginModalShow} setPhonenum={setPhonenum} show={PhoneModalShow} onHide={() => setPhoneModalShow(false)} />
     </>
     )
 }

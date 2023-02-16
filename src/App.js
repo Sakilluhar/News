@@ -13,7 +13,11 @@ import NewsView from './Componenets/NewsView';
 import Categories from './Componenets/Categories';
 import CategoryView from './Componenets/CategoryView';
 import CatNav from './Componenets/CatNav';
+
+// import Spinner from './Componenets/Spinner';
+import { useEffect, useState } from 'react';
 import Hello from './Componenets/Hello';
+
 
 function App() {
 
@@ -21,6 +25,22 @@ function App() {
 
   return (
     <>
+      {/* {isloading ? <Spinner /> : (<> */}
+        <Header />
+        <Navbar />
+        <CatNav />
+        <Routes>
+          <Route exact path='/' element={<HomePage />}></Route>
+          <Route exact path='/NewsView' element={<NewsView />}></Route>
+          <Route exact path='/CategoryView' element={<CategoryView />}></Route>
+          <Route exact path='/Categories' element={<Categories />}></Route>
+          <Route exact path='/about_us' element={<AboutUs />}></Route>
+          <Route exact path='/notification' element={<Notification />}></Route>
+          <Route exact path='/Contact_us' element={<ContactUs />}></Route>
+          <Route exact path='/News_Notification' element={<NewsNotification />}></Route>
+          <Route exact path='/Persnol_Notification' element={<Notification />}></Route>
+
+        </Routes>
       <Header />
       <Navbar />
       <CatNav/>
