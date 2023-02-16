@@ -123,7 +123,7 @@ function Navbar(props) {
                                     <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link></b>
                                 </li>
                                 <li className="nav-item">
-                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">LIVE NEWS</Link></b>
+                                    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
                                 </li>
                                 {/* <li className="nav-item">
                                     
