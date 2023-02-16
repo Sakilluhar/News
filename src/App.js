@@ -21,43 +21,23 @@ import Hello from './Componenets/Hello';
 
 function App() {
 
-  
-
   return (
     <>
       {/* {isloading ? <Spinner /> : (<> */}
-        <Header />
-        <Navbar />
-        <CatNav />
-        <Routes>
-          <Route exact path='/' element={<HomePage />}></Route>
-          <Route exact path='/NewsView' element={<NewsView />}></Route>
-          <Route exact path='/CategoryView' element={<CategoryView />}></Route>
-          <Route exact path='/Categories' element={<Categories />}></Route>
-          <Route exact path='/about_us' element={<AboutUs />}></Route>
-          <Route exact path='/notification' element={<Notification />}></Route>
-          <Route exact path='/Contact_us' element={<ContactUs />}></Route>
-          <Route exact path='/News_Notification' element={<NewsNotification />}></Route>
-          <Route exact path='/Persnol_Notification' element={<Notification />}></Route>
-
-        </Routes>
       <Header />
       <Navbar />
-      <CatNav/>
+      <CatNav />
       <Routes>
-
         <Route exact path='/' element={<HomePage />}></Route>
-        <Route exact path='/hello/:name/:sname' element={<Hello/>}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>
         <Route exact path='/CategoryView' element={<CategoryView />}></Route>
-        {/* <Route exact path='/CategoryView' element={<CategoryView />}></Route> */}
         <Route exact path='/Categories' element={<Categories />}></Route>
         <Route exact path='/about_us' element={<AboutUs />}></Route>
         <Route exact path='/notification' element={<Notification />}></Route>
-        <Route exact path='/Contact_us'  element={<ContactUs/>}></Route>
-        <Route exact path='/News_Notification' element={<NewsNotification/>}></Route>
-        <Route exact path='/Persnol_Notification' element={<Notification/>}></Route>
-        
+        <Route exact path='/Contact_us' element={<ContactUs />}></Route>
+        <Route exact path='/News_Notification' element={<NewsNotification />}></Route>
+        <Route exact path='/Persnol_Notification' element={<Notification />}></Route>
+
       </Routes>
 
       <Footer />
