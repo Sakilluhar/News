@@ -33,7 +33,7 @@ export default function Header() {
         <h3 id=''><b>32'c</b></h3>
         <div id='header-city-section'>
         <h5 id=''>Bhuj</h5>
-        <h7 id='' >{day[currDay]}, Sunny</h7>
+        <p id='header-city-section-day' >{day[currDay]}, Sunny</p>
         </div>
         {/* <label>Trending News</label>
         <ul>

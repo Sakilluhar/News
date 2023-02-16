@@ -254,6 +254,10 @@ color: #1A2E51;
     margin-top: 5%;
 }
 
+#header-city-section-day{
+    font-size: medium;
+}
+
 .right-head{
     display: flex;
     flex-direction: row;
