@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import './Home.css'
 import { useEffect } from 'react'
+import { BearerToken } from '../Tokens';
+
 
 function TopNewsSection() {
 
   const [Data, setData] = useState([]);
+  const BToken = BearerToken();
+
 
   useEffect(()=>{
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
+    myHeaders.append("Authorization", "Bearer "+BToken);
     
     var formdata = new FormData();
     formdata.append("access_key", "5670");
