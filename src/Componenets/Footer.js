@@ -72,11 +72,8 @@ function Footer() {
 
                                     <input type="text" className="col-auto form-control" name='email' id="e-f" placeholder="Enter Email" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
                                     <button className='col-auto btn' id='ES' onClick={handleSubcribe}>SUBCRIBE</button>
-
-
-
                                 </div>
-                                <p className='error-msg'> {formErrors.email}</p>
+                                <p className='error-msg-sub'> {formErrors.email}</p>
                             </div>
                         </div>
                     </div>

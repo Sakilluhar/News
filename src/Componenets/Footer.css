@@ -98,6 +98,10 @@ border: 2px; */
 .newsLetter {
   font-size: small;
 }
+.error-msg-sub{
+  padding-top: 2%;
+  /* font-size: ; */
+}
 #ES {
   position: relative;
   right: 160px;

@@ -34,7 +34,7 @@ function Forgot_Password2(props) {
         await sendPasswordResetEmail(auth, formValues.email)
             .then((userCredential) => {
                 // Signed in s
-                // alert("Email sent Succesfully")
+                alert("Email sent Succesfully")
                 // ...
                 props.onHide();
                 props.setLoginModalShow(true);
@@ -42,7 +42,7 @@ function Forgot_Password2(props) {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-console.log(error)                
+                console.log(error)
                 // ..
             });
 
@@ -71,8 +71,8 @@ console.log(error)
                 dialogClassName="border-radius-2"
 
             >
-               <div className='ModalWrapper' id='ModalWrapper11' style={{backgroundColor:"#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px"}}>
+                <div className='ModalWrapper' id='ModalWrapper11' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
+                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
                         <img className="ModalImg" id='ModalImg2' src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo2' />
@@ -82,14 +82,14 @@ console.log(error)
                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
                         </div>
                     </div>
-                    
-                    <div style={{ width: '100%', backgroundColor:"#ffffff", borderRadius:"0 20px 20px 0" }}>
+
+                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Forgot Password
                             </Modal.Title>
                         </Modal.Header>
-                        <Modal.Body style={{marginTop: "12%"}}>
+                        <Modal.Body style={{ marginTop: "12%" }}>
                             <div className="">
                                 <div className='AC'>
                                     <div className="h my-5 mx-3">

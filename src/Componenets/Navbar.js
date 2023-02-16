@@ -5,22 +5,27 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import SignIn_Modal from './SignIn_Modal';
 // import Categories from './Categories';
-import { getAuth, signOut } from 'firebase/auth';
+import { getAuth, signOut, sendPasswordResetEmail } from 'firebase/auth';
 import News_main_Logo from '../images/News_main_Logo.png';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
-function Navbar() {
+function Navbar(props) {
 
     const auth = getAuth();
 
     useEffect(() => {
-        if (localStorage.getItem('token') !== null) {
+        if (localStorage.getItem('token') !== null || localStorage.getItem('user') !== null) {
             setIsLogout(true)
+            setisloginloading(false)
         } else {
             setIsLogout(false)
+            setisloginloading(true)
+
         }
 
     }, [])
@@ -75,8 +80,26 @@ function Navbar() {
     };
     const [modalShow, setModalShow] = React.useState(false);
     const [islogout, setIsLogout] = useState(false)
+    const [isloginloading, setisloginloading] = useState(true)
+
+
     // const [islogoutalert,setislogoutalert] = useState(false)
 
+    const changePassword = () => {
+        sendPasswordResetEmail(auth, JSON.parse(localStorage.getItem('user')).data.email)
+            .then((userCredential) => {
+                // Signed in s
+                alert("Email sent Succesfully")
+                // ...
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(error)
+                // ..
+            });
+    }
     return (
         <div>
 
@@ -120,7 +143,24 @@ function Navbar() {
                                     {!islogout ?
                                         <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
                                         :
-                                        <Button variant="danger" onClick={logout} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Log out</Button>
+                                        // <Button variant="danger" onClick={logout} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Log out</Button>
+                                        <Dropdown>
+                                            <Dropdown.Toggle id="btnSignIn" className='me-3'>
+                                                <BiUserCircle size={23} id='btnLogo' />
+                                                {!isloginloading ?
+                                                    JSON.parse(localStorage.getItem('user')).data.name
+                                                    : ''
+                                                }
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
+                                                <Dropdown.Item id='btnLogout' onClick={changePassword}>
+                                                    Change Password
+                                                </Dropdown.Item>
+                                                <Dropdown.Divider />
+                                                <Dropdown.Item onClick={logout} id='btnLogout' className='me-3'>Log Out</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                     }
                                 </li>
                                 <li>
@@ -144,7 +184,7 @@ function Navbar() {
                 </div>
 
             </nav>
-            <SignIn_Modal setIsLogout={setIsLogout} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
+            <SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
         </div>
     )
 }

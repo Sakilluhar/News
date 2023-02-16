@@ -14,7 +14,7 @@ import Categories from './Componenets/Categories';
 import CategoryView from './Componenets/CategoryView';
 import CatNav from './Componenets/CatNav';
 // import Spinner from './Componenets/Spinner';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -28,12 +28,6 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
-      <Header />
-      <Navbar />
-      <CatNav/>
-      <Routes>
-=======
       {/* {isloading ? <Spinner /> : (<> */}
         <Header />
         <Navbar />
@@ -50,7 +44,6 @@ function App() {
           <Route exact path='/Persnol_Notification' element={<Notification />}></Route>
 
         </Routes>
->>>>>>> f267a2e961d79124fcfbc5e2e3909759265c9127
 
         <Footer />
       {/* </>)} */}
