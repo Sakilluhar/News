@@ -13,8 +13,13 @@
 
 #cv-card{
     width: 100%;
-    height: 30rem;
+    height: 27rem;
     border: none;
+    margin-top: 1%;
+}
+
+#cv-card:hover{
+    border: 1px solid #C0C5D0;
 }
 
 #cv-card-image{
@@ -25,18 +30,19 @@
 
 #cv-card-body{
     /* margin-top: 20%; */
-    padding: 2%;
+    padding: 1%;
     height: 40%;
 }
 
 #cv-btnCatagory{
+    margin-top: 3%;
     color: #ffffff; 
     background:#EE2934;
     width: fit-content;
 }
 
 #cv-card-title{
-
+    margin-top: 2%;
 }
 
 #btncvRead{

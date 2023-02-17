@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+
+#RNews-main{
+  font-family: 'Zilla Slab', serif;
+    border: 1px solid #C0C5D0;
+    border-radius: 1%;
+    height: 38rem;
+    }
+
+    #PNews-cat-nav{
+        border: 2px solid #EE2934;
+        border-radius: 3%;
+        color: #ffffff;
+        background-color: #EE2934;
+        /* padding-top: 2%; */
+        justify-content: center;
+        height: 3rem;
+      }
+    
+    #RNews-card{
+      width: 96%;
+      margin-left: 3%;
+      margin-right: 3%;
+      margin-top: 3%;
+      background: #ffffff;
+      overflow: hidden;
+      border: none;
+      display: flex;
+      flex-direction: row;
+    }
+    
+    #RNews-image{
+     object-fit: cover;
+     height: 7rem;
+     width: 30%;
+     border-radius: 3%;
+    }
+    
+    #RNews-card-body{
+      /* padding: 5%; */
+      padding-left: 2%;
+    }
+
+    #btnRNewsCatagory{
+        color: #ffffff; 
+        background:#EE2934;
+        width: fit-content;
+        margin-top: 4%;
+        margin-left: 4%;
+      }
+    
+    #RNews-card-text{
+      margin: 4%;
+    }
