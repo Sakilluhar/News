@@ -61,7 +61,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-block">
                 <h4 className="card-title">{Data[0].title.slice(0,80)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[0].id+"&Cid="+Data[0].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
             </div>
 
             <div id='rns-card' className="card">
@@ -72,7 +72,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[1].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[1].id+"&Cid="+Data[1].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
 
@@ -84,7 +84,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[2].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[2].id+"&Cid="+Data[2].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
             </div>
@@ -98,7 +98,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[3].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[3].id+"&Cid="+Data[3].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
 
@@ -110,7 +110,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[4].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[4].id+"&Cid="+Data[4].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
 
@@ -123,7 +123,7 @@ function RecentNewsSection() {
                 <h4 className="card-title">{Data[5].title.slice(0,70)}...</h4>
                 </div>
                 <div id='rns-card-footer'>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[5].id+"&Cid="+Data[5].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
                 </div>
             </div>
             </div>
@@ -137,7 +137,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[6].title.slice(0,85)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[6].id+"&Cid="+Data[6].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
 
@@ -149,7 +149,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[7].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[7].id+"&Cid="+Data[7].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
 
@@ -161,7 +161,7 @@ function RecentNewsSection() {
                 <div id='rns-card-body' className="card-body">
                 <h4 className="card-title">{Data[8].title.slice(0,70)}...</h4>
                 </div>
-                <Link id='btnrnsRead' className='btn overlay' to='/home' type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
+                <Link id='btnrnsRead' className='btn overlay' to={"/NewsView?Nid="+Data[8].id+"&Cid="+Data[8].category_id+"Uid=1"} type="button" >Read More<IoMdArrowForward id='rns-arrow' size={25}/></Link>  
 
             </div>
             </div>

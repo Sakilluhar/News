@@ -1,11 +1,13 @@
 import React from 'react'
 import './categoryview.css';
+import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
 import { BearerToken } from '../Tokens';
+import BreadcrumbSection from './BreadcrumbSection';
 
 
 
@@ -20,7 +22,7 @@ function CategoryView() {
   const BToken = BearerToken();
 
   const loca = useLocation();
-  console.log(loca);
+  // window.onnload = test(); 
   // test();
   function test() {
 
@@ -50,6 +52,8 @@ function CategoryView() {
       })
       .catch(error => console.log('error', error));
     }
+
+
   useEffect(()=>{
     test()
     
@@ -57,7 +61,7 @@ function CategoryView() {
 
   return (
     <div id='cv-main'>
-        <p>my corrent location is {loca.pathname}</p>
+        {/* <p>my corrent location is {loca.pathname}</p>
         {loca.pathname === `/CategoryView` ? 
         <button
         onClick={ () => alert('you are awesome')} >
@@ -65,26 +69,24 @@ function CategoryView() {
           click me
         </button> 
         : null  
-        }
-
-        
-
-        <div className="container">
+        } */}
+        {/* <BreadcrumbSection/> */}
+        <div id='cv-content' className="">
         <h1 className="text-center"></h1>   
         <div className="row">
                  <Link id='' to="/go"  ></Link>
 
           {Data && Data.map((element)=>(
-        <div className="col-md-3 my-3" key={element.id}>
+        <div className="col-md-4 " key={element.id}>
           {console.log(element)}
           <div id='cv-card' className="card">
                 <img  id='cv-card-image' src={element.image} className="card-img" alt="..."/>
-                {/* <div id='' className="card-img-overlay">
-                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >Technology</button>
-                </div> */}
+                
                 <div id='cv-card-body' className="card-body">
-                <h5 id='cv-card-title' className="card-title">{element.title.slice(0,54)}...</h5>
-                 <Link id='btncvRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link>
+                <button id='cv-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
+                <h5 id='cv-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
+                <p id="cv-card-date"><FiCalendar size={18} id="cv-logoCalendar" />{element.date.slice(0, 10)}</p>
+                 {/* <Link id='btncvRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link> */}
                  </div>
                    
           </div>

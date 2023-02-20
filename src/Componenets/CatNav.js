@@ -50,7 +50,7 @@ function CatNav() {
 
           {Data && Data.map((element)=>(
             
-            <b><Link Link id='catNav-links'  to={"/CategoryView?id="+element.id+"&uid=1"}>{element.category_name}</Link></b>
+            <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} > <b>{element.category_name}</b> </Link>
             ))}
             
           </Nav>

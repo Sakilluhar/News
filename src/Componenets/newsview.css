@@ -4,8 +4,9 @@
     display: grid;
     grid-template-columns: 10rem 1fr 10rem;
     /* width: 100%; */
-    height: 70rem;
-  font-family: 'Zilla Slab', serif;
+    height: fit-content;
+    font-family: 'Zilla Slab', serif;
+    color: #1A2E51;
 }
 
 #nv-page{
@@ -16,21 +17,33 @@
     margin-top: 5rem;
 }
 
+#btnnvCatagory{
+    color: #ffffff; 
+    background:#EE2934;
+    width: fit-content;
+  }
+
 #nv-right-section{
     display: flex;
     flex-direction: column;
     gap: 2%;
 }
 
+#nv-body{
+    width: 100%;
+max-width: 100%;
+}
+
 #nv-title{
-    
+    margin-top: 1%;
 }
 
 #nv-image{
     margin-top: 5%;
     object-fit: cover;
     width: 100%;
-    height: 30rem;
+    max-width: 100%;
+    height: auto;
 }
 
 #nv-functions{
@@ -47,4 +60,17 @@
 
 #nv-description{
     margin-top: 5%;
+    /* width: 20rem; */
+    width: 100%;
+    /* max-width: 100%; */
+}
+#nv-description img{
+    max-width: 100% !important;
+    height: auto;
+}
+
+#nv-description video{    
+    max-width: 100%;
+    max-height: 40rem;
+    height: auto;
 }

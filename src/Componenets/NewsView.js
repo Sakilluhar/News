@@ -1,5 +1,4 @@
-import React from 'react'
-import technology3_static from '../images/technology3_static.jpg';
+import { useState,useEffect } from 'react';
 import './newsview.css';
 import travel3_static_jpg from '../images/travel3_static.jpg';
 import sports3_ronaldo_jpg from '../images/sports3_static.jpg';
@@ -11,30 +10,100 @@ import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike } from 'react-icons/ai';
 import { MdOutlineComment } from 'react-icons/md';
 import WeatherCard from './WeatherCard';
+import { BearerToken } from '../Tokens';
+import { useQuery } from '../Hooks';
+import RelatedNewsSection from './RelatedNewsSection';
+import CarouselSection from './CarouselSection';
+
+
 
 
 function NewsView() {
+
+  const [Data, setData] = useState([]);
+  const query = useQuery();
+  const Nid = query.get('Nid');
+  const catid = query.get('Cid');
+  const user_id = query.get('Uid');
+  const BToken = BearerToken();
+
+  console.log(Nid);
+    useEffect(()=>{
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+BToken);
+
+    var formdata = new FormData();
+    formdata.append("access_key", "5670");
+    formdata.append("news_id", Nid);
+    formdata.append("user_id", "1");
+    formdata.append("language_id", "14");
+
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: formdata,
+    redirect: 'follow'
+    };
+
+    fetch("https://news.wrteam.in/Api/get_news_by_id", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setData(result.data);
+    })
+    .catch(error => console.log('error', error));
+
+    },[])
+
+    console.log(Data);
+
   return (
+    
     <div id='nv-main'>
         <div id='nv-page'>
-            <div id='nv-body'>
-        <h1 id='nv-title'>Congress's AK Antony's Son Quits Party, Cites Post On BBC Series On PM Modi</h1>
-      <img id='nv-image' src={technology3_static} alt="..." />
 
-        <nav id='nv-functions' class="">
+        {Data.length === 0 ? "loading"
+            :
+            <div id='nv-body'>
+        <button id='btnnvCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
+        <h1 id='nv-title'>{Data[0].title}</h1>
+
+        <div id='Header' className=' d-flex justify-content-around'>
+
+            <div className='left-head'>
+                <button id='btncalendar' className='btn btn-sm '></button>
+                
+            </div> 
             
-            <a id='nv-function' class="" href="#"><AiOutlineLike size={25}/></a>
-            <a id='nv-function' class="" href="#"><AiOutlineDislike size={25}/></a>
-            <a id='nv-function' class="" href="#"><MdOutlineComment size={25}/></a>
+            <div className='right-head'>
+            <div className="dropdown">
+                
+            </div>
+            <a id='line-head' > </a>
+            <button type='button' id='btnHead-Socials' className='btn '></button>
+            
+            </div>
+
+        </div>
+    
+
+        {/* <CarouselSection images={Data[0].image}/> */}
+      <img id='nv-image' src={Data[0].image} alt="..." />
+
+        <nav id='nv-functions' className="">
+            
+            <a id='nv-function' className="" href="#"><AiOutlineLike size={25}/></a>
+            <a id='nv-function' className="" href="#"><AiOutlineDislike size={25}/></a>
+            <a id='nv-function' className="" href="#"><MdOutlineComment size={25}/></a>
             
         </nav>
-        <p id='nv-description'>The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md</p>
+        <p id='nv-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p>
         
         </div>
+        }
 
         <div id='nv-right-section'>
 
-        <WeatherCard/>
+        <RelatedNewsSection Cid={catid} Uid={user_id}/>
 
         <div id='rns-Catagory-main'>
                 <nav id='rns-cat-nav' className="navbar">  
