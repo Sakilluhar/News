@@ -8,12 +8,17 @@ import politics3_static_jpg from '../images/politics3_static.jpg';
 import cars3_static_jpg from '../images/cars3_static.jpg';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike } from 'react-icons/ai';
+import { BsBookmark,BsFillBookmarkFill } from 'react-icons/bs';
 import { MdOutlineComment } from 'react-icons/md';
-import WeatherCard from './WeatherCard';
+import { FiCalendar } from "react-icons/fi";
+import { AiOutlineEye } from "react-icons/ai";
 import { BearerToken } from '../Tokens';
 import { useQuery } from '../Hooks';
 import RelatedNewsSection from './RelatedNewsSection';
 import CarouselSection from './CarouselSection';
+import { Link } from 'react-router-dom';
+import TagsSection from './TagsSection';
+import CommentSection from './CommentSection';
 
 
 
@@ -67,20 +72,16 @@ function NewsView() {
         <button id='btnnvCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
         <h1 id='nv-title'>{Data[0].title}</h1>
 
-        <div id='Header' className=' d-flex justify-content-around'>
-
-            <div className='left-head'>
-                <button id='btncalendar' className='btn btn-sm '></button>
-                
+        <div id='nv-Header' className=' d-flex justify-content-around'>
+            <div id='nv-left-head'>
+                <h6 id='head-lables'><FiCalendar size={18} id='head-logos'/> {Data[0].date.slice(0,10)}</h6>
+                <h6 id='head-lables'><AiOutlineEye size={18} id='head-logos'/></h6>
+                <h6 id='head-lables'><AiOutlineLike size={18} id='head-logos'/> {Data[0].total_like} Likes</h6>
             </div> 
             
-            <div className='right-head'>
-            <div className="dropdown">
-                
-            </div>
-            <a id='line-head' > </a>
-            <button type='button' id='btnHead-Socials' className='btn '></button>
-            
+            <div id='nv-right-head'>
+            <h6>SHARE:</h6>
+            <Link></Link>
             </div>
 
         </div>
@@ -89,23 +90,31 @@ function NewsView() {
         {/* <CarouselSection images={Data[0].image}/> */}
       <img id='nv-image' src={Data[0].image} alt="..." />
 
-        <nav id='nv-functions' className="">
-            
-            <a id='nv-function' className="" href="#"><AiOutlineLike size={25}/></a>
-            <a id='nv-function' className="" href="#"><AiOutlineDislike size={25}/></a>
-            <a id='nv-function' className="" href="#"><MdOutlineComment size={25}/></a>
+        <nav id='nv-functions' className="d-flex justify-content-around">
+            <div id='nv-functions-left'></div>
+            <div id='nv-functions-right'>
+                <div>
+                <Link id='nv-function' className="" to="#"><AiOutlineLike size={30}/></Link>
+                <h6>Like</h6>
+                </div>
+                <div>
+                <Link id='nv-function' className="" to="#"><BsBookmark size={30}/></Link>
+                <h6>Save</h6>
+                </div>
+            </div>
             
         </nav>
         <p id='nv-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p>
-        
+        <CommentSection/>
         </div>
         }
 
         <div id='nv-right-section'>
 
         <RelatedNewsSection Cid={catid} Uid={user_id}/>
+        <TagsSection    />
 
-        <div id='rns-Catagory-main'>
+        {/* <div id='rns-Catagory-main'>
                 <nav id='rns-cat-nav' className="navbar">  
                        <h4 id='rns-nav-logo' ><b>Catagories</b></h4> 
                 </nav>
@@ -169,7 +178,7 @@ function NewsView() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
         </div>

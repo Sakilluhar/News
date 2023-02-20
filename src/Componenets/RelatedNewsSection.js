@@ -47,14 +47,14 @@ function RelatedNewsSection(props) {
 
       <div id='RNews-main'>
                 <nav id='PNews-cat-nav' className="navbar">  
-                       <h4 id='nav-logo' ><b>Popular News</b></h4> 
+                       <h4 id='nav-logo' ><b>Related News</b></h4> 
                 </nav>
 
                 <div id='RNews-card' className="card">
                     <img  id='RNews-image' src={Data[0].image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
-                    <h4 id='RNews-card-text' className="card-text">{Data[0].title.slice(0,40)}...</h4>
+                    <h6 id='RNews-card-text' className="card-text">{Data[0].title.slice(0,40)}...</h6>
                     </div>
                 </div>
                 
@@ -63,7 +63,7 @@ function RelatedNewsSection(props) {
                     <img  id='RNews-image' src={Data[1].image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[1].category_name}</button>
-                    <h4 id='RNews-card-text' className="card-text">{Data[1].title.slice(0,40)}...</h4>
+                    <h6 id='RNews-card-text' className="card-text">{Data[1].title.slice(0,40)}...</h6>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@ function RelatedNewsSection(props) {
                     <img  id='RNews-image' src={Data[2].image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[2].category_name}</button>
-                    <h4 id='RNews-card-text' className="card-text">{Data[2].title.slice(0,40)}...</h4>
+                    <h6 id='RNews-card-text' className="card-text">{Data[2].title.slice(0,40)}...</h6>
                     </div>
                 </div>
 
@@ -79,7 +79,31 @@ function RelatedNewsSection(props) {
                     <img  id='RNews-image' src={Data[3].image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[3].category_name}</button>
-                    <h4 id='RNews-card-text' className="card-text">{Data[3].title.slice(0,40)}...</h4>
+                    <h6 id='RNews-card-text' className="card-text">{Data[3].title.slice(0,40)}...</h6>
+                    </div>
+                </div>
+
+                <div id='RNews-card' className="card">
+                    <img  id='RNews-image' src={Data[4].image} className="card-img-top" alt="..."/>
+                    <div className="RNews-card-body">
+                    <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[4].category_name}</button>
+                    <h6 id='RNews-card-text' className="card-text">{Data[4].title.slice(0,40)}...</h6>
+                    </div>
+                </div>
+
+                <div id='RNews-card' className="card">
+                    <img  id='RNews-image' src={Data[5].image} className="card-img-top" alt="..."/>
+                    <div className="RNews-card-body">
+                    <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[5].category_name}</button>
+                    <h6 id='RNews-card-text' className="card-text">{Data[5].title.slice(0,40)}...</h6>
+                    </div>
+                </div>
+
+                <div id='RNews-card' className="card">
+                    <img  id='RNews-image' src={Data[6].image} className="card-img-top" alt="..."/>
+                    <div className="RNews-card-body">
+                    <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[6].category_name}</button>
+                    <h6 id='RNews-card-text' className="card-text">{Data[6].title.slice(0,40)}...</h6>
                     </div>
                 </div>
 

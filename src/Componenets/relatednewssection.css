@@ -4,13 +4,14 @@
 #RNews-main{
   font-family: 'Zilla Slab', serif;
     border: 1px solid #C0C5D0;
-    border-radius: 1%;
-    height: 38rem;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    height: 53rem;
     }
 
     #PNews-cat-nav{
         border: 2px solid #EE2934;
-        border-radius: 3%;
+        border-radius: 5px;
         color: #ffffff;
         background-color: #EE2934;
         /* padding-top: 2%; */
@@ -20,24 +21,32 @@
     
     #RNews-card{
       width: 96%;
+      height: 6rem;
       margin-left: 3%;
       margin-right: 3%;
       margin-top: 3%;
-      background: #ffffff;
+      background-color: #F5F5F5;
       overflow: hidden;
       border: none;
       display: flex;
       flex-direction: row;
     }
+
+    #RNews-card:hover {
+      border: 1px solid #C0C5D0;
+    }
     
     #RNews-image{
      object-fit: cover;
-     height: 7rem;
+     height: 6rem;
      width: 30%;
-     border-radius: 3%;
+     min-width: 30%;
+     max-width: 30%;
+     border-radius: 5px;
     }
     
     #RNews-card-body{
+      width: 70%;
       /* padding: 5%; */
       padding-left: 2%;
     }
@@ -46,10 +55,10 @@
         color: #ffffff; 
         background:#EE2934;
         width: fit-content;
-        margin-top: 4%;
-        margin-left: 4%;
+        margin-top: 3%;
+        margin-left: 3%;
       }
     
     #RNews-card-text{
-      margin: 4%;
+      margin: 3%;
     }

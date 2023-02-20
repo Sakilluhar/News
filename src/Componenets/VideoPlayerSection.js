@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import ReactPlayer from "react-player";
 import Card from "react-bootstrap/Card";
-import { FaCalendarAlt } from "react-icons/fa";
+import { FiCalendar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import VideoPlayerModal from "./VideoPlayerModal";
@@ -75,7 +75,7 @@ function VideoPlayerSection() {
             <h1 id="vps-main-title">{Data[0].title}</h1>
 
             <h6 id="vps-main-date">
-              <FaCalendarAlt size={18} id="logoCalendar" />
+              <FiCalendar size={18} id="logoCalendar" />
               {Data[0].date.slice(0, 10)}
             </h6>
             

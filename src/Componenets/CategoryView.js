@@ -57,7 +57,7 @@ function CategoryView() {
   useEffect(()=>{
     test()
     
-  },[])
+  },[catid])
 
   return (
     <div id='cv-main'>
