@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react'
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './/Spinner';
+import { BearerToken } from '../Tokens';
 
 function NewsNotification() {
 
     const [Data, setData] = useState([]);
 
-
+    const BToken = BearerToken();
     const handleDeleteComment = (id) => {
         console.log(id);
 
@@ -19,7 +20,7 @@ function NewsNotification() {
 
 
         var myHeaders = new Headers();
-        myHeaders.append("Authorization",  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
@@ -51,7 +52,7 @@ function NewsNotification() {
 
     useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {

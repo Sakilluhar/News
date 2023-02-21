@@ -4,48 +4,60 @@ import { FiTrash2 } from 'react-icons/fi';
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner';
+import { BearerToken } from '../Tokens';
+
+
+
 
 function Notification() {
-    // const [visible, setVisible] = useState(true);
-    const handleDeleteAll = () => {
+   
+    const BToken = BearerToken();
+
+
+    const handleDeleteComment = (id) => {
+        console.log(id);
+
+        var uid = JSON.parse(localStorage.getItem('user')).data.id
+        console.log(uid)
 
 
 
-    }
-
-
-    const handleDeleteComment = (index) => {
-        // setVisible((prev) => !prev);
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
-            method: 'GET',
+            method: 'POST',
             headers: myHeaders,
             redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/delete_comment?access_key=5670&user_id=1&comment_id=1", requestOptions)
-            // fetch("http://news.thewrteam.in/Api/get_comment_by_news?access_key=5670&news_id=1&user_id=1&offset=0&limit=10", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
+
+        var params = { 'access_key': 5670, 'user_id': uid, 'comment_id': id };
+        var url = new URL("https://news.wrteam.in/Api/delete_comment");
+        // var url =new URL("http://news.thewrteam.in/Api/delete_comment");
+        for (let k in params) {
+            url.searchParams.append(k, params[k])
+        };
+        fetch(url, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+
+                alert(result.message)
+
+
+
+
+            })
             .catch(error => console.log('error', error));
     }
-    //    const [icon, setIcon] = useState(AiOutlineLike);
-    // const [like, setLike] = useState(false);
-    // const [likeId, setLikeId] = useState(false);
-
-    // const handletoggle = () => {
-    //     setLike(!like)
-    //     setLikeId()
-    // };
+    
     const [Data, setData] = useState([]);
 
 
     useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization",  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization",  "Bearer "+ BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
@@ -65,7 +77,7 @@ function Notification() {
 
     useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {

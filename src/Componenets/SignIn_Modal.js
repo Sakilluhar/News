@@ -13,10 +13,12 @@ import { authentication } from '../Firebase';
 import Forgot_Password2 from './Forgot_Password2';
 import Ragister_Modal2 from './Ragister_Modal2';
 import Phone_Login2 from './Phone_Login2';
+import { BearerToken } from '../Tokens';
+
 function SignIn_Modal(props) {
 
 
-
+    const BToken = BearerToken();
     const [modalShow, setModalShow] = React.useState(false);
     const [ForgotModalShow, setForgotModalShow] = React.useState(false);
     const [PhoneModalShow, setPhoneModalShow] = React.useState(false);
@@ -34,9 +36,9 @@ function SignIn_Modal(props) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name)
+        // console.log(name)
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        // console.log(formValues);
     };
     // const navigate = useNavigate()
 
@@ -90,7 +92,7 @@ function SignIn_Modal(props) {
 
 
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+                myHeaders.append("Authorization", "Bearer "+BToken);
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -120,7 +122,7 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                       fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
@@ -144,7 +146,7 @@ function SignIn_Modal(props) {
                 props.onHide()
                 props.setIsLogout(true)
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+                myHeaders.append("Authorization", "Bearer "+BToken);
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -174,7 +176,7 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                       fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
@@ -184,7 +186,7 @@ function SignIn_Modal(props) {
                             .catch(error => console.log('error', error));
                     })
                     .catch(error => console.log('error', error));
-            })  
+            })
             .catch((err) => {
                 console.log(err.message);
             })
@@ -215,7 +217,7 @@ function SignIn_Modal(props) {
 
 
                 var myHeaders = new Headers();
-                myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+                myHeaders.append("Authorization", "Bearer "+BToken);
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                 var requestOptions = {
@@ -349,7 +351,7 @@ function SignIn_Modal(props) {
 
                         <div className="footer">
                             <h6 className="">Don't have an account?<a style={{ cursor: "pointer" }} onClick={() => {
-                                console.log("click")
+                                // console.log("click")
                                 props.onHide()
                                 setPhoneModalShow(false)
                                 setForgotModalShow(false)

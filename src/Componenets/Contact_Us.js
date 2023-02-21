@@ -4,6 +4,7 @@ import photo from '../images/Login.jpg'
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import './Contact_Us.css'
+import emailjs from 'emailjs-com'
 function ContactUs() {
 
     const initialValues = { username: "", email: "", subject: "", message: "" };
@@ -17,8 +18,22 @@ function ContactUs() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
+
+        emailjs.sendForm('service_ko6b84p', 'template_3ls0tse', e.target, '725ajYBjkYgkz3pC7')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
         setIsSubmit(true);
         // navigate('/')
+    };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        // console.log(name)
+        setFormValues({ ...formValues, [name]: value });
+        // console.log(formValues);
     };
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit);
@@ -33,21 +48,14 @@ function ContactUs() {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
             errors.email = "Enter a Valid EMail";
-        }
-        if (!values.subject) {
+        }else if (!values.subject) {
             errors.subject = " Subject is reqired! ";
-        }
-        if (!values.message) {
+        }else if (!values.message) {
             errors.message = " Enter a feedback! ";
         }
         return errors;
     };
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        console.log(name)
-        setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
-    };
+
     return (
         <div id='main_contact_us'>
             <div id='contact_us'>
@@ -84,7 +92,7 @@ function ContactUs() {
                 <h2> Get in touch with us! </h2>
             </div>
             <div className='form-value'>
-            <form className="mx-3" onSubmit={handleSubmit}>
+                <form className="mx-3" onSubmit={handleSubmit}>
                     <div>
                         <div style={{ display: "grid", gridTemplateColumns: "200fr 200fr", gap: "2%", height: "5rem" }}>
                             <div className="form-floating mb-3">
@@ -101,16 +109,16 @@ function ContactUs() {
                             </div>
                         </div>
                         <div className="form-floating mb-3" style={{ height: "4rem" }}>
-                            <input type="text" className="form-control"
-                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp"    />
+                            <input type="text" className="form-control" name="subject"
+                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailsubject" />
                             <p className='error-msg'> {formErrors.subject}</p>
                             <label htmlFor="floatingInput" name="subject">Enter Subject</label>
                         </div>
                         <div className="form-floating mb-3">
                             {/* <textarea type="text" className="form-control" rows="50"
                                 id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" /> */}
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style={{ height: "14rem" }}
-                            placeholder="name@example.com" aria-describedby="emailHelp" ></textarea>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="3" style={{ height: "14rem" }} name="message"
+                                placeholder="name@example.com" aria-describedby="emailHelp" ></input>
                             <p className='error-msg'> {formErrors.message}</p>
                             <label htmlFor="floatingInput" name="message">Enter Message</label>
                         </div>
@@ -121,82 +129,10 @@ function ContactUs() {
                     </div>
                 </form>
                 <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2952862908382!2d69.64345920000001!3d23.232339399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39511e5b00000001%3A0x99eb1d2a09bf7685!2sWRTeam!5e0!3m2!1sen!2sin!4v1675745236296!5m2!1sen!2sin" 
-                style={{ width: "750px", height: "450px"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2952862908382!2d69.64345920000001!3d23.232339399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39511e5b00000001%3A0x99eb1d2a09bf7685!2sWRTeam!5e0!3m2!1sen!2sin!4v1675745236296!5m2!1sen!2sin"
+                        style={{ width: "750px", height: "450px" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // <div>
-        //     <div className="fonton">
-        //         <div>
-        //             <div className="modal-dialog modal-dialog-centered justify-content-center">
-        //                 <div className="modal-content flex-row ModalWrapper12">
-        //                     <div style={{ width: '50%' , backgroundColor: "#EE2934"}}>
-        //                         <img  id='ModalImg6' src={photo} alt='' />
-        //                         <div className="logo-img-overlay">
-        //                             <img src={Logo} alt="" id='logo6' />
-
-        //                         </div>
-        //                         <div className='logo-text'>
-        //                             <h4> This beautiful theam yours!</h4>
-        //                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
-        //                         </div>
-        //                     </div>
-        //                     <div className="ModalContent" style={{ width: '50%', padding: '8%', fontSize: '150%', backgroundColor: "#1B2D51", color: "#fff" }}>
-
-        //                         <div className='container p1'>
-        //                             <h2 className=" my-4" style={{ color: "#fff" }}><strong> Contact Us </strong></h2>
-        //                             <p className=''><strong>How can we help you?</strong></p>
-        //                             <p className=''>It looks like you have problems with our system. <br />We are here to help you. so, please get in touch with us.</p>
-        //                             <div className='p2'>
-        //                                 <p><strong>Head Office No. :</strong></p>
-        //                                 <p> +919876543210</p>
-        //                             </div>
-        //                             <div className='p2'>
-        //                                 <p><strong>&nbsp;Fax No. :</strong></p>
-        //                                 <p> +9195324785584</p>
-        //                             </div>
-        //                             <div className='p2'>
-        //                                 <p><strong>Office Address:</strong></p>
-        //                                 <p> Gujarat-India</p>
-        //                             </div>
-        //                             <div className='p2'>
-        //                                 <p><strong>Email Address:</strong></p>
-        //                                 {/* <a onClick={()=>{
-        //                                     window.location.href='http://www.gmail.com'
-        //                                 }}> newsApp123@gmail.com</a> */}
-        //                                  <a> newsApp123@gmail.com</a>
-
-        //                             </div>
-        //                         </div>
-        //                     </div>
-
-        //                 </div>
-        //             </div>
-        //         </div>
-
-
-        //     </div>
-        // </div>
     )
 } export default ContactUs
