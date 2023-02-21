@@ -57,7 +57,7 @@ function NewsView() {
     })
     .catch(error => console.log('error', error));
 
-    },[])
+    },[Nid])
 
     console.log(Data);
 
@@ -105,7 +105,7 @@ function NewsView() {
             
         </nav>
         <p id='nv-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p>
-        <CommentSection/>
+        <CommentSection Nid={Nid}/>
         </div>
         }
 

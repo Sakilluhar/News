@@ -146,7 +146,7 @@ max-width: 100%;
 }
 
 #cs-input{
-    width: 30rem;
+    /* width: 30rem; */
 }
 
 #cs-btnsub{
@@ -155,11 +155,52 @@ max-width: 100%;
     width: fit-content;
 }
 
+#cv-comment{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+#cs-profile{
+    width: 10%;
+    height: 7rem;
+    object-fit: cover;
+}
+
 #cs-card{
     background-color: #f5f5f5;
     border: 1px solid #C0C5D0;
+    width: 70%;
+}
+
+#cdbtnReport{
+    text-decoration: none;
+    color: #EE2934;
+    position: absolute;
+    right: 1%;
+    top: 2%;
 }
 
 #cs-card-text{
-    
+   
+}
+
+#csbtnLike{
+    width: fit-content;
+    border: none;
+}
+
+#cdbtnReplay{
+    width: fit-content;
+    background-color: #EE2934;
+    color: #ffffff;
+    border: none;
+    position: absolute;
+    right: 1%;
+    bottom: 6%;
+}
+
+#cs-like-dis{
+    display: flex;
+    flex-direction: row;
 }
