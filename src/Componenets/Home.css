@@ -586,9 +586,19 @@ height: 38rem;
 
 #rns-tags-main{
   border: 1px solid #C0C5D0;
-  border-radius: 1%;
+  border-radius: 5px;
   height: 15rem;
 
+}
+
+#tags-nav{
+  border: 2px solid #EE2934;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #EE2934;
+  /* padding-top: 2%; */
+  justify-content: center;
+  height: 3rem;
 }
 
 #tags-tag{

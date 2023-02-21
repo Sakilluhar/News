@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { BearerToken } from '../Tokens';
+
 
 function TagsSection() {
 
     const [Data, setData] =useState([]);
+    const BToken = BearerToken();
 
     useEffect(()=>{
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM5MzAwNDksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY1MjIwNDksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.PcSpXqX6tLmFSC6-dfKvkPKwUxzrB_6ZGrgwnLDcmCQ");
+        myHeaders.append("Authorization", "Bearer "+BToken);
 
         var formdata = new FormData();
         formdata.append("access_key", "5670");
@@ -32,7 +35,7 @@ function TagsSection() {
   return (
     <div>
       <div id='rns-tags-main'>
-                <nav id='rns-cat-nav' className="navbar">  
+                <nav id='tags-nav' className="navbar">  
                        <h4 id='rns-nav-logo' ><b>Tags</b></h4> 
                 </nav>
                 <div id='tags-tag'>
