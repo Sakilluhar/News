@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { BearerToken } from '../Tokens';
+import  './Terms&Privacy.css'
+import { GiCheckedShield } from 'react-icons/gi';
+
 
 
 function Privacy_Policy(props) {
@@ -34,12 +37,13 @@ function Privacy_Policy(props) {
                 ? "Loading"
                 :
                 <Modal show={props.Privacy} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <img style={{ paddingRight: "10px", height: "2.5rem" }} src={Data[0].page_icon} alt="" />
+                    <Modal.Header id='pp-modal-header'>
+                    <GiCheckedShield style={{ paddingRight: "10px"}} size={50}/>
+                        {/* <img style={{ paddingRight: "10px", height: "2.5rem" }} src={Data[0].page_icon} alt="" /> */}
                         <Modal.Title>{Data[0].title}</Modal.Title>
 
                     </Modal.Header>
-                    <Modal.Body dangerouslySetInnerHTML={{ __html: Data[0].page_content }}></Modal.Body>
+                    <Modal.Body id='pp-modal-body' dangerouslySetInnerHTML={{ __html: Data[0].page_content }}></Modal.Body>
                 </Modal>
             }
         </div>

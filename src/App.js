@@ -15,8 +15,8 @@ import CategoryView from './Componenets/CategoryView';
 import CatNav from './Componenets/CatNav';
 
 // import Spinner from './Componenets/Spinner';
-import { useEffect, useState } from 'react';
-import Hello from './Componenets/Hello';
+// import { useEffect, useState } from 'react';
+
 
 
 function App() {
@@ -24,9 +24,9 @@ function App() {
   return (
     <>
       {/* {isloading ? <Spinner /> : (<> */}
-      <Header />
+      {/* <Header /> */}
       <Navbar />
-      <CatNav />
+      {/* <CatNav /> */}
       <Routes>
         <Route exact path='/' element={<HomePage />}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>
@@ -40,7 +40,7 @@ function App() {
 
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

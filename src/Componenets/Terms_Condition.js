@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { BearerToken } from '../Tokens';
+import  './Terms&Privacy.css'
+import { MdOutlineMenuBook } from 'react-icons/md';
+
 
 
 function Terms_Condition(props) {
@@ -35,12 +38,13 @@ function Terms_Condition(props) {
                 ? "Loading"
                 :
                 <Modal show={props.show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <img style={{ paddingRight: "10px", height: "2.5rem" }} src={Data[1].page_icon} alt="" />
+                    <Modal.Header id='tns-modal-header' >
+                        <MdOutlineMenuBook style={{ paddingRight: "10px"}} size={50}/>
+                        {/* <img style={{ paddingRight: "10px", height: "2.5rem"}} src={Data[1].page_icon} alt="" /> */}
                         <Modal.Title>{Data[1].title}</Modal.Title>
 
                     </Modal.Header>
-                    <Modal.Body dangerouslySetInnerHTML={{ __html: Data[1].page_content }}></Modal.Body>
+                    <Modal.Body  id="tns-modal-body" dangerouslySetInnerHTML={{ __html: Data[1].page_content }}></Modal.Body>
                 </Modal>
             }
         </div>
