@@ -98,7 +98,7 @@ function VideoPlayerSection() {
               </Card.ImgOverlay>
             </Card>
 
-            <Card id="vps-image-cards" className="text-black">
+            {/* <Card id="vps-image-cards" className="text-black">
               <Card.Img
                 id="vps-secondry-images"
                 src={Data[2].image}
@@ -112,7 +112,7 @@ function VideoPlayerSection() {
                   <b>{Data[2].title}</b>
                 </h4>
               </Card.ImgOverlay>
-            </Card>
+            </Card> */}
           </div>
 
           <VideoPlayerModal
