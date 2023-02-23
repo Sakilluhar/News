@@ -51,11 +51,22 @@ function RelatedNewsSection(props) {
                 </nav>
                 {Data && Data.map((element)=>(
                 <div id='RNews-card' className="card">
-                    <img  id='RNews-image' src={Data[0].image} className="card-img-top" alt="..."/>
+                    <img  id='RNews-image' src={element.image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
-                    <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
-                    <h6 id='RNews-card-text' className="card-text">{Data[0].title.slice(0,40)}...</h6>
+                    <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
+                    <h6 id='RNews-card-text' className="card-text">{element.title.slice(0,40)}...</h6>
                     </div>
+                    {/* <>
+                  {index<=3 ? 
+                  <div id='RNews-card' className="card">
+                  <img  id='RNews-image' src={element.image} className="card-img-top" alt="..."/>
+                  <div className="RNews-card-body">
+                  <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
+                  <h6 id='RNews-card-text' className="card-text">{element.title.slice(0,40)}...</h6>
+                  </div>
+              </div>:null}
+                  
+                  </> */}
                 </div>
                 ))}
 
