@@ -26,7 +26,7 @@
 #nv-right-section{
     display: flex;
     flex-direction: column;
-    gap: 2%;
+    gap: 1%;
 }
 
 #nv-body{
@@ -107,26 +107,79 @@ max-width: 100%;
     border: 1px solid #C0C5D0;
     border-radius: 10px;
     background-color: #f5f5f5;
-    height: 5rem;
-    
+    height: 6rem;
+    display: grid;
+    grid-template-columns: 3% 4fr 1fr 3%;
+}
+
+#nv-functions-left{
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
+#nv-function-pair{
+    margin-left: 15%;
+    margin-top: 15%;
+    justify-content: center;
 }
 
 #nv-function{
-    color: #000000;
+    color: #1A2E51;
     text-decoration: none;
     margin: 1%;
+
+}
+
+#nv-function-text{
+    font-size: small;
+}
+
+#nv-font-lable{
+    margin-top: 1%;
+}
+
+#nv-FontRange{
+    color: #1A2E51;
+    width: 70%;
+}
+
+#nv-FontRange-labels{
+    margin-right: 10%;
+    font-size: small;
+
 }
 
 #nv-functions-right{
     display: flex;
     flex-direction: row;
+    justify-content: right;
 }
 
 #nv-description{
-    margin-top: 5%;
+    margin-top: 3%;
     /* width: 20rem; */
     width: 100%;
     /* max-width: 100%; */
+}
+
+.nv-description-14{
+    font-size: 14px;
+}
+.nv-description-16{
+    font-size: 16px;
+}
+.nv-description-18{
+    font-size: 18px;
+}
+.nv-description-20{
+    font-size: 20px;
+}
+.nv-description-22{
+    font-size: 22px;
+}
+.nv-description-24{
+    font-size: 24px;
 }
 
 #nv-description img{
@@ -139,6 +192,9 @@ max-width: 100%;
     max-height: 40rem;
     height: auto;
 }
+
+/* ---------------------------------- comments ---------------------------------------------- */
+
 
 #cs-main{
     display: flex;
@@ -158,19 +214,22 @@ max-width: 100%;
 #cv-comment{
     display: flex;
     flex-direction: row;
+    gap: 3%;
     margin-bottom: 2%;
 }
 
 #cs-profile{
     width: 10%;
-    height: 7rem;
+    height: 6rem;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 #cs-card{
+    padding: 1%;
     background-color: #f5f5f5;
     border: 1px solid #C0C5D0;
-    width: 70%;
+    width: 87%;
 }
 
 #cdbtnReport{
@@ -203,4 +262,21 @@ max-width: 100%;
 #cs-like-dis{
     display: flex;
     flex-direction: row;
+}
+
+/* ---------------------------------- replay comments ---------------------------------------------- */
+
+#cv-Rcomment{
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    margin-bottom: 2%;
+    justify-content: right;
+}
+
+#cs-Rcard{
+    padding: 1%;
+    background-color: #f5f5f5;
+    border: 1px solid #C0C5D0;
+    width: 74%;
 }
