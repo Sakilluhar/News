@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 // import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
-// import { FiTrash2 } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './/Spinner';
+import { BearerToken } from '../Tokens';
 
 function NewsNotification() {
 
     const [Data, setData] = useState([]);
 
-
+    const BToken = BearerToken();
     const handleDeleteComment = (id) => {
         console.log(id);
 
@@ -19,7 +20,7 @@ function NewsNotification() {
 
 
         var myHeaders = new Headers();
-        myHeaders.append("Authorization",  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
@@ -51,7 +52,7 @@ function NewsNotification() {
 
     useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+        myHeaders.append("Authorization", "Bearer "+BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
@@ -88,20 +89,23 @@ function NewsNotification() {
                     : (<>
                         {Data && Data.map((d, index) => (
                             <div className="card my-3" key={index}>
-                                <div className="card-body d-flex bd-highlight" id='card-noti'>
-                                    <img id='noti_img' src={d.image} alt="" />
+                                <div className="card-body bd-highlight" id='card-noti'>
+                                    <img id='noti_profile' src={d.image} alt="" />
                                     {/* <button className="btn bd-highlight" style={{ color: "#EE2934", background: "" }} id='it' onClick={handletoggle}>
                                         {like ? <AiFillLike size={35} /> : <AiOutlineLike size={35} />}
                                     </button> */}
-                                    <div>
+                                    <div className='Noti-text'>
                                         {/* <p className='bd-highlight'>{d.title}</p> */}
-                                        <h4>{d.title.slice(0, 100)}...</h4>
+                                        <p>{d.title.slice(0, 100)}...</p>
                                         <p className='bd-highlight' > {d.message.slice(0, 100)}...</p>
-                                        <p className='bd-highlight' style={{ fontSize: "medium", paddingTop: "10px" }}> {d.date_sent}</p>
+                                        <p className='bd-highlight'> {d.date_sent}</p>
                                     </div>
 
                                     <div className='iconTrash ms-auto bd-highlight'>
-                                        <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>Delete</button>
+                                        <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>
+                                            <p className='hide-mobile'>Delete</p>
+                                            <p className='hide-laptop'><FiTrash2/></p>
+                                        </button>
 
                                     </div>
                                 </div>

@@ -12,6 +12,7 @@ import { authentication } from '../Firebase';
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 
+import { BearerToken } from '../Tokens';
 
 
 function OTPmodal2(props) {
@@ -20,7 +21,7 @@ function OTPmodal2(props) {
         if (error !== "")
             setError("")
     }, 5000))
-
+    const BToken = BearerToken();
     // const navigate = useNavigate()
 
     // const handleChange = (element, index) => {
@@ -80,7 +81,7 @@ function OTPmodal2(props) {
             // navigate('/')
 
             var myHeaders = new Headers();
-            myHeaders.append("Authorization",  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+            myHeaders.append("Authorization", "Bearer "+BToken);
             myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
             var requestOptions = {
@@ -140,8 +141,8 @@ function OTPmodal2(props) {
                     centered
                     dialogClassName="border-radius-2"
                 >
-                    <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                    <div className='ModalWrapper55' id='ModalWrapper'>
+                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}id="login_img5">
                             <img className="ModalImg5" src={photo} alt="" />
                             <div className="logo-img-overlay">
                                 <img src={Logo} alt="" id='logo5' />
@@ -152,7 +153,7 @@ function OTPmodal2(props) {
                             </div>
                         </div>
 
-                        <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                        <div id="modal-content">
                             <Modal.Header closeButton>
                                 <Modal.Title id="contained-modal-title-vcenter">
                                     Login

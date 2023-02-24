@@ -48,8 +48,8 @@ function Phone_Login2(props) {
                     centered
                     dialogClassName="border-radius-2"
                 >
-                    <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                    <div className='ModalWrapper44' id='ModalWrapper44'>
+                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }} id="login_img4">
                             <img className="ModalImg4" src={photo} alt="" />
                             <div className="logo-img-overlay">
                                 <img src={Logo} alt="" id='logo4' />
@@ -60,21 +60,22 @@ function Phone_Login2(props) {
                         </div>
                         </div>
 
-                        <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                        <div  id="modal-content">
                             <Modal.Header closeButton>
                                 <Modal.Title id="contained-modal-title-vcenter">
                                     Login
                                 </Modal.Title>
                             </Modal.Header>
-                            <Modal.Body style={{marginTop: "9%"}}>
+                            <Modal.Body >
                                 <div className='AC'>
-                                    <div className="h my-5 mx-3">
+                                    <div className="welcom-back4">
                                         <h5> <strong> Enter Your Mobile Number </strong></h5>
                                         <div id="Welcom" style={{ fontSize: "14px" }}> You can Receive 6 digit code for your number verification. </div>
                                     </div>
                                     <form className="my-2 mx-4">
                                         <div className="mb-3">
                                             <PhoneInput
+                                            className='phoneInput'
                                                 placeholder="Enter your phone number"
                                                 defaultCountry='IN'
                                                 value={value}
