@@ -1,10 +1,14 @@
-.ModalWrapper1 {
+@media screen and (min-width: 700px) {
+
+
+
+.ModalWrapper55{
   min-width: 680px;
-  height: 500px;
+  height: 43.5rem;
   display: flex;
   flex-direction: row;
-  background: #fff;
-  color: #000;
+  background-color: #EE2934;
+  border-radius: 20px;
 }
 .Background {
   width: 100%;
@@ -93,4 +97,18 @@
 .userInput {
   display: flex;
   justify-content: center;
+}
+.modal-content{
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0 20px 20px 0;
+}
+}
+@media screen and (max-width: 700px) {
+  #login_img5{
+    display: none;
+  }
+  .modal-content{
+    border-radius: 20px;
+  }
 }

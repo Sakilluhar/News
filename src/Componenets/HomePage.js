@@ -1,11 +1,11 @@
 import React from 'react'
-import BreakingNewsSection from './BreakingNewsSection'
-import FirstSection from './FirstSection'
 import HealthNewsSection from './HealthNewsSection'
 import './Home.css'
+import BreakingNewsSection from './BreakingNewsSection'
+// import FirstSection from './FirstSection'
 import RecentNewsSection from './RecentNewsSection'
-import TopNewsSection from './TopNewsSection'
-import VideoPlayerSection from './VideoPlayerSection'
+// import TopNewsSection from './TopNewsSection'
+// import VideoPlayerSection from './VideoPlayerSection'
 
 
 
@@ -13,32 +13,32 @@ import VideoPlayerSection from './VideoPlayerSection'
 function HomePage() {
   return (
     <>
-    
-        {/* first section */}
-        <div id='first-section' className="">
+
+      {/* first section */}
+      {/* <div id='first-section' className="">
             <FirstSection/>
-        </div>
-        {/* top news section */}
-        <div id='top-news-section' className="">
+        </div> */}
+      {/* top news section */}
+      {/* <div id='top-news-section' className="">
             <TopNewsSection/>
-        </div>
-        {/* Breacking News section */}
-        <div id='' className=''>
+        </div> */}
+      {/* Breacking News section */}
+      <div id='' className=''>
           <BreakingNewsSection/>
         </div>
-          {/* Recent News section */}
-          <div id='' className=''>
-          <RecentNewsSection/>
-        </div>
-        {/* Video player section */}
-        <div id=''>
+      {/* Recent News section */}
+      <div id='' className=''>
+        <RecentNewsSection />
+      </div>
+      {/* Video player section */}
+      {/* <div id=''>
           <VideoPlayerSection/>
-        </div>
-        {/* health News Section */}
-        <div id='' className=''>
-          <HealthNewsSection/>
-        </div>
-    
+        </div> */}
+      {/* health News Section */}
+      <div id='' className=''>
+        <HealthNewsSection />
+      </div>
+
     </>
   )
 }

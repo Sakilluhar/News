@@ -71,8 +71,8 @@ function Forgot_Password2(props) {
                 dialogClassName="border-radius-2"
 
             >
-                <div className='ModalWrapper' id='ModalWrapper11' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                <div className='ModalWrapper' id='ModalWrapper11'>
+                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }} id="login_img2">
                         <img className="ModalImg" id='ModalImg2' src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo2' />
@@ -83,7 +83,7 @@ function Forgot_Password2(props) {
                         </div>
                     </div>
 
-                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                    <div id="modal-content2" >
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Forgot Password
@@ -92,7 +92,7 @@ function Forgot_Password2(props) {
                         <Modal.Body style={{ marginTop: "12%" }}>
                             <div className="">
                                 <div className='AC'>
-                                    <div className="h my-5 mx-3">
+                                    <div className="welcom-back2">
                                         <h5> <strong>Enter the email address associated with your account </strong></h5>
                                         <div id="Welcom" style={{ fontSize: "14px" }}>Enter your email for create new password. </div>
                                     </div>

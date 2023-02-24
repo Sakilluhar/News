@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 // import { BsCheckLg } from 'react-icons/bs';
 
+import { BearerToken } from '../Tokens';
 
 
 
@@ -23,7 +24,7 @@ function Ragister_Modal2(props) {
         if (formErrors !== "")
             setFormErrors("")
     }, 5000));
-
+    const BToken = BearerToken();
     const [isValidForm, setIsValidForm] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false);
     const [type, setType] = useState("password");
@@ -54,7 +55,7 @@ function Ragister_Modal2(props) {
 
             setIsSubmit(true);
             const auth = getAuth();
-           
+
 
 
             createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
@@ -62,11 +63,11 @@ function Ragister_Modal2(props) {
                     // send verification mail.
 
                     const user = userCredential.user;
-                    
+
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
 
-                            alert("Email sent");  
+                            alert("Email sent");
                             // ..
 
                             const name = formValues.username;
@@ -75,7 +76,7 @@ function Ragister_Modal2(props) {
 
 
                             var myHeaders = new Headers();
-                            myHeaders.append("Authorization",  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY0NTQzODAsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkwNDYzODAsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.A-52XBT69OTnP9P2GnoCNS3DpOdC7g-o6AzRcNKbJ5k");
+                            myHeaders.append("Authorization", "Bearer "+BToken);
                             myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
                             var formdata = new FormData();
@@ -96,7 +97,7 @@ function Ragister_Modal2(props) {
                             };
 
                             // fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
-                                fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
+                            fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
                                 .then(response => response.text())
                                 .then(result => {
 
@@ -104,19 +105,19 @@ function Ragister_Modal2(props) {
 
                                     updateProfile(user, {
                                         displayName: result.id
-                                      }).then(() => {
+                                    }).then(() => {
                                         // Profile updated!
                                         // ...
                                         console.log(user)
-                                      }).catch((error) => {
-                                         // An error occurred
+                                    }).catch((error) => {
+                                        // An error occurred
                                         // ...
-                                      });
-                                    
+                                    });
+
                                     // props.setIsLogout(true)
                                     props.onHide()
                                     props.setLoginModalShow(true)
-                                   
+
                                 })
                                 .catch(error => console.log('error', error));
                         })
@@ -285,8 +286,8 @@ function Ragister_Modal2(props) {
                 dialogClassName="border-radius-2"
 
             >
-                <div className='ModalWrapper' id='ModalWrapper22' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }}>
+                <div className='ModalWrapper' id='ModalWrapper22'>
+                    <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }} id="login_img3">
                         <img className="ModalImg3" src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo3' />
@@ -297,7 +298,7 @@ function Ragister_Modal2(props) {
                         </div>
                     </div>
 
-                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                    <div id="modal-content">
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Create an Account
@@ -305,12 +306,12 @@ function Ragister_Modal2(props) {
                         </Modal.Header>
                         <Modal.Body>
                             <div className="">
-                                <div className="my-5 mx-4" >
+                                <div className="welcom-back3" >
                                     <div>
                                         <h5> <strong>Welcome</strong></h5>
                                         <div id="Welcom" style={{ fontSize: "14px" }}> Enter the details above and Register for Daily News</div>
                                     </div>
-                                    <div id='textwithimage'>
+                                    {/* <div id='textwithimage'>
                                         <div className="my-3">
                                             <h5>Add Profile:</h5>
                                             <input className='input mx-1' type="file" name="image" onChange={handleChange1} required />
@@ -319,7 +320,7 @@ function Ragister_Modal2(props) {
                                         <div>
                                             <img src={file} className="imageInput rounded float-end" alt="..."></img>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <form className="my-2 mx-4" onSubmit={handleSubmit}>
@@ -346,7 +347,7 @@ function Ragister_Modal2(props) {
 
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
+                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formErrors.confirmPassword}
                                                 onChange={handleConfirmpassword}
                                             />
                                             <label htmlFor="floatingConfirmPassword"> Confirm Password</label>
@@ -355,7 +356,7 @@ function Ragister_Modal2(props) {
                                             </p>
 
                                         </div>
-                                        <div className='py-5'>
+                                        <div className='py-3'>
                                             <button type="submit" className="btn   btn-lg" id='loginbutton2' >Sign Up</button>
                                         </div>
                                     </div>
@@ -365,7 +366,7 @@ function Ragister_Modal2(props) {
                             </div>
 
                         </Modal.Body>
-                        
+
                     </div>
                 </div >
 
