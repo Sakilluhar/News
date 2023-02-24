@@ -1,3 +1,6 @@
+@media screen and (min-width: 700px) {
+
+
 #tns-modal-header{
     background-color: #1A2E51;
     color: #ffffff;
@@ -16,3 +19,37 @@
     background-color: #1A2E51;
     color: #ffffff;
 }
+}
+
+@media screen and (max-width: 700px) {
+    #modaltp{
+
+        margin-left: 15%;
+        margin-right: 15%;
+        align-self: center;
+    }
+    #tns-modal-header{
+        background-color: #1A2E51;
+        color: #ffffff;
+        justify-content: start;
+        width: 100%;
+    }
+    #tns-modal-body{
+        background-color: #1A2E51;
+        color: #ffffff;
+        font-size: small;
+        width: 100%;
+    }
+    #pp-modal-header{
+        background-color: #1A2E51;
+        color: #ffffff;
+        justify-content: start;
+    }
+    #pp-modal-body{
+        background-color: #1A2E51;
+        color: #ffffff;
+    }
+
+}
+
+

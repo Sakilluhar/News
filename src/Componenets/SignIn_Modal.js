@@ -275,8 +275,8 @@ function SignIn_Modal(props) {
                 dialogClassName="border-radius-2"
 
             >
-                <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                <div className='ModalWrapper' id='ModalWrapper'>
+                    <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }} id="login_img1" > 
                         <img className="ModalImg" src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo1' />
@@ -287,8 +287,7 @@ function SignIn_Modal(props) {
                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
                         </div>
                     </div>
-
-                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                    <div id="modal-content">
                         <Modal.Header closeButton >
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Login
@@ -297,7 +296,7 @@ function SignIn_Modal(props) {
                         <Modal.Body>
                             <div className="">
                                 <div>
-                                    <div className="my-5 mx-4">
+                                    <div className="welcom-back">
                                         <h5> <strong>Welcome back!</strong></h5>
                                         <div id="Welcom" style={{ fontSize: "14px" }}> Enter your email address and password to access your account. </div>
                                     </div>
@@ -320,7 +319,7 @@ function SignIn_Modal(props) {
                                                     setModalShow(false)
                                                     setPhoneModalShow(false)
                                                     setForgotModalShow(true)
-                                                }} id="forgot" style={{ float: "right", cursor: "pointer" }}> Forgot Password? </p></p>
+                                                }} id="forgot"> Forgot Password? </p></p>
 
                                         </div>
                                         <div className='py-3' id='login'>
@@ -332,9 +331,9 @@ function SignIn_Modal(props) {
 
                                 </div>
                                 <div className="conatiner mx-4 d-flex justify-content-between" id='social_buttons'>
-                                    <button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#3B5998" }} type="button" className=" btn mx-1" onClick={signInWithFacebook}><FaFacebookF /> Login with Facebook</button>
-                                    <button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#EA4335" }} type="button" className=" btn mx-1" onClick={signInWithGoogle}><FaGoogle /> Sign in with Google</button>
-                                    <Button style={{ border: "none", width: "30%", height: "37px", fontSize: "11px", color: "#ffffff", background: "#1B2D51" }} type="button" className=" btn mx-1" onClick={() => {
+                                    <button id='login-social1' type="button" className=" btn" onClick={signInWithFacebook}><FaFacebookF /> Sign in with Facebook</button>
+                                    <button id='login-social2' type="button" className=" btn" onClick={signInWithGoogle}><FaGoogle /> Sign in with Google</button>
+                                    <Button id='login-social3' type="button" className=" btn" onClick={() => {
                                         props.onHide()
                                         setModalShow(false)
                                         setPhoneModalShow(true)

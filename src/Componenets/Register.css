@@ -1,137 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap");
+@media screen and (min-width: 700px) {
+  #forgot {
+    font: "small-caption";
+    font-family: "Zilla Slab", serif;
+  }
+  .bordert {
+    border-top: 1px solid #aaa;
+    position: relative;
+  }
 
-
-
-
-#forgot{
-  
-  font: "small-caption" ;
-  font-family: 'Zilla Slab', serif
-}
-.bordert {
-  border-top: 1px solid #aaa;
-  position: relative;
-}
-
-.bordert:after {
+  .bordert:after {
   content: "OR";
   position: absolute;
   top: -13px;
   left: 42%;
-  background-color: #fff;
+  background-color: #f5f5f5;
   padding: 0px 8px;
 }
-.ModalContent5{
+  .ModalContent5 {
     width: 56%;
-}
+  }
+  welcom-back3{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    
+  }.
 
-#ModalWrapper22 {
-  min-width: 680px;
-  height: 43.5rem;
-  display: flex;
-  flex-direction: row;
-  background: rgb(255, 255, 255);
-  color: #000;
-
-}
-.Background {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: rgba(185, 151, 151, 0.115); */
-  filter: blur(5px);
-}
-.logo-img-overlay{
-  position: absolute;
+  #ModalWrapper22 {
+    min-width: 680px;
+    height: 43.5rem;
+    display: flex;
+    flex-direction: row;
+    background-color: #EE2934;
+    border-radius: 20px;
+  }
+  .Background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(185, 151, 151, 0.115); */
+    filter: blur(5px);
+  }
+  .logo-img-overlay {
+    position: absolute;
     top: 3%;
     left: 3%;
-}
-.border-radius-2 div {
-  border-radius: 20px;
-}
-.logo-text3{
-  color: #ffffff;
-  text-align: center;
-  width: 50%;
-  position: absolute;
-  bottom: 3%;
-  
-}
-#logo3{
-  width: 25%;
-  height: auto;
-}
-.ModalImg3 {
-  width: 100%;
-  height: 43.5rem;  
-  border-radius: 21px 0 0 21px;
-  opacity: 0.5;
-  object-fit: cover;
+  }
+  .border-radius-2 div {
+    border-radius: 20px;
+  }
+  .logo-text3 {
+    color: #ffffff;
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    bottom: 3%;
+  }
+  #logo3 {
+    width: 25%;
+    height: auto;
+  }
+  .ModalImg3 {
+    width: 100%;
+    height: 43.5rem;
+    border-radius: 21px 0 0 21px;
+    opacity: 0.5;
+    object-fit: cover;
+  }
+  .my-2 {
+    margin-top: -2.5rem !important;
+  }
 
-}
-.my-2 {
-  margin-top: -2.5rem !important;
-}
+  .ModelHeader {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    height: 32px;
+    z-index: 10;
+  }
+  .form {
+    position: relative;
 
-.ModelHeader {
-  position: relative;
-  top: 10px;
-  left: 20px;
-  height: 32px;
-  z-index: 10;
-}
-.form {
-  position: relative;
-
-  left: 20px;
-  height: 32px;
-  padding: 20px;
-  z-index: 10;
-
-}
-.mx-5 {
-  margin-right: 37rem!important;
-  margin-left: 20rem!important;
-}
-.password-icon {
-  position: relative;
-  bottom: 50px;
-  float: right;
-  right: 10px;
-  cursor: pointer;
-}
-.Cpassword-icon{
+    left: 20px;
+    height: 32px;
+    padding: 20px;
+    z-index: 10;
+  }
+  .mx-5 {
+    margin-right: 37rem !important;
+    margin-left: 20rem !important;
+  }
+  .password-icon {
     position: relative;
     bottom: 50px;
     float: right;
     right: 10px;
-    cursor: pointer;   
-}
-#loginbutton2 {
-  position: absolute;
-  bottom: 2%;
-  color: #ffffff;
-  background: #1b2d51;
-  width: 30rem;
-}
-.error-msg{
-  font-size: smaller;
-  color: rgb(250, 50, 50);
-  text-align: justify;
-  margin-left: 0.5rem;
-}
-.imageInput{
-  height: 8rem;
-  width: 100%;
-  object-fit: cover;
-  /* border-radius: 50%; */
-  
+    cursor: pointer;
+  }
+  #modal-content {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0 20px 20px 0;
+  }
+  .Cpassword-icon {
+    position: relative;
+    bottom: 50px;
+    float: right;
+    right: 10px;
+    cursor: pointer;
+  }
+  #loginbutton2 {
+    position: absolute;
+    bottom: 2%;
+    color: #ffffff;
+    background: #1b2d51;
+    width: 30rem;
+  }
+  #loginbutton2:hover{
+    background-color: #fff;
+    color: #1b2d51;
+    border: #1b2d51 solid 3px;
+    font-weight: bold;
 
-}
-/* .input{ */
+  }
+  .error-msg {
+    font-size: smaller;
+    color: rgb(250, 50, 50);
+    text-align: justify;
+    margin-left: 0.5rem;
+  }
+  .imageInput {
+    height: 8rem;
+    width: 100%;
+    object-fit: cover;
+    /* border-radius: 50%; */
+  }
+  /* .input{ */
   /* height: 50%; */
   /* width: 34%; */
   /* min-width: 34%; */
@@ -139,11 +147,49 @@
   object-fit: cover;
   justify-content: center; */
 
-/* } */
-#textwithimage{
-  display: grid;
-  grid-template-columns: 3fr 1fr ;
-  gap: 5%;
-  max-height: 10%;
-  margin-top: 5%;
+  /* } */
+  #textwithimage {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 5%;
+    max-height: 10%;
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #login_img3{
+    display: none;
+  }
+  .password-icon {
+    position: relative;
+    bottom: 50px;
+    float: right;
+    right: 10px;
+    cursor: pointer;
+  }
+  .Cpassword-icon {
+    position: relative;
+    bottom: 50px;
+    float: right;
+    right: 10px;
+    cursor: pointer;
+  }
+  .welcom-back3{
+    margin: 5%;
+    
+  }
+  #loginbutton2 {
+    color: #ffffff;
+    background: #1b2d51;
+  }
+  #modal-content {
+    border-radius: 20px;
+  }
+  #loginbutton2 {
+    color: #ffffff;
+    background: #1b2d51;
+    /* align-items: center; */
+    width: 100%;
+    /* border-radius: 25%; */
+  }
 }

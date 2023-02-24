@@ -141,8 +141,8 @@ function OTPmodal2(props) {
                     centered
                     dialogClassName="border-radius-2"
                 >
-                    <div className='ModalWrapper' id='ModalWrapper' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}>
+                    <div className='ModalWrapper55' id='ModalWrapper'>
+                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}id="login_img5">
                             <img className="ModalImg5" src={photo} alt="" />
                             <div className="logo-img-overlay">
                                 <img src={Logo} alt="" id='logo5' />
@@ -153,7 +153,7 @@ function OTPmodal2(props) {
                             </div>
                         </div>
 
-                        <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                        <div id="modal-content">
                             <Modal.Header closeButton>
                                 <Modal.Title id="contained-modal-title-vcenter">
                                     Login

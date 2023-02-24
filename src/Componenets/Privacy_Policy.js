@@ -34,9 +34,12 @@ function Privacy_Policy(props) {
     return (
         <div>
             {Data.length === 0
-                ? "Loading"
+                ? ""
                 :
-                <Modal show={props.Privacy} onHide={handleClose}>
+                <Modal show={props.Privacy} 
+                onHide={handleClose}
+                centered
+                id="modaltp">
                     <Modal.Header id='pp-modal-header'>
                     <GiCheckedShield style={{ paddingRight: "10px"}} size={50}/>
                         {/* <img style={{ paddingRight: "10px", height: "2.5rem" }} src={Data[0].page_icon} alt="" /> */}

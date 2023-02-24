@@ -59,27 +59,27 @@ function ContactUs() {
     return (
         <div id='main_contact_us'>
             <div id='contact_us'>
-                <div className="card my-3 main-card">
-                    <div className="card-body d-flex bd-highlight" id='card-noti'>
-                        <button className="btn bd-highlight" style={{ color: "#ffffff", backgroundColor: "#EE2934", width: "20%" }} size={50} id='it'><FiPhone size={35} /></button>
+                <div className="card my-3 main-card" id='card-contact'>
+                    <div className="card-body" id='card-social'>
+                        <button className="btn bd-highlight"size={50} id='it'><FiPhone size={35} /></button>
                         <div>
                             <p className='text-mute'> Phone </p>
                             <p> +9195324785584 </p>
                         </div>
                     </div>
                 </div>
-                <div className="card my-3 main-card">
-                    <div className="card-body d-flex bd-highlight" id='card-noti'>
-                        <button className="btn bd-highlight" style={{ color: "#ffffff", backgroundColor: "#EE2934", width: "20%" }} id='it'><FiMail size={35} /></button>
+                <div className="card my-3 main-card"id='card-contact'>
+                    <div className="card-body" id='card-social' >
+                        <button className="btn bd-highlight"id='it'><FiMail size={35} /></button>
                         <div>
                             <p className='text-mute'> Mail </p>
                             <p> newsApp123@gmail.com </p>
                         </div>
                     </div>
                 </div>
-                <div className="card my-3 main-card">
-                    <div className="card-body d-flex bd-highlight" id='card-noti'>
-                        <button className="btn bd-highlight" style={{ color: "#ffffff", backgroundColor: "#EE2934", width: "20%" }} size={50} id='it'><GoLocation size={35} /></button>
+                <div className="card my-3 main-card" id='card-contact'>
+                    <div className="card-body" id='card-social'>
+                        <button className="btn bd-highlight"size={50} id='it'><GoLocation size={35} /></button>
                         <div>
                             <p className='text-mute'> Office Address </p>
                             <p> Gujarat-India </p>
@@ -128,9 +128,9 @@ function ContactUs() {
                         </div>
                     </div>
                 </form>
-                <div>
+                <div className='map'>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2952862908382!2d69.64345920000001!3d23.232339399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39511e5b00000001%3A0x99eb1d2a09bf7685!2sWRTeam!5e0!3m2!1sen!2sin!4v1675745236296!5m2!1sen!2sin"
-                        style={{ width: "750px", height: "450px" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        id='map' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

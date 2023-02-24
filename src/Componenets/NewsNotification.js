@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
-// import { FiTrash2 } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './/Spinner';
@@ -89,20 +89,23 @@ function NewsNotification() {
                     : (<>
                         {Data && Data.map((d, index) => (
                             <div className="card my-3" key={index}>
-                                <div className="card-body d-flex bd-highlight" id='card-noti'>
-                                    <img id='noti_img' src={d.image} alt="" />
+                                <div className="card-body bd-highlight" id='card-noti'>
+                                    <img id='noti_profile' src={d.image} alt="" />
                                     {/* <button className="btn bd-highlight" style={{ color: "#EE2934", background: "" }} id='it' onClick={handletoggle}>
                                         {like ? <AiFillLike size={35} /> : <AiOutlineLike size={35} />}
                                     </button> */}
-                                    <div>
+                                    <div className='Noti-text'>
                                         {/* <p className='bd-highlight'>{d.title}</p> */}
-                                        <h4>{d.title.slice(0, 100)}...</h4>
+                                        <p>{d.title.slice(0, 100)}...</p>
                                         <p className='bd-highlight' > {d.message.slice(0, 100)}...</p>
-                                        <p className='bd-highlight' style={{ fontSize: "medium", paddingTop: "10px" }}> {d.date_sent}</p>
+                                        <p className='bd-highlight'> {d.date_sent}</p>
                                     </div>
 
                                     <div className='iconTrash ms-auto bd-highlight'>
-                                        <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>Delete</button>
+                                        <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>
+                                            <p className='hide-mobile'>Delete</p>
+                                            <p className='hide-laptop'><FiTrash2/></p>
+                                        </button>
 
                                     </div>
                                 </div>

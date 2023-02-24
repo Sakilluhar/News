@@ -286,8 +286,8 @@ function Ragister_Modal2(props) {
                 dialogClassName="border-radius-2"
 
             >
-                <div className='ModalWrapper' id='ModalWrapper22' style={{ backgroundColor: "#EE2934", borderRadius: "20px" }}>
-                    <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }}>
+                <div className='ModalWrapper' id='ModalWrapper22'>
+                    <div style={{ width: '100%', objectFit: "cover", borderRadius: "20px" }} id="login_img3">
                         <img className="ModalImg3" src={photo} alt="" />
                         <div className="logo-img-overlay">
                             <img src={Logo} alt="" id='logo3' />
@@ -298,7 +298,7 @@ function Ragister_Modal2(props) {
                         </div>
                     </div>
 
-                    <div style={{ width: '100%', backgroundColor: "#ffffff", borderRadius: "0 20px 20px 0" }}>
+                    <div id="modal-content">
                         <Modal.Header closeButton>
                             <Modal.Title id="contained-modal-title-vcenter">
                                 Create an Account
@@ -306,7 +306,7 @@ function Ragister_Modal2(props) {
                         </Modal.Header>
                         <Modal.Body>
                             <div className="">
-                                <div className="my-5 mx-4" >
+                                <div className="welcom-back3" >
                                     <div>
                                         <h5> <strong>Welcome</strong></h5>
                                         <div id="Welcom" style={{ fontSize: "14px" }}> Enter the details above and Register for Daily News</div>
@@ -347,7 +347,7 @@ function Ragister_Modal2(props) {
 
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
+                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formErrors.confirmPassword}
                                                 onChange={handleConfirmpassword}
                                             />
                                             <label htmlFor="floatingConfirmPassword"> Confirm Password</label>

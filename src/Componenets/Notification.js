@@ -112,20 +112,20 @@ function Notification() {
                                 {/* {visible && ( */}
                                 <div className="card my-3" key={index}>
 
-                                    <div className="card-body d-flex bd-highlight" id='card-noti'>
+                                    <div className="card-body bd-highlight" id='card-noti'>
                                         <img id='noti_profile' src={d.profile} alt="" />
-                                        {/* <button className="btn bd-highlight" style={{ color: "#EE2934", background: "" }} id={d.id} onClick={handletoggle}>
-                                        {like && (likeId == d.id) ? <AiFillLike size={35} /> : <AiOutlineLike size={35} />}
-                                    </button> */}
-                                        <div>
+                                        <div className='Noti-text'>
 
-                                            <h5 className='bd-highlight' > Replay in your comment {d.message}</h5>
-                                            <h5>by {d.name}</h5>
-                                            <p className='bd-highlight' style={{ fontSize: "medium", paddingTop: "10px" }}> {d.date} ago</p>
+                                            <p className='bd-highlight ' > Replay in your comment {d.message}</p>
+                                            <p>by {d.name}</p>
+                                            <p className='bd-highlight'> {d.date} ago</p>
                                         </div>
 
                                         <div className='iconTrash ms-auto bd-highlight'>
-                                            <button className="btn  btn m-2 " id='btntrash' onClick={handleDeleteComment} >Delete</button>
+                                            <button className="btn  btn m-2 " id='btntrash' onClick={handleDeleteComment} >
+                                            <p className='hide-mobile'>Delete</p>
+                                            <p className='hide-laptop'><FiTrash2/></p>
+                                            </button>
                                         </div>
 
                                     </div>

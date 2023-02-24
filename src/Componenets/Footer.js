@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 function Footer() {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
-   
-   
+
+
     const [Privacy, setPrivacy] = useState(false);
     const handlePrivacy = () => setPrivacy(true);
 
@@ -59,7 +59,7 @@ function Footer() {
 
                 <section id="footer">
                     <div className="card" id="cB">
-                        <div className="card-body d-flex justify-content-between" id='card-noti'>
+                        <div className="card-body d-flex justify-content-between" id='card-footer'>
                             <div className='newsLetter'>
                                 <strong><h3> Subcribe our news Letter</h3></strong>
                                 <p>
@@ -85,17 +85,17 @@ function Footer() {
                         <div className="row">
 
                             <div className="col-xs-3 col-sm-3 col-md-3" >
-                                <div>
-                                    <h3 style={{ color: "#fff" }}>News</h3>
+                                <div className='News'>
+                                    <h3 >News</h3>
                                 </div>
-                                <div className='my-5'>
+                                <div className='my-5 Lorem-text'>
                                     <p className='lorem'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit a minus nesciunt veniam ipsam molestiae asperiores soluta et. Et est, dolor, dicta libero vero quis sit<br /></p>
                                     <p className='lorem'> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab saepe aliquam rem velit vitae provident possimus quaerat facere reiciendis veritatis.</p>
                                 </div>
 
                             </div>
                             <div className="col-xs-3 col-sm-3 col-md-3" >
-                                <h5> News Cbategories</h5>
+                                <h5> News Categories</h5>
                                 <ul className='newscate'>
                                     <li><Link to="/">Politics</Link></li>
                                     <li><Link to="/">Technology</Link></li>
@@ -133,11 +133,17 @@ function Footer() {
                                 <div className='d-flex flex-column gap-3'>
                                     <div>
                                         <h5>Follow us </h5>
-                                        <div className='d-flex flex-column gap-4 row'>
+                                        <div  className='hide-mobile'>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /> Link in</button>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> Twitter</button>
+                                        </div>
+                                        <div id='contact-us' className='hide-laptop2'>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> </button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> </button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /></button>
+                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> </button>
                                         </div>
                                     </div>
 

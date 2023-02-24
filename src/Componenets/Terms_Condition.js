@@ -35,9 +35,13 @@ function Terms_Condition(props) {
     return (
         <div>
             {Data.length === 0
-                ? "Loading"
+                ? ""
                 :
-                <Modal show={props.show} onHide={handleClose}>
+                <Modal 
+                show={props.show} 
+                onHide={handleClose} 
+                centered
+                id="modaltp">
                     <Modal.Header id='tns-modal-header' >
                         <MdOutlineMenuBook style={{ paddingRight: "10px"}} size={50}/>
                         {/* <img style={{ paddingRight: "10px", height: "2.5rem"}} src={Data[1].page_icon} alt="" /> */}
