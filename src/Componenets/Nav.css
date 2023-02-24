@@ -115,6 +115,17 @@ color: #1A2E51;
 #btnSignIn:hover{
     background: #1A2E51;
 }
+
+#btnBookmark{
+text-decoration: none;
+color: #ffffff;
+border: none;
+}
+
+#btnBookmark:hover{
+    background: #EE2934;
+}
+
 #btnLogout{ 
     color: #ffffff; 
     /* background:#1A2E51; */

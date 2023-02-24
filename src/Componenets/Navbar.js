@@ -194,6 +194,11 @@ function Navbar(props) {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
+                                            <Dropdown.Item id='btnLogout' >
+                                            <Link id='btnBookmark' to="/Bookmark" >
+                                                    Bookmark
+                                                </Link>
+                                                </Dropdown.Item>
                                                 <Dropdown.Item id='btnLogout' onClick={changePassword}>
                                                     Change Password
                                                 </Dropdown.Item>

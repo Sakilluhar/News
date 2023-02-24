@@ -125,6 +125,8 @@ max-width: 100%;
 }
 
 #nv-function{
+    border: none;
+    padding: 0%;
     color: #1A2E51;
     text-decoration: none;
     margin: 1%;

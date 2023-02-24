@@ -1,19 +1,8 @@
 import { useState, useEffect } from "react";
 import "./newsview.css";
 import Form from "react-bootstrap/Form";
-import travel3_static_jpg from "../images/travel3_static.jpg";
-import sports3_ronaldo_jpg from "../images/sports3_static.jpg";
-import fashion3_static_jpg from "../images/fashion3_static.jpg";
-import technology3_static_jpg from "../images/technology3_static.jpg";
-import politics3_static_jpg from "../images/politics3_static.jpg";
-import cars3_static_jpg from "../images/cars3_static.jpg";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
-import {
-  AiOutlineLike,
-  AiTwotoneLike,
-  AiOutlineDislike,
-  AiTwotoneDislike,
-} from "react-icons/ai";
+import {AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike,} from "react-icons/ai";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import { MdOutlineComment } from "react-icons/md";
 import { FiCalendar } from "react-icons/fi";
@@ -30,6 +19,7 @@ import { Button } from "bootstrap";
 function NewsView() {
   const [Data, setData] = useState([]);
   const [Like ,setLike] = useState(false);
+  const [Bookmark ,setBookmark] = useState(false);
   const [FontSize, setFontSize] = useState(0);
   const [FontSizeCss, setFontSizeCss] = useState("14px");
   const query = useQuery();
@@ -138,21 +128,43 @@ function NewsView() {
               </div>
               <div id="nv-functions-right">
                 <div id="nv-function-pair">
-                  <Link id="nv-function" className="" to="#">
-                    <BsBookmark size={23} />
-                  </Link>
+                  <button id="nv-function" className="btn" onClick={()=>{
+
+                    var myHeaders = new Headers();
+                    myHeaders.append("Authorization", "Bearer "+BToken);
+
+                    var formdata = new FormData();
+                    formdata.append("access_key", "5670");
+                    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
+                    formdata.append("news_id", Data[0].id);
+                    formdata.append("status", !Bookmark?1:0);
+
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: formdata,
+                      redirect: 'follow'
+                    };
+
+                    fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
+                      .then(response => response.text())
+                      .then(result => setLike(Bookmark))
+                      .catch(error => console.log('error', error));
+                  }}>
+                    {Bookmark ? <BsFillBookmarkFill size={23}/> : <BsBookmark size={23} />}
+                  </button>
                   <p id="nv-function-text">Save</p>
                 </div>
                 <div id="nv-function-pair">
                   <button id="nv-function" className="btn" onClick={()=>{
                     
                     var myHeaders = new Headers();
-                    myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzY1MjUzMjksImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzkxMTczMjksInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.QQb22oSYt2QKa_vXlywhSOVFONYbzLThps7T_Q_VfFg");
+                    myHeaders.append("Authorization", "Bearer "+BToken);
                     
                     var formdata = new FormData();
                     formdata.append("access_key", "5670");
                     formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
-                    formdata.append("news_id", "153");
+                    formdata.append("news_id", Nid);
                     formdata.append("status", !Like?1:0);
                     
                     var requestOptions = {

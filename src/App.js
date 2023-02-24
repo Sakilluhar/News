@@ -17,6 +17,7 @@ import CatNav from './Componenets/CatNav';
 // import Spinner from './Componenets/Spinner';
 import { useEffect, useState } from 'react';
 import Hello from './Componenets/Hello';
+import BookmarkSection from './Componenets/BookmarkSection';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <CatNav />
         <Routes>
           <Route exact path='/' element={<HomePage />}></Route>
+          <Route exact path='/Bookmark' element={<BookmarkSection/>}></Route>
           <Route exact path='/NewsView' element={<NewsView />}></Route>
           <Route exact path='/CategoryView' element={<CategoryView />}></Route>
           <Route exact path='/Categories' element={<Categories />}></Route>

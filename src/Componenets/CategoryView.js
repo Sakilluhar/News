@@ -78,7 +78,6 @@ function CategoryView() {
 
           {Data && Data.map((element)=>(
         <div className="col-md-4 " key={element.id}>
-          {console.log(element)}
           <div id='cv-card' className="card">
                 <img  id='cv-card-image' src={element.image} className="card-img" alt="..."/>
                 
