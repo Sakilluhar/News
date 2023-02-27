@@ -261,6 +261,21 @@ max-width: 100%;
     bottom: 6%;
 }
 
+#cv-replay-propover{
+    /* width: 50%; */
+    padding: 0%;
+}
+
+#cdbtnsubReplay{
+    /* width: fit-content; */
+    /* width: 100%; */
+    /* background-color: #EE2934; */
+    /* color: #ffffff; */
+    /* border: none; */
+    /* padding: 2%; */
+    
+}
+
 #cs-like-dis{
     display: flex;
     flex-direction: row;

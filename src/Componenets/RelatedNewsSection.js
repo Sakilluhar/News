@@ -50,7 +50,7 @@ function RelatedNewsSection(props) {
                        <h4 id='nav-logo' ><b>Related News</b></h4> 
                 </nav>
                 {Data && Data.map((element)=>(
-                <div id='RNews-card' className="card">
+                <div id='RNews-card' className="card" key={element.id}>
                     <img  id='RNews-image' src={element.image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>

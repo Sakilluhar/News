@@ -15,6 +15,16 @@ import { Link } from "react-router-dom";
 import TagsSection from "./TagsSection";
 import CommentSection from "./CommentSection";
 import { Button } from "bootstrap";
+import {
+  FacebookIcon,
+  WhatsappIcon,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookShareButton,
+  
+} from "react-share";
+// import { useLocation } from 'react-router-dom';
 
 function NewsView() {
   const [Data, setData] = useState([]);
@@ -27,6 +37,8 @@ function NewsView() {
   const catid = query.get("Cid");
   const user_id = query.get("Uid");
   const BToken = BearerToken();
+  const shareUrl = window.location.href
+
 
   useEffect(() => {
     if (FontSize === 0) {
@@ -98,6 +110,15 @@ function NewsView() {
 
               <div id="nv-right-head">
                 <h6>SHARE:</h6>
+                <FacebookShareButton url={shareUrl} title={Data[0].title+' - Enews'} hashtag={'Enews'}>
+                  <FacebookIcon size={40} round/>
+                </FacebookShareButton>
+                <WhatsappShareButton url={shareUrl} title={Data[0].title+' - Enews'} hashtag={'Enews'}>
+                  <WhatsappIcon size={40} round/>
+                </WhatsappShareButton>
+                <TwitterShareButton url={shareUrl} title={Data[0].title+' - Enews'} hashtag={'Enews'}>
+                  <TwitterIcon size={40} round/>
+                </TwitterShareButton>
                 <Link></Link>
               </div>
             </div>
@@ -148,7 +169,7 @@ function NewsView() {
 
                     fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
                       .then(response => response.text())
-                      .then(result => setLike(Bookmark))
+                      .then(result => setBookmark(!Bookmark))
                       .catch(error => console.log('error', error));
                   }}>
                     {Bookmark ? <BsFillBookmarkFill size={23}/> : <BsBookmark size={23} />}

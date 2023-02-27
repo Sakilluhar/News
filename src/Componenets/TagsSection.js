@@ -41,7 +41,7 @@ function TagsSection() {
                 <div id='tags-tag'>
 
                 {Data && Data.map((element)=>(
-                <button id='btnTags' className='btn btn-outline-dark'>{element.tag_name}</button>
+                <button id='btnTags' key={element.id} className='btn btn-outline-dark'>{element.tag_name}</button>
                 ))}
                 </div>
                 
