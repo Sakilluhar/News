@@ -30,31 +30,30 @@ function NewsView() {
   const [Data, setData] = useState([]);
   const [Like ,setLike] = useState(false);
   const [Bookmark ,setBookmark] = useState(false);
-  const [FontSize, setFontSize] = useState(0);
+  const [FontSize, setFontSize] = useState(14);
   const [FontSizeCss, setFontSizeCss] = useState("14px");
   const query = useQuery();
   const Nid = query.get("Nid");
   const catid = query.get("Cid");
-  const user_id = query.get("Uid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
 
 
-  useEffect(() => {
-    if (FontSize === 0) {
-      setFontSizeCss("nv-description-14");
-    } else if (FontSize === 1) {
-      setFontSizeCss("nv-description-16");
-    } else if (FontSize === 2) {
-      setFontSizeCss("nv-description-18");
-    } else if (FontSize === 3) {
-      setFontSizeCss("nv-description-20");
-    } else if (FontSize === 4) {
-      setFontSizeCss("nv-description-22");
-    } else if (FontSize === 5) {
-      setFontSizeCss("nv-description-24");
-    }
-  }, [FontSize]);
+  // useEffect(() => {
+  //   if (FontSize === 0) {
+  //     setFontSizeCss("14pxx");
+  //   } else if (FontSize === 1) {
+  //     setFontSizeCss("nv-description-16");
+  //   } else if (FontSize === 2) {
+  //     setFontSizeCss("nv-description-18");
+  //   } else if (FontSize === 3) {
+  //     setFontSizeCss("nv-description-20");
+  //   } else if (FontSize === 4) {
+  //     setFontSizeCss("nv-description-22");
+  //   } else if (FontSize === 5) {
+  //     setFontSizeCss("nv-description-24");
+  //   }
+  // }, [FontSize]);
 
   useEffect(() => {
     var myHeaders = new Headers();
@@ -99,9 +98,9 @@ function NewsView() {
                   <FiCalendar size={18} id="head-logos" />{" "}
                   {Data[0].date.slice(0, 10)}
                 </h6>
-                <h6 id="head-lables">
+                {/* <h6 id="head-lables">
                   <AiOutlineEye size={18} id="head-logos" />
-                </h6>
+                </h6> */}
                 <h6 id="head-lables">
                   <AiOutlineLike size={18} id="head-logos" />{" "}
                   {Data[0].total_like} Likes
@@ -131,9 +130,9 @@ function NewsView() {
                 <Form.Label id="nv-font-lable">Font Size</Form.Label>
                 <Form.Range
                   id="nv-FontRange"
-                  min={0}
-                  max={5}
-                  step={1}
+                  min={14}
+                  max={24}
+                  step={2}
                   value={FontSize}
                   onChange={(e) => setFontSize(e.target.value)}
                 />
@@ -145,7 +144,7 @@ function NewsView() {
                   <Form.Label id="nv-FontRange-labels">22px</Form.Label>
                   <Form.Label id="nv-FontRange-labels">24px</Form.Label>
                 </div>
-                <h1>{FontSize}</h1>
+                {/* <h1>{FontSize}</h1> */}
               </div>
               <div id="nv-functions-right">
                 <div id="nv-function-pair">
@@ -207,45 +206,17 @@ function NewsView() {
                 </div>
               </div>
             </nav>
-
-            {FontSize === 0 ? (
-              <p
-                id="nv-description"
-                style={{ fontSize: "14px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            ) : FontSize === 1 ? (
-              <p
-                id="nv-description"
-                style={{ fontSize: "16px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            ) : FontSize === 2 ? (
-              <p
-                id="nv-description"
-                style={{ fontSize: "18px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            ) : FontSize === 3 ? (
-              <p
-                id="nv-description"
-                style={{ fontSize: "20px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            ) : FontSize === 4 ? (
-              <p
-                id="nv-description"
-                style={{ fontSize: "22px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            ) : (
-              <p
-                id="nv-description"
-                style={{ fontSize: "24px" }}
-                dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-            )}
+                {console.log(FontSize)}
+                {/*  */}
+              <p id="nv-description" style={{ fontSize: `${FontSize}px` }} dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
+           
             {/* // <p id='nv-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p> */}
             <CommentSection Nid={Nid} />
           </div>
         )}
 
         <div id="nv-right-section">
-          <RelatedNewsSection Cid={catid} Uid={user_id} />
+          <RelatedNewsSection Cid={catid}/>
           <TagsSection />
 
           {/* <div id='rns-Catagory-main'>

@@ -2,13 +2,13 @@ import { useState,useEffect } from 'react';
 import './relatednewssection.css'
 import { BearerToken } from '../Tokens';
 import { useQuery } from '../Hooks';
+import { Link } from 'react-router-dom';
 
 function RelatedNewsSection(props) {
 
     const [Data, setData] = useState([]);
     const query = useQuery();
     const catid = props.Cid
-    const user_id = props.Uid
     const BToken = BearerToken();
 
     useEffect(()=>{
@@ -20,7 +20,7 @@ function RelatedNewsSection(props) {
     formdata.append("category_id", catid);
     formdata.append("offset", "0");
     formdata.append("limit", "10");
-    formdata.append("user_id", user_id);
+    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
     formdata.append("language_id", "14");
 
     var requestOptions = {
@@ -50,7 +50,8 @@ function RelatedNewsSection(props) {
                        <h4 id='nav-logo' ><b>Related News</b></h4> 
                 </nav>
                 {Data && Data.map((element)=>(
-                <div id='RNews-card' className="card" key={element.id}>
+                  <Link id='Link-all' to={"/NewsView?Nid=" + Data[0].id + "&Cid=" + Data[0].category_id} key={element.id}>
+                <div id='RNews-card' className="card" >
                     <img  id='RNews-image' src={element.image} className="card-img-top" alt="..."/>
                     <div className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
@@ -68,6 +69,7 @@ function RelatedNewsSection(props) {
                   
                   </> */}
                 </div>
+                </Link>
                 ))}
 
             </div>

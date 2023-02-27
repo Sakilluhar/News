@@ -2,10 +2,10 @@ import React from 'react'
 import HealthNewsSection from './HealthNewsSection'
 import './Home.css'
 import BreakingNewsSection from './BreakingNewsSection'
-// import FirstSection from './FirstSection'
+import FirstSection from './FirstSection'
 import RecentNewsSection from './RecentNewsSection'
-// import TopNewsSection from './TopNewsSection'
-// import VideoPlayerSection from './VideoPlayerSection'
+import TopNewsSection from './TopNewsSection'
+import VideoPlayerSection from './VideoPlayerSection'
 
 
 
@@ -15,9 +15,9 @@ function HomePage() {
     <>
 
       {/* first section */}
-      {/* <div id='first-section' className="">
+      <div id='first-section' className="">
             <FirstSection/>
-        </div> */}
+        </div>
       {/* top news section */}
       {/* <div id='top-news-section' className="">
             <TopNewsSection/>

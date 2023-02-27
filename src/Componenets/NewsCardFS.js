@@ -15,6 +15,8 @@ function NewsCardFS() {
     const [Category, setCategory] = useState('Breaking News');
     const [Image, setImage] = useState();
     const [Video_url, setVideo_url] = useState();
+    const [Nid, setNid] = useState();
+    const [Category_id, setCategory_id] = useState();
     const BToken = BearerToken();
 
     useEffect(()=>{
@@ -54,6 +56,8 @@ function NewsCardFS() {
             setCategory('Breaking News');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
+            // setNid(Data[0].id);
+            // setCategory_id(Data[0].category_id);
 
             
         }
@@ -97,7 +101,7 @@ function NewsCardFS() {
                 <h1 id='Top-Title'><b>{Title}</b></h1>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>
-                <Link id='btnReadMore' className='btn' type="button" to="/NewsView" ><b>READ MORE</b></Link>
+                {/* <Link id='btnReadMore' className='btn' type="button" to={"/NewsView?Nid=" + Data[0].id + "&Cid=" + Data[0].category_id} ><b>READ MORE</b></Link> */}
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
                 </div>
             </div>
