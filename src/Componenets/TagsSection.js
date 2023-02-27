@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { BearerToken } from '../Tokens';
 
 
@@ -41,7 +42,7 @@ function TagsSection() {
                 <div id='tags-tag'>
 
                 {Data && Data.map((element)=>(
-                <button id='btnTags' key={element.id} className='btn btn-outline-dark'>{element.tag_name}</button>
+                <Link id='btnTags' key={element.id} to={"/TagNewsview?Tid="+element.id} className='btn btn-outline-dark'>{element.tag_name}</Link>
                 ))}
                 </div>
                 

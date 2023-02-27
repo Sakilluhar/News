@@ -6,35 +6,35 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
-  #cv-main{
+  #bs-main{
       font-family: 'Zilla Slab', serif;
       display: grid;
       grid-template-columns: 6% 1fr 6%;
   }
   
-  #cv-content{
+  #bs-content{
       display: grid;
       grid-column: 2/3;
   }
   
-  #cv-card{
+  #bs-card{
       width: 100%;
       height: 27rem;
       border: none;
       margin-top: 1%;
   }
   
-  #cv-card:hover{
+  #bs-card:hover{
       border: 1px solid #C0C5D0;
   }
   
-  #cv-card-image{
+  #bs-card-image{
       width: 100%;
       height: 60%;
       object-fit: cover;
   }
   
-  #cv-card-body{
+  #bs-card-body{
       /* margin-top: 20%; */
       padding: 1%;
       height: 40%;
@@ -58,14 +58,14 @@
     top: 30%;
   }
   
-  #cv-btnCatagory{
+  #bs-btnCatagory{
       margin-top: 3%;
       color: #ffffff; 
       background:#EE2934;
       width: fit-content;
   }
   
-  #cv-card-title{
+  #bs-card-title{
       margin-top: 2%;
   }
   
@@ -75,11 +75,11 @@
       border: none;
   }
   
-  #cv-card-date{
+  #bs-card-date{
       font-size: large;
   }
   
-  #cv-logoCalendar{
+  #bs-logoCalendar{
       margin-bottom: 0.6%;
       margin-right: 1%;
   }

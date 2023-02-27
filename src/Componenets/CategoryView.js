@@ -78,6 +78,7 @@ function CategoryView() {
 
           {Data && Data.map((element)=>(
         <div className="col-md-4 " key={element.id}>
+          <Link id='Link-all' to={"/NewsView?Nid=" + element.id + "&Cid=" + element.category_id}>
           <div id='cv-card' className="card">
                 <img  id='cv-card-image' src={element.image} className="card-img" alt="..."/>
                 
@@ -90,7 +91,7 @@ function CategoryView() {
                    
           </div>
 
-          
+          </Link>
           </div>
 
           ))}

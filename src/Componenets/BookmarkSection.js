@@ -40,7 +40,7 @@ function BookmarkSection() {
     },[Data])
 
   return (
-    <div id='cv-main'>
+    <div id='bs-main'>
         {/* <p>my corrent location is {loca.pathname}</p>
         {loca.pathname === `/CategoryView` ? 
         <button
@@ -51,18 +51,19 @@ function BookmarkSection() {
         : null  
         } */}
         {/* <BreadcrumbSection/> */}
-        <div id='cv-content' className="">
+        <div id='bs-content' className="">
         <h1 className="text-center"></h1>   
         <div className="row">
                  <Link id='' to="/go"  ></Link>
 
           {Data && Data.map((element)=>(
         <div className="col-md-4 " key={element.id}>
-          <div id='cv-card' className="card">
-                <img  id='cv-card-image' src={element.image} className="card-img" alt="..."/>
+          <Link id='Link-all' to={"/NewsView?Nid=" + element.news_id + "&Cid=" + element.category_id} >
+          <div id='bs-card' className="card">
+                <img  id='bs-card-image' src={element.image} className="card-img" alt="..."/>
                 
-                <div id='cv-card-body' className="card-body">
-                <button id='cv-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
+                <div id='bs-card-body' className="card-body">
+                <button id='bs-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
                 <button id='bs-btnBookmark' className='btn' onClick={()=>{
 
                     var myHeaders = new Headers();
@@ -87,13 +88,13 @@ function BookmarkSection() {
                       .catch(error => console.log('error', error));
 
                 }}><BsFillBookmarkFill id='bs-bookmark-logo' size={18}/></button>
-                <h5 id='cv-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
-                <p id="cv-card-date"><FiCalendar size={18} id="cv-logoCalendar" />{element.date.slice(0, 10)}</p>
+                <h5 id='bs-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
+                <p id="bs-card-date"><FiCalendar size={18} id="bs-logoCalendar" />{element.date.slice(0, 10)}</p>
                  </div>
                    
           </div>
 
-          
+          </Link>
           </div>
 
           ))}
