@@ -38,6 +38,7 @@ function NewsView() {
   const user_id = query.get("Uid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
+  // console.log(window.location.href)
 
 
   useEffect(() => {
