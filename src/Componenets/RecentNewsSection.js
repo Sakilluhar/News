@@ -176,7 +176,7 @@ function RecentNewsSection() {
                     <div id='rns-main-mobile' className="">
 
                         <div id='rns-head-main' className=''>
-                            <h4 id='rns-main-logo'>Recent <br/>News</h4>
+                            <h5 id='rns-main-logo'>Recent <br/>News</h5>
                             <a href='/' id='rns-Viewmore'>View  <br/> More</a>
                         </div>
 

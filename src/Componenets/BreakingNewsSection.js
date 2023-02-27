@@ -72,7 +72,7 @@ function BreakingNewsSection() {
           <div id='bns-main-card' className="card" >
             <img id='bns-main-image' src={breakingNews2_jpg} className="card-img" alt="..." />
             <div id='bns-main-text' className="card-img-overlay">
-              <h1 id='' className="card-text"><b>Breacking <br /> News</b></h1>
+              <p id='' className="card-text"><b>Breacking <br /> News</b></p>
               <button id='btnbnsCatagory' className='btn' type="button" >VEIW ALL</button>
             </div>
           </div>

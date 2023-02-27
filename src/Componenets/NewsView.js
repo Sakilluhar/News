@@ -37,6 +37,7 @@ function NewsView() {
   const catid = query.get("Cid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
+  // console.log(window.location.href)
 
 
   // useEffect(() => {
