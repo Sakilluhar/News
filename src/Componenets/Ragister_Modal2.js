@@ -58,7 +58,7 @@ function Ragister_Modal2(props) {
 
 
 
-            createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
+            createUserWithEmailAndPassword(auth, formValues.email, formValues.password )
                 .then((userCredential) => {
                     // send verification mail.
 
@@ -347,7 +347,7 @@ function Ragister_Modal2(props) {
 
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formErrors.confirmPassword}
+                                            <input type={type} className="form-control" id="floatingPassword" placeholder="Password" name='confirmpassword' value={formValues.confirmPassword}
                                                 onChange={handleConfirmpassword}
                                             />
                                             <label htmlFor="floatingConfirmPassword"> Confirm Password</label>
