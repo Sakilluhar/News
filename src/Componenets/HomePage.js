@@ -15,29 +15,29 @@ function HomePage() {
     <>
 
       {/* first section */}
-      <div id='first-section' className="">
+      {/* <div id='first-section' className="">
             <FirstSection/>
-        </div>
+        </div> */}
       {/* top news section */}
       {/* <div id='top-news-section' className="">
             <TopNewsSection/>
         </div> */}
       {/* Breacking News section */}
-      <div id='' className=''>
+      {/* <div id='' className=''>
           <BreakingNewsSection/>
-        </div>
+        </div> */}
       {/* Recent News section */}
-      <div id='' className=''>
+      {/* <div id='' className=''>
         <RecentNewsSection />
-      </div>
+      </div> */}
       {/* Video player section */}
       {/* <div id=''>
           <VideoPlayerSection/>
         </div> */}
       {/* health News Section */}
-      <div id='' className=''>
+      {/* <div id='' className=''>
         <HealthNewsSection />
-      </div>
+      </div> */}
 
     </>
   )

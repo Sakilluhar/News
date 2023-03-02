@@ -31,8 +31,8 @@ function NewsNotification() {
 
 
         var params = { 'access_key': 5670, 'user_id': uid, 'comment_id': id };
-        var url = new URL("https://news.wrteam.in/Api/delete_comment");
-        // var url =new URL("http://news.thewrteam.in/Api/delete_comment");
+        // var url = new URL("https://news.wrteam.in/Api/delete_comment");
+        var url =new URL("http://news.thewrteam.in/Api/delete_comment");
         for (let k in params) {
             url.searchParams.append(k, params[k])
         };
@@ -76,8 +76,8 @@ function NewsNotification() {
     return (
         <div id="main-Noticard" className='my-3'>
             <div className="d-flex bd-highlight mb-3">
-                <Link to='/Persnol_Notification' id='btnNotification1' className="btn mx-1 bd-highlight" > Personal </Link>
-                <Link to='/News_Notification' id='btnNewsnoti' className="btn mx-1 bd-highlight" > News</Link>
+                <Link to='/Persnol_Notification' id='btnNotification11' className="btn mx-1 bd-highlight" > Personal </Link>
+                <Link to='/News_Notification' id='btnNewsnoti1' className="btn mx-1 bd-highlight" > News</Link>
                 {/* <button  id='btnNotification1' className="btn  btn mx-1 ms-auto bd-highlight" onClick={handleDeleteAll} > Delete All</button> */}
             </div>
             <div className='my-3'>

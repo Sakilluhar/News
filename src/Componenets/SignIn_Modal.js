@@ -127,7 +127,6 @@ function SignIn_Modal(props) {
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
-                                console.log(result)
                             })
                             .catch(error => console.log('error', error));
                     })
@@ -181,7 +180,6 @@ function SignIn_Modal(props) {
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
-                                console.log(result)
                             })
                             .catch(error => console.log('error', error));
                     })
@@ -317,7 +315,7 @@ function SignIn_Modal(props) {
                                                 <p onClick={() => {
                                                     props.onHide()
                                                     setModalShow(false)
-                                                    setPhoneModalShow(false)
+                                                    setPhoneModalShow(false)  
                                                     setForgotModalShow(true)
                                                 }} id="forgot"> Forgot Password? </p></p>
 

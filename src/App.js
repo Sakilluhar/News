@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       {/* {isloading ? <Spinner /> : (<> */}
-        <Header />
+        {/* <Header /> */}
         <Navbar />
         <CatNav />
         <Routes>
