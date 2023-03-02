@@ -35,9 +35,9 @@ function HomePage() {
           <VideoPlayerSection/>
         </div> */}
       {/* health News Section */}
-      {/* <div id='' className=''>
+      <div id='' className=''>
         <HealthNewsSection />
-      </div> */}
+      </div>
 
     </>
   )

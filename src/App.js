@@ -30,9 +30,9 @@ function App() {
     <>
       {/* {isloading ? <Spinner /> : (<> */}
 
-        <Header />
+        {/* <Header /> */}
         <Newsbar/>
-        <CatNav />
+        {/* <CatNav /> */}
         <Routes>
           <Route exact path='/' element={<HomePage />}></Route>
           <Route exact path='/TagNewsview' element={<TagNewsview/>}></Route>

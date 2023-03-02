@@ -20,7 +20,7 @@ function NewsNotification() {
 
 
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer "+BToken);
+        myHeaders.append("Authorization", "Bearer " + BToken);
         myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
         var requestOptions = {
@@ -32,7 +32,7 @@ function NewsNotification() {
 
         var params = { 'access_key': 5670, 'user_id': uid, 'comment_id': id };
         // var url = new URL("https://news.wrteam.in/Api/delete_comment");
-        var url =new URL("http://news.thewrteam.in/Api/delete_comment");
+        var url = new URL("http://news.thewrteam.in/Api/delete_comment");
         for (let k in params) {
             url.searchParams.append(k, params[k])
         };
@@ -51,24 +51,31 @@ function NewsNotification() {
 
 
     useEffect(() => {
+
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer "+BToken);
-        myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
+        myHeaders.append("Authorization",  "Bearer "+BToken);
+
+        var formdata = new FormData();
+        formdata.append("access_key", "5670");
+        formdata.append("offset", "0");
+        formdata.append("limit", "100");
+        formdata.append("language_id", "14");
 
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
+            body: formdata,
             redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_notification?access_key=5670&offset=0&limit=10", requestOptions)
-            // fetch("http://news.thewrteam.in/Api/get_notification?access_key=5670&offset=0&limit=10", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_notification?access_key=5670&offset=0&limit=20", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_notification?access_key=5670&offset=0&limit=10", requestOptions)
             .then(response => response.json())
             .then(result => {
-                setData(result.data)
-
-
-            })
+                        setData(result.data)
+        
+        
+                    })
             .catch(error => console.log('error', error));
 
     }, [])
@@ -104,7 +111,7 @@ function NewsNotification() {
                                     <div className='iconTrash ms-auto bd-highlight'>
                                         <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>
                                             <p className='hide-mobile'>Delete</p>
-                                            <p className='hide-laptop'><FiTrash2/></p>
+                                            <p className='hide-laptop'><FiTrash2 /></p>
                                         </button>
 
                                     </div>
