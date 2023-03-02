@@ -30,7 +30,7 @@ function App() {
     <>
       {/* {isloading ? <Spinner /> : (<> */}
         <Header />
-        {/* <Navbar /> */}
+        
         <Newsbar/>
         <CatNav />
         <Routes>
