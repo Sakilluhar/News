@@ -3,10 +3,11 @@
 /* Newsbar css */
 
 .Newsbar{
+    font-family: 'Zilla Slab', serif;
     width: 100%;
     height: 5rem;
     display: grid;
-    grid-template-columns: 10rem 4fr 6fr ;
+    grid-template-columns: 6% 4fr 6fr ;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -18,8 +19,9 @@
 .News-logo{
     display: grid;
     grid-column: 2/3;
-    justify-content: start;
+    /* justify-content: start; */
     align-items: center;
+    position: absolute;
 
 }
 
@@ -50,6 +52,14 @@
 }
 .Manu-links ul a{
     text-decoration: none;
+}
+
+#nb-popover-body{
+    width: 18rem;
+    height: fit-content;
+    padding: 0%;
+    border: none;
+    /* border: 1px solid #909090; */
 }
 
 @media (max-width: 1260px) {
@@ -90,8 +100,8 @@
 #NewsNav {
  width: 100%;
  height: 6rem;
- box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    
+ /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;     */
 }
 
 #nav-link{
@@ -99,9 +109,10 @@ color: #1A2E51;
 }
 
 #NewsLogo{
+    margin-top: 1.5%;
     margin-left: 110px;
-    width: 11%;
-    /* height: 25%; */
+    width: 23%;
+    /* height: 100%; */
 }
 
 /* nav buttons */
@@ -172,19 +183,16 @@ border: none;
     position: absolute;
     background: #ffffff;
     border: 1px solid #C0C5D0;
-    padding: 1%;
-    top: 90%;
-    right: 5%;
+    padding: 0%;
+    /* top: 90%;
+    right: 5%; */
     
 }
 
 #nav-links{
     color: #1A2E51;
-}
-
-#nav-links:hover{
-    color: #ffffff;
-    background-color: #EE2934;
+    position: relative;
+    
 }
 
 
@@ -306,8 +314,13 @@ border: none;
     background-color: #909090;
 }
 #btnHead-Socials{
+    padding: 0%;
     color: #ffffff; 
     background:#EE2934;
+}
+
+#btnHead-Socials svg{
+    margin-bottom: 5%;
 }
 
 #drop-head-lang{
@@ -327,5 +340,5 @@ border: none;
 #catNav-links{
     color: #1A2E51;
     text-decoration: none;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }

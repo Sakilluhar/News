@@ -19,6 +19,7 @@ import { useEffect, useState } from 'react';
 import Hello from './Componenets/Hello';
 import BookmarkSection from './Componenets/BookmarkSection';
 import TagNewsview from './Componenets/TagNewsview';
+import Newsbar from './Componenets/Newsbar';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
     <>
       {/* {isloading ? <Spinner /> : (<> */}
         <Header />
-        <Navbar />
+        {/* <Navbar /> */}
+        <Newsbar/>
         <CatNav />
         <Routes>
           <Route exact path='/' element={<HomePage />}></Route>

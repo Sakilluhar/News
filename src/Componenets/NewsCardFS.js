@@ -34,13 +34,14 @@ function NewsCardFS() {
         redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_breaking_news", requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)
             setTitle(result.data[0].title);
             setDescription(result.data[0].description.slice(0, 350)+"...");
-            setCategory('Food');
+            setCategory('Breaking News');
             setImage (result.data[0].image);
         })
         .catch(error => console.log('error', error));

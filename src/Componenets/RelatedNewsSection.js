@@ -20,7 +20,7 @@ function RelatedNewsSection(props) {
     formdata.append("category_id", catid);
     formdata.append("offset", "0");
     formdata.append("limit", "10");
-    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
+    formdata.append("user_id", "1");
     formdata.append("language_id", "14");
 
     var requestOptions = {
