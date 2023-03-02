@@ -38,7 +38,9 @@ function TagNewsview() {
           redirect: 'follow'
         };
         
-        fetch("https://news.wrteam.in/Api/get_news_by_tag", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_news_by_tag", requestOptions)
+ fetch("http://news.thewrteam.in/Api/get_news_by_tag", requestOptions)
+
           .then(response => response.json())
           .then(result => {
             setData(result.data);

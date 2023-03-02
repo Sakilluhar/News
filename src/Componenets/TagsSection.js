@@ -25,7 +25,8 @@ function TagsSection() {
         redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_tag", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_tag", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_tag", requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)

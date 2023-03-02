@@ -2,7 +2,7 @@
 
 #nv-main{
     display: grid;
-    grid-template-columns: 10rem 1fr 10rem;
+    grid-template-columns: 7% 1fr 7%;
     /* width: 100%; */
     height: fit-content;
     font-family: 'Zilla Slab', serif;
@@ -109,7 +109,7 @@ max-width: 100%;
     background-color: #f5f5f5;
     height: 6rem;
     display: grid;
-    grid-template-columns: 3% 4fr 1fr 3%;
+    grid-template-columns: 3% 3fr 2fr 3%;
 }
 
 #nv-functions-left{
@@ -119,8 +119,8 @@ max-width: 100%;
 }
 
 #nv-function-pair{
-    margin-left: 15%;
-    margin-top: 15%;
+    margin-left: 10%;
+    margin-top: 1.7rem;
     justify-content: center;
 }
 
@@ -138,16 +138,16 @@ max-width: 100%;
 }
 
 #nv-font-lable{
-    margin-top: 1%;
+    margin-top: 0.5rem;
 }
 
 #nv-FontRange{
     color: #1A2E51;
-    width: 70%;
+    width: 100%;
 }
 
 #nv-FontRange-labels{
-    margin-right: 10%;
+    /* margin-right: 10%; */
     font-size: small;
 
 }

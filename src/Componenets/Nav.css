@@ -75,6 +75,14 @@
         grid-template-columns: 2rem 1fr 2fr 1fr 1rem ;
     }
 
+    .mobile-manu{
+        display: none;   
+   }
+
+    .mobile-manu2{
+        display: contents;   
+   }
+
     .Manu-links{
         display: none;
     }
@@ -82,10 +90,16 @@
         display: contents;
         grid-column: 4/5;
         display: flex;
-    justify-content: right;
-    align-items: center;
+        justify-content: right;
+        align-items: center;
     }
    
+}
+
+#Nav-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
 }
 
 
@@ -106,6 +120,7 @@
 
 #nav-link{
 color: #1A2E51;
+text-decoration: none;
 }
 
 #NewsLogo{

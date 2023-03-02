@@ -30,7 +30,8 @@ function CatNav() {
           redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_category", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_category", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_category", requestOptions)
           .then(response => response.json())
           .then(result => {
             setData(result.data)

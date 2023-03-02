@@ -43,13 +43,14 @@ function CommentsView(props) {
       redirect: "follow",
     };
 
-    fetch("https://news.wrteam.in/Api/get_comment_by_news", requestOptions)
+    // fetch("https://news.wrteam.in/Api/get_comment_by_news", requestOptions)
+    fetch("http://news.thewrteam.in/Api/get_comment_by_news", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
       })
       .catch((error) => console.log("error", error));
-  }, []);
+  }, [props.Nid]);
  
 
   return (
@@ -71,14 +72,14 @@ function CommentsView(props) {
                 <p id="cs-card-text" className="card-text">
                   {element.message}
                 </p>
-                <div id="cs-like-dis">
+                {/* <div id="cs-like-dis">
                   <button id="csbtnLike" className="btn">
                     <AiOutlineLike size={18} />
                   </button>
                   <button id="csbtnLike" className="btn">
                     <AiOutlineDislike size={18} />
                   </button>
-                </div>
+                </div> */}
                 {/* <button id="cdbtnReplay" className="btn">
                   REPLAY
                 </button> */}
@@ -133,7 +134,7 @@ function CommentsView(props) {
               </div>
             </div>
             {element.replay.map((ele) => (
-                <div id="cv-Rcomment">
+                <div id="cv-Rcomment" key={ele.id}>
                   <img
                     id="cs-profile"
                     src={ele.profile ? ele.profile : no_image}
@@ -147,14 +148,14 @@ function CommentsView(props) {
                     <p id="cs-card-text" className="card-text">
                       {ele.message}
                     </p>
-                    <div id="cs-like-dis">
+                    {/* <div id="cs-like-dis">
                       <button id="csbtnLike" className="btn">
                         <AiOutlineLike size={18} />
                       </button>
                       <button id="csbtnLike" className="btn">
                         <AiOutlineDislike size={18} />
                       </button>
-                    </div>
+                    </div> */}
                     {/* <button id="cdbtnReplay" className="btn">
                       REPLAY
                     </button> */}

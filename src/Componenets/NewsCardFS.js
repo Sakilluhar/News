@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { BsPlayCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { BearerToken } from '../Tokens';
+import { Shimmer,Breathing  } from 'react-shimmer'
   
 
 
@@ -43,9 +44,13 @@ function NewsCardFS() {
             setDescription(result.data[0].description.slice(0, 350)+"...");
             setCategory('Breaking News');
             setImage (result.data[0].image);
+            
+            
         })
         .catch(error => console.log('error', error));
     },[]);
+
+    
     
     const handleRad = (event)=>{
 
@@ -108,7 +113,7 @@ function NewsCardFS() {
             </div>
 
             <div>
-            <img src={Image} className="float-end" id='fs-Newscard-image' alt="..."/>
+            <img src={Image} className="float-end" id='fs-Newscard-image' fallback={<Breathing width={800} height={600} />} alt="..."/>
             </div>
 
             </div>

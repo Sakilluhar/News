@@ -23,10 +23,9 @@ import {
 
 function NewsView() {
   const [Data, setData] = useState([]);
-  const [Like ,setLike] = useState(false);
-  const [Bookmark ,setBookmark] = useState(
-    
-  );
+  const [CheckLike ,setCheckLike] = useState(false);
+  const [Like ,setLike] = useState(CheckLike);
+  const [Bookmark ,setBookmark] = useState(false);
   const [FontSize, setFontSize] = useState(14);
   const [FontSizeCss, setFontSizeCss] = useState("14px");
   const query = useQuery();
@@ -34,6 +33,40 @@ function NewsView() {
   const catid = query.get("Cid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
+
+  useEffect(() => {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+BToken);
+
+    var formdata = new FormData();
+    formdata.append("access_key", "5670");
+    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
+    formdata.append("offset", "0");
+    // formdata.append("limit", "10");
+    formdata.append("language_id", "14");
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+
+    fetch("http://news.thewrteam.in/Api/get_like", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        result.data.map((d)=>{
+          if (d.news_id === Nid) {
+          setCheckLike(true)
+        }else{
+          setCheckLike(false)
+        }
+      })
+        
+        console.log(CheckLike);
+      })
+      .catch(error => console.log('error', error));
+      },[])
 
   useEffect(() => {
     var myHeaders = new Headers();
@@ -52,7 +85,8 @@ function NewsView() {
       redirect: "follow",
     };
 
-    fetch("https://news.wrteam.in/Api/get_news_by_id", requestOptions)
+    // fetch("https://news.wrteam.in/Api/get_news_by_id", requestOptions)
+    fetch("http://news.thewrteam.in/Api/get_news_by_id", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
@@ -116,7 +150,7 @@ function NewsView() {
                   value={FontSize}
                   onChange={(e) => setFontSize(e.target.value)}
                 />
-                <div>
+                <div className="d-flex justify-content-between">
                   <Form.Label id="nv-FontRange-labels">14px</Form.Label>
                   <Form.Label id="nv-FontRange-labels">16px</Form.Label>
                   <Form.Label id="nv-FontRange-labels">18px</Form.Label>
@@ -146,7 +180,8 @@ function NewsView() {
                       redirect: 'follow'
                     };
 
-                    fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
+                    // fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
+                    fetch("http://news.thewrteam.in/Api/set_bookmark", requestOptions)
                       .then(response => response.text())
                       .then(result => setBookmark(!Bookmark))
                       .catch(error => console.log('error', error));
@@ -174,7 +209,8 @@ function NewsView() {
                       redirect: 'follow'
                     };
                     
-                    fetch("https://news.wrteam.in/Api/set_like_dislike", requestOptions)
+                    // fetch("https://news.wrteam.in/Api/set_like_dislike", requestOptions)
+                    fetch("http://news.thewrteam.in/Api/set_like_dislike", requestOptions)
                       .then(response => response.json())
                       .then(result => setLike(!Like))
                       .catch(error => console.log('error', error));
@@ -186,8 +222,6 @@ function NewsView() {
                 </div>
               </div>
             </nav>
-                {console.log(FontSize)}
-                {/*  */}
               <p id="nv-description" style={{ fontSize: `${FontSize}px` }} dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
            
             {/* // <p id='nv-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p> */}

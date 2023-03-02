@@ -29,7 +29,8 @@ function RecentNewsSection() {
             redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_news", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_news", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_news", requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)

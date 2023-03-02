@@ -31,7 +31,8 @@ function BookmarkSection() {
         redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_bookmark", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_bookmark", requestOptions)
+    fetch("http://news.thewrteam.in/Api/get_bookmark", requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)

@@ -34,7 +34,8 @@ function CommentSection(props) {
             redirect: 'follow'
           };
           
-          fetch("https://news.wrteam.in/Api/set_comment", requestOptions)
+          // fetch("https://news.wrteam.in/Api/set_comment", requestOptions)
+    fetch("http://news.thewrteam.in/Api/set_comment", requestOptions)
             .then(response => response.json())
             .then(result => {
               setData(result.data);

@@ -30,7 +30,8 @@ function RelatedNewsSection(props) {
       redirect: 'follow'
     };
 
-    fetch("https://news.wrteam.in/Api/get_news_by_category", requestOptions)
+    // fetch("https://news.wrteam.in/Api/get_news_by_category", requestOptions)
+    fetch("http://news.thewrteam.in/Api/get_news_by_category", requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)
@@ -50,10 +51,10 @@ function RelatedNewsSection(props) {
                        <h4 id='nav-logo' ><b>Related News</b></h4> 
                 </nav>
                 {Data && Data.map((element)=>(
-                  <Link id='Link-all' to={"/NewsView?Nid=" + element.id + "&Cid=" + element.category_id} >
-                <div id='RNews-card' className="card" key={element.id} >
+                  <Link id='Link-all' to={"/NewsView?Nid=" + element.id + "&Cid=" + element.category_id} key={element.id}>
+                <div id='RNews-card' className="card"  >
                     <img  id='RNews-image' src={element.image} className="card-img-top" alt="..."/>
-                    <div className="RNews-card-body">
+                    <div id='RNews-card-body' className="RNews-card-body">
                     <button id='btnRNewsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
                     <h6 id='RNews-card-text' className="card-text">{element.title.slice(0,40)}...</h6>
                     </div>

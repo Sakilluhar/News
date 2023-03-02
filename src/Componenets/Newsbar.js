@@ -119,7 +119,7 @@ const Newsbar = () => {
         <img id='NewsLogo' src={News_main_Logo} alt="" />
         </div>
         {/* manu buttons */}
-        <div className={ShowManu ? "Manu-links mobile-manu" : "Manu-links"}>
+        <div className="Manu-links">
             {/* <ul>
                 <li>
                     <a href="">HOME</a>
@@ -149,29 +149,29 @@ const Newsbar = () => {
             <ul className="">
 
 <li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link></b>
+    <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
 </li>
 <li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link></b>
+    <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
 </li>
 <li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
+    <b><Link id='nav-links' className="" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
 </li>
 
 <li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link></b>
+    <b><Link id='nav-links' className="" aria-current="page" to="/">BREAKING NEWS</Link></b>
 </li>
 <li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+    <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
 </li>
-<li>
+<li id='Nav-btns'>
     
     {!islogout ?
-        <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
+        <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
         :
         
         <Dropdown>
-            <Dropdown.Toggle id="btnSignIn" className='me-3'>
+            <Dropdown.Toggle id="btnSignIn" className=''>
                 <BiUserCircle size={23} id='btnLogo' />
                 {!isloginloading ?
                     JSON.parse(localStorage.getItem('user')).data.name
@@ -189,15 +189,13 @@ const Newsbar = () => {
                     Change Password
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item onClick={logout} id='btnLogout' className='me-3'>Log Out</Dropdown.Item>
+                <Dropdown.Item onClick={logout} id='btnLogout' className=''>Log Out</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     }
-</li>
-<li>
-    <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23} /></Link>
-</li>
-<li>
+
+    <Link to="/notification" id='btnNotification' type="button" className="btn"><BiBell size={23} /></Link>
+
     {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
     {['bottom-end'].map((placement) => (
         <OverlayTrigger
@@ -224,13 +222,6 @@ const Newsbar = () => {
       ))}
 </li>
 </ul>
-{/* {Search ?
-                            (<form id='serchModal' className="d-flex" role="search">
-                                <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button id='btnSerchForm' className="btn" type="submit">Search</button>
-                            </form>)
-                            : null
-                        } */}
 
                         
 
@@ -238,12 +229,12 @@ const Newsbar = () => {
 
         </div>
         <div className="hamburger-manu">
-                <a href="" onClick={()=> setShowManu(!setShowManu)}>
+                <button onClick={()=> setShowManu(!ShowManu)}>
                 <GiHamburgerMenu/>
-                </a>
+                </button>
             </div>
       </nav>
-      <div className="mobile-manu">
+      <div className={ShowManu ? "mobile-manu2" :"mobile-manu"} >
             <ul>
                 <li>
                     <a href="">HOME</a>
@@ -263,6 +254,9 @@ const Newsbar = () => {
                 <li>
                     <button>Sign In</button>
                 </li>  
+                <li>
+                    
+                </li>
                 <li> 
                    <button><BiBell className="notification"/></button>
                 </li>

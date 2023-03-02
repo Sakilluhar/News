@@ -1,12 +1,12 @@
 import React from 'react'
-import spinner from '../images/Triple intersection.gif'
+import spinner from '../images/Spinner16.gif'
 import  './Spinner.css'
 
 
 function Spinner() {
   return (
-    <div c>
-      <img  src={spinner} alt="News Logo" id='spinner' />
+    <div>
+      <img  src={spinner} alt="LOADING..." id='spinner' />
     </div>
   )
 }
