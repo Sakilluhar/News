@@ -19,9 +19,9 @@ function HomePage() {
             <FirstSection/>
         </div>
       {/* top news section */}
-      {/* <div id='top-news-section' className="">
+      <div id='top-news-section' className="">
             <TopNewsSection/>
-        </div> */}
+        </div>
       {/* Breacking News section */}
       <div id='' className=''>
           <BreakingNewsSection/>
@@ -31,9 +31,9 @@ function HomePage() {
         <RecentNewsSection />
       </div>
       {/* Video player section */}
-      {/* <div id=''>
+      <div id=''>
           <VideoPlayerSection/>
-        </div> */}
+        </div>
       {/* health News Section */}
       <div id='' className=''>
         <HealthNewsSection />

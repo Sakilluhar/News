@@ -68,7 +68,7 @@ function Footer() {
                             </div>
                             <div className='d-flex flex-column justify-content-center'>
 
-                                <div className='row g-3'>
+                                <div className='' id='news_letter'>
 
                                     <input type="text" className="col-auto form-control" name='email' id="e-f" placeholder="Enter Email" aria-describedby="emailHelp" value={formValues.email} onChange={handleChange} />
                                     <button className='col-auto btn' id='ES' onClick={handleSubcribe}>SUBCRIBE</button>

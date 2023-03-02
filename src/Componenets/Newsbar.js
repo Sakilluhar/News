@@ -1,4 +1,4 @@
-import {GiHamburgerMenu} from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import React, { useEffect, useState } from 'react'
 import './Nav.css';
 
@@ -110,17 +110,17 @@ const Newsbar = () => {
             });
     }
 
-  const [ShowManu,setShowManu]= useState();
-  return (
-    <div>
-      <nav className="Newsbar">
-        {/* News logo */}
-        <div className="News-logo">
-        <img id='NewsLogo' src={News_main_Logo} alt="" />
-        </div>
-        {/* manu buttons */}
-        <div className={ShowManu ? "Manu-links mobile-manu" : "Manu-links"}>
-            {/* <ul>
+    const [ShowManu, setShowManu] = useState();
+    return (
+        <div>
+            <nav className="Newsbar">
+                {/* News logo */}
+                <div className="News-logo">
+                    <img id='NewsLogo' src={News_main_Logo} alt="" />
+                </div>
+                {/* manu buttons */}
+                <div className={ShowManu ? "Manu-links mobile-manu" : "Manu-links"}>
+                    {/* <ul>
                 <li>
                     <a href="">HOME</a>
                 </li>
@@ -146,85 +146,88 @@ const Newsbar = () => {
                     <button><BiSearch className="serch"/></button>
                 </li>
             </ul> */}
-            <ul className="">
+                    <ul className="">
 
-<li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link></b>
-</li>
-<li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link></b>
-</li>
-<li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
-</li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">HOME</Link></b>
+                        </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                        </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
+                        </li>
 
-<li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link></b>
-</li>
-<li className="nav-item">
-    <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
-</li>
-<li>
-    
-    {!islogout ?
-        <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
-        :
-        
-        <Dropdown>
-            <Dropdown.Toggle id="btnSignIn" className='me-3'>
-                <BiUserCircle size={23} id='btnLogo' />
-                {!isloginloading ?
-                    JSON.parse(localStorage.getItem('user')).data.name
-                    : ''
-                }
-            </Dropdown.Toggle>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link></b>
+                        </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                        </li>
+                        <li>
 
-            <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
-            <Dropdown.Item id='btnLogout' >
-            <Link id='btnBookmark' to="/Bookmark" >
-                    Bookmark
-                </Link>
-                </Dropdown.Item>
-                <Dropdown.Item id='btnLogout' onClick={changePassword}>
-                    Change Password
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item onClick={logout} id='btnLogout' className='me-3'>Log Out</Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>
-    }
-</li>
-<li>
-    <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23} /></Link>
-</li>
-<li>
-    {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-    {['bottom-end'].map((placement) => (
-        <OverlayTrigger
-          trigger="click"
-          key={placement}
-          placement={placement}
-          overlay={
-            <Popover id={`popover-positioned-${placement}`}>
-              {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
-              <Popover.Body id='nb-popover-body' >
-              <form id='serchModal' className="d-flex" role="search">
-                                <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
-                                <button id='btnSerchForm' className="btn" type="submit" onClick={(e)=>{
-                                    e.preventDefault();
-                                    
-                                }}>Search</button>
-                            </form>
-              </Popover.Body>
-            </Popover>
-          }
-        >
-          <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
-        </OverlayTrigger>
-      ))}
-</li>
-</ul>
-{/* {Search ?
+                            {!islogout ?
+                                <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
+                                :
+
+                                <Dropdown>
+                                    <Dropdown.Toggle id="btnSignIn" className='me-3'>
+                                        <BiUserCircle size={23} id='btnLogo' />
+                                        {!isloginloading ?
+                                            JSON.parse(localStorage.getItem('user')).data.name
+                                            : ''
+                                        }
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
+                                        <Dropdown.Item id='btnLogout' >
+                                            <Link id='btnBookmark' to="/Bookmark" >
+                                                Bookmark
+                                            </Link>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item id='btnLogout' onClick={changePassword}>
+                                            Change Password
+                                        </Dropdown.Item>
+                                        <Dropdown.Divider />
+                                        <Dropdown.Item onClick={logout} id='btnLogout' className='me-3'>Log Out</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            }
+                        </li>
+                        <li>
+                            {islogout ?
+                                <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23} /></Link>
+                                : null
+                            }
+                        </li>
+                        <li>
+                            {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
+                            {['bottom-end'].map((placement) => (
+                                <OverlayTrigger
+                                    trigger="click"
+                                    key={placement}
+                                    placement={placement}
+                                    overlay={
+                                        <Popover id={`popover-positioned-${placement}`}>
+                                            {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
+                                            <Popover.Body id='nb-popover-body' >
+                                                <form id='serchModal' className="d-flex" role="search">
+                                                    <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => { setSearch(e.target.value) }} />
+                                                    <button id='btnSerchForm' className="btn" type="submit" onClick={(e) => {
+                                                        e.preventDefault();
+
+                                                    }}>Search</button>
+                                                </form>
+                                            </Popover.Body>
+                                        </Popover>
+                                    }
+                                >
+                                    <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
+                                </OverlayTrigger>
+                            ))}
+                        </li>
+                    </ul>
+                    {/* {Search ?
                             (<form id='serchModal' className="d-flex" role="search">
                                 <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button id='btnSerchForm' className="btn" type="submit">Search</button>
@@ -232,47 +235,47 @@ const Newsbar = () => {
                             : null
                         } */}
 
-                        
 
-<SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
 
+                    <SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
+
+                </div>
+                <div className="hamburger-manu">
+                    <a href="" onClick={() => setShowManu(!setShowManu)}>
+                        <GiHamburgerMenu />
+                    </a>
+                </div>
+            </nav>
+            <div className="mobile-manu">
+                <ul>
+                    <li>
+                        <a href="">HOME</a>
+                    </li>
+                    <li>
+                        <a href="">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="">CATEGORIES</a>
+                    </li>
+                    <li>
+                        <a href="">BREAKING NEWS</a>
+                    </li>
+                    <li>
+                        <a href="">CONTACT US</a>
+                    </li>
+                    <li>
+                        <button>Sign In</button>
+                    </li>
+                    <li>
+                        <button><BiBell className="notification" /></button>
+                    </li>
+                    <li>
+                        <button><BiSearch className="serch" /></button>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div className="hamburger-manu">
-                <a href="" onClick={()=> setShowManu(!setShowManu)}>
-                <GiHamburgerMenu/>
-                </a>
-            </div>
-      </nav>
-      <div className="mobile-manu">
-            <ul>
-                <li>
-                    <a href="">HOME</a>
-                </li>
-                <li>
-                    <a href="">ABOUT US</a>
-                </li>
-                <li>
-                    <a href="">CATEGORIES</a>
-                </li>
-                <li>
-                    <a href="">BREAKING NEWS</a>
-                </li>  
-                <li>
-                    <a href="">CONTACT US</a>
-                </li>   
-                <li>
-                    <button>Sign In</button>
-                </li>  
-                <li> 
-                   <button><BiBell className="notification"/></button>
-                </li>
-                <li>  
-                    <button><BiSearch className="serch"/></button>
-                </li>
-            </ul>
-            </div>
-    </div>
-  )
+    )
 }
 
 export default Newsbar
