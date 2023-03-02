@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
 import "./newsview.css";
 import Form from "react-bootstrap/Form";
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import {AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike,} from "react-icons/ai";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
-import { MdOutlineComment } from "react-icons/md";
 import { FiCalendar } from "react-icons/fi";
-import { AiOutlineEye } from "react-icons/ai";
 import { BearerToken } from "../Tokens";
 import { useQuery } from "../Hooks";
 import RelatedNewsSection from "./RelatedNewsSection";
-import CarouselSection from "./CarouselSection";
 import { Link } from "react-router-dom";
 import TagsSection from "./TagsSection";
 import CommentSection from "./CommentSection";
-import { Button } from "bootstrap";
 import {
   FacebookIcon,
   WhatsappIcon,
@@ -29,7 +24,9 @@ import {
 function NewsView() {
   const [Data, setData] = useState([]);
   const [Like ,setLike] = useState(false);
-  const [Bookmark ,setBookmark] = useState(false);
+  const [Bookmark ,setBookmark] = useState(
+    
+  );
   const [FontSize, setFontSize] = useState(14);
   const [FontSizeCss, setFontSizeCss] = useState("14px");
   const query = useQuery();
@@ -37,24 +34,6 @@ function NewsView() {
   const catid = query.get("Cid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
-  // console.log(window.location.href)
-
-
-  // useEffect(() => {
-  //   if (FontSize === 0) {
-  //     setFontSizeCss("14pxx");
-  //   } else if (FontSize === 1) {
-  //     setFontSizeCss("nv-description-16");
-  //   } else if (FontSize === 2) {
-  //     setFontSizeCss("nv-description-18");
-  //   } else if (FontSize === 3) {
-  //     setFontSizeCss("nv-description-20");
-  //   } else if (FontSize === 4) {
-  //     setFontSizeCss("nv-description-22");
-  //   } else if (FontSize === 5) {
-  //     setFontSizeCss("nv-description-24");
-  //   }
-  // }, [FontSize]);
 
   useEffect(() => {
     var myHeaders = new Headers();

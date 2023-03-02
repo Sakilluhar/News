@@ -152,7 +152,7 @@ function Navbar(props) {
 
             <nav id='NewsNav' className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-
+                    
                     <img id='NewsLogo' src={News_main_Logo} alt="" />
 
                     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
