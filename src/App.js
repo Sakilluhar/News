@@ -29,14 +29,10 @@ function App() {
   return (
     <>
       {/* {isloading ? <Spinner /> : (<> */}
-<<<<<<< HEAD
-        <Header />
-=======
 
-        {/* <Header /> */}
->>>>>>> c456b865838f3b712422c744d972858facf9401d
+        <Header />
         <Newsbar/>
-        {/* <CatNav /> */}
+        <CatNav />
         <Routes>
           <Route exact path='/' element={<HomePage />}></Route>
           <Route exact path='/TagNewsview' element={<TagNewsview/>}></Route>
