@@ -34,39 +34,39 @@ function NewsView() {
   const BToken = BearerToken();
   const shareUrl = window.location.href
 
-  useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+BToken);
+  // useEffect(() => {
+  //   var myHeaders = new Headers();
+  //   myHeaders.append("Authorization", "Bearer "+BToken);
 
-    var formdata = new FormData();
-    formdata.append("access_key", "5670");
-    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
-    formdata.append("offset", "0");
-    // formdata.append("limit", "10");
-    formdata.append("language_id", "14");
+  //   var formdata = new FormData();
+  //   formdata.append("access_key", "5670");
+  //   formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
+  //   formdata.append("offset", "0");
+  //   // formdata.append("limit", "10");
+  //   formdata.append("language_id", "14");
 
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: formdata,
-      redirect: 'follow'
-    };
+  //   var requestOptions = {
+  //     method: 'POST',
+  //     headers: myHeaders,
+  //     body: formdata,
+  //     redirect: 'follow'
+  //   };
 
-    fetch("http://news.thewrteam.in/Api/get_like", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        result.data.map((d)=>{
-          if (d.news_id === Nid) {
-          setCheckLike(true)
-        }else{
-          setCheckLike(false)
-        }
-      })
+  //   fetch("http://news.thewrteam.in/Api/get_like", requestOptions)
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       result.data.map((d)=>{
+  //         if (d.news_id === Nid) {
+  //         setCheckLike(true)
+  //       }else{
+  //         setCheckLike(false)
+  //       }
+  //     })
         
-        console.log(CheckLike);
-      })
-      .catch(error => console.log('error', error));
-      },[])
+  //       console.log(CheckLike);
+  //     })
+  //     .catch(error => console.log('error', error));
+  //     },[])
 
   useEffect(() => {
     var myHeaders = new Headers();

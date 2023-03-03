@@ -83,3 +83,20 @@
       margin-bottom: 0.6%;
       margin-right: 1%;
   }
+
+  .bs-ReadMore{
+    position: absolute;
+    bottom: 3%;
+    right: 1%;
+    color: #ffffff;
+    background-color: #1A2E51;
+    /* border: 1px solid #C0C5D0; */
+
+  }
+
+  .bs-ReadMore:hover{
+    color: #ffffff;
+    background-color: #1A2E51;
+    /* border: 1px solid #C0C5D0; */
+
+  }

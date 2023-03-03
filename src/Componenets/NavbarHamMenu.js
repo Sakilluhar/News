@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
 import './categories.css';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import sports3_ronaldo_jpg from '../images/sports3_static.jpg';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useEffect } from 'react';
 import { BearerToken } from "../Tokens";
 
 
-function NavbarHamMenu() {
+function NavbarHamMenu(props) {
   
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const BToken = BearerToken();
 
   
     return (
@@ -25,7 +24,7 @@ function NavbarHamMenu() {
         
         <Offcanvas show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton>
-            {/* <Offcanvas.Title>CATEGORIES</Offcanvas.Title> */}
+            <Offcanvas.Title>MENU</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             

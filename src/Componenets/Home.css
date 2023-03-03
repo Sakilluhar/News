@@ -822,20 +822,18 @@
   #hns-head {
     font-family: "Zilla Slab", serif;
     color: #1a2e51;
-    display: grid;
-    grid-template-columns: 6rem 1fr 6rem;
     margin: 1%;
   }
 
   #hns-head-main {
     display: grid;
-    grid-column: 2/3;
-    display: flex;
-    flex-direction: row;
-    gap: 78%;
+    grid-template-columns: 6% 4fr 1fr 6%;
+    
   }
 
   #hns-main-logo {
+    display: grid;
+    grid-column: 2/3;
     margin-top: 2%;
     /* max-width: 2000px; */
     position: relative;
@@ -854,10 +852,10 @@
   } */
 
   #hns-Viewmore {
-    text-align: center;
+    text-align: end;
     text-decoration: none;
-    color: black;
-    margin-top: 2.2%;
+    color: #1a2e51;
+    margin-top: 8%;
   }
 
   #hns-main {

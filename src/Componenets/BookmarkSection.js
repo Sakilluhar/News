@@ -23,6 +23,7 @@ function BookmarkSection() {
         formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
         formdata.append("offset", "0");
         // formdata.append("limit", "10");
+        formdata.append("language_id", "14");
 
         var requestOptions = {
         method: 'POST',
@@ -59,8 +60,9 @@ function BookmarkSection() {
 
           {Data && Data.map((element)=>(
         <div className="col-md-4 " key={element.id}>
-          <Link id='Link-all' to={"/NewsView?Nid=" + element.news_id + "&Cid=" + element.category_id} >
+          
           <div id='bs-card' className="card">
+          
                 <img  id='bs-card-image' src={element.image} className="card-img" alt="..."/>
                 
                 <div id='bs-card-body' className="card-body">
@@ -83,7 +85,9 @@ function BookmarkSection() {
                       redirect: 'follow'
                     };
                     
-                    fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
+                    // fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
+                    fetch("http://news.thewrteam.in/Api/set_bookmark", requestOptions)
+
                       .then(response => response.text())
                       .then(result => console.log(result))
                       .catch(error => console.log('error', error));
@@ -91,11 +95,12 @@ function BookmarkSection() {
                 }}><BsFillBookmarkFill id='bs-bookmark-logo' size={18}/></button>
                 <h5 id='bs-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
                 <p id="bs-card-date"><FiCalendar size={18} id="bs-logoCalendar" />{element.date.slice(0, 10)}</p>
+                <Link id='Link-all ' className='btn bs-ReadMore' to={"/NewsView?Nid=" + element.news_id + "&Cid=" + element.category_id} >READ MORE</Link>
                  </div>
                    
           </div>
 
-          </Link>
+          
           </div>
 
           ))}
