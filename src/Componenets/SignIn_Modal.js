@@ -213,11 +213,6 @@ function SignIn_Modal(props) {
                 }
                 // props.setIsLogout(true)
                 props.onHide()
-
-
-
-
-
                 var myHeaders = new Headers();
                 myHeaders.append("Authorization", "Bearer "+BToken);
                 myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
