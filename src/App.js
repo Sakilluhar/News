@@ -13,13 +13,13 @@ import NewsView from './Componenets/NewsView';
 import Categories from './Componenets/Categories';
 import CategoryView from './Componenets/CategoryView';
 import CatNav from './Componenets/CatNav';
+import Newsbar from './Componenets/Newsbar';
 
 // import Spinner from './Componenets/Spinner';
 import { useEffect, useState } from 'react';
 import Hello from './Componenets/Hello';
 import BookmarkSection from './Componenets/BookmarkSection';
 import TagNewsview from './Componenets/TagNewsview';
-import Newsbar from './Componenets/Newsbar';
 
 
 function App() {
@@ -29,9 +29,14 @@ function App() {
   return (
     <>
       {/* {isloading ? <Spinner /> : (<> */}
+<<<<<<< HEAD
         <Header />
+=======
+
+        {/* <Header /> */}
+>>>>>>> c456b865838f3b712422c744d972858facf9401d
         <Newsbar/>
-        <CatNav />
+        {/* <CatNav /> */}
         <Routes>
           <Route exact path='/' element={<HomePage />}></Route>
           <Route exact path='/TagNewsview' element={<TagNewsview/>}></Route>

@@ -25,12 +25,30 @@
   #btnNotification1:hover {
     background-color: #1a2e51;
   }
+  #btnNotification11 {
+    width: 10%;
+    color: #000000;
+    background-color: #edf2f8;
+  }
+  #btnNotification11:hover {
+    color: #ffffff;
+    background-color: #1a2e51;
+  }
   #btnNewsnoti {
     width: 10%;
     color: #000000;
     background-color: #edf2f8;
   }
   #btnNewsnoti:hover {
+    color: #ffffff;
+    background-color: #1a2e51;
+  }
+  #btnNewsnoti1 {
+    width: 10%;
+    color: #ffffff;
+    background-color: #ee2934;
+  }
+  #btnNewsnoti1:hover {
     color: #ffffff;
     background-color: #1a2e51;
   }

@@ -153,7 +153,7 @@ function Navbar(props) {
             <nav id='NewsNav' className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     
-                    {/* <img id='NewsLogo' src={News_main_Logo} alt="" /> */}
+                    <img id='NewsLogo' src={News_main_Logo} alt="" />
 
                     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -174,7 +174,7 @@ function Navbar(props) {
                                 <li className="nav-item">
                                     <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
                                 </li>
-                                
+
                                 <li className="nav-item">
                                     <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/">BREAKING NEWS</Link></b>
                                 </li>
@@ -182,11 +182,11 @@ function Navbar(props) {
                                     <b><Link id='nav-links' className="nav-link active me-4" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
                                 </li>
                                 <li>
-                                    
+
                                     {!islogout ?
                                         <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='me-3' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
                                         :
-                                        
+
                                         <Dropdown>
                                             <Dropdown.Toggle id="btnSignIn" className='me-3'>
                                                 <BiUserCircle size={23} id='btnLogo' />
@@ -197,10 +197,10 @@ function Navbar(props) {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
-                                            <Dropdown.Item id='btnLogout' >
-                                            <Link id='btnBookmark' to="/Bookmark" >
-                                                    Bookmark
-                                                </Link>
+                                                <Dropdown.Item id='btnLogout' >
+                                                    <Link id='btnBookmark' to="/Bookmark" >
+                                                        Bookmark
+                                                    </Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item id='btnLogout' onClick={changePassword}>
                                                     Change Password
@@ -212,7 +212,10 @@ function Navbar(props) {
                                     }
                                 </li>
                                 <li>
-                                    <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23} /></Link>
+                                    {islogout ?
+                                        <Link to="/notification" id='btnNotification' type="button" className="btn me-3"><BiBell size={23} /></Link>
+                                        : null
+                                    }
                                 </li>
                                 <li>
                                     <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button>

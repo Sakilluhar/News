@@ -101,7 +101,8 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
+                // fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                     .then(response => response.text())
                     .then(result => {
 
@@ -122,12 +123,12 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
+                        // fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
-                                console.log(result)
                             })
                             .catch(error => console.log('error', error));
                     })
@@ -155,7 +156,8 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
+                // fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                     .then(response => response.text())
                     .then(result => {
 
@@ -176,12 +178,12 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
+                        // fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
-                                console.log(result)
                             })
                             .catch(error => console.log('error', error));
                     })
@@ -226,7 +228,8 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                await fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
+                // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                     .then(response => response.text())
                     .then(async result => {
 
@@ -246,7 +249,8 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        await fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
+                        // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
@@ -317,7 +321,7 @@ function SignIn_Modal(props) {
                                                 <p onClick={() => {
                                                     props.onHide()
                                                     setModalShow(false)
-                                                    setPhoneModalShow(false)
+                                                    setPhoneModalShow(false)  
                                                     setForgotModalShow(true)
                                                 }} id="forgot"> Forgot Password? </p></p>
 

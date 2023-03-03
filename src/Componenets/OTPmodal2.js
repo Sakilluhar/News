@@ -90,7 +90,8 @@ function OTPmodal2(props) {
                 redirect: 'follow'
             };
 
-            await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+            await fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
+            // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                 .then(response => response.text())
                 .then(async result => {
 
@@ -110,7 +111,8 @@ function OTPmodal2(props) {
                         redirect: 'follow'
                     };
 
-                    await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                    await fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
+                    // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                         .then(response => response.json())
                         .then(result => {
                             localStorage.setItem('user', JSON.stringify(result))

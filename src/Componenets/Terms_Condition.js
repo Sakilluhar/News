@@ -25,7 +25,8 @@ function Terms_Condition(props) {
             redirect: 'follow'
         };
 
-        fetch("https://news.wrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
+        fetch("http://news.thewrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
+        // fetch("https://news.wrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)

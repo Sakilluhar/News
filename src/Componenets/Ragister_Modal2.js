@@ -96,8 +96,8 @@ function Ragister_Modal2(props) {
                                 redirect: 'follow'
                             };
 
-                            // fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
-                            fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
+                            fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
+                            // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
                                 .then(response => response.text())
                                 .then(result => {
 
