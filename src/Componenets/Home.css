@@ -621,17 +621,17 @@
   }
 
   #vps-head-main {
-    display: flex;
-    flex-direction: row;
-    gap: 70%;
+    display: grid;
+    grid-template-columns: 6% 4fr 1fr 6%;
+    margin-bottom: 1%;
   }
 
   #vps-main-logo {
-    margin-left: 6%;
-    max-width: 2000%;
-    position: relative;
+    display: grid;
+    grid-column: 2/3;
     margin-top: 2%;
-    margin-bottom: 2%;
+    /* max-width: 2000px; */
+    position: relative;
   }
 
   /* #vps-main-logo::after {
@@ -646,10 +646,10 @@
   } */
 
   #vps-Viewmore {
-    text-align: center;
+    text-align: end;
     text-decoration: none;
     color: #ffffff;
-    margin-top: 2.1%;
+    margin-top: 8%;
   }
 
   #vps-body {
@@ -854,7 +854,7 @@
   #hns-Viewmore {
     text-align: end;
     text-decoration: none;
-    color: #ee2934;
+    color: #0f1f40;
     margin-top: 8%;
   }
 
