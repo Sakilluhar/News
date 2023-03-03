@@ -53,7 +53,7 @@ function TopNewsSection() {
       {Data && Data.length === 0 ? null : (
         <>
 
-          <div id='tns-head-main' className='d-flex justify-content-between'>
+          <div id='tns-head-main' className=''>
             <h4 id='tns-logo' >Top News</h4>
             <a href='/' id='tns-Viewmore'>View More</a>
           </div>

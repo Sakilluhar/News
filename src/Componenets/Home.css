@@ -98,14 +98,16 @@
     display: none;
   }
   #tns-head-main {
-    margin-top: 2%;
-    margin-left: 6%;
-    margin-right: 6%;
+    display: grid;
+    grid-template-columns: 6% 4fr 1fr 6%;
+    margin-top: 3%;
     margin-bottom: 2%;
   }
 
   #tns-logo {
-    text-align: center;
+    display: grid;
+    grid-column: 2/3;
+    /* text-align: center; */
     /* max-width: 2000%; */
     position: relative;
   }
@@ -123,9 +125,10 @@
   } */
 
   #tns-Viewmore {
-    text-align: center;
+    text-align: end;
     text-decoration: none;
-    color: black;
+    color: #1a2e51;
+    margin-top: 1%;
   }
 
   #top-news-section {
@@ -332,9 +335,9 @@
   }
 
   #rns-head-main {
-    display: flex;
-    flex-direction: row;
-    gap: 85%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
   }
 
   #rns-main-logo {
@@ -357,10 +360,10 @@
   } */
 
   #rns-Viewmore {
-    text-align: center;
+    text-align: end;
     text-decoration: none;
     color: black;
-    margin-top: 2.2%;
+    margin-top: 8%;
   }
 
   #rns-cards-main {
@@ -854,7 +857,7 @@
   #hns-Viewmore {
     text-align: end;
     text-decoration: none;
-    color: #ee2934;
+    color: #1a2e51;
     margin-top: 8%;
   }
 
