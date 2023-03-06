@@ -58,7 +58,7 @@ function NewsCardFS() {
        
         if(value === 'rad1'){
             setTitle(Data[0].title);
-            setDescription(Data[0].description.slice(0, 350)+"...");
+            setDescription(Data[0].description.slice(0, 250)+"...");
             setCategory('Breaking News');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
@@ -69,7 +69,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad2'){
             setTitle(Data[1].title);
-            setDescription(Data[1].description.slice(0, 350)+"...");
+            setDescription(Data[1].description.slice(0, 250)+"...");
             setCategory('Breaking News');
             setImage (Data[1].image);
             setVideo_url(Data[1].content_value);
@@ -77,7 +77,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad3'){
             setTitle(Data[2].title);
-            setDescription(Data[2].description.slice(0, 350)+"...");
+            setDescription(Data[2].description.slice(0, 250)+"...");
             setCategory('Breaking News');
             setImage (Data[2].image);
             setVideo_url(Data[2].content_value);
@@ -104,15 +104,16 @@ function NewsCardFS() {
             <div id='body-first-section' className=''>
             <div id='Left-first-section' className='my-auto'>
                 <button id='btnCatagory' className='btn' type="button" >{Category}</button>
-                <h1 id='Top-Title'><b>{Title}</b></h1>
+                <p id='Top-Title'><b>{Title}</b></p>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>
-                {/* <Link id='btnReadMore' className='btn' type="button" to={"/NewsView?Nid=" + Data[0].id + "&Cid=" + Data[0].category_id} ><b>READ MORE</b></Link> */}
+                <Link id='btnReadMore' className='btn' type="button" to='' ><b>READ MORE</b></Link>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
+                <a id='btnpaly-mobile'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={30}/></a>
                 </div>
             </div>
 
-            <div>
+            <div id='right-first-section'>
             <img src={Image} className="float-end" id='fs-Newscard-image' fallback={<Breathing width={800} height={600} />} alt="..."/>
             </div>
 
