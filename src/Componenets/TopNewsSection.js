@@ -111,7 +111,7 @@ function TopNewsSection() {
 
               <div id='top-news-card1' className="card" onClick={tnshandleReadMore}>
                 <img id='tns-news-image1' src={Data[0].image} className="card-img" alt="..." />
-                <div id='tns-text-card1' className="card-img-overlay ">
+                <div id='tns-text-card1' className="card-body ">
                   <button id='btnTnsCatagory-card1' className='btn' type="button" onClick={tnshandleCatagory} >{Data[0].category_name}</button>
                   <p id='tns-Title-card1' className="">{Data[0].title}</p>
                 </div>

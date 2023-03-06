@@ -136,45 +136,13 @@ const Newsbar = (props) => {
       
         return (
           <>
-                  <Link variant="primary" className='nav-link active me-4' onClick={handleShow} >
+                  <button variant="primary" className='btn' onClick={handleShow} >
                   <GiHamburgerMenu/>
-                      </Link>
+                      </button>
                       
                       <Offcanvas id="Nav-Offcanvas" show={show} onHide={handleClose} {...props}>
                       <Offcanvas.Header closeButton>
-                          <Offcanvas.Title>MENU</Offcanvas.Title>
-                      </Offcanvas.Header>
-                      <Offcanvas.Body>
-                      <ul className="">
-
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
-                        </li>
-
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">BREAKING NEWS</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
-                        </li>
-                        <li className="nav-item">
-                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CATAGORIES</Link></b>
-                            <ul >
-                                {!Data ? "Loading..."
-                                :Data.map((element)=>(
-                                <li className="nav-item">
-                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} > <b>{element.category_name}</b> </Link>
-                                </li>
-                                ))}
-                            </ul>
-                        </li>
-                        <li id='Nav-btns'>
+                          <Offcanvas.Title><li id='Nav-btns'>
                             
                             {!islogout ?
                                 <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
@@ -231,7 +199,39 @@ const Newsbar = (props) => {
                                 <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                                 </OverlayTrigger>
                             ))}
+                        </li></Offcanvas.Title>
+                      </Offcanvas.Header>
+                      <Offcanvas.Body>
+                      <ul className="">
+
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
                         </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                        </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="" aria-current="page" to="/hello/sakil/luhar">LIVE NEWS</Link></b>
+                        </li>
+
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="" aria-current="page" to="/">BREAKING NEWS</Link></b>
+                        </li>
+                        <li className="nav-item">
+                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                        </li>
+                        <li className="nav-item">
+                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CATAGORIES</Link></b>
+                            <ul >
+                                {!Data ? "Loading..."
+                                :Data.map((element)=>(
+                                <li className="nav-item">
+                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} > <b>{element.category_name}</b> </Link>
+                                </li>
+                                ))}
+                            </ul>
+                        </li>
+                        
                         </ul>
                       </Offcanvas.Body>
                       </Offcanvas>
