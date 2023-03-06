@@ -825,7 +825,6 @@
   #hns-head {
     font-family: "Zilla Slab", serif;
     color: #1a2e51;
-    margin: 1%;
   }
 
   #hns-head-main {
@@ -837,7 +836,7 @@
   #hns-main-logo {
     display: grid;
     grid-column: 2/3;
-    margin-top: 2%;
+    margin-top: 3%;
     /* max-width: 2000px; */
     position: relative;
   }
@@ -858,7 +857,7 @@
     text-align: end;
     text-decoration: none;
     color: #1a2e51;
-    margin-top: 8%;
+    margin-top: 13%;
   }
 
   #hns-main {
