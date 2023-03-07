@@ -41,7 +41,7 @@ function NewsCardFS() {
         .then(result => {
             setData(result.data)
             setTitle(result.data[0].title);
-            setDescription(result.data[0].description.slice(0, 350)+"...");
+            setDescription(result.data[0].description.slice(0, 300)+"...");
             setCategory('Breaking News');
             setImage (result.data[0].image);
             
@@ -58,7 +58,7 @@ function NewsCardFS() {
        
         if(value === 'rad1'){
             setTitle(Data[0].title);
-            setDescription(Data[0].description.slice(0, 250)+"...");
+            setDescription(Data[0].description.slice(0, 300)+"...");
             setCategory('Breaking News');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
@@ -69,7 +69,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad2'){
             setTitle(Data[1].title);
-            setDescription(Data[1].description.slice(0, 250)+"...");
+            setDescription(Data[1].description.slice(0, 300)+"...");
             setCategory('Breaking News');
             setImage (Data[1].image);
             setVideo_url(Data[1].content_value);
@@ -77,7 +77,7 @@ function NewsCardFS() {
         }
         else if(value === 'rad3'){
             setTitle(Data[2].title);
-            setDescription(Data[2].description.slice(0, 250)+"...");
+            setDescription(Data[2].description.slice(0, 300)+"...");
             setCategory('Breaking News');
             setImage (Data[2].image);
             setVideo_url(Data[2].content_value);

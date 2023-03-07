@@ -45,8 +45,9 @@ function BreakingNewsSection() {
           <div id='bns-main-card' className="card" >
             <img id='bns-main-image' src={breakingNews2_jpg} className="card-img" alt="..." />
             <div id='bns-main-text' className="card-img-overlay">
-              <h1 id='' className="card-text"><b>Breacking <br /> News</b></h1>
-              <button id='btnbnsCatagory' className='btn' type="button" >VEIW ALL</button>
+              <p id='bns-logo-col' className="card-text"><b>Breacking <br /> News</b></p>
+              <p id='bns-logo-row' className="card-text"><b>Breacking News</b></p>
+              <button id='btnbnsViewAll' className='btn' type="button" >VEIW ALL</button>
             </div>
           </div>
 
@@ -57,7 +58,7 @@ function BreakingNewsSection() {
                 <img id='bns-image' src={element.image} className="card-img-top" alt="..." />
                 <div id='bns-card-body' className="card-body">
                   <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Breaking News</button>
-                  <h5 id='bns-card-text' className="">{element.title.slice(0, 60)}...</h5>
+                  <h5 id='bns-card-text' className="">{element.title.slice(0, 50)}...</h5>
                 </div>
               </div>
             ))}
