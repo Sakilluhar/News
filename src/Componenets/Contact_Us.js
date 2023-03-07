@@ -48,9 +48,11 @@ function ContactUs() {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
             errors.email = "Enter a Valid EMail";
-        }else if (!values.subject) {
+        }
+        if (!values.subject) {
             errors.subject = " Subject is reqired! ";
-        }else if (!values.message) {
+        }
+        if (!values.message) {
             errors.message = " Enter a feedback! ";
         }
         return errors;
@@ -117,8 +119,8 @@ function ContactUs() {
                         <div className="form-floating mb-3">
                             {/* <textarea type="text" className="form-control" rows="50"
                                 id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" /> */}
-                            <input class="form-control" id="exampleFormControlTextarea1" rows="3" style={{ height: "14rem" }} name="message"
-                                placeholder="name@example.com" aria-describedby="emailHelp" ></input>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style={{ height: "14rem" }} name="message"
+                                placeholder="name@example.com" aria-describedby="emailHelp" ></textarea>
                             <p className='error-msg'> {formErrors.message}</p>
                             <label htmlFor="floatingInput" name="message">Enter Message</label>
                         </div>
