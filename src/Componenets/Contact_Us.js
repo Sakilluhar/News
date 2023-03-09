@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import photo from '../images/Login.jpg'
+
 // import Logo from '../images/Logo.png'
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import './Contact_Us.css'
 import emailjs from 'emailjs-com'
+import ReCAPTCHA from "react-google-recaptcha";
+
+
+
+
 function ContactUs() {
+    const onChange = () => {
+        setVerifed(true);
+    }
 
     const initialValues = { username: "", email: "", subject: "", message: "" };
     const [formValues, setFormValues] = useState(initialValues);
@@ -14,6 +22,7 @@ function ContactUs() {
             setFormErrors("")
     }, 5000));
     const [isSubmit, setIsSubmit] = useState(false);
+    const [verifed, setVerifed] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +36,7 @@ function ContactUs() {
             });
 
         setIsSubmit(true);
+        setFormValues(initialValues)
         // navigate('/')
     };
     const handleChange = (e) => {
@@ -63,16 +73,16 @@ function ContactUs() {
             <div id='contact_us'>
                 <div className="card my-3 main-card" id='card-contact'>
                     <div className="card-body" id='card-social'>
-                        <button className="btn bd-highlight"size={50} id='it'><FiPhone size={35} /></button>
+                        <button className="btn bd-highlight" size={50} id='it'><FiPhone size={35} /></button>
                         <div>
                             <p className='text-mute'> Phone </p>
                             <p> +9195324785584 </p>
                         </div>
                     </div>
                 </div>
-                <div className="card my-3 main-card"id='card-contact'>
+                <div className="card my-3 main-card" id='card-contact'>
                     <div className="card-body" id='card-social' >
-                        <button className="btn bd-highlight"id='it'><FiMail size={35} /></button>
+                        <button className="btn bd-highlight" id='it'><FiMail size={35} /></button>
                         <div>
                             <p className='text-mute'> Mail </p>
                             <p> newsApp123@gmail.com </p>
@@ -81,7 +91,7 @@ function ContactUs() {
                 </div>
                 <div className="card my-3 main-card" id='card-contact'>
                     <div className="card-body" id='card-social'>
-                        <button className="btn bd-highlight"size={50} id='it'><GoLocation size={35} /></button>
+                        <button className="btn bd-highlight" size={50} id='it'><GoLocation size={35} /></button>
                         <div>
                             <p className='text-mute'> Office Address </p>
                             <p> Gujarat-India </p>
@@ -112,21 +122,27 @@ function ContactUs() {
                         </div>
                         <div className="form-floating mb-3" style={{ height: "4rem" }}>
                             <input type="text" className="form-control" name="subject"
-                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailsubject" />
+                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailsubject" value={formValues.subject}  onChange={handleChange} />
                             <p className='error-msg'> {formErrors.subject}</p>
                             <label htmlFor="floatingInput" name="subject">Enter Subject</label>
                         </div>
                         <div className="form-floating mb-3">
-                            {/* <textarea type="text" className="form-control" rows="50"
-                                id="floatingInput" placeholder="name@example.com" aria-describedby="emailHelp" /> */}
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style={{ height: "14rem" }} name="message"
-                                placeholder="name@example.com" aria-describedby="emailHelp" ></textarea>
+                                placeholder="name@example.com" aria-describedby="emailHelp" value={formValues.message}  onChange={handleChange} ></textarea>
                             <p className='error-msg'> {formErrors.message}</p>
                             <label htmlFor="floatingInput" name="message">Enter Message</label>
                         </div>
+                        <div id='recaptcha'>
+                            <div className='py-3'>
+                                <button type="submit" className="btn   btn-lg  w-30" id='Send_Message' disabled={!verifed} >SEND MESSAGE</button>
+                            </div>
 
-                        <div className='py-3'>
-                            <button type="submit" className="btn   btn-lg  w-30" id='Send_Message' >SEND MESSAGE</button>
+                            <div className='recap1'> 
+                                <ReCAPTCHA
+                                    sitekey="6LcQytwkAAAAAHyCYveL9YC8Yju8wGsUiRRUHyPb"
+                                    onChange={onChange}
+                                />
+                            </div>
                         </div>
                     </div>
                 </form>
