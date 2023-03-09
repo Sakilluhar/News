@@ -1109,6 +1109,7 @@
   #rns-main-mobile {
     display: none;
   }
+
   #rns-main {
     display: grid;
     grid-template-columns: 6% 1fr 6%;
@@ -1127,21 +1128,8 @@
   #rns-main-logo {
     margin-top: 2%;
     margin-bottom: 3%;
-    /* max-width: 1500px; */
     position: relative;
   }
-
-  /* #rns-main-logo::after {
-    content: "";
-    display: block;
-    width: 1040%;
-    height: 1px;
-    background: #ee2934;
-    position: absolute;
-    left: 115%;
-    top: 50%;
-    z-index: -2;
-  } */
 
   #rns-Viewmore {
     text-align: end;
@@ -1190,11 +1178,16 @@
   #rns-card-body {
     margin-top: 2%;
     padding: 3%;
-    height: 15%;
+    height: 17%;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   #rns-card-footer {
-    height: 25%;
+    height: 23%;
   }
 
   #btnrnsCatagory {
@@ -1206,12 +1199,14 @@
   }
 
   #btnrnsRead {
-    width: 27%;
+    width: fit-content;
     height: fit-content;
-    position: relative;
+    position: absolute;
     /* font-size: 25; */
     color: #1a2e51;
-    margin: 3%;
+    /* margin: 3%; */
+    left: 3%;
+    bottom: 3%;
     padding: 3%;
     border: 1px solid #1a2e51;
   }
@@ -1283,6 +1278,141 @@
     background-color: #00000000;
     border: none;
   }
+
+  @media (max-width: 1250px) {
+    #rns-card-body {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 850px) {
+
+    #rns-card {
+      width: 100%;
+      height: 30rem;
+      background-color: #f5f5f5;
+    }
+
+    #rns-card-body {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #rns-card {
+    width: 100%;
+    height: 24rem;
+    background-color: #f5f5f5;
+  }
+
+  #rns-card-body {
+    font-size: 14px;
+}
+}
+
+@media (max-width: 600px) {
+
+  #rns-main {
+    display: grid;
+    grid-template-columns: 6% 1fr 6%;
+    font-family: "Zilla Slab", serif;
+    color: #1a2e51;
+    padding-top: 2%;
+    height: fit-content;
+  }
+  
+  #rns-cards-main{
+    display: none;
+  }
+
+  #rns-main-mobile{
+    height: 100%;
+    display: grid;
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  #rns-card-row {
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    height: 20rem;
+    overflow-x: auto;
+
+  }
+
+  #rns-card {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5f5;
+  }
+
+  #rns-image {
+    height: 100%;
+    min-height: 100%;
+    min-width: 30%;
+    max-width: 30%;
+    margin: 0%;
+    border-radius: 5px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+
+    width: 30%;
+    object-fit: cover;
+  }
+
+  #btnrnsCatagory {
+    color: #ffffff;
+    background: #ee2934;
+    width: fit-content;
+    font-size: 10px;
+    padding: 1px;
+    position: absolute;
+    margin: 0%;
+    top: 0%;
+    left: 0%;
+  }
+
+  #rns-card-body {
+    margin-top: 2%;
+    padding: 3%;
+    height: 17%;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+@media (max-width: 450px) {
+
+  #rns-Viewmore {
+    text-align: end;
+    text-decoration: none;
+    color: black;
+    margin-top: 8%;
+    font-size: 12px;
+  }
+
+  #rns-card-body {
+    margin-top: 2%;
+    padding: 3%;
+    height: 17%;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+}
 
   /* ---------------------------------- rns weather card ------------------------------------ */
 

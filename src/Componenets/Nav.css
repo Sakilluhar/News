@@ -24,6 +24,12 @@
     /* position: absolute; */
 }
 
+#NewsLogo{
+    height: 3rem;
+    width: auto;
+    margin: 1rem;
+}
+
 /* manu-links and buttons */
 .Manu-links{
     grid-column: 3/4;
@@ -83,6 +89,13 @@
         /* justify-content: start; */
         /* align-items: center; */
         /* position: absolute; */
+    }
+
+    #NewsLogo{
+        height: 2.5rem;
+        width: auto;
+        margin: 1rem;
+        margin-top: 1.3rem;
     }
 
     .mobile-manu{
@@ -154,16 +167,6 @@
 #nav-link{
 color: #1A2E51;
 text-decoration: none;
-}
-
-#NewsLogo{
-    /* height: 30%;
-    margin-left: 2%;
-    margin-top: 1%;
-     */
-     height: 2rem;
-    width: auto;
-    margin: 1rem;
 }
 
 /* nav buttons */
