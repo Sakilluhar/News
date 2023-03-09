@@ -20,9 +20,8 @@
     display: grid;
     grid-column: 2/3;
     /* justify-content: start; */
-    align-items: center;
-    position: absolute;
-
+    /* align-items: center; */
+    /* position: absolute; */
 }
 
 /* manu-links and buttons */
@@ -70,17 +69,20 @@
     list-style-type: none;
 }
 
-/* @media (max-width: 1260px) {
-    .Newsbar {
-        height: 4rem;
-        grid-template-columns: 2rem 1fr 3fr 1rem ;
-    }
-} */
+
 /* mobile mode */
 @media (max-width: 1550px) {
     .Newsbar {
-        /* height: 4rem; */
-        grid-template-columns: 2rem 1fr 2fr 1fr 1rem ;
+        height: 5rem;
+        grid-template-columns: 6% 1fr 2fr 1fr 6% ;
+    }
+
+    .News-logo{
+        display: grid;
+        grid-column: 2/3;
+        /* justify-content: start; */
+        /* align-items: center; */
+        /* position: absolute; */
     }
 
     .mobile-manu{
@@ -103,7 +105,9 @@
         grid-column: 4/5;
         display: flex;
         justify-content: right;
-        align-items: center;
+        /* align-items: center; */
+        margin-top: 1.5rem;
+        height: fit-content;
     }
     #nav-links{
         font-size: 22px;
@@ -153,10 +157,13 @@ text-decoration: none;
 }
 
 #NewsLogo{
-    margin-top: 1.5%;
-    margin-left: 110px;
-    width: 23%;
-    /* height: 100%; */
+    /* height: 30%;
+    margin-left: 2%;
+    margin-top: 1%;
+     */
+     height: 2rem;
+    width: auto;
+    margin: 1rem;
 }
 
 /* nav buttons */
@@ -262,31 +269,7 @@ border: none;
 
 /* ---------------------- respons Navbar css -------------------------- */
 
-/* @media (max-width: 1240px) {
-    .Navbar {
-        height: 4rem;
-        
-    }
-}
 
-@media (max-width: 980px) {
-    .Newsbar {
-        height: 4rem;
-        grid-template-columns: 2rem 1fr 2fr 1fr 1rem ;
-    }
-
-    .Manu-links{
-        display: none;
-    }
-    .hamburger-manu {
-        display: contents;
-        grid-column: 4/5;
-        display: flex;
-    justify-content: right;
-    align-items: center;
-    }
-   
-} */
 
 /* ---------------------- Header css -------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
