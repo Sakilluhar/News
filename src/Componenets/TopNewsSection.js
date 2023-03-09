@@ -63,7 +63,7 @@ function TopNewsSection() {
                 <img id='tns-news-image' src={Data[1].image} className="card-img" alt="..." />
                 <div id='tns-text' className="card-img-overlay">
                   <button id='btnTnsCatagory' className='btn' type="button">{Data[1].category_name}</button>
-                  <h6 id='tns-Title' className="card-text">{Data[1].title}</h6>
+                  <h5 id='tns-Title' className="card-text">{Data[1].title}</h5>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ function TopNewsSection() {
                 <img id='tns-news-image' src={Data[2].image} className="card-img" alt="..." />
                 <div id='tns-text' className="card-img-overlay">
                   <button id='btnTnsCatagory' className='btn' type="button" >{Data[2].category_name}</button>
-                  <h6 id='tns-Title' className="card-text">{Data[2].title}</h6>
+                  <h5 id='tns-Title' className="card-text">{Data[2].title}</h5>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ function TopNewsSection() {
                 <img id='tns-news-image' src={Data[3].image} className="card-img" alt="..." />
                 <div id='tns-text' className="card-img-overlay">
                   <button id='btnTnsCatagory' className='btn' type="button" >{Data[3].category_name}</button>
-                  <h6 id='tns-Title' className="card-text">{Data[3].title}</h6>
+                  <h5 id='tns-Title' className="card-text">{Data[3].title}</h5>
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ function TopNewsSection() {
                 <img id='tns-news-image' src={Data[4].image} className="card-img" alt="..." />
                 <div id='tns-text' className="card-img-overlay">
                   <button id='btnTnsCatagory' className='btn' type="button" >{Data[4].category_name}</button>
-                  <h6 id='tns-Title' className="card-text">{Data[4].title}</h6>
+                  <h5 id='tns-Title' className="card-text">{Data[4].title}</h5>
                 </div>
               </div>
             </div>

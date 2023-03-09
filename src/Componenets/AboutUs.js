@@ -43,7 +43,7 @@ function AboutUs() {
           </div>
           <div id="about">
             <h2 className="A my-4" style={{ color: "#1B2D51" }}><strong> About Us </strong></h2>
-            <p> Most people wouldn't even consider getting a physical morning newspaper anymore,so we depend on digital source for our news. Finding an app that helps your get the news you want in a timely manner is essential.<br /><br />
+            <p className='p'> Most people wouldn't even consider getting a physical morning newspaper anymore,so we depend on digital source for our news. Finding an app that helps your get the news you want in a timely manner is essential.<br /><br />
               Now all are in your handy. The Web contains so many polupar categories of news. Such as breaking news, top news, travels, sports, health,entaintainment,world etc. You can read,bookmark,like,comment and share the news with others
             </p>
           </div>
@@ -64,7 +64,7 @@ function AboutUs() {
         </div>
         <div className='container A3'>
           <h1> About Our Company</h1>
-          <p> Our company that provide multi-technology services with multi-skilled and highly competent work force and strong globle presence.<br /><br />
+          <p className='p'> Our company that provide multi-technology services with multi-skilled and highly competent work force and strong globle presence.<br /><br />
             Our motto of help the customer to expand their business with help of technology. Yes, we aren't alone, We are team of Devlopers & Thechnology lovers who are Enthusiastic, Passionate, Skilled, Creative, Multi-Telented, Ready to Strive,Helpful & always there to support our lovable clients, who are integral part of our team. </p>
         </div>
       </div>
