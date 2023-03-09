@@ -34,14 +34,22 @@ function OTPmodal2(props) {
     //     }
     // };
 
+    const resendOTP = () => {
+        if (props.phonenum !== null)
+            generateOTP(props.phonenum)
 
+
+    }
     const generateRecaptcha = () => {
-        window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-            'size': 'invisible',
-            'callback': (response) => {
-                // reCAPTCHA solved, allow signInWithPhoneNumber.
-            }
-        }, authentication);
+        if (!window.recaptchaVerifier) {
+            window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+                'size': 'invisible',
+                'callback': (response) => {
+                    // reCAPTCHA solved, allow signInWithPhoneNumber.
+                }
+            }, authentication);
+        }
+
     }
 
 
@@ -81,7 +89,7 @@ function OTPmodal2(props) {
             // navigate('/')
 
             var myHeaders = new Headers();
-            myHeaders.append("Authorization", "Bearer "+BToken);
+            myHeaders.append("Authorization", "Bearer " + BToken);
             myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
 
             var requestOptions = {
@@ -91,7 +99,7 @@ function OTPmodal2(props) {
             };
 
             await fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
-            // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
                 .then(response => response.text())
                 .then(async result => {
 
@@ -112,7 +120,7 @@ function OTPmodal2(props) {
                     };
 
                     await fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
-                    // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                         .then(response => response.json())
                         .then(result => {
                             localStorage.setItem('user', JSON.stringify(result))
@@ -144,7 +152,7 @@ function OTPmodal2(props) {
                     dialogClassName="border-radius-2"
                 >
                     <div className='ModalWrapper55' id='ModalWrapper'>
-                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }}id="login_img5">
+                        <div style={{ width: '100%', height: "100%", objectFit: "cover", borderRadius: "20px" }} id="login_img5">
                             <img className="ModalImg5" src={photo} alt="" />
                             <div className="logo-img-overlay">
                                 <img src={Logo} alt="" id='logo5' />
@@ -170,14 +178,21 @@ function OTPmodal2(props) {
                                     <form className="my-3 mx-4" onSubmit={(e) => {
                                         e.preventDefault()
                                     }}>
-                                        <div className="mb-3">
-                                            <OTPInput className='otp-container' value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false} secure />
+                                        <div className="mb-3 my-3">
+                                            <OTPInput className="otp-container" value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false} secure />
+                                            <p className='error-msg'>{error}</p>
+
+                                            <div>
+                                                <button onClick={resendOTP} id='resendbutton'  className="btn">Resend Otp</button>
+                                            </div>
+
                                         </div>
 
                                         <div className='py-3'>
-                                            <p className='error-msg'>{error}</p>
+
                                             <button type="submit" className="btn   btn-lg  w-100" id='submitbutton' onClick={submitOTP} >Submit</button>
                                         </div>
+
 
                                     </form>
                                 </div>

@@ -1,3 +1,4 @@
+
 import {GiHamburgerMenu} from 'react-icons/gi';
 import React, { useEffect, useState } from 'react'
 import './Nav.css';
@@ -13,8 +14,8 @@ import SignIn_Modal from './SignIn_Modal';
 // import Categories from './Categories';
 import { getAuth, signOut, sendPasswordResetEmail } from 'firebase/auth';
 import News_main_Logo from '../images/News_main_Logo.png';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { BearerToken } from '../Tokens';
@@ -132,11 +133,14 @@ const Newsbar = (props) => {
         const [show, setShow] = useState(false);
       
         const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
+        const handleShow = () => {
+            console.log('click')
+            setShow(true)
+        };
       
         return (
           <>
-                  <button variant="primary" className='btn' onClick={handleShow} >
+                  <button className='btn' onClick={handleShow} >
                   <GiHamburgerMenu/>
                       </button>
                       
@@ -242,11 +246,11 @@ const Newsbar = (props) => {
   return (
     <div>
       <nav className="Newsbar">
-        {/* News logo */}
-        <div className="News-logo">
+
+        <div id='News-logo' className="News-logo">
         <img id='NewsLogo' src={News_main_Logo} alt="" />
         </div>
-        {/* manu buttons */}
+
         <div className="Manu-links">
             <ul className="">
 
@@ -331,9 +335,7 @@ const Newsbar = (props) => {
 
         </div>
         <div className="hamburger-manu">
-                {/* <button onClick={()=> setShowManu(!ShowManu)}>
-                <GiHamburgerMenu/>
-                </button> */}
+
                 {['end'].map((placement, idx) => (
                     <OffCanvasExample key={idx} placement={placement} name={placement} />
                 ))}
