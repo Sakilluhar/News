@@ -1528,6 +1528,7 @@
   }
 
   /* -----------------------------video player sectin ---------------------------------- */
+
   #vps-main {
     height: fit-content;
     padding-bottom: 2%;
@@ -1539,6 +1540,7 @@
 
   #vps-head-main {
     display: grid;
+    padding-top: 1%;
     grid-template-columns: 6% 4fr 1fr 6%;
     margin-bottom: 1%;
   }
@@ -1547,8 +1549,11 @@
     display: grid;
     grid-column: 2/3;
     margin-top: 2%;
-    /* max-width: 2000px; */
     position: relative;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   /* #vps-main-logo::after {
@@ -1581,9 +1586,14 @@
   }
 
   #vps-main-card {
-    height: 80%;
+    height: 46rem;
     width: 100%;
-    background-color: #000000;
+    background-color: #00000000;
+    border: none;
+  }
+
+  #vps-card-overlay{
+    height: 65%;
   }
 
   #vps-main-image {
@@ -1591,18 +1601,33 @@
     object-fit: cover;
     opacity: 0.8;
     border-radius: 10px;
-    height: 100%;
+    height: 65%;
+    width: 100%;
+  }
+
+  #vps-card-body{
+    height: 35%;
     width: 100%;
   }
 
   #vps-main-title {
+    color: #ffffff;
+    margin-left: 1%;
     position: relative;
-    bottom: 30%;
+    font-size: 30px;
+    top: 30%;
   }
 
   #vps-main-date {
-    position: relative;
-    bottom: 50%;
+    color: #ffffff;
+    position: absolute;
+    bottom: 3%;
+    font-size: 1.2rem;
+    margin-left: 1%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   #vps-body-right {
@@ -1616,6 +1641,7 @@
   #vps-image-cards {
     background-color: #000000;
     border-radius: 10px;
+    height: 22rem;
     border: none;
   }
 
@@ -1624,16 +1650,261 @@
     opacity: 0.8;
     object-fit: cover;
     border-radius: 10px;
-    height: 22rem;
+    height: 100%;
     width: 100%;
   }
 
   #vps-card-title {
-    position: relative;
-    top: 80%;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    margin: 1%;
+    padding: 5%;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.5);
+    font-size: 23px;
+    line-height: 1.2;
   }
+
+  @media (max-width: 1200px) {
+
+    #vps-main-card {
+      height: 40rem;
+      width: 100%;
+      background-color: #00000000;
+      border: none;
+    }
+
+    #vps-main-title {
+      color: #ffffff;
+      margin-left: 1%;
+      position: relative;
+      font-size: 24px;
+      top: 20%;
+    }
+
+    #vps-image-cards {
+      background-color: #000000;
+      border-radius: 10px;
+      height: 19rem;
+      border: none;
+    }
+
+    #vps-card-title {
+      position: absolute;
+      bottom: 1%;
+      left: 0;
+      margin: 1%;
+      padding: 5%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+  }
+
+  @media (max-width: 940px) {
+    #vps-main-card {
+      height: 36rem;
+      width: 100%;
+      background-color: #00000000;
+      border: none;
+    }
+
+    #vps-main-title {
+      color: #ffffff;
+      margin-left: 1%;
+      position: relative;
+      font-size: 20px;
+      top: 20%;
+    }
+
+    #vps-image-cards {
+      background-color: #000000;
+      border-radius: 10px;
+      height: 17rem;
+      border: none;
+    }
+
+    #vps-card-title {
+      position: absolute;
+      bottom: 1%;
+      left: 0;
+      margin: 1%;
+      padding: 5%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #vps-main-card {
+      height: 32rem;
+      width: 100%;
+      background-color: #00000000;
+      border: none;
+    }
+
+    #vps-main-title {
+      color: #ffffff;
+      margin-left: 1%;
+      position: relative;
+      font-size: 18px;
+      top: 15%;
+    }
+
+    #vps-image-cards {
+      background-color: #000000;
+      border-radius: 10px;
+      height: 15rem;
+      border: none;
+    }
+
+    #vps-card-title {
+      position: absolute;
+      bottom: 1%;
+      left: 0;
+      margin: 1%;
+      padding: 5%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 650px) {
+
+    #vps-main-logo {
+      display: grid;
+      grid-column: 2/3;
+      margin-top: 2%;
+      position: relative;
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  
+    #vps-Viewmore {
+      font-size: 14px;
+      text-align: end;
+      text-decoration: none;
+      color: #ffffff;
+      margin-top: 8%;
+    }
+
+    #vps-body {
+      display: grid;
+      grid-template-columns: 4.5% 1fr 4.5%;
+      gap: 0%;
+    }
+  
+    #vps-body-left {
+      display: grid;
+      grid-column: 2/3;
+    }
+
+    #vps-body-right {
+      display: grid;
+      grid-column: 2/3;
+      display: flex;
+      flex-direction: row;
+      gap: 2%;
+      margin-bottom: 2%;
+    }
+
+    #vps-main-card {
+      height: 26rem;
+      width: 100%;
+      background-color: #00000000;
+      border: none;
+    }
+
+    #vps-main-title {
+      color: #ffffff;
+      margin-left: 1%;
+      position: relative;
+      font-size: 18px;
+      top: 10%;
+    }
+
+    #vps-image-cards {
+      background-color: #000000;
+      border-radius: 10px;
+      height: 10rem;
+      min-width: 50%;
+      border: none;
+    }
+
+    #vps-card-title {
+      position: absolute;
+      bottom: 1%;
+      left: 0;
+      margin: 1%;
+      padding: 5%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      max-height: 4.1em;
+    }
+  }
+
+  @media (max-width: 400px) {
+
+    #vps-main-logo {
+      display: grid;
+      grid-column: 2/3;
+      margin-top: 2%;
+      position: relative;
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  
+    #vps-Viewmore {
+      font-size: 12px;
+      text-align: end;
+      text-decoration: none;
+      color: #ffffff;
+      margin-top: 8%;
+    }
+
+    #vps-card-overlay{
+      height: 65%;
+    }
+  
+    #vps-main-image {
+      box-shadow: 3px 3px 15px 15px #0f1f4000;
+      object-fit: cover;
+      opacity: 0.8;
+      border-radius: 10px;
+      height: 60%;
+      width: 100%;
+    }
+  
+    #vps-card-body{
+      height: 40%;
+      width: 100%;
+    }
+
+    #vps-image-cards {
+      background-color: #000000;
+      border-radius: 10px;
+      height: 10rem;
+      min-width: 50%;
+      border: none;
+    } 
+  }
+
   /* -----------------------------modal css -------------------------------------------------- */
   #vps-modal-btnclose {
     background-color: #00000000;
