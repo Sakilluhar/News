@@ -51,8 +51,8 @@ export default function Header() {
 
     <div className='left-head'>
         <button id='btncalendar' className='btn btn-sm '><FaCalendarAlt size={17} id='logoCalendar'/>{curdate}</button>
-        <h3><BsSun/></h3>
-        <h3 id=''><b>32'c</b></h3>
+        {/* <h3><BsSun/></h3>
+        <h3 id=''><b>32'c</b></h3> */}
         <div id='header-city-section'>
         <h5 id=''>Bhuj</h5>
         <p id='header-city-section-day' >{day[currDay]}, Sunny</p>
@@ -64,7 +64,7 @@ export default function Header() {
     </div> 
     
     <div className='right-head'>
-    <NavDropdown
+    {/* <NavDropdown
               id="nav-dropdown-dark-example"
               title="Languages"
               menuVariant="dark"
@@ -74,17 +74,13 @@ export default function Header() {
                 Hindi
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Arebic</NavDropdown.Item>
-              {/* <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item> */}
     </NavDropdown>
       
       <a id='line-head' > </a>
       <button type='button' id='btnHead-Socials' className='btn '><FaFacebookSquare size={25}/></button>
       <button type='button' id='btnHead-Socials' className='btn '><TiSocialInstagram size={25}/></button>
       <button type='button' id='btnHead-Socials' className='btn '><FaLinkedin size={25}/></button>
-      <button type='button' id='btnHead-Socials' className='btn '><FaTwitterSquare size={25}/></button>
+      <button type='button' id='btnHead-Socials' className='btn '><FaTwitterSquare size={25}/></button> */}
     </div>
 
     </div>

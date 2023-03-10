@@ -1,6 +1,6 @@
 
 import {GiHamburgerMenu} from 'react-icons/gi';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Nav.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Tooltip from 'react-bootstrap/Tooltip';
@@ -39,6 +39,7 @@ const Newsbar = (props) => {
     const [isloginloading, setisloginloading] = useState(true)
     const [ShowManu,setShowManu]= useState();
 
+    const closeRef = useRef()
     useEffect(()=>{
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer "+BToken);
@@ -145,7 +146,7 @@ const Newsbar = (props) => {
                       </button>
                       
                       <Offcanvas id="Nav-Offcanvas" show={show} onHide={handleClose} {...props}>
-                      <Offcanvas.Header closeButton>
+                      <Offcanvas.Header closeButton ref={closeRef}>
                           <Offcanvas.Title><li id='Nav-btns'>
                             
                             {!islogout ?
@@ -209,28 +210,28 @@ const Newsbar = (props) => {
                       <ul className="">
 
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>HOME</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us" onClick={handleClose}>ABOUT US</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews">LIVE NEWS</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews" onClick={handleClose}>LIVE NEWS</Link></b>
                         </li>
 
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">BREAKING NEWS</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>BREAKING NEWS</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CONTACT US</Link></b>
                         </li>
                         <li className="nav-item">
-                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CATAGORIES</Link></b>
+                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CATAGORIES</Link></b>
                             <ul >
                                 {!Data ? "Loading..."
                                 :Data.map((element)=>(
                                 <li className="nav-item">
-                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} > <b>{element.category_name}</b> </Link>
+                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} onClick={handleClose}> <b>{element.category_name}</b> </Link>
                                 </li>
                                 ))}
                             </ul>
@@ -255,6 +256,7 @@ const Newsbar = (props) => {
             <ul className="">
 
             <li className="nav-item">
+                
                 <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
             </li>
             <li className="nav-item">
