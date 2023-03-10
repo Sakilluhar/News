@@ -81,12 +81,6 @@ function VideoPlayerSection() {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <h1 id="vps-main-title">{Data[0].title}</h1>
-
-            <h6 id="vps-main-date">
-              <FiCalendar size={18} id="logoCalendar" />
-              {Data[0].date.slice(0, 10)}
-            </h6>
           </div>
 
           <div id="vps-body-right">
