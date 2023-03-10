@@ -16,7 +16,11 @@ function VideoPlayerSection() {
 
   useEffect(() => {
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+BToken);
+
+    myHeaders.append(
+      "Authorization",
+      "Bearer " + BToken
+    );
 
     var formdata = new FormData();
     formdata.append("access_key", "5670");
@@ -63,10 +67,9 @@ function VideoPlayerSection() {
                 src={Data[0].image}
                 alt="Card image"
               />
-              <Card.ImgOverlay id="vps-card-overlay">
-                <Link
-                  id="vps-btnVideo"
-                  onClick={() => handleVideoUrl(Data[0].content_value)}>
+
+              <Card.ImgOverlay>
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[0].content_value)}>
                   <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
               </Card.ImgOverlay>
@@ -78,6 +81,12 @@ function VideoPlayerSection() {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <h1 id="vps-main-title">{Data[0].title}</h1>
+
+            <h6 id="vps-main-date">
+              <FiCalendar size={18} id="logoCalendar" />
+              {Data[0].date.slice(0, 10)}
+            </h6>
           </div>
 
           <div id="vps-body-right">
@@ -88,9 +97,8 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link
-                  id="vps-btnVideo"
-                  onClick={() => handleVideoUrl(Data[1].content_value)}>
+
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[1].content_value)}>
                   <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
                 <p id="vps-card-title">
@@ -106,9 +114,7 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link
-                  id="vps-btnVideo"
-                  onClick={() => handleVideoUrl(Data[2].content_value)}>
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[2].content_value)}>
                   <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
                 <p id="vps-card-title">
@@ -124,7 +130,7 @@ function VideoPlayerSection() {
             backdrop="static"
             keyboard={false}
             url={Video_url}
-            // title={Data[0].title}
+          // title={Data[0].title}
           />
 
           {/* <ReactPlayer
