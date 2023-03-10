@@ -19,7 +19,7 @@ function VideoPlayerSection() {
     var myHeaders = new Headers();
     myHeaders.append(
       "Authorization",
-      "Bearer "+BToken
+      "Bearer " + BToken
     );
 
     var formdata = new FormData();
@@ -69,8 +69,8 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[0].content_value)}>
-                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[0].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
               </Card.ImgOverlay>
             </Card>
@@ -80,7 +80,7 @@ function VideoPlayerSection() {
               <FiCalendar size={18} id="logoCalendar" />
               {Data[0].date.slice(0, 10)}
             </h6>
-            
+
           </div>
 
           <div id="vps-body-right">
@@ -91,8 +91,8 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[1].content_value)}>
-                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[1].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
                 <h4 id="vps-card-title">
                   <b>{Data[1].title}</b>
@@ -107,8 +107,8 @@ function VideoPlayerSection() {
                 alt="Card image"
               />
               <Card.ImgOverlay>
-                <Link id="vps-btnVideo" onClick={()=>handleVideoUrl(Data[2].content_value)}>
-                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60}/>
+                <Link id="vps-btnVideo" onClick={() => handleVideoUrl(Data[2].content_value)}>
+                  <BsFillPlayFill id="vps-btnVideo-logo" fill="red" size={60} />
                 </Link>
                 <h4 id="vps-card-title">
                   <b>{Data[2].title}</b>
@@ -118,13 +118,13 @@ function VideoPlayerSection() {
           </div>
 
           <VideoPlayerModal
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
-                  backdrop="static"
-                  keyboard={false}
-                  url={Video_url}
-                  // title={Data[0].title}
-                />
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            backdrop="static"
+            keyboard={false}
+            url={Video_url}
+          // title={Data[0].title}
+          />
 
           {/* <ReactPlayer
           width="40%"
