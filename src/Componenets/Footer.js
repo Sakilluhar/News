@@ -86,7 +86,7 @@ function Footer() {
 
                             <div className="col-xs-3 col-sm-3 col-md-3" >
                                 <div className='News'>
-                                    <h3 >News</h3>
+                                    <h3 >E-News</h3>
                                 </div>
                                 <div className='my-5 Lorem-text'>
                                     <p className='lorem'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit a minus nesciunt veniam ipsam molestiae asperiores soluta et. Et est, dolor, dicta libero vero quis sit<br /></p>
@@ -95,7 +95,7 @@ function Footer() {
 
                             </div>
                             <div className="col-xs-3 col-sm-3 col-md-3" >
-                                <h5> News Categories</h5>
+                                <p id='footer-nav'> News Categories</p>
                                 <ul className='newscate'>
                                     <li><Link to="/">Politics</Link></li>
                                     <li><Link to="/">Technology</Link></li>
@@ -117,7 +117,7 @@ function Footer() {
                             </div>
 
                             <div className="col-xs-3 col-sm-3 col-md-">
-                                <h5>useful links</h5>
+                                <p id='footer-nav'>useful links</p>
                                 <ul className="useL">
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/about_us">About</Link></li>
@@ -132,7 +132,7 @@ function Footer() {
                             <div className="col-xs-3 col-sm-3 col-md-3">
                                 <div className='d-flex flex-column gap-3'>
                                     <div>
-                                        <h5>Follow us </h5>
+                                        <p id='footer-nav'>Follow us </p>
                                         <div  className='hide-mobile'>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
                                             <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
@@ -156,7 +156,7 @@ function Footer() {
                     <div className=" d-flex copyright" id='copyright1'>
 
                         <p id='footer-Copyright' className="h6 me-auto p-2" >Copyright © 2022.All right Reversed By WRTeam.</p>
-                        <p id='footer-tearms' className="h6" variant="primary" onClick={handleShow}>
+                        <p id='footer-tearms' className="h6 p-2" variant="primary" onClick={handleShow}>
                             Terms & Conditions
                         </p>
                         {/* <Button className=" btn h6 p-2"> Terms & Conditions</Button>  */}
