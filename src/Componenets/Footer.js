@@ -155,13 +155,13 @@ function Footer() {
 
                     <div className=" d-flex copyright" id='copyright1'>
 
-                        <p className="h6 me-auto p-2" >Copyright © 2022.All right Reversed By WRTeam.</p>
-                        <p className="h6" variant="primary" onClick={handleShow}>
+                        <p id='footer-Copyright' className="h6 me-auto p-2" >Copyright © 2022.All right Reversed By WRTeam.</p>
+                        <p id='footer-tearms' className="h6" variant="primary" onClick={handleShow}>
                             Terms & Conditions
                         </p>
                         {/* <Button className=" btn h6 p-2"> Terms & Conditions</Button>  */}
                         <p className="h6 p-2"> | </p>
-                        <p className="h6 p-2" variant="primary" onClick={handlePrivacy}> Privacy Policy </p>
+                        <p id='footer-pri-pol' className="h6 p-2" variant="primary" onClick={handlePrivacy}> Privacy Policy </p>
                     </div>
                 </section>
             </div>
