@@ -22,6 +22,8 @@ import BookmarkSection from './Componenets/BookmarkSection';
 import TagNewsview from './Componenets/TagNewsview';
 import LiveNews from './Componenets/LiveNews';
 import BreakingNewsView from './Componenets/BreakingNewsView';
+import RecentNewsView from './Componenets/RecentNewsView';
+import VideoNewsview from './Componenets/VideoNewsview';
 
 
 function App() {
@@ -32,12 +34,14 @@ function App() {
     <>
       {/* {isloading ? <Spinner /> : (<> */}
 
-      {/* <Header /> */}
+      <Header />
       <Newsbar />
       <CatNav />
       <Routes>
         <Route exact path='/' element={<HomePage />}></Route>
         <Route exact path='/TagNewsview' element={<TagNewsview />}></Route>
+        <Route exact path='/VideoNewsview' element={<VideoNewsview />}></Route>
+        <Route exact path='/RecentNewsView' element={<RecentNewsView />}></Route>
         <Route exact path='/Bookmark' element={<BookmarkSection />}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>
         <Route exact path='/CategoryView' element={<CategoryView />}></Route>

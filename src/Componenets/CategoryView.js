@@ -35,7 +35,7 @@ function CategoryView() {
     formdata.append("access_key", "5670");
     formdata.append("category_id", catid);
     formdata.append("offset", "0");
-    formdata.append("limit", "10");
+    formdata.append("limit", "12");
     formdata.append("user_id", user_id);
     formdata.append("language_id", "14");
 

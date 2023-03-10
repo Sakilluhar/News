@@ -52,14 +52,14 @@ function RecentNewsSection() {
 
                         <div id='rns-head-main' className=''>
                             <h4 id='rns-main-logo'>Recent News</h4>
-                            <a href='/' id='rns-Viewmore'>View More</a>
+                            <Link href='/' id='rns-Viewmore' to="/RecentNewsView">View More</Link>
                         </div>
 
                         <div id='rns-card-row'>
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[0].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay card-inverse">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[0].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[0].category_id}`}>{Data[0].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-block">
                                     <p className="card-title">{Data[0].title.slice(0, 80)}...</p>
@@ -72,7 +72,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[1].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[1].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[1].category_id}`}>{Data[1].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[1].title.slice(0, 70)}...</p>
@@ -85,7 +85,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[2].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[2].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[2].category_id}`}>{Data[2].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[2].title.slice(0, 70)}...</p>
@@ -100,7 +100,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[3].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[3].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[3].category_id}`}>{Data[3].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[3].title.slice(0, 70)}...</p>
@@ -113,7 +113,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[4].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[4].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[4].category_id}`}>{Data[4].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[4].title.slice(0, 70)}...</p>
@@ -126,7 +126,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[5].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[5].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[5].category_id}`}>{Data[5].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[5].title.slice(0, 70)}...</p>
@@ -141,7 +141,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[6].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[6].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[6].category_id}`}>{Data[6].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[6].title.slice(0, 85)}...</p>
@@ -154,7 +154,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[7].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[7].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[7].category_id}`}>{Data[7].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[7].title.slice(0, 70)}...</p>
@@ -167,7 +167,7 @@ function RecentNewsSection() {
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={Data[8].image} className="card-img-top" alt="..." />
                                 <div id='rns-img-overlay' className="card-img-overlay">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{Data[8].category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${Data[8].category_id}`}>{Data[8].category_name}</Link>
                                 </div>
                                 <div id='rns-card-body' className="card-body">
                                     <p className="card-title">{Data[8].title.slice(0, 70)}...</p>
@@ -198,7 +198,7 @@ function RecentNewsSection() {
                                 {/* <div id='rns-img-overlay' className="card-img-overlay card-inverse">
                                 </div> */}
                                 <div id='rns-card-body' className="card-block">
-                                    <button id='btnrnsCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
+                                    <Link id='btnrnsCatagory' className='btn btn-sm' type="button" to={`/CategoryView?id=${element.category_id}`}>{element.category_name}</Link>
                                     <p className="card-title">{element.title.slice(0, 80)}...</p>
                                 </div>
                                 {/* <div id='rns-card-footer'>                                

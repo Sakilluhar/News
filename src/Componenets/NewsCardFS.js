@@ -103,7 +103,7 @@ function NewsCardFS() {
 {/* <div className="col-12 " dangerouslySetInnerHTML={{__html: data}}></div> */}
             <div id='body-first-section' className=''>
             <div id='Left-first-section' className='my-auto'>
-                <button id='btnCatagory' className='btn' type="button" >{Category}</button>
+                <Link id='btnCatagory' className='btn' type="button" to={'/BreakingNews'}>{Category}</Link>
                 <p id='Top-Title'><b>{Title}</b></p>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>

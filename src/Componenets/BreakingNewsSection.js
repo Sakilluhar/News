@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import { BearerToken } from '../Tokens';
+import { Link } from 'react-router-dom';
 
 
 
@@ -47,7 +48,7 @@ function BreakingNewsSection() {
             <div id='bns-main-text' className="card-img-overlay">
               <p id='bns-logo-col' className="card-text"><b>Breacking <br /> News</b></p>
               <p id='bns-logo-row' className="card-text"><b>Breacking News</b></p>
-              <button id='btnbnsViewAll' className='btn' type="button" >VEIW ALL</button>
+              <Link id='btnbnsViewAll' className='btn' type="button" to='/BreakingNews'>VIEW ALL</Link>
             </div>
           </div>
 
@@ -57,7 +58,7 @@ function BreakingNewsSection() {
               <div id='bns-card' className="card" key={element.id}>
                 <img id='bns-image' src={element.image} className="card-img-top" alt="..." />
                 <div id='bns-card-body' className="card-body">
-                  <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Breaking News</button>
+                  <Link id='btnbnsCatagory' className='btn btn-sm' type="button" to='/BreakingNews'>Breaking News</Link>
                   <h5 id='bns-card-text' className="">{element.title.slice(0, 50)}...</h5>
                 </div>
               </div>

@@ -51,9 +51,9 @@ function VideoPlayerSection() {
     <div id="vps-main">
       <div id="vps-head-main" className="">
         <p id="vps-main-logo">Video News To Explore</p>
-        <a href="/" id="vps-Viewmore">
+        <Link href="/" id="vps-Viewmore" to={'/VideoNewsview'}>
           View More
-        </a>
+        </Link>
       </div>
 
       {Data.length === 0 ? (
