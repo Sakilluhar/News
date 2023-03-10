@@ -49,17 +49,16 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <div id='our-company'>
-        <div className="conatiner" id="our">
+      <div id='our-company' >
         <div className='img-wrapper' >
-          <div className="text-center">
-            <img src={about1} className="img-thumbnail" id='i1' alt="..." />
+          <div id='i1'>
+            <img src={about1}  alt="..." id="image1" />
+          </div> 
+          <div id='i2'>
+            <img src={about3}  alt="..." id="image2"/>
           </div>
-          <div className="text-center">
-            <img src={about3} className="img-thumbnail" id='i2' alt="..." />
-          </div>
-          <div className="text-center">
-            <img src={about2} className="img-thumbnail" id='i3' alt="..." />
+          <div id='i3'>
+            <img src={about2}  alt="..." style={{}} id="image3"/>
           </div>
         </div>
         <div className='container A3'>
@@ -68,7 +67,6 @@ function AboutUs() {
             Our motto of help the customer to expand their business with help of technology. Yes, we aren't alone, We are team of Devlopers & Thechnology lovers who are Enthusiastic, Passionate, Skilled, Creative, Multi-Telented, Ready to Strive,Helpful & always there to support our lovable clients, who are integral part of our team. </p>
         </div>
       </div>
-    </div>
     </div >
   )
 } export default AboutUs

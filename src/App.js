@@ -20,6 +20,8 @@ import { useEffect, useState } from 'react';
 import Hello from './Componenets/Hello';
 import BookmarkSection from './Componenets/BookmarkSection';
 import TagNewsview from './Componenets/TagNewsview';
+import LiveNews from './Componenets/LiveNews';
+import BreakingNewsView from './Componenets/BreakingNewsView';
 
 
 function App() {
@@ -41,6 +43,8 @@ function App() {
         <Route exact path='/CategoryView' element={<CategoryView />}></Route>
         <Route exact path='/Categories' element={<Categories />}></Route>
         <Route exact path='/about_us' element={<AboutUs />}></Route>
+        <Route exact path='/LiveNews' element={<LiveNews/>}></Route>
+        <Route exact path='/BreakingNews' element={<BreakingNewsView/>}></Route>
         <Route exact path='/notification' element={<Notification />}></Route>
         <Route exact path='/Contact_us' element={<ContactUs />}></Route>
         <Route exact path='/News_Notification' element={<NewsNotification />}></Route>
