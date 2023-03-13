@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import CommentsView from './CommentsView';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 
 function CommentSection(props) {
@@ -8,7 +9,8 @@ function CommentSection(props) {
   const Nid = props.Nid
   const [Data,setData] = useState([]);
   const BToken = BearerToken();
-
+  const ApiUrl = ApiWrt();
+  
   useEffect(()=>{
     
     },[])
@@ -34,8 +36,7 @@ function CommentSection(props) {
             redirect: 'follow'
           };
           
-          // fetch("https://news.wrteam.in/Api/set_comment", requestOptions)
-    fetch("http://news.thewrteam.in/Api/set_comment", requestOptions)
+    fetch(`${ApiUrl}/set_comment`, requestOptions)
             .then(response => response.json())
             .then(result => {
               setData(result.data);

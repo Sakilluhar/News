@@ -13,7 +13,8 @@ import { authentication } from '../Firebase';
 import Forgot_Password2 from './Forgot_Password2';
 import Ragister_Modal2 from './Ragister_Modal2';
 import Phone_Login2 from './Phone_Login2';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 function SignIn_Modal(props) {
 
@@ -23,6 +24,7 @@ function SignIn_Modal(props) {
     const [ForgotModalShow, setForgotModalShow] = React.useState(false);
     const [PhoneModalShow, setPhoneModalShow] = React.useState(false);
     const handleClose = () => props.setPrivacy(false);
+    const ApiUrl = ApiWrt();
 
     const initialValues = { email: "", password: "" };
     const [formValues, setFormValues] = useState(initialValues);
@@ -101,8 +103,7 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
-                // fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                fetch(`${ApiUrl}/generate_token`, requestOptions)
                     .then(response => response.text())
                     .then(result => {
 
@@ -123,8 +124,7 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
-                        // fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch(`${ApiUrl}/user_signup`, requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
@@ -156,8 +156,7 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
-                // fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                fetch(`${ApiUrl}/generate_token`, requestOptions)
                     .then(response => response.text())
                     .then(result => {
 
@@ -178,8 +177,7 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
-                        // fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        fetch(`${ApiUrl}/user_signup`, requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))
@@ -223,8 +221,7 @@ function SignIn_Modal(props) {
                     redirect: 'follow'
                 };
 
-                await fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
-                // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+                await fetch(`${ApiUrl}/generate_token`, requestOptions)
                     .then(response => response.text())
                     .then(async result => {
 
@@ -244,8 +241,7 @@ function SignIn_Modal(props) {
                             redirect: 'follow'
                         };
 
-                        await fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
-                        // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
+                        await fetch(`${ApiUrl}/user_signup`, requestOptions2)
                             .then(response => response.json())
                             .then(result => {
                                 localStorage.setItem('user', JSON.stringify(result))

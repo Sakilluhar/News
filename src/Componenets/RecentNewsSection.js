@@ -3,12 +3,14 @@ import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { IoMdArrowForward } from 'react-icons/io';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 
 
 function RecentNewsSection() {
-
+    const ApiUrl = ApiWrt();
+  
     const [Data, setData] = useState([]);
     const BToken = BearerToken();
     useEffect(() => {
@@ -29,8 +31,8 @@ function RecentNewsSection() {
             redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/get_news", requestOptions)
-        fetch("http://news.thewrteam.in/Api/get_news", requestOptions)
+
+        fetch(`${ApiUrl}/get_news`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)
@@ -193,6 +195,7 @@ function RecentNewsSection() {
 
                         <div id='rns-card-row'>
                         {!Data ? "LOADING.." : Data.map((element) => (
+                            <Link id='Link-all' to={"/NewsView?Nid=" + element.id + "&Cid=" + element.category_id}>
                             <div id='rns-card' className="card">
                                 <img id='rns-image' src={element.image} className="card-img-top" alt="..." />
                                 {/* <div id='rns-img-overlay' className="card-img-overlay card-inverse">
@@ -204,6 +207,7 @@ function RecentNewsSection() {
                                 {/* <div id='rns-card-footer'>                                
                                 </div> */}
                             </div>
+                            </Link>
                             ))}
 
                             {/* <div id='rns-card' className="card">

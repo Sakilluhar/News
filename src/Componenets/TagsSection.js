@@ -2,14 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 
 function TagsSection() {
 
     const [Data, setData] =useState([]);
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
+  
     useEffect(()=>{
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer "+BToken);
@@ -25,8 +27,7 @@ function TagsSection() {
         redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/get_tag", requestOptions)
-        fetch("http://news.thewrteam.in/Api/get_tag", requestOptions)
+        fetch(`${ApiUrl}/get_tag`, requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)

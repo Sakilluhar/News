@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import  './Terms&Privacy.css'
 import { GiCheckedShield } from 'react-icons/gi';
 
@@ -9,7 +10,8 @@ import { GiCheckedShield } from 'react-icons/gi';
 function Privacy_Policy(props) {
     const handleClose = () => props.setPrivacy(false);
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
+  
 
     const [Data, setData] = useState([]);
 
@@ -24,8 +26,7 @@ function Privacy_Policy(props) {
             redirect: 'follow'
         };
 
-        fetch("http://news.thewrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
-        // fetch("https://news.wrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
+        fetch(`${ApiUrl}/get_pages? access_key=5670&language_id=14`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)

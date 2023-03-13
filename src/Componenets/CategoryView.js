@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import BreadcrumbSection from './BreadcrumbSection';
 
 
@@ -21,7 +22,8 @@ function CategoryView() {
   const catid = query.get('id');
   const user_id = query.get('uid');
   const BToken = BearerToken();
-
+  const ApiUrl = ApiWrt();
+ 
   const loca = useLocation();
   // window.onnload = test(); 
   // test();
@@ -46,8 +48,7 @@ function CategoryView() {
       redirect: 'follow'
     };
 
-    // fetch("https://news.wrteam.in/Api/get_news_by_category", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_news_by_category", requestOptions)
+     fetch(`${ApiUrl}/get_news_by_category`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)

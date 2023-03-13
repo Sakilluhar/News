@@ -6,14 +6,16 @@ import { FiCalendar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import VideoPlayerModal from "./VideoPlayerModal";
-import { BearerToken } from "../Tokens";
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 function VideoPlayerSection() {
   const [Data, setData] = useState([]);
   const [Video_url, setVideo_url] = useState();
   const [modalShow, setModalShow] = React.useState(false);
   const BToken = BearerToken();
-
+  const ApiUrl = ApiWrt();
+  
   useEffect(() => {
     var myHeaders = new Headers();
 
@@ -33,8 +35,8 @@ function VideoPlayerSection() {
       redirect: "follow",
     };
 
-    // fetch("https://news.wrteam.in/Api/get_videos", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_videos", requestOptions)
+
+    fetch(`${ApiUrl}/get_videos`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);

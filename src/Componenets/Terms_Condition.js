@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import  './Terms&Privacy.css'
 import { MdOutlineMenuBook } from 'react-icons/md';
 
@@ -10,7 +11,7 @@ function Terms_Condition(props) {
 
     const handleClose = () => props.setShow(false);
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
     const [Data, setData] = useState([]);
 
 
@@ -25,8 +26,8 @@ function Terms_Condition(props) {
             redirect: 'follow'
         };
 
-        fetch("http://news.thewrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
-        // fetch("https://news.wrteam.in/Api/get_pages? access_key=5670&language_id=14", requestOptions)
+
+  fetch(`${ApiUrl}/get_pages? access_key=5670&language_id=14`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)

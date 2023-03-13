@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+
 import './Home.css'
 
 function PopularNewsSection() {

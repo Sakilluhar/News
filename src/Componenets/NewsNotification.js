@@ -4,12 +4,13 @@ import { FiTrash2 } from 'react-icons/fi';
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './/Spinner';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 
 function NewsNotification() {
 
     const [Data, setData] = useState([]);
-
+    const ApiUrl = ApiWrt();
     const BToken = BearerToken();
     const handleDeleteComment = (id) => {
         console.log(id);
@@ -31,8 +32,8 @@ function NewsNotification() {
 
 
         var params = { 'access_key': 5670, 'user_id': uid, 'comment_id': id };
-        // var url = new URL("https://news.wrteam.in/Api/delete_comment");
-        var url = new URL("http://news.thewrteam.in/Api/delete_comment");
+
+        var url = new URL(`${ApiUrl}/delete_comment`);
         for (let k in params) {
             url.searchParams.append(k, params[k])
         };
@@ -68,8 +69,7 @@ function NewsNotification() {
             redirect: 'follow'
         };
 
-        fetch("http://news.thewrteam.in/Api/get_notification?access_key=5670&offset=0&limit=20", requestOptions)
-        // fetch("https://news.wrteam.in/Api/get_notification?access_key=5670&offset=0&limit=10", requestOptions)
+        fetch(`${ApiUrl}/get_notification?access_key=5670&offset=0&limit=20`, requestOptions)
             .then(response => response.json())
             .then(result => {
                         setData(result.data)

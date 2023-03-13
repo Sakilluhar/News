@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import no_image from "../images/no_image.jpeg";
 import { BsFillPlayFill } from "react-icons/bs";
 import VideoPlayerModal from "./VideoPlayerModal";
@@ -22,6 +23,7 @@ function VideoNewsview() {
     const BToken = BearerToken();
     const [Video_url, setVideo_url] = useState();
     const [modalShow, setModalShow] = React.useState(false);
+    const ApiUrl = ApiWrt();
 
     useEffect(() => {
         var myHeaders = new Headers();
@@ -42,8 +44,7 @@ function VideoNewsview() {
       redirect: "follow",
     };
 
-    // fetch("https://news.wrteam.in/Api/get_videos", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_videos", requestOptions)
+      fetch(`${ApiUrl}/get_videos`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);

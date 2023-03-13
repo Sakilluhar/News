@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import BreadcrumbSection from './BreadcrumbSection';
 
 function TagNewsview() {
@@ -15,6 +16,7 @@ function TagNewsview() {
     const query = useQuery();
     const Tid = query.get('Tid');
     const BToken = BearerToken();
+    const ApiUrl = ApiWrt();
   
     const loca = useLocation();
     // window.onnload = test(); 
@@ -38,8 +40,7 @@ function TagNewsview() {
           redirect: 'follow'
         };
         
-        // fetch("https://news.wrteam.in/Api/get_news_by_tag", requestOptions)
- fetch("http://news.thewrteam.in/Api/get_news_by_tag", requestOptions)
+        fetch(`${ApiUrl}/get_news_by_tag`, requestOptions)
 
           .then(response => response.json())
           .then(result => {

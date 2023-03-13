@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import no_image from "../images/no_image.jpeg";
 import { BsFillPlayFill } from "react-icons/bs";
 import VideoPlayerModal from "./VideoPlayerModal";
@@ -26,7 +27,8 @@ function LiveNews(props) {
     const BToken = BearerToken();
     const [Video_url, setVideo_url] = useState();
     const [modalShow, setModalShow] = React.useState(false);
-
+    const ApiUrl = ApiWrt();
+  
     useEffect(() => {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer " + BToken);
@@ -42,7 +44,7 @@ function LiveNews(props) {
             redirect: 'follow'
         };
 
-        fetch("http://news.thewrteam.in/Api/get_live_streaming", requestOptions)
+        fetch(`${ApiUrl}/get_live_streaming`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)
@@ -81,7 +83,7 @@ function LiveNews(props) {
                                 <VideoPlayerModal
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-                                    backdrop="static"   
+                                    // backdrop="static"   
                                     keyboard={false}
                                     url={Video_url}
                                 // title={Data[0].title}

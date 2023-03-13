@@ -5,13 +5,16 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
+  
+
 import { Link } from 'react-router-dom';
 
 
 
 function BreakingNewsSection() {
-
+  const ApiUrl = ApiWrt();
   const [Data, setData] = useState([]);
   const BToken = BearerToken();
   useEffect(() => {
@@ -29,8 +32,7 @@ function BreakingNewsSection() {
       redirect: 'follow'
     };
 
-    // fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_breaking_news", requestOptions)
+    fetch(`${ApiUrl}/get_breaking_news`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)
@@ -46,8 +48,8 @@ function BreakingNewsSection() {
           <div id='bns-main-card' className="card" >
             <img id='bns-main-image' src={breakingNews2_jpg} className="card-img" alt="..." />
             <div id='bns-main-text' className="card-img-overlay">
-              <p id='bns-logo-col' className="card-text"><b>Breacking <br /> News</b></p>
-              <p id='bns-logo-row' className="card-text"><b>Breacking News</b></p>
+              <p id='bns-logo-col' className="card-text"><b>Breaking <br /> News</b></p>
+              <p id='bns-logo-row' className="card-text"><b>Breaking News</b></p>
               <Link id='btnbnsViewAll' className='btn' type="button" to='/BreakingNews'>VIEW ALL</Link>
             </div>
           </div>
@@ -75,7 +77,7 @@ function BreakingNewsSection() {
           <div id='bns-main-card' className="card" >
             <img id='bns-main-image' src={breakingNews2_jpg} className="card-img" alt="..." />
             <div id='bns-main-text' className="card-img-overlay">
-              <p id='' className="card-text"><b>Breacking <br /> News</b></p>
+              <p id='' className="card-text"><b>Breaking <br /> News</b></p>
               <button id='btnbnsCatagory' className='btn' type="button" >VEIW ALL</button>
             </div>
           </div>

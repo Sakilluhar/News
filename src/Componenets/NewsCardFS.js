@@ -3,9 +3,10 @@ import './Home.css'
 import { useEffect } from 'react'
 import { BsPlayCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { BearerToken } from '../Tokens';
 import { Shimmer,Breathing  } from 'react-shimmer'
-  
+import { ApiWrt, BearerToken } from '../Tokens';
+
+
 
 
 
@@ -19,7 +20,7 @@ function NewsCardFS() {
     const [Nid, setNid] = useState();
     const [Category_id, setCategory_id] = useState();
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
     useEffect(()=>{
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer "+BToken);
@@ -34,9 +35,8 @@ function NewsCardFS() {
         body: formdata,
         redirect: 'follow'
         };
-
-        // fetch("https://news.wrteam.in/Api/get_breaking_news", requestOptions)
-        fetch("http://news.thewrteam.in/Api/get_breaking_news", requestOptions)
+  
+        fetch(`${ApiUrl}/get_breaking_news`, requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)
@@ -107,7 +107,7 @@ function NewsCardFS() {
                 <p id='Top-Title'><b>{Title}</b></p>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>
-                <Link id='btnReadMore' className='btn' type="button" to='' ><b>READ MORE</b></Link>
+                {/* <Link id='btnReadMore' className='btn' type="button" to='' ><b>READ MORE</b></Link> */}
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
                 <a id='btnpaly-mobile'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={30}/></a>
                 </div>

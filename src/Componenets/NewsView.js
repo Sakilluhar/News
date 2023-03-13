@@ -4,7 +4,8 @@ import Form from "react-bootstrap/Form";
 import {AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike,} from "react-icons/ai";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import { FiCalendar } from "react-icons/fi";
-import { BearerToken } from "../Tokens";
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import { useQuery } from "../Hooks";
 import RelatedNewsSection from "./RelatedNewsSection";
 import { Link } from "react-router-dom";
@@ -33,7 +34,8 @@ function NewsView() {
   const catid = query.get("Cid");
   const BToken = BearerToken();
   const shareUrl = window.location.href
-
+  const ApiUrl = ApiWrt();
+  
   // useEffect(() => {
   //   var myHeaders = new Headers();
   //   myHeaders.append("Authorization", "Bearer "+BToken);
@@ -85,8 +87,7 @@ function NewsView() {
       redirect: "follow",
     };
 
-    // fetch("https://news.wrteam.in/Api/get_news_by_id", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_news_by_id", requestOptions)
+    fetch(`${ApiUrl}/get_news_by_id`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
@@ -180,8 +181,7 @@ function NewsView() {
                       redirect: 'follow'
                     };
 
-                    // fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
-                    fetch("http://news.thewrteam.in/Api/set_bookmark", requestOptions)
+                    fetch(`${ApiUrl}/set_bookmark`, requestOptions)
                       .then(response => response.text())
                       .then(result => setBookmark(!Bookmark))
                       .catch(error => console.log('error', error));
@@ -209,8 +209,7 @@ function NewsView() {
                       redirect: 'follow'
                     };
                     
-                    // fetch("https://news.wrteam.in/Api/set_like_dislike", requestOptions)
-                    fetch("http://news.thewrteam.in/Api/set_like_dislike", requestOptions)
+                    fetch(`${ApiUrl}/set_like_dislike`, requestOptions)
                       .then(response => response.json())
                       .then(result => setLike(!Like))
                       .catch(error => console.log('error', error));

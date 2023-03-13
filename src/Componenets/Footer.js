@@ -55,7 +55,7 @@ function Footer() {
 
     return (
         <>
-            <div className='full_fotter'>
+            <div className='full_footer'>
 
                 <section id="footer">
                     <div className="card" id="cB">

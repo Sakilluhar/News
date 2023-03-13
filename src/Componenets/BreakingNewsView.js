@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import no_image from "../images/no_image.jpeg";
 
 function BreakingNewsView() {
@@ -16,7 +17,8 @@ function BreakingNewsView() {
     const catid = query.get('id');
     const user_id = query.get('uid');
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
+  
     useEffect(() => {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer"+BToken);
@@ -27,7 +29,7 @@ function BreakingNewsView() {
             redirect: 'follow'
         };
 
-        fetch("http://news.thewrteam.in/Api/get_breaking_news?access_key=5670&language_id=14", requestOptions)
+        fetch(`${ApiUrl}/get_breaking_news?access_key=5670&language_id=14`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)

@@ -11,12 +11,13 @@ import OTPInput from "otp-input-react";
 import { authentication } from '../Firebase';
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
 
 
 function OTPmodal2(props) {
-    const [OTP, setOTP] = useState("");
+    const ApiUrl = ApiWrt();
+  
+const [OTP, setOTP] = useState("");
     const [error, setError] = useState("", setTimeout(() => {
         if (error !== "")
             setError("")
@@ -98,8 +99,7 @@ function OTPmodal2(props) {
                 redirect: 'follow'
             };
 
-            await fetch("http://news.thewrteam.in/Api/generate_token", requestOptions)
-                // await fetch("http://news.wrteam.in/Api/generate_token", requestOptions)
+            await fetch(`${ApiUrl}/generate_token`, requestOptions)
                 .then(response => response.text())
                 .then(async result => {
 
@@ -119,7 +119,7 @@ function OTPmodal2(props) {
                         redirect: 'follow'
                     };
 
-                    await fetch("http://news.thewrteam.in/Api/user_signup", requestOptions2)
+                    await fetch(`${ApiUrl}/user_signup`, requestOptions2)
                         // await fetch("https://news.wrteam.in/Api/user_signup", requestOptions2)
                         .then(response => response.json())
                         .then(result => {

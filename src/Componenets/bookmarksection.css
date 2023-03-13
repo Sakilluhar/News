@@ -46,7 +46,7 @@
     border: 5px solid #FFFFFF;
     border-radius: 50%;
     height: 11%;
-    width: 11%;
+    width: 3rem;
     position: absolute;
     right: 5%;
     top: 55%;
@@ -108,7 +108,7 @@
         border: 5px solid #FFFFFF;
         border-radius: 50%;
         height: 11%;
-        width: 14%;
+        width: 3rem;
         position: absolute;
         right: 5%;
         top: 55%;
@@ -122,7 +122,7 @@
         border: 5px solid #FFFFFF;
         border-radius: 50%;
         height: 11%;
-        width: 10%;
+        width: 3rem;
         position: absolute;
         right: 5%;
         top: 55%;
@@ -136,7 +136,7 @@
         border: 5px solid #FFFFFF;
         border-radius: 50%;
         height: 11%;
-        width: 15%;
+        width: 3rem;
         position: absolute;
         right: 5%;
         top: 55%;

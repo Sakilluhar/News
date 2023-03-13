@@ -18,7 +18,8 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -38,7 +39,8 @@ const Newsbar = (props) => {
     const [islogout, setIsLogout] = useState(false)
     const [isloginloading, setisloginloading] = useState(true)
     const [ShowManu,setShowManu]= useState();
-
+    const ApiUrl = ApiWrt();
+  
     const closeRef = useRef()
     useEffect(()=>{
         var myHeaders = new Headers();
@@ -57,8 +59,7 @@ const Newsbar = (props) => {
           redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/get_category", requestOptions)
-        fetch("http://news.thewrteam.in/Api/get_category", requestOptions)
+        fetch(`${ApiUrl}/get_category`, requestOptions)
           .then(response => response.json())
           .then(result => {
             setData(result.data)
@@ -164,7 +165,7 @@ const Newsbar = (props) => {
 
                                     <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
                                     <Dropdown.Item id='btnLogout' >
-                                    <Link id='btnBookmark' to="/Bookmark" >
+                                    <Link id='btnBookmark' to="/Bookmark" onClick={handleClose}>
                                             Bookmark
                                         </Link>
                                         </Dropdown.Item>
@@ -219,7 +220,7 @@ const Newsbar = (props) => {
                         </li>
 
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>BREAKING NEWS</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews  " onClick={handleClose}>BREAKING NEWS</Link></b>
                         </li>
                         <li className="nav-item">
                             <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CONTACT US</Link></b>
