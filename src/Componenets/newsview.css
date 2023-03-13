@@ -42,7 +42,8 @@ max-width: 100%;
 /* ------------------------------------------------------------------- */
 
 #nv-Header{
-    
+    display: flex;
+    justify-content: space-between;
     height: 3rem;
     background-color: #ffffff ;
     color: #1A2E51;
@@ -78,6 +79,7 @@ max-width: 100%;
 }
 
 #head-lables{
+    font-size: 16px;
     margin-top: 3%;
 }
 
@@ -195,6 +197,96 @@ max-width: 100%;
     height: auto;
 }
 
+@media (max-width: 1200px) {
+    #nv-main{
+        display: grid;
+        grid-template-columns: 7% 1fr 7%;
+        /* width: 100%; */
+        height: fit-content;
+        font-family: 'Zilla Slab', serif;
+        color: #1A2E51;
+    }
+    
+    #nv-page{
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 2%;
+        margin-top: 5rem;
+    }
+    
+    #btnnvCatagory{
+        color: #ffffff; 
+        background:#EE2934;
+        width: fit-content;
+      }
+    
+    #nv-right-section{
+
+        display: none;
+        flex-direction: column;
+        gap: 1%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    #nv-Header{
+    
+        height: 3rem;
+        background-color: #ffffff ;
+        color: #1A2E51;
+        border-top: 1px solid #C0C5D0;
+        border-bottom: 1px solid #C0C5D0;
+        font-family: 'Zilla Slab', serif;
+        gap: 20%;
+    }
+
+    #head-lables{
+        font-size: 14px;
+        margin-top: 3%;
+    }
+}
+
+@media (max-width: 660px) {
+
+    #nv-Header{
+    
+        height: 3rem;
+        background-color: #ffffff ;
+        color: #1A2E51;
+        border-top: 1px solid #C0C5D0;
+        border-bottom: 1px solid #C0C5D0;
+        font-family: 'Zilla Slab', serif;
+        gap: 10%;
+    }
+}
+
+@media (max-width: 570px) {
+
+        #nv-Header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 6rem;
+            background-color: #ffffff ;
+            color: #1A2E51;
+            border-top: 1px solid #C0C5D0;
+            border-bottom: 1px solid #C0C5D0;
+            font-family: 'Zilla Slab', serif;
+            gap: 0%;
+        }
+}
+
+@media (max-width: 425px) {
+    #nv-FontRange-labels{
+        /* margin-right: 10%; */
+        font-size: 10px;
+    
+    }
+}
+
+
 /* ---------------------------------- comments ---------------------------------------------- */
 
 
@@ -297,3 +389,4 @@ max-width: 100%;
     border: 1px solid #C0C5D0;
     width: 74%;
 }
+

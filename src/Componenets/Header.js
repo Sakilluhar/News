@@ -74,10 +74,6 @@ export default function Header() {
                 Hindi
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Arebic</NavDropdown.Item>
-              {/* <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item> */}
     </NavDropdown>
       
       <a id='line-head' > </a>

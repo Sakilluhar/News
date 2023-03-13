@@ -75,11 +75,19 @@
     list-style-type: none;
 }
 
-.nav-item:hover {
+/* .nav-item:hover {
+    
+} */
+
+#NavHover:hover{
     height: 5rem;
     padding-top: 1.7rem;
     background-color: #EE2934;
 }
+
+
+
+
 
 
 /* mobile mode */
@@ -295,7 +303,7 @@ border: none;
     background-color: #1A2E51 ;
     color: #ffffff;
     font-family: 'Zilla Slab', serif;
-    gap: 32%;
+    gap: 0%;
 }
 
 .left-head{

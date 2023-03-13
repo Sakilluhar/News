@@ -24,6 +24,7 @@ import LiveNews from './Componenets/LiveNews';
 import BreakingNewsView from './Componenets/BreakingNewsView';
 import RecentNewsView from './Componenets/RecentNewsView';
 import VideoNewsview from './Componenets/VideoNewsview';
+import SearchNewsView from './Componenets/SearchNewsView';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route exact path='/' element={<HomePage />}></Route>
         <Route exact path='/TagNewsview' element={<TagNewsview />}></Route>
         <Route exact path='/VideoNewsview' element={<VideoNewsview />}></Route>
+        <Route exact path='/SearchNewsView' element={<SearchNewsView />}></Route>
         <Route exact path='/RecentNewsView' element={<RecentNewsView />}></Route>
         <Route exact path='/Bookmark' element={<BookmarkSection />}></Route>
         <Route exact path='/NewsView' element={<NewsView />}></Route>

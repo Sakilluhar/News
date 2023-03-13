@@ -106,19 +106,19 @@ function NewsView() {
             </button>
             <h1 id="nv-title">{Data[0].title}</h1>
 
-            <div id="nv-Header" className=" d-flex justify-content-around">
+            <div id="nv-Header" className="">
               <div id="nv-left-head">
-                <h6 id="head-lables">
+                <p id="head-lables">
                   <FiCalendar size={18} id="head-logos" />{" "}
                   {Data[0].date.slice(0, 10)}
-                </h6>
+                </p>
                 {/* <h6 id="head-lables">
                   <AiOutlineEye size={18} id="head-logos" />
                 </h6> */}
-                <h6 id="head-lables">
+                <p id="head-lables">
                   <AiOutlineLike size={18} id="head-logos" />{" "}
                   {Data[0].total_like} Likes
-                </h6>
+                </p>
               </div>
 
               <div id="nv-right-head">

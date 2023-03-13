@@ -81,3 +81,108 @@
   #LN-btnVideo-logo {
     margin-left: 10%;
   }
+
+  @media (max-width: 1370px) {
+
+    #LN-card-title{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #LN-card-date{
+        font-size: 14px;
+    }        
+}
+
+@media (max-width: 1250px) {
+
+    #LN-card-title{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #LN-card-date{
+        font-size: 14px;
+    }        
+}
+
+@media (max-width: 1090px) {
+    #LN-card-title{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #LN-card-date{
+        font-size: 12px;
+    }   
+}
+
+@media (max-width: 850px) {
+    #LN-btnCatagory{
+    margin-top: 3%;
+    color: #ffffff; 
+    background:#EE2934;
+    padding: 1%;
+    width: fit-content;
+}
+}
+
+@media (max-width: 770px) {
+    #LN-card{
+    width: 100%;
+    height: 10rem;
+    border: none;
+    margin-top: 1%;
+    /* flex-direction: row; */
+}
+
+#LN-card-image{
+    max-width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+
+
+#LN-card-body{
+    /* margin-top: 20%; */
+    padding: 1%;
+    width: 100%;
+    height: 30%;
+}
+}
+
+@media (max-width: 425px) {
+    #LN-card{
+    width: 100%;
+    height: 10rem;
+    border: none;
+    margin-top: 1%;
+    /* flex-direction: row; */
+}
+
+
+
+#LN-btnCatagory{
+    margin-top: 3%;
+    color: #ffffff; 
+    background:#EE2934;
+    padding: 1%;
+    font-size: 10px;
+    width: fit-content;
+}
+
+#LN-card-title{
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+
+#LN-card-date{
+    font-size: 10px;
+    } 
+}

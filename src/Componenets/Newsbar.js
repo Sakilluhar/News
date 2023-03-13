@@ -1,6 +1,6 @@
 
 import {GiHamburgerMenu} from 'react-icons/gi';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Nav.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Tooltip from 'react-bootstrap/Tooltip';
@@ -39,6 +39,7 @@ const Newsbar = (props) => {
     const [isloginloading, setisloginloading] = useState(true)
     const [ShowManu,setShowManu]= useState();
 
+    const closeRef = useRef()
     useEffect(()=>{
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer "+BToken);
@@ -145,7 +146,7 @@ const Newsbar = (props) => {
                       </button>
                       
                       <Offcanvas id="Nav-Offcanvas" show={show} onHide={handleClose} {...props}>
-                      <Offcanvas.Header closeButton>
+                      <Offcanvas.Header closeButton ref={closeRef}>
                           <Offcanvas.Title><li id='Nav-btns'>
                             
                             {!islogout ?
@@ -180,14 +181,13 @@ const Newsbar = (props) => {
                                 :null
                             }
                             {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-                            {['bottom-end'].map((placement) => (
+                            {/* {['bottom-end'].map((placement) => (
                                 <OverlayTrigger
                                 trigger="click"
                                 key={placement}
                                 placement={placement}
                                 overlay={
                                     <Popover id={`popover-positioned-${placement}`}>
-                                    {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
                                     <Popover.Body id='nb-popover-body' >
                                     <form id='serchModal' className="d-flex" role="search">
                                                         <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
@@ -202,35 +202,35 @@ const Newsbar = (props) => {
                                 >
                                 <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                                 </OverlayTrigger>
-                            ))}
+                            ))} */}
                         </li></Offcanvas.Title>
                       </Offcanvas.Header>
                       <Offcanvas.Body>
                       <ul className="">
 
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>HOME</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us" onClick={handleClose}>ABOUT US</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews">LIVE NEWS</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews" onClick={handleClose}>LIVE NEWS</Link></b>
                         </li>
 
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/">BREAKING NEWS</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>BREAKING NEWS</Link></b>
                         </li>
                         <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CONTACT US</Link></b>
                         </li>
                         <li className="nav-item">
-                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CATAGORIES</Link></b>
+                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CATAGORIES</Link></b>
                             <ul >
                                 {!Data ? "Loading..."
                                 :Data.map((element)=>(
                                 <li className="nav-item">
-                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} > <b>{element.category_name}</b> </Link>
+                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} onClick={handleClose}> <b>{element.category_name}</b> </Link>
                                 </li>
                                 ))}
                             </ul>
@@ -254,20 +254,21 @@ const Newsbar = (props) => {
         <div className="Manu-links">
             <ul className="">
 
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
+                
                 <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
             </li>
 
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
             </li>
             <li id='Nav-btns'>
@@ -306,18 +307,17 @@ const Newsbar = (props) => {
                             }
 
                 {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-                {['bottom-end'].map((placement) => (
+                {/* {['bottom-end'].map((placement) => (
                     <OverlayTrigger
                     trigger="click"
                     key={placement}
                     placement={placement}
                     overlay={
                         <Popover id={`popover-positioned-${placement}`}>
-                        {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
                         <Popover.Body id='nb-popover-body' >
                         <form id='serchModal' className="d-flex" role="search">
                                             <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
-                                            <Link id='btnSerchForm' className="btn" type="submit" to="/SearchNewsView">Search</Link>
+                                            <Link id='btnSerchForm' className="btn" type="submit" to={`/SearchNewsView?Search=${Search}`}>Search</Link>
                                         </form>
                         </Popover.Body>
                         </Popover>
@@ -325,7 +325,7 @@ const Newsbar = (props) => {
                     >
                     <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                     </OverlayTrigger>
-                ))}
+                ))} */}
             </li>
             </ul>
 
