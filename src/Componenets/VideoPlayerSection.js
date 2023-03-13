@@ -121,7 +121,7 @@ function VideoPlayerSection() {
           <VideoPlayerModal
             show={modalShow}
             onHide={() => setModalShow(false)}
-            backdrop="static"
+            // backdrop="static"
             keyboard={false}
             url={Video_url}
           // title={Data[0].title}
