@@ -593,6 +593,10 @@
       padding: 1%;
       margin-bottom: 3%;
       }
+
+      .link-removel{
+        text-decoration: none;
+      }
   }
 
   @media (max-width: 600px) {

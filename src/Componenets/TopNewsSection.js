@@ -88,7 +88,8 @@ function TopNewsSection() {
                 <button id='btnTnsCatagory' className='btn' type="button" onClick={tnshandleCatagory} >{Data[0].category_name}</button>
                 <h4 id='tns-Title' className="">{Data[0].title}</h4>
               </div>
-            </div></Link>
+            </div>
+            </Link>
 
             <div id='tns-right-cards'>
             <Link id='Link-all' to={"/NewsView?Nid=" + Data[3].id + "&Cid=" + Data[3].category_id}>                   
@@ -117,7 +118,8 @@ function TopNewsSection() {
 
           <div id=''>
             <div id='tns-main-mobile' className=''>
-            <Link id='Link-all' to={"/NewsView?Nid=" + Data[0].id + "&Cid=" + Data[0].category_id}>                  
+            
+            <Link id='top-news-card1' className='link-removel' to={"/NewsView?Nid=" + Data[0].id + "&Cid=" + Data[0].category_id}>                  
 
               <div id='top-news-card1' className="card" onClick={tnshandleReadMore}>
                 <img id='tns-news-image1' src={Data[0].image} className="card-img" alt="..." />
@@ -128,7 +130,7 @@ function TopNewsSection() {
               </div></Link>
 
               <div id='tns-left-cards'>
-            <Link id='Link-all' to={"/NewsView?Nid=" + Data[1].id + "&Cid=" + Data[1].category_id}>                  
+            <Link id='top-news-card' to={"/NewsView?Nid=" + Data[1].id + "&Cid=" + Data[1].category_id}>                  
 
                 <div id='top-news-card' className="card" onClick={tnshandleReadMore}>
                   <img id='tns-news-image' src={Data[1].image} className="card-img" alt="..." />
@@ -138,7 +140,7 @@ function TopNewsSection() {
                   </div>
                 </div></Link>
 
-                <Link id='Link-all' to={"/NewsView?Nid=" + Data[2].id + "&Cid=" + Data[2].category_id}>                  
+                <Link id='top-news-card' to={"/NewsView?Nid=" + Data[2].id + "&Cid=" + Data[2].category_id}>                  
 
                 <div id='top-news-card' className="card" onClick={tnshandleReadMore}>
                   <img id='tns-news-image' src={Data[2].image} className="card-img" alt="..." />
@@ -152,7 +154,7 @@ function TopNewsSection() {
 
 
               <div id='tns-right-cards'>
-            <Link id='Link-all' to={"/NewsView?Nid=" + Data[3].id + "&Cid=" + Data[3].category_id}>                  
+            <Link id='top-news-card' to={"/NewsView?Nid=" + Data[3].id + "&Cid=" + Data[3].category_id}>                  
 
                 <div id='top-news-card' className="card" onClick={tnshandleReadMore}>
                   <img id='tns-news-image' src={Data[3].image} className="card-img" alt="..." />
@@ -162,7 +164,7 @@ function TopNewsSection() {
                   </div>
                 </div></Link>
 
-                <Link id='Link-all' to={"/NewsView?Nid=" + Data[4].id + "&Cid=" + Data[4].category_id}>                 
+                <Link id='top-news-card' to={"/NewsView?Nid=" + Data[4].id + "&Cid=" + Data[4].category_id}>                 
 
                 <div id='top-news-card' className="card" onClick={tnshandleReadMore}>
                   <img id='tns-news-image' src={Data[4].image} className="card-img" alt="..." />
