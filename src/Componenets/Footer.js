@@ -121,8 +121,8 @@ function Footer() {
                                 <ul className="useL">
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/about_us">About</Link></li>
-                                    <li><Link to="/">Live News</Link></li>
-                                    <li><Link to="/">Breaking News</Link></li>
+                                    <li><Link to="/LiveNews">Live News</Link></li>
+                                    <li><Link to="/BreakingNews">Breaking News</Link></li>
                                     <li><Link to="/Contact_us">Contact Us</Link></li>
                                 </ul>
                             </div>
@@ -130,7 +130,7 @@ function Footer() {
 
 
                             <div className="col-xs-3 col-sm-3 col-md-3">
-                                <div className='d-flex flex-column gap-3'>
+                                <div className='d-flex gap-3'>
                                     <div>
                                         <p id='footer-nav'>Follow us </p>
                                         <div  className='hide-mobile'>
