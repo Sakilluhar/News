@@ -104,8 +104,8 @@ function ContactUs() {
                 <h2> Get in touch with us! </h2>
             </div>
             <div className='form-value'>
-                <form className="mx-3" onSubmit={handleSubmit}>
-                    <div>
+                <form className="mx-3 " onSubmit={handleSubmit}>
+                    <div id='contact-form'>
                         <div style={{ display: "grid", gridTemplateColumns: "200fr 200fr", gap: "2%", height: "5rem" }}>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control w-100" name='username'
