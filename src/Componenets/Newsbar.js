@@ -181,14 +181,13 @@ const Newsbar = (props) => {
                                 :null
                             }
                             {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-                            {['bottom-end'].map((placement) => (
+                            {/* {['bottom-end'].map((placement) => (
                                 <OverlayTrigger
                                 trigger="click"
                                 key={placement}
                                 placement={placement}
                                 overlay={
                                     <Popover id={`popover-positioned-${placement}`}>
-                                    {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
                                     <Popover.Body id='nb-popover-body' >
                                     <form id='serchModal' className="d-flex" role="search">
                                                         <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
@@ -203,7 +202,7 @@ const Newsbar = (props) => {
                                 >
                                 <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                                 </OverlayTrigger>
-                            ))}
+                            ))} */}
                         </li></Offcanvas.Title>
                       </Offcanvas.Header>
                       <Offcanvas.Body>
@@ -308,14 +307,13 @@ const Newsbar = (props) => {
                             }
 
                 {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-                {['bottom-end'].map((placement) => (
+                {/* {['bottom-end'].map((placement) => (
                     <OverlayTrigger
                     trigger="click"
                     key={placement}
                     placement={placement}
                     overlay={
                         <Popover id={`popover-positioned-${placement}`}>
-                        {/* <Popover.Header as="h3">{`Popover ${placement}`}</Popover.Header> */}
                         <Popover.Body id='nb-popover-body' >
                         <form id='serchModal' className="d-flex" role="search">
                                             <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
@@ -327,7 +325,7 @@ const Newsbar = (props) => {
                     >
                     <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                     </OverlayTrigger>
-                ))}
+                ))} */}
             </li>
             </ul>
 
