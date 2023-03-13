@@ -134,16 +134,16 @@ function Footer() {
                                     <div>
                                         <p id='footer-nav'>Follow us </p>
                                         <div  className='hide-mobile'>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /> Link in</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> Twitter</button>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> Facebook</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://instagram.com/wrteam.in?igshid=YmMyMTA2M2Y='><FaInstagram /> Instagram</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.linkedin.com/company/wrteam/'><FaLinkedin /> Link in</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start'href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> Twitter</a>
                                         </div>
                                         <div id='contact-us' className='hide-laptop2'>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> </button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> </button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /></button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> </button>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> </a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://instagram.com/wrteam.in?igshid=YmMyMTA2M2Y='><FaInstagram /> </a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.linkedin.com/company/wrteam/'><FaLinkedin /></a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> </a>
                                         </div>
                                     </div>
 
