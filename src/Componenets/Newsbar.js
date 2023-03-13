@@ -255,21 +255,21 @@ const Newsbar = (props) => {
         <div className="Manu-links">
             <ul className="">
 
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 
                 <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
             </li>
 
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
             </li>
-            <li className="nav-item">
+            <li id='NavHover' className="nav-item">
                 <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
             </li>
             <li id='Nav-btns'>
@@ -319,7 +319,7 @@ const Newsbar = (props) => {
                         <Popover.Body id='nb-popover-body' >
                         <form id='serchModal' className="d-flex" role="search">
                                             <input id='inputSerchForm' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
-                                            <Link id='btnSerchForm' className="btn" type="submit" to="/SearchNewsView">Search</Link>
+                                            <Link id='btnSerchForm' className="btn" type="submit" to={`/SearchNewsView?Search=${Search}`}>Search</Link>
                                         </form>
                         </Popover.Body>
                         </Popover>

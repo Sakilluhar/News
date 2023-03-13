@@ -1,61 +1,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
-#rnv-main{
+#cv-main{
     font-family: 'Zilla Slab', serif;
     display: grid;
     grid-template-columns: 6% 1fr 6%;
 }
 
-#rnv-content{
+#cv-content{
     display: grid;
     grid-column: 2/3;
 }
 
-#rnv-card{
+#cv-card{
     width: 100%;
     height: 27rem;
     border: none;
     margin-top: 1%;
 }
 
-#rnv-card:hover{
+#cv-card:hover{
     border: 1px solid #C0C5D0;
 }
 
-#rnv-card-image{
+#cv-card-image{
     width: 100%;
     height: 60%;
     object-fit: cover;
 }
 
-#rnv-card-body{
+#cv-card-body{
     /* margin-top: 20%; */
     padding: 1%;
     height: 40%;
 }
 
-#rnv-btnCatagory{
+#cv-btnCatagory{
     margin-top: 3%;
     color: #ffffff; 
     background:#EE2934;
     width: fit-content;
 }
 
-#rnv-card-title{
+#cv-card-title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
     margin-top: 2%;
 }
 
-#btnrnvRead{
+#btncvRead{
     color:#EE2934; 
     background:#d1d1d1;
     border: none;
 }
 
-#rnv-card-date{
+#cv-card-date{
     font-size: large;
 }
 
-#rnv-logoCalendar{
+#cv-logoCalendar{
     margin-bottom: 0.6%;
     margin-right: 1%;
+}
+
+@media (max-width: 1370px) {
+
+    #cv-card-title{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #cv-card-date{
+        font-size: 14px;
+    }        
+}
+
+@media (max-width: 1250px) {
+
+    #cv-card-title{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #cv-card-date{
+        font-size: 14px;
+    }        
+}
+
+@media (max-width: 1090px) {
+    #cv-card-title{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+    #cv-card-date{
+        font-size: 12px;
+    }   
+}
+
+@media (max-width: 850px) {
+    #cv-btnCatagory{
+    margin-top: 3%;
+    color: #ffffff; 
+    background:#EE2934;
+    padding: 1%;
+    width: fit-content;
+}
+}
+
+@media (max-width: 770px) {
+    #cv-card{
+    width: 100%;
+    height: 10rem;
+    border: none;
+    margin-top: 1%;
+    flex-direction: row;
+}
+
+#cv-card-image{
+    max-width: 30%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#cv-card-body{
+    /* margin-top: 20%; */
+    padding: 1%;
+    width: 70%;
+    height: 100%;
+}
+}
+
+@media (max-width: 425px) {
+    #cv-card{
+    width: 100%;
+    height: 8rem;
+    border: none;
+    margin-top: 1%;
+    flex-direction: row;
+}
+
+#cv-card-image{
+    max-width: 30%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#cv-card-body{
+    /* margin-top: 20%; */
+    padding: 1%;
+    width: 70%;
+    height: 100%;
+}
+
+#cv-btnCatagory{
+    margin-top: 3%;
+    color: #ffffff; 
+    background:#EE2934;
+    padding: 1%;
+    font-size: 10px;
+    width: fit-content;
+}
+
+#cv-card-title{
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 2%;
+    }
+
+#cv-card-date{
+    font-size: 10px;
+    } 
 }

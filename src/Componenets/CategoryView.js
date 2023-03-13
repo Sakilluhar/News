@@ -86,7 +86,7 @@ function CategoryView() {
                 
                 <div id='cv-card-body' className="card-body">
                 <button id='cv-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
-                <h5 id='cv-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
+                <p id='cv-card-title' className="card-title">{element.title.slice(0,150)}...</p>
                 <p id="cv-card-date"><FiCalendar size={18} id="cv-logoCalendar" />{element.date.slice(0, 10)}</p>
                  {/* <Link id='btncvRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link> */}
                  </div>

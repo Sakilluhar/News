@@ -14,7 +14,7 @@ function SearchNewsView() {
 
     const [Data, setData] = useState([]);
     const query = useQuery();
-    const Tid = query.get('Tid');
+    const Search = query.get('Search');
     const BToken = BearerToken();
   
     const loca = useLocation();
@@ -30,7 +30,7 @@ function SearchNewsView() {
             formdata.append("access_key", "5670");
             formdata.append("offset", "0");
             formdata.append("user_id", "1");
-            formdata.append("search", "entertainment");
+            formdata.append("search", {Search});
             formdata.append("language_id", "14");
 
             var requestOptions = {
@@ -46,7 +46,7 @@ function SearchNewsView() {
             setData(result.data);
           })
           .catch(error => console.log('error', error));
-      },[])
+      },[Search])
 
   return (
    <div>
