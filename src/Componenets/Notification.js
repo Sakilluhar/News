@@ -4,7 +4,8 @@ import { FiTrash2 } from 'react-icons/fi';
 import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import no_image from "../images/no_image.jpeg";
 
 
@@ -14,7 +15,8 @@ import no_image from "../images/no_image.jpeg";
 function Notification() {
    
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
+ 
 
     const handleDeleteComment = (id) => {
         console.log(id);
@@ -36,8 +38,7 @@ function Notification() {
 
 
         var params = { 'access_key': 5670, 'user_id': uid, 'comment_id': id };
-        // var url = new URL("https://news.wrteam.in/Api/delete_comment");
-        var url =new URL("http://news.thewrteam.in/Api/delete_comment");
+        var url =new URL(`${ApiUrl}/delete_comment`);
         for (let k in params) {
             url.searchParams.append(k, params[k])
         };
@@ -68,8 +69,8 @@ function Notification() {
             redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/get_comment_by_news?access_key=5670&news_id=1&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&offset=0&limit=10", requestOptions)
-            fetch("http://news.thewrteam.in/Api/get_comment_by_news?access_key=5670&news_id=1&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&offset=0&limit=10", requestOptions)
+ 
+        fetch(`${ApiUrl}/get_comment_by_news?access_key=5670&news_id=1&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&offset=0&limit=10`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setData(result.data)
@@ -88,8 +89,7 @@ function Notification() {
             redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/delete_comment?access_key=5670&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&comment_id=1", requestOptions)
-        fetch("http://news.thewrteam.in/Api/get_comment_by_news?access_key=5670&news_id=1&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&offset=0&limit=10", requestOptions)
+        fetch(`${ApiUrl}/get_comment_by_news?access_key=5670&news_id=1&user_id="+JSON.parse(localStorage.getItem('user')).data.id+"&offset=0&limit=10`, requestOptions)
             .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));

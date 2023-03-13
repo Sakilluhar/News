@@ -9,6 +9,7 @@ function TopNewsSection() {
   const [Data, setData] = useState([]);
   const BToken = BearerToken();
   const ApiUrl = ApiWrt();
+  
 
 
   useEffect(() => {
@@ -31,8 +32,7 @@ function TopNewsSection() {
       redirect: 'follow'
     };
 
-    // fetch(`${ApiUrl}/get_news_by_category`, requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_news_by_category", requestOptions)
+    fetch(`${ApiUrl}/get_news_by_category`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)

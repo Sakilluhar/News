@@ -6,7 +6,8 @@ import {
   AiTwotoneDislike,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { BearerToken } from "../Tokens";
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import no_image from "../images/no_image.jpeg";
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -22,7 +23,8 @@ function CommentsView(props) {
   const Nid = query.get("Nid");
   const catid = query.get("Cid");
   const user_id = query.get("Uid");
-
+  const ApiUrl = ApiWrt();
+ 
   
 
   useEffect(() => {
@@ -43,8 +45,7 @@ function CommentsView(props) {
       redirect: "follow",
     };
 
-    // fetch("https://news.wrteam.in/Api/get_comment_by_news", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_comment_by_news", requestOptions)
+     fetch(`${ApiUrl}/get_comment_by_news`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
@@ -112,7 +113,7 @@ function CommentsView(props) {
                                 redirect: 'follow'
                               };
 
-                              fetch("https://news.wrteam.in/Api/set_comment", requestOptions)
+                              fetch(`${ApiUrl}/set_comment`, requestOptions)
                                 .then(response => response.json())
                                 .then(result => console.log(result))
                                 .catch(error => console.log('error', error));
@@ -188,7 +189,7 @@ function CommentsView(props) {
                                 redirect: 'follow'
                               };
 
-                              fetch("https://news.wrteam.in/Api/set_comment", requestOptions)
+                              fetch(`${ApiUrl}/set_comment`, requestOptions)
                                 .then(response => response.json())
                                 .then(result => console.log(result))
                                 .catch(error => console.log('error', error));

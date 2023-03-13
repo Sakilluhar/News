@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import BreadcrumbSection from './BreadcrumbSection';
 
 function RecentNewsView() {
@@ -18,7 +19,8 @@ function RecentNewsView() {
   const catid = query.get('id');
   const user_id = query.get('uid');
   const BToken = BearerToken();
-
+  const ApiUrl = ApiWrt();
+  
   const loca = useLocation();
   // window.onnload = test(); 
   // test();
@@ -42,8 +44,7 @@ function RecentNewsView() {
         redirect: 'follow'
         };
 
-    // fetch("https://news.wrteam.in/Api/get_news", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_news", requestOptions)
+    fetch(`${ApiUrl}/get_news`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)

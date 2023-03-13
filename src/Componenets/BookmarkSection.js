@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import "./bookmarksection.css";
-import { BearerToken } from "../Tokens";
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import { useQuery } from "../Hooks";
 import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
@@ -12,7 +13,8 @@ function BookmarkSection() {
     const query = useQuery();
     const BToken = BearerToken();
     const [Data, setData] = useState([]);
-
+    const ApiUrl = ApiWrt();
+ 
 
     useEffect(()=>{
         var myHeaders = new Headers();
@@ -32,8 +34,7 @@ function BookmarkSection() {
         redirect: 'follow'
         };
 
-        // fetch("https://news.wrteam.in/Api/get_bookmark", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_bookmark", requestOptions)
+         fetch(`${ApiUrl}/get_bookmark`, requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result.data)

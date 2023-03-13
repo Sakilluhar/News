@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import BreadcrumbSection from './BreadcrumbSection';
 
 function SearchNewsView() {
@@ -16,6 +17,7 @@ function SearchNewsView() {
     const query = useQuery();
     const Search = query.get('Search');
     const BToken = BearerToken();
+    const ApiUrl = ApiWrt();
   
     const loca = useLocation();
     // window.onnload = test(); 
@@ -40,7 +42,7 @@ function SearchNewsView() {
             redirect: 'follow'
             };
 
-        fetch("http://news.thewrteam.in/Api/get_news", requestOptions)
+        fetch(`${ApiUrl}/get_news`, requestOptions)
           .then(response => response.json())
           .then(result => {
             setData(result.data);

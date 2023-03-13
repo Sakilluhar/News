@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const ApiWrt = () => {
- return "https://news.wrteam.in/Api"
+ return "https://news.thewrteam.in/Api"
 };
 
 export default ApiWrt

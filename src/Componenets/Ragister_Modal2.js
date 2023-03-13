@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 // import { BsCheckLg } from 'react-icons/bs';
 
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
 
 
 
@@ -18,6 +18,9 @@ function Ragister_Modal2(props) {
     const actionCodeSettings = {
         url: 'https://fir-auth-82fbe.firebaseapp.com',
     }
+    const ApiUrl = ApiWrt();
+ 
+
     const initialValues = { username: "", email: "", password: "", confirmpassword: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState("", setTimeout(() => {
@@ -96,8 +99,7 @@ function Ragister_Modal2(props) {
                                 redirect: 'follow'
                             };
 
-                            fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
-                            // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
+                             fetch(`${ApiUrl}/user_signup`, requestOptions)
                                 .then(response => response.text())
                                 .then(result => {
 
@@ -141,75 +143,7 @@ function Ragister_Modal2(props) {
 
 
 
-        // if (isValidForm) {
-
-
-        //     setIsSubmit(true);
-        //     const auth = getAuth();
-
-
-
-        //     await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, formValues.confirmpassword)
-        //         .then((userCredential) => {
-        //             // send verification mail.
-
-        //             const user = userCredential.user;
-        //             console.log(user)
-        //             sendEmailVerification(auth.currentUser)
-        //                 .then(() => {
-
-        //                     alert("Email sent");
-        //                     // ..
-
-        //                     const name = formValues.username;
-        //                     const Email = formValues.email;
-
-
-        //                     var myHeaders = new Headers();
-        //                     myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzM4NTMxMjEsImlzcyI6Ik5ld3NBUFAiLCJleHAiOjE2NzY0NDUxMjEsInN1YiI6Ik5ld3MgQVBQIEF1dGhlbnRpY2F0aW9uIn0.aKZFkV4bqFGOKok5CAX897sqBkERhVF6qiPe2CIYPvw");
-        //                     myHeaders.append("Cookie", "ci_session=12af9107c7cb1f15a290434b44c1be817b862317; csrf_cookie_name=2edd6e5df33b18ac19c9b5bed190f876");
-
-        //                     var formdata = new FormData();
-        //                     formdata.append("access_key", "5670");
-        //                     formdata.append("firebase_id", user.uid);
-        //                     formdata.append("name", name);
-        //                     formdata.append("email", Email);
-        //                     formdata.append("profile", file);
-        //                     formdata.append("type", "email");
-        //                     formdata.append("status", "1");
-
-        //                     var requestOptions = {
-        //                         method: 'POST',
-        //                         headers: myHeaders,
-        //                         body: formdata,
-        //                         redirect: 'follow'
-        //                     };
-
-        //                     fetch("http://news.thewrteam.in/Api/user_signup", requestOptions)
-        //                         // fetch("https://news.wrteam.in/Api/user_signup", requestOptions)
-        //                         .then(response => response.text())
-        //                         .then(result => {
-        //                             console.log(result)
-        //                             // props.setIsLogout(true)
-        //                             props.onHide()
-        //                             props.setLoginModalShow(true)
-        //                         })
-        //                         .catch(error => console.log('error', error));
-
-
-
-
-
-
-        //                 })
-        //                 .catch((error) => {
-        //                     console.log(error)
-        //                     // ..
-        //                     alert("Error");
-        //                 });
-        //         })
-        //         .catch((error) => console.log(error))
-        // } 
+       
 
     };
     const handletoggle = () => {

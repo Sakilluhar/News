@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react';
 import './relatednewssection.css'
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
+
 import { useQuery } from '../Hooks';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +11,8 @@ function RelatedNewsSection(props) {
     const query = useQuery();
     const catid = props.Cid
     const BToken = BearerToken();
-
+    const ApiUrl = ApiWrt();
+  
     useEffect(()=>{
         var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer "+BToken);
@@ -30,8 +32,7 @@ function RelatedNewsSection(props) {
       redirect: 'follow'
     };
 
-    // fetch("https://news.wrteam.in/Api/get_news_by_category", requestOptions)
-    fetch("http://news.thewrteam.in/Api/get_news_by_category", requestOptions)
+    fetch(`${ApiUrl}/get_news_by_category`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setData(result.data)
