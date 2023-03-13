@@ -1994,7 +1994,7 @@
   }
 
   #vns-btn-image {
-    height: 100%;
+    height: auto;
     opacity: 0.3;
     width: 33%;
     border-radius: 50%;

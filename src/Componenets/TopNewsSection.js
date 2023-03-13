@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import './Home.css'
 import { useEffect } from 'react'
-import { BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken } from '../Tokens';
 import { Link } from 'react-router-dom';
 
 function TopNewsSection() {
 
   const [Data, setData] = useState([]);
   const BToken = BearerToken();
+  const ApiUrl = ApiWrt();
 
 
   useEffect(() => {
@@ -30,7 +31,7 @@ function TopNewsSection() {
       redirect: 'follow'
     };
 
-    // fetch("https://news.wrteam.in/Api/get_news_by_category", requestOptions)
+    // fetch(`${ApiUrl}/get_news_by_category`, requestOptions)
     fetch("http://news.thewrteam.in/Api/get_news_by_category", requestOptions)
       .then(response => response.json())
       .then(result => {
