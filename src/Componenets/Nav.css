@@ -24,6 +24,8 @@
     /* position: absolute; */
 }
 
+
+
 #NewsLogo{
     height: 3rem;
     width: auto;
@@ -85,6 +87,15 @@
     background-color: #EE2934;
 }
 
+.link-color:hover{
+    color: #ffffff !important;
+}
+
+#nav-links{
+    color: #1A2E51;
+    position: relative;
+    text-decoration: none;
+}
 
 
 
@@ -275,15 +286,9 @@ border: none;
 
 
 
-#nav-links{
-    color: #1A2E51;
-    position: relative;
-    text-decoration: none;
-}
 
-#nav-links:hover{
-    color: #ffffff;
-}
+
+
 
 
 /* #inputSerchForm{

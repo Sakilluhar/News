@@ -256,20 +256,20 @@ const Newsbar = (props) => {
 
             <li id='NavHover' className="nav-item">
                 
-                <b><Link id='nav-links' className="" aria-current="page" to="/">HOME</Link></b>
+                <b><Link id='nav-links' className="link-color" aria-current="page" to="/">HOME</Link></b>
             </li>
             <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                <b><Link id='nav-links' className="link-color" aria-current="page" to="/about_us">ABOUT US</Link></b>
             </li>
             <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
+                <b><Link id='nav-links' className="link-color" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
             </li>
 
             <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
+                <b><Link id='nav-links' className="link-color" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
             </li>
             <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                <b><Link id='nav-links' className="link-color" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
             </li>
             <li id='Nav-btns'>
                 
