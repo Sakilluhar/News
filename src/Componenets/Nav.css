@@ -91,7 +91,23 @@
 
 
 /* mobile mode */
-@media (max-width: 1550px) {
+
+@media (max-width: 1400px) {
+#nav-links {
+    font-size: 14px;
+}
+
+#catNav-links{
+    color: #1A2E51;
+    font-size: 12px;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+}
+
+
+@media (max-width: 1200px) {
     .Newsbar {
         height: 5rem;
         grid-template-columns: 6% 1fr 2fr 1fr 6% ;
