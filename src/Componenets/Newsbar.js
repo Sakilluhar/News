@@ -163,7 +163,7 @@ const Newsbar = (props) => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
-                                    <Dropdown.Item id='btnLogout' >
+                                    <Dropdown.Item id='btnLogout' onClick={handleClose}>
                                     <Link id='btnBookmark' to="/Bookmark" >
                                             Bookmark
                                         </Link>

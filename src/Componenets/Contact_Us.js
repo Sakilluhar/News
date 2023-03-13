@@ -139,7 +139,7 @@ function ContactUs() {
 
                             <div className='recap1'> 
                                 <ReCAPTCHA
-                                    sitekey="6LcQytwkAAAAAHyCYveL9YC8Yju8wGsUiRRUHyPb"
+                                    sitekey="6LeMr9wkAAAAAAL9PzHPElqroaVi9pgpR1hM11la"
                                     onChange={onChange}
                                 />
                             </div>
