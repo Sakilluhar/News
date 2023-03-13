@@ -46,7 +46,7 @@
     border: 5px solid #FFFFFF;
     border-radius: 50%;
     height: 11%;
-    width: 9%;
+    width: 11%;
     position: absolute;
     right: 5%;
     top: 55%;
@@ -100,3 +100,45 @@
     /* border: 1px solid #C0C5D0; */
 
   }
+
+  @media (max-width: 1450px) {
+    #bs-btnBookmark{
+        background-color: #1A2E51;
+        color: #ffffff;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        height: 11%;
+        width: 14%;
+        position: absolute;
+        right: 5%;
+        top: 55%;
+      }
+}
+
+@media (max-width: 766px) {
+    #bs-btnBookmark{
+        background-color: #1A2E51;
+        color: #ffffff;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        height: 11%;
+        width: 10%;
+        position: absolute;
+        right: 5%;
+        top: 55%;
+      }
+}
+
+@media (max-width: 450px) {
+    #bs-btnBookmark{
+        background-color: #1A2E51;
+        color: #ffffff;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        height: 11%;
+        width: 15%;
+        position: absolute;
+        right: 5%;
+        top: 55%;
+      }
+}
