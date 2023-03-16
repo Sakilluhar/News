@@ -6,6 +6,8 @@ import { GoLocation } from 'react-icons/go';
 import './Contact_Us.css'
 import emailjs from 'emailjs-com'
 import ReCAPTCHA from "react-google-recaptcha";
+import BreadcrumbNav from './BreadcrumbNav'
+
 
 
 
@@ -69,7 +71,12 @@ function ContactUs() {
     };
 
     return (
+        <>    
+        <BreadcrumbNav SecondElement="Contact Us"/>
+
         <div id='main_contact_us'>
+        
+
             <div id='contact_us'>
                 <div className="card my-3 main-card" id='card-contact'>
                     <div className="card-body" id='card-social'>
@@ -152,5 +159,7 @@ function ContactUs() {
                 </div>
             </div>
         </div>
+        </>
+
     )
 } export default ContactUs

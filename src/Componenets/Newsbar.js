@@ -7,7 +7,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import { BiBell, BiSearch, BiUserCircle } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 import SignIn_Modal from './SignIn_Modal';
@@ -41,6 +41,7 @@ const Newsbar = (props) => {
     const [ShowManu,setShowManu]= useState();
     const ApiUrl = ApiWrt();
   
+    const navigate = useNavigate()
     const closeRef = useRef()
     useEffect(()=>{
         var myHeaders = new Headers();
@@ -92,9 +93,10 @@ const Newsbar = (props) => {
                         signOut(auth).then(() => {
                             // Sign-out successful.
                             // alert("Sign-out successful.")
-                            setIsLogout(false)
                             localStorage.removeItem('token')
                             localStorage.removeItem('user')
+                            setIsLogout(false)
+                            navigate('/')
 
                         }).catch((error) => {
                             alert(error)
@@ -119,7 +121,7 @@ const Newsbar = (props) => {
         sendPasswordResetEmail(auth, JSON.parse(localStorage.getItem('user')).data.email)
             .then((userCredential) => {
                 // Signed in s
-                alert("Email sent Succesfully")
+               alert("email sent Successfully")
                 // ...
 
             })

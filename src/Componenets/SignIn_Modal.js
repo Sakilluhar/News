@@ -108,12 +108,13 @@ function SignIn_Modal(props) {
                     .then(result => {
 
                         localStorage.setItem('token', result)
-                        // console.log(re.user.uid);
+                        // console.log(re.user.displayName);
                         var formdata2 = new FormData();
                         formdata2.append("access_key", "5670");
                         formdata2.append("firebase_id", re.user.uid);
                         formdata2.append("email", formValues.email);
-                        formdata2.append("type", "Facebook");
+                        formdata2.append("name", re.user.displayName);
+                        formdata2.append("type", "fb");
                         // console.log(re);
 
 
@@ -126,8 +127,9 @@ function SignIn_Modal(props) {
 
                         fetch(`${ApiUrl}/user_signup`, requestOptions2)
                             .then(response => response.json())
-                            .then(result => {
-                                localStorage.setItem('user', JSON.stringify(result))
+                            .then(async result => {
+                                console.log(result)
+                                await localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
                             })
                             .catch(error => console.log('error', error));
@@ -161,12 +163,13 @@ function SignIn_Modal(props) {
                     .then(result => {
 
                         localStorage.setItem('token', result)
-                        // console.log(re.user.uid);
+                        // console.log(re.user.displayName);
                         var formdata2 = new FormData();
                         formdata2.append("access_key", "5670");
                         formdata2.append("firebase_id", re.user.uid);
                         formdata2.append("email", formValues.email);
-                        formdata2.append("type", "Google");
+                        formdata2.append("name", re.user.displayName);
+                        formdata2.append("type", "gmail");
                         // console.log(re);
 
 
@@ -180,6 +183,7 @@ function SignIn_Modal(props) {
                         fetch(`${ApiUrl}/user_signup`, requestOptions2)
                             .then(response => response.json())
                             .then(result => {
+                                console.log(result)
                                 localStorage.setItem('user', JSON.stringify(result))
                                 props.setisloginloading(false)
                             })
