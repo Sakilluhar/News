@@ -6,6 +6,23 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
+#bs-no-main{
+    text-align: center;
+    background-color: #F5F5F5;
+}
+
+#bs-no-image{
+    width: 15rem;
+}
+    
+#bs-no-title{
+  font-size: 40px;
+}
+
+#bs-no-text{
+    font-size: 20px;
+}
+
   #bs-main{
       font-family: 'Zilla Slab', serif;
       display: grid;

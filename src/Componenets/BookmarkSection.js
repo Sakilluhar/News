@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import "./bookmarksection.css";
 import { ApiWrt, BearerToken } from '../Tokens';
-
+import bookmarkIMG from '../images/bookmark (4).png';
 import { useQuery } from "../Hooks";
 import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
@@ -12,6 +12,7 @@ function BookmarkSection() {
 
     const query = useQuery();
     const BToken = BearerToken();
+    const [Bookmark, setBookmark] = useState(false);
     const [Data, setData] = useState([]);
     const ApiUrl = ApiWrt();
  
@@ -38,22 +39,27 @@ function BookmarkSection() {
         .then(response => response.json())
         .then(result => {
             setData(result.data)
+            if(result.data){
+              setBookmark(true)
+            }
+            else{
+              setBookmark(false);
+            }
         })
         .catch(error => console.log('error', error));
     },[Data])
 
-  return (
+  return ( 
+  <>
+  {!Bookmark ? 
+      <div id='bs-no-main'>
+      <img id='bs-no-image' src={bookmarkIMG} alt="" />
+      <p id='bs-no-title'><b>Add Bookmarks</b></p>
+      <p id='bs-no-text'>Don't forget to Bookmark the News you like the most so that you can find those easily over here.</p>
+      </div>
+      :
     <div id='bs-main'>
-        {/* <p>my corrent location is {loca.pathname}</p>
-        {loca.pathname === `/CategoryView` ? 
-        <button
-        onClick={ () => alert('you are awesome')} >
-          
-          click me
-        </button> 
-        : null  
-        } */}
-        {/* <BreadcrumbSection/> */}
+     
         <div id='bs-content' className="">
         <h1 className="text-center"></h1>   
         <div className="row">
@@ -86,8 +92,7 @@ function BookmarkSection() {
                       redirect: 'follow'
                     };
                     
-                    // fetch("https://news.wrteam.in/Api/set_bookmark", requestOptions)
-                    fetch("http://news.thewrteam.in/Api/set_bookmark", requestOptions)
+                    fetch(`${ApiUrl}/set_bookmark`, requestOptions)
 
                       .then(response => response.text())
                       .then(result => console.log(result))
@@ -109,7 +114,8 @@ function BookmarkSection() {
         </div>
         </div> 
  
-    </div>
+    </div>}
+    </>
   )
 }
 

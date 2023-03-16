@@ -8,8 +8,8 @@
     height: 5rem;
     display: grid;
     grid-template-columns: 6% 4fr 6fr ;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
 }
 
 
@@ -406,6 +406,8 @@ border: none;
     border-top: 0.1px solid #00000063;
     border-bottom: 0.1px solid #00000063;
     background-color: #ffffff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    
 }
 
 #catNav-links{

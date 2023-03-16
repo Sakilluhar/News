@@ -36,39 +36,6 @@ function NewsView() {
   const shareUrl = window.location.href
   const ApiUrl = ApiWrt();
   
-  // useEffect(() => {
-  //   var myHeaders = new Headers();
-  //   myHeaders.append("Authorization", "Bearer "+BToken);
-
-  //   var formdata = new FormData();
-  //   formdata.append("access_key", "5670");
-  //   formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
-  //   formdata.append("offset", "0");
-  //   // formdata.append("limit", "10");
-  //   formdata.append("language_id", "14");
-
-  //   var requestOptions = {
-  //     method: 'POST',
-  //     headers: myHeaders,
-  //     body: formdata,
-  //     redirect: 'follow'
-  //   };
-
-  //   fetch("http://news.thewrteam.in/Api/get_like", requestOptions)
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       result.data.map((d)=>{
-  //         if (d.news_id === Nid) {
-  //         setCheckLike(true)
-  //       }else{
-  //         setCheckLike(false)
-  //       }
-  //     })
-        
-  //       console.log(CheckLike);
-  //     })
-  //     .catch(error => console.log('error', error));
-  //     },[])
 
   useEffect(() => {
     var myHeaders = new Headers();
@@ -78,7 +45,6 @@ function NewsView() {
     formdata.append("access_key", "5670");
     formdata.append("news_id", Nid);
     formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id ? JSON.parse(localStorage.getItem('user')).data.id : "1" );
-    // formdata.append("user_id", JSON.parse(localStorage.getItem('user')) === null ? "1" : JSON.parse(localStorage.getItem('user')).data.id);
     formdata.append("language_id", "14");
 
     var requestOptions = {
@@ -98,6 +64,13 @@ function NewsView() {
         }
         else {
           setBookmark(true)
+        }
+
+        if (result.data[0].like === "0"){
+          setLike(false)
+        }
+        else {
+          setLike(true)
         }
       
       })
