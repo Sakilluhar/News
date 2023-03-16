@@ -249,7 +249,7 @@ const Newsbar = (props) => {
       <nav className="Newsbar">
 
         <div id='News-logo' className="News-logo">
-        <img id='NewsLogo' src={News_main_Logo} alt="" />
+            <Link to="/"><img id='NewsLogo' src={News_main_Logo} alt="" /></Link>
         </div>
 
         <div className="Manu-links">

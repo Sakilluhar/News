@@ -77,7 +77,8 @@ function NewsView() {
     var formdata = new FormData();
     formdata.append("access_key", "5670");
     formdata.append("news_id", Nid);
-    formdata.append("user_id", "1");
+    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id ? JSON.parse(localStorage.getItem('user')).data.id : "1" );
+    // formdata.append("user_id", JSON.parse(localStorage.getItem('user')) === null ? "1" : JSON.parse(localStorage.getItem('user')).data.id);
     formdata.append("language_id", "14");
 
     var requestOptions = {
@@ -91,8 +92,16 @@ function NewsView() {
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
+        console.log(result.data[0].bookmark)
+        if (result.data[0].bookmark === "0"){
+          setBookmark(false)
+        }
+        else {
+          setBookmark(true)
+        }
+      
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => console.log("error", error)); 
   }, [Nid]);
 
   return (
