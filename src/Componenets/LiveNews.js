@@ -9,6 +9,7 @@ import { ApiWrt, BearerToken } from '../Tokens';
 import no_image from "../images/no_image.jpeg";
 import { BsFillPlayFill } from "react-icons/bs";
 import VideoPlayerModal from "./VideoPlayerModal";
+import BreadcrumbNav from './BreadcrumbNav'
 
 
 
@@ -56,8 +57,11 @@ function LiveNews(props) {
         setVideo_url(url)
     }
     return (
-        <>
+        <> 
+        <BreadcrumbNav SecondElement="Live News"/>
+
             <div id='LN-main'>
+           
                 <div id='LN-content' className="">
                     <h1 className="text-center"></h1>
                     <div className="row">

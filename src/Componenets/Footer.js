@@ -127,23 +127,21 @@ function Footer() {
                                 </ul>
                             </div>
 
-
-
                             <div className="col-xs-3 col-sm-3 col-md-3">
                                 <div className='d-flex gap-3'>
                                     <div>
                                         <p id='footer-nav'>Follow us </p>
                                         <div  className='hide-mobile'>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> Facebook</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> Instagram</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /> Link in</button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> Twitter</button>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> Facebook</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://instagram.com/wrteam.in?igshid=YmMyMTA2M2Y='><FaInstagram /> Instagram</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.linkedin.com/company/wrteam/'><FaLinkedin /> Linked in</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start'href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> Twitter</a>
                                         </div>
                                         <div id='contact-us' className='hide-laptop2'>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaFacebookSquare /> </button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaInstagram /> </button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaLinkedin /></button>
-                                            <button id='social_platforms' className='btn btn-outline-white text-start'><FaTwitterSquare /> </button>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> </a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://instagram.com/wrteam.in?igshid=YmMyMTA2M2Y='><FaInstagram /> </a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.linkedin.com/company/wrteam/'><FaLinkedin /></a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> </a>
                                         </div>
                                     </div>
 
@@ -155,7 +153,7 @@ function Footer() {
 
                     <div className=" d-flex copyright" id='copyright1'>
 
-                        <p id='footer-Copyright' className="h6 me-auto p-2" >Copyright © 2022.All right Reversed By WRTeam.</p>
+                        <p id='footer-Copyright' className="h6 me-auto p-2" >Copyright © 2022.All right Reserved By WRTeam.</p>
                         <p id='footer-tearms' className="h6 p-2" variant="primary" onClick={handleShow}>
                             Terms & Conditions
                         </p>

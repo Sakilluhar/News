@@ -5,6 +5,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
 import { ApiWrt, BearerToken } from '../Tokens';
+import BreadcrumbNav from './BreadcrumbNav'
 
 import no_image from "../images/no_image.jpeg";
 
@@ -38,6 +39,8 @@ function BreakingNewsView() {
     }, [])
     return (
         <>
+        <BreadcrumbNav SecondElement="Breaking News"/>
+
             <div id='BNV-main'>
                 <div id='BNV-content' className="">
                     <h1 className="text-center"></h1>

@@ -62,6 +62,9 @@
   color: #fff;
   font-size: smaller;
 }
+.hide-mobile a:hover {
+  color: #ffffff;
+}
 @media only screen and (max-width: 1300px)  and (min-width: 690px)  {
   #footer-nav{
     color: #fff;
@@ -222,7 +225,8 @@ border: 2px; */
   background-color: #1b2d51;
   width: 60%;
 }
-#social_platforms:hover {
+a#social_platforms:hover {
+  color: #ffffff;
   background-color: #ee2934;
 }
 #contact-us {
@@ -406,7 +410,8 @@ border: 2px; */
     background-color: #1b2d51;
     width: fit-content;
   }
-  #social_platforms:hover {
+  a#social_platforms:hover {
+    color: #ffffff;
     background-color: #ee2934;
   }
   #cB {
