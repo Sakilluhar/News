@@ -5,6 +5,7 @@ import './Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './/Spinner';
 import { ApiWrt, BearerToken } from '../Tokens';
+import BreadcrumbNav from './BreadcrumbNav'
 
 
 function NewsNotification() {
@@ -54,7 +55,7 @@ function NewsNotification() {
     useEffect(() => {
 
         var myHeaders = new Headers();
-        myHeaders.append("Authorization",  "Bearer "+BToken);
+        myHeaders.append("Authorization", "Bearer " + BToken);
 
         var formdata = new FormData();
         formdata.append("access_key", "5670");
@@ -72,55 +73,59 @@ function NewsNotification() {
         fetch(`${ApiUrl}/get_notification?access_key=5670&offset=0&limit=20`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                        setData(result.data)
-        
-        
-                    })
+                setData(result.data)
+
+
+            })
             .catch(error => console.log('error', error));
 
     }, [])
 
     return (
-        <div id="main-Noticard" className='my-3'>
-            <div className="d-flex bd-highlight mb-3">
-                <Link to='/Persnol_Notification' id='btnNotification11' className="btn mx-1 bd-highlight" > Personal </Link>
-                <Link to='/News_Notification' id='btnNewsnoti1' className="btn mx-1 bd-highlight" > News</Link>
-                {/* <button  id='btnNotification1' className="btn  btn mx-1 ms-auto bd-highlight" onClick={handleDeleteAll} > Delete All</button> */}
-            </div>
-            <div className='my-3'>
-                {Data.length === 0
-                    ?
-                    <div>
-                        <Spinner />
-                    </div>
-                    : (<>
-                        {Data && Data.map((d, index) => (
-                            <div className="card my-3" key={index}>
-                                <div className="card-body bd-highlight" id='card-noti'>
-                                    <img id='noti_profile' src={d.image} alt="" />
-                                    {/* <button className="btn bd-highlight" style={{ color: "#EE2934", background: "" }} id='it' onClick={handletoggle}>
+        <>
+        <BreadcrumbNav SecondElement="Notification"/>
+
+            <div id="main-Noticard" className='my-3'>
+                <div className="d-flex bd-highlight mb-3">
+                    <Link to='/Persnol_Notification' id='btnNotification11' className="btn mx-1 bd-highlight" > Personal </Link>
+                    <Link to='/News_Notification' id='btnNewsnoti1' className="btn mx-1 bd-highlight" > News</Link>
+                    {/* <button  id='btnNotification1' className="btn  btn mx-1 ms-auto bd-highlight" onClick={handleDeleteAll} > Delete All</button> */}
+                </div>
+                <div className='my-3'>
+                    {Data.length === 0
+                        ?
+                        <div>
+                            <Spinner />
+                        </div>
+                        : (<>
+                            {Data && Data.map((d, index) => (
+                                <div className="card my-3" key={index}>
+                                    <div className="card-body bd-highlight" id='card-noti'>
+                                        <img id='noti_profile' src={d.image} alt="" />
+                                        {/* <button className="btn bd-highlight" style={{ color: "#EE2934", background: "" }} id='it' onClick={handletoggle}>
                                         {like ? <AiFillLike size={35} /> : <AiOutlineLike size={35} />}
                                     </button> */}
-                                    <div className='Noti-text'>
-                                        {/* <p className='bd-highlight'>{d.title}</p> */}
-                                        <p>{d.title.slice(0, 100)}...</p>
-                                        <p className='bd-highlight' > {d.message.slice(0, 100)}...</p>
-                                        <p className='bd-highlight'> {d.date_sent}</p>
-                                    </div>
+                                        <div className='Noti-text'>
+                                            {/* <p className='bd-highlight'>{d.title}</p> */}
+                                            <p>{d.title.slice(0, 100)}...</p>
+                                            <p className='bd-highlight' > {d.message.slice(0, 100)}...</p>
+                                            <p className='bd-highlight'> {d.date_sent}</p>
+                                        </div>
 
-                                    <div className='iconTrash ms-auto bd-highlight'>
-                                        <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>
-                                            <p className='hide-mobile'>Delete</p>
-                                            <p className='hide-laptop'><FiTrash2 /></p>
-                                        </button>
+                                        <div className='iconTrash ms-auto bd-highlight'>
+                                            <button className="btn  btn m-2 " id='btntrash' onClick={() => handleDeleteComment(d.id)}>
+                                                <p className='hide-mobile'>Delete</p>
+                                                <p className='hide-laptop'><FiTrash2 /></p>
+                                            </button>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </>)}
+                            ))}
+                        </>)}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 export default NewsNotification

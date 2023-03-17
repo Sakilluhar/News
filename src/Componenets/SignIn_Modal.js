@@ -61,14 +61,14 @@ function SignIn_Modal(props) {
         if (!values.email) {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
-            errors.email = "Enter a Valid EMail";
+            errors.email = "Enter Valid email";
         }
         if (!values.password) {
             errors.password = "Password is required!";
         } else if (values.password.length < 6) {
-            errors.password = "Password must be more then 6 charchaters";
+            errors.password = "Password must be more than 6 charchaters";
         } else if (values.password.length > 12) {
-            errors.password = "Password cannot exceed then 12 charchaters";
+            errors.password = "Password cannot exceed than 12 charchaters";
         }
         return errors;
     };
@@ -282,7 +282,7 @@ function SignIn_Modal(props) {
 
                         </div>
                         <div className='logo-text'>
-                            <h4> This beautiful theam yours!</h4>
+                            <h4> This beautiful theme yours!</h4>
                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
                         </div>
                     </div>
@@ -311,7 +311,7 @@ function SignIn_Modal(props) {
                                                 onChange={handleChange}
                                             />
                                             <label htmlFor="floatingPassword">Password</label>
-                                            <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={19} /></span>
+                                            <span onClick={handletoggle} className="password-icon"><Icon icon={icon} size={20} /></span>
                                             <p className='error-msg'> {formErrors.password}
                                                 <p onClick={() => {
                                                     props.onHide()
@@ -348,7 +348,7 @@ function SignIn_Modal(props) {
 
 
                         <div className="footer">
-                            <h6 className="">Don't have an account?<a style={{ cursor: "pointer" }} onClick={() => {
+                            <h6 className="">Don't have an account?<a style={{ cursor: "pointer",fontSize: "18px" ,fontWeight: "bold", color:"#3B5998"}} onClick={() => {
                                 // console.log("click")
                                 props.onHide()
                                 setPhoneModalShow(false)

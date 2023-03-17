@@ -7,6 +7,8 @@ import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import BreadcrumbNav from './BreadcrumbNav'
+
 
 function BookmarkSection() {
 
@@ -51,6 +53,8 @@ function BookmarkSection() {
 
   return ( 
   <>
+    <BreadcrumbNav SecondElement="Bookmark"/>
+
   {!Bookmark ? 
       <div id='bs-no-main'>
       <img id='bs-no-image' src={bookmarkIMG} alt="" />

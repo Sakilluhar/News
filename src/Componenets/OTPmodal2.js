@@ -158,7 +158,7 @@ const [OTP, setOTP] = useState("");
                                 <img src={Logo} alt="" id='logo5' />
                             </div>
                             <div className='logo-text5'>
-                                <h4> This beautiful theam yours!</h4>
+                                <h4> This beautiful theme yours!</h4>
                                 <p> " Best investment i made for a long time. Can recommend for other users."</p>
                             </div>
                         </div>

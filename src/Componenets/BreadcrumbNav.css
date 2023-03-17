@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
-
+.breadcrumb-item+.breadcrumb-item:before {
+    content: var(--bs-breadcrumb-divider,"|");
+}
 #bcb-main{
     height: 5rem;
     background: #f5f5f5;
@@ -9,6 +11,9 @@
     font-size: 20px;
 
     
+}
+#bcb-home-logo{
+    margin-bottom: 10%;
 }
 #bcb-main [role=button] {
     text-decoration: none;
@@ -20,4 +25,17 @@
 #bcb-item{
     margin-left: 8%;
     text-decoration: none;
+}
+#bcb-active-item{
+    color: #EE2934;
+}
+#bcb-third-item{
+    display: none;
+}
+
+#bcb-active-item::before{
+    content: var(--bs-breadcrumb-divider,"|");
+}
+#bcb-third-item::before{
+    content: var(--bs-breadcrumb-divider,"|");
 }
