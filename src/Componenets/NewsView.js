@@ -44,7 +44,7 @@ function NewsView() {
     var formdata = new FormData();
     formdata.append("access_key", "5670");
     formdata.append("news_id", Nid);
-    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id ? JSON.parse(localStorage.getItem('user')).data.id : "1" );
+    formdata.append("user_id", localStorage.getItem('user') !== null  ? JSON.parse(localStorage.getItem('user')).data.id : "1" );
     formdata.append("language_id", "14");
 
     var requestOptions = {
@@ -105,7 +105,7 @@ function NewsView() {
               </div>
 
               <div id="nv-right-head">
-                <h6>SHARE:</h6>
+                <h6 id="nv-Share-Label">SHARE:</h6>
                 <FacebookShareButton url={shareUrl} title={Data[0].title+' - Enews'} hashtag={'Enews'}>
                   <FacebookIcon size={40} round/>
                 </FacebookShareButton>

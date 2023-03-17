@@ -58,12 +58,15 @@ function BreakingNewsSection() {
 
             {Data && Data.map((element) => (
               <div id='bns-card' className="card" key={element.id}>
+                <Link id='Link-all' to={"/Breaking_NewsView?BNid=" + element.id}> 
                 <img id='bns-image' src={element.image} className="card-img-top" alt="..." />
                 <div id='bns-card-body' className="card-body">
                   <Link id='btnbnsCatagory' className='btn btn-sm' type="button" to='/BreakingNews'>Breaking News</Link>
                   <h5 id='bns-card-text' className="">{element.title.slice(0, 50)}...</h5>
                 </div>
+                </Link>
               </div>
+              
             ))}
           </div>
 
@@ -84,14 +87,17 @@ function BreakingNewsSection() {
 
           <div id='bns-rest-cards'>
 
-            {Data && Data.map((element) => (
-              <div id='bns-card' className="card" key={element.id}>
+            {Data && Data.map((element) => (            
+              <div id='bns-card' className="card" key={element.id}> 
+              <Link id='Link-all' to={"/Breaking_NewsView?Nid=" + element.id}> 
                 <img id='bns-image' src={element.image} className="card-img-top" alt="..." />
                 <div id='bns-card-body' className="card-body">
                   <button id='btnbnsCatagory' className='btn btn-sm' type="button" >Breaking News</button>
                   <h5 id='bns-card-text' className="">{element.title.slice(0, 60)}...</h5>
                 </div>
+                </Link>
               </div>
+              
             ))}
           </div>
 
