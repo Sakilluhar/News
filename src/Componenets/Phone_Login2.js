@@ -1,4 +1,4 @@
-import './PhoneLogin.css';
+import '../CSS/PhoneLogin.css';
 import photo from '../images/Login.jpg'
 import Logo from '../images/Logo.png'
 import 'react-phone-number-input/style.css'

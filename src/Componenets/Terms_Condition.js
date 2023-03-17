@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { ApiWrt, BearerToken } from '../Tokens';
-import  './Terms&Privacy.css'
+import  '../CSS/Terms&Privacy.css'
 import { MdOutlineMenuBook } from 'react-icons/md';
 
 

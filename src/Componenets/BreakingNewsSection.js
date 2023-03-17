@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './Home.css';
+import '../CSS/Home.css';
 import breakingNews2_jpg from '../images/earthImage.png';
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";

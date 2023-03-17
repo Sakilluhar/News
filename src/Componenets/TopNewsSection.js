@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Home.css'
+import '../CSS/Home.css'
 import { useEffect } from 'react'
 import { ApiWrt, BearerToken } from '../Tokens';
 import { Link } from 'react-router-dom';

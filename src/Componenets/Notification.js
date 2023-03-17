@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
 import { FiTrash2 } from 'react-icons/fi';
-import './Notification.css'
+import '../CSS/Notification.css'
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner';
 import { ApiWrt, BearerToken } from '../Tokens';

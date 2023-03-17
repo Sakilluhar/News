@@ -3,7 +3,7 @@ import about from '../images/About.png'
 import about1 from '../images/image 1.png'
 import about2 from '../images/image 2.png'
 import about3 from '../images/image  3.png'
-import './AboutUs.css'
+import '../CSS/AboutUs.css'
 import BreadcrumbNav from './BreadcrumbNav'
 
 
@@ -35,7 +35,7 @@ function AboutUs() {
             <img src={about3}  alt="..." id="image2"/>
           </div>
           <div id='i3'>
-            <img src={about2}  alt="..." id="image3"/>
+            <img src={about2}  alt="..."  id="image3"/>
           </div>
         </div>
         <div className='container A3'>

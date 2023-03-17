@@ -1,7 +1,7 @@
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import React, { useEffect, useState, useRef } from 'react'
-import './Nav.css';
+import '../CSS/Nav.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BiBell, BiUserCircle } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
@@ -153,7 +153,7 @@ const Newsbar = (props) => {
                                     <Dropdown.Toggle id="btnSignIn" className=''>
                                         <BiUserCircle size={23} id='btnLogo' />
                                         {!isloginloading ?
-                                            JSON.parse(localStorage.getItem('user')).data.name
+                                            JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).data.name
                                             : ''
                                         }
                                     </Dropdown.Toggle>
@@ -277,7 +277,7 @@ const Newsbar = (props) => {
                                     <Dropdown.Toggle id="btnSignIn" className=''>
                                         <BiUserCircle size={23} id='btnLogo' />
                                         {!isloginloading ?
-                                            JSON.parse(localStorage.getItem('user')).data.name
+                                            JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).data.name
                                             : ''
                                         }
                                     </Dropdown.Toggle>

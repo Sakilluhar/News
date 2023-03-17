@@ -1,5 +1,5 @@
 import React from 'react'
-import './tagnewsview.css';
+import '../CSS/tagnewsview.css';
 import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { useState } from 'react';

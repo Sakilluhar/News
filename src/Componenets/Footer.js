@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Footer.css';
+import '../CSS/Footer.css';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import Terms_Condition from './Terms_Condition';
 import Privacy_Policy from './Privacy_Policy';
@@ -18,7 +18,7 @@ function Footer() {
     const [Data, setData] = useState([]);
     const BToken = BearerToken();
     const ApiUrl = ApiWrt();
-  
+
     const initialValues = { email: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState("", setTimeout(() => {
@@ -34,6 +34,10 @@ function Footer() {
         console.log(formValues);
     };
 
+    const scrollToTop =()=>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
 
 
     const handleSubcribe = (e) => {
@@ -55,9 +59,9 @@ function Footer() {
 
         return errors;
     };
-    useEffect(()=>{
+    useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer "+BToken);
+        myHeaders.append("Authorization", "Bearer " + BToken);
 
         var formdata = new FormData();
         formdata.append("access_key", "5670");
@@ -66,19 +70,19 @@ function Footer() {
         formdata.append("language_id", "14");
 
         var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: formdata,
-          redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
         };
 
         fetch(`${ApiUrl}/get_category`, requestOptions)
-          .then(response => response.json())
-          .then(result => {
-            setData(result.data)
-          })
-          .catch(error => console.log('error', error));
-        },[])
+            .then(response => response.json())
+            .then(result => {
+                setData(result.data)
+            })
+            .catch(error => console.log('error', error));
+    }, [])
 
 
     return (
@@ -125,18 +129,18 @@ function Footer() {
                             <div className="col-xs-3 col-sm-3 col-md-3" >
                                 <p id='footer-nav'> News Categories</p>
                                 {Data.length > 0 ?
-                                <ul className='newscate'>
-                                    <li><Link to={"/CategoryView?id="+Data[0].id} >{Data[0].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[1].id} >{Data[1].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[2].id} >{Data[2].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[3].id} >{Data[3].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[4].id} >{Data[4].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[5].id} >{Data[5].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[6].id} >{Data[6].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[7].id} >{Data[7].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[8].id} >{Data[8].category_name}</Link></li>
-                                    <li><Link to={"/CategoryView?id="+Data[9].id} >{Data[9].category_name}</Link></li>
-                                </ul>:null
+                                    <ul className='newscate'>
+                                        <li><Link to={"/CategoryView?id=" + Data[0].id} onClick={scrollToTop}>{Data[0].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[1].id} onClick={scrollToTop}>{Data[1].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[2].id} onClick={scrollToTop}>{Data[2].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[3].id} onClick={scrollToTop}>{Data[3].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[4].id} onClick={scrollToTop}>{Data[4].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[5].id} onClick={scrollToTop}>{Data[5].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[6].id} onClick={scrollToTop}>{Data[6].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[7].id} onClick={scrollToTop}>{Data[7].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[8].id} onClick={scrollToTop}>{Data[8].category_name} </Link></li>
+                                        <li><Link to={"/CategoryView?id=" + Data[9].id} onClick={scrollToTop}>{Data[9].category_name} </Link></li>
+                                    </ul> : null
                                 }
 
 
@@ -145,11 +149,11 @@ function Footer() {
                             <div className="col-xs-3 col-sm-3 col-md-">
                                 <p id='footer-nav'>useful links</p>
                                 <ul className="useL">
-                                    <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/about_us">About</Link></li>
-                                    <li><Link to="/LiveNews">Live News</Link></li>
-                                    <li><Link to="/BreakingNews">Breaking News</Link></li>
-                                    <li><Link to="/Contact_us">Contact Us</Link></li>
+                                    <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
+                                    <li><Link to="/about_us" onClick={scrollToTop}>About</Link></li>
+                                    <li><Link to="/LiveNews" onClick={scrollToTop}>Live News</Link></li>
+                                    <li><Link to="/BreakingNews" onClick={scrollToTop}>Breaking News</Link></li>
+                                    <li><Link to="/Contact_us" onClick={scrollToTop}>Contact Us</Link></li>
                                 </ul>
                             </div>
 
@@ -157,11 +161,11 @@ function Footer() {
                                 <div className='d-flex gap-3'>
                                     <div>
                                         <p id='footer-nav'>Follow us </p>
-                                        <div  className='hide-mobile'>
+                                        <div className='hide-mobile'>
                                             <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> Facebook</a>
                                             <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://instagram.com/wrteam.in?igshid=YmMyMTA2M2Y='><FaInstagram /> Instagram</a>
                                             <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.linkedin.com/company/wrteam/'><FaLinkedin /> Linked in</a>
-                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start'href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> Twitter</a>
+                                            <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://twitter.com/wrteam2?s=21&t=kgc60HHQmTKkjdKsj74Ieg'><FaTwitterSquare /> Twitter</a>
                                         </div>
                                         <div id='contact-us' className='hide-laptop2'>
                                             <a target='_blank' id='social_platforms' className='btn btn-outline-white text-start' href='https://www.facebook.com/wrteam.in?mibextid=ZbWKwL'><FaFacebookSquare /> </a>

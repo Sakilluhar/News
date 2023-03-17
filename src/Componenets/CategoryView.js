@@ -1,5 +1,5 @@
 import React from 'react'
-import './categoryview.css';
+import '../CSS/categoryview.css';
 import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { useState } from 'react';

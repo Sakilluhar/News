@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import './relatednewssection.css'
+import '../CSS/relatednewssection.css'
 import { ApiWrt, BearerToken } from '../Tokens';
 
 import { useQuery } from '../Hooks';

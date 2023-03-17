@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
-import './Contact_Us.css'
+import '../CSS/Contact_Us.css'
 import emailjs from 'emailjs-com'
 import ReCAPTCHA from "react-google-recaptcha";
 import BreadcrumbNav from './BreadcrumbNav'

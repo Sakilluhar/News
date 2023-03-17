@@ -1,7 +1,7 @@
 import React from 'react'
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link } from 'react-router-dom';
-import './BreadcrumbNav.css'
+import '../CSS/BreadcrumbNav.css'
 import { FaHome } from 'react-icons/fa';
 
 
