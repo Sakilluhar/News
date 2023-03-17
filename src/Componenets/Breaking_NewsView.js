@@ -20,6 +20,8 @@ import {
   FacebookShareButton,
   
 } from "react-share";
+import RelatedBreakingNews from "./RelatedBreakingNews";
+import BreadcrumbNav from "./BreadcrumbNav";
 
 function Breaking_NewsView() {
 
@@ -58,32 +60,26 @@ function Breaking_NewsView() {
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
-        // if (result.data[0].bookmark === "0"){
-        //   setBookmark(false)
-        // }
-        // else {
-        //   setBookmark(true)
-        // }
 
-        // if (result.data[0].like === "0"){
-        //   setLike(false)
-        // }
-        // else {
-        //   setLike(true)
-        // }
       })
       .catch((error) => console.log("error", error)); 
   }, [BNid]);
   return (
-    <div id="B_NV-main">
-      <div id="B_NV-page">
-        {Data.length === 0 ? (
+    
+    <>
+    {Data.length === 0 ? (
           "loading"
         ) : (
+          <>
+        <BreadcrumbNav SecondElement="News Details" ThirdElement={Data[0].title}/>
+    <div id="B_NV-main">
+      <div id="B_NV-page">
+        
           <div id="B_NV-body">
-            {/* <button id="btnB_NVCatagory" className="btn btn-sm" type="button">
-              {Data[0].category_name}
-            </button> */}
+
+            <Link id="btnB_NVCatagory" className="btn btn-sm" type="button" to='/BreakingNews'>
+              Breaking News
+            </Link>
             <h1 id="B_NV-title">{Data[0].title}</h1>
 
             <div id="B_NV-Header" className="">
@@ -202,14 +198,17 @@ function Breaking_NewsView() {
             {/* // <p id='B_NV-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p> */}
             {/* <CommentSection Nid={Nid} /> */}
           </div>
-        )}
+        
 
         <div id="B_NV-right-section">
-          {/* <RelatedNewsSection Cid={catid}/> */}
+          <RelatedBreakingNews />
           <TagsSection />
         </div>
       </div>
     </div>
+    </>
+    )}
+    </>
   )
 }
 

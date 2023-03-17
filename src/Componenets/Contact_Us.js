@@ -72,7 +72,7 @@ function ContactUs() {
 
     return (
         <>    
-        <BreadcrumbNav SecondElement="Contact Us"/>
+        <BreadcrumbNav SecondElement="Contact Us" ThirdElement="0"/>
 
         <div id='main_contact_us'>
         

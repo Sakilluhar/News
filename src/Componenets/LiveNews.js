@@ -58,7 +58,7 @@ function LiveNews(props) {
     }
     return (
         <> 
-        <BreadcrumbNav SecondElement="Live News"/>
+        <BreadcrumbNav SecondElement="Live News" ThirdElement="0"/>
 
             <div id='LN-main'>
            

@@ -4,13 +4,12 @@
     content: var(--bs-breadcrumb-divider,"|");
 }
 #bcb-main{
-    height: 5rem;
+    /* height: 5rem; */
     background: #f5f5f5;
-    padding: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.1rem;
     font-family: 'Zilla Slab', serif;
-    font-size: 20px;
-
-    
+    font-size: 20px; 
 }
 #bcb-home-logo{
     margin-bottom: 10%;
@@ -28,9 +27,6 @@
 }
 #bcb-active-item{
     color: #EE2934;
-}
-#bcb-third-item{
-    display: none;
 }
 
 #bcb-active-item::before{

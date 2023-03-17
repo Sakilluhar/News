@@ -12,7 +12,7 @@ function AboutUs() {
 
   return (
     <div >
-    <BreadcrumbNav SecondElement="About Us"/>
+    <BreadcrumbNav SecondElement="About Us" ThirdElement="0"/>
       <div className='main-aboutus'>
         <div id='about-us'>
           <div>

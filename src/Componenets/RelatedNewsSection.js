@@ -48,7 +48,7 @@ function RelatedNewsSection(props) {
                 :
 
       <div id='RNews-main'>
-                <nav id='PNews-cat-nav' className="navbar">  
+                <nav id='RNews-cat-nav' className="navbar">  
                        <h4 id='nav-logo' ><b>Related News</b></h4> 
                 </nav>
                 {Data && Data.map((element)=>(

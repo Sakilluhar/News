@@ -64,7 +64,7 @@ function CategoryView() {
 
   return (
     <>
-      <BreadcrumbNav SecondElement="Category" />
+      <BreadcrumbNav SecondElement="Category" ThirdElement="0"/>
       <div id='cv-main'>
 
 

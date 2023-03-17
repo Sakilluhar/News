@@ -17,8 +17,7 @@ function NewsCardFS() {
     const [Category, setCategory] = useState('Breaking News');
     const [Image, setImage] = useState();
     const [Video_url, setVideo_url] = useState();
-    const [Nid, setNid] = useState();
-    const [Category_id, setCategory_id] = useState();
+    const [BNid, setBNid] = useState();
     const BToken = BearerToken();
     const ApiUrl = ApiWrt();
     useEffect(()=>{
@@ -44,6 +43,7 @@ function NewsCardFS() {
             setDescription(result.data[0].description.slice(0, 300)+"...");
             setCategory('Breaking News');
             setImage (result.data[0].image);
+            setBNid(result.data[0].id)
             
             
         })
@@ -62,9 +62,7 @@ function NewsCardFS() {
             setCategory('Breaking News');
             setImage (Data[0].image);
             setVideo_url(Data[0].content_value);
-            // setNid(Data[0].id);
-            // setCategory_id(Data[0].category_id);
-
+            setBNid(Data[0].id)
             
         }
         else if(value === 'rad2'){
@@ -73,6 +71,7 @@ function NewsCardFS() {
             setCategory('Breaking News');
             setImage (Data[1].image);
             setVideo_url(Data[1].content_value);
+            setBNid(Data[1].id)
 
         }
         else if(value === 'rad3'){
@@ -81,19 +80,13 @@ function NewsCardFS() {
             setCategory('Breaking News');
             setImage (Data[2].image);
             setVideo_url(Data[2].content_value);
+            setBNid(Data[2].id)
 
         }
         
     
     }
     
-
-    
- 
-    // const NewsCardContan = () => {
-
-
-    // }
     
   return (
 
@@ -107,7 +100,7 @@ function NewsCardFS() {
                 <p id='Top-Title'><b>{Title}</b></p>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>
-                <Link id='btnReadMore' className='btn' type="button" to='Breaking_NewsView' ><b>READ MORE</b></Link>
+                <Link id='btnReadMore' className='btn' type="button" to={"/Breaking_NewsView?BNid=" + BNid} ><b>READ MORE</b></Link>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
                 <a id='btnpaly-mobile'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={30}/></a>
                 </div>
