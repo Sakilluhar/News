@@ -365,7 +365,7 @@ max-width: 100%;
     border: none;
 }
 
-#cdbtnReplay{
+.cdbtnReplay{
     width: fit-content;
     background-color: #EE2934;
     color: #ffffff;

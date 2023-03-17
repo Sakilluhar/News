@@ -116,7 +116,7 @@ function CommentsView(props) {
                                 .then(response => response.json())
                                 .then(result => {
                                   setLoadComments(true);
-                                  // replyRef.current.click()
+
                                   document.getElementById(`cdbtnRepla${element.id}`).click()
                                   setTimeout(() => {
                                     setLoadComments(false);
@@ -135,7 +135,7 @@ function CommentsView(props) {
                       </Popover>
                     }
                   >
-                    <Button id={`cdbtnRepla${element.id}`} variant="secondary" ref={replyRef}>Reply</Button>
+                    <Button id={`${element.id}`} className="cdbtnReplay" variant="secondary" ref={replyRef}>Reply</Button>
                   </OverlayTrigger>
                 ))}
               </div>
@@ -216,7 +216,7 @@ function CommentsView(props) {
                       </Popover>
                     }
                   >
-                    <Button id="cdbtnReplay" variant="secondary">Reply</Button>
+                    <Button id="cdbtnReplay" className="cdbtnReplay" variant="secondary">Reply</Button>
                   </OverlayTrigger>
                 ))}
                   </div>

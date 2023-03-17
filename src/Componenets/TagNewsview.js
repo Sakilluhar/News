@@ -53,8 +53,7 @@ function TagNewsview() {
     <div>
         
         <div id='ts-main'>
-        <div id='ts-content' className="">
-        <h1 className="text-center"></h1>   
+        <div id='ts-content' className="">  
         <div className="row">
                  <Link id='' to="/go"  ></Link>
 
@@ -68,7 +67,6 @@ function TagNewsview() {
                 <button id='ts-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button>
                 <h5 id='ts-card-title' className="card-title">{element.title.slice(0,150)}...</h5>
                 <p id="ts-card-date"><FiCalendar size={18} id="ts-logoCalendar" />{element.date.slice(0, 10)}</p>
-                 {/* <Link id='btncvRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link> */}
                  </div>
                    
           </div>

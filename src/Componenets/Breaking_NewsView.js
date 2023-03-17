@@ -84,14 +84,6 @@ function Breaking_NewsView() {
 
             <div id="B_NV-Header" className="">
               <div id="B_NV-left-head">
-                {/* <p id="head-lables">
-                  <FiCalendar size={18} id="head-logos" />{" "}
-                  {Data[0].date.slice(0, 10)}
-                </p>
-                <p id="head-lables">
-                  <AiOutlineLike size={18} id="head-logos" />{" "}
-                  {Data[0].total_like} Likes
-                </p> */}
               </div>
 
               <div id="B_NV-right-head">
@@ -109,7 +101,6 @@ function Breaking_NewsView() {
               </div>
             </div>
 
-            {/* <CarouselSection images={Data[0].image}/> */}
             <img id="B_NV-image" src={Data[0].image} alt="..." />
 
             <nav id="B_NV-functions" className="">
@@ -131,72 +122,14 @@ function Breaking_NewsView() {
                   <Form.Label id="B_NV-FontRange-labels">22px</Form.Label>
                   <Form.Label id="B_NV-FontRange-labels">24px</Form.Label>
                 </div>
-                {/* <h1>{FontSize}</h1> */}
+
               </div>
               <div id="B_NV-functions-right">
-                {/* <div id="B_NV-function-pair">
-                  <button id="B_NV-function" className="btn" onClick={()=>{
-
-                    var myHeaders = new Headers();
-                    myHeaders.append("Authorization", "Bearer "+BToken);
-
-                    var formdata = new FormData();
-                    formdata.append("access_key", "5670");
-                    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
-                    formdata.append("news_id", Data[0].id);
-                    formdata.append("status", !Bookmark?1:0);
-
-                    var requestOptions = {
-                      method: 'POST',
-                      headers: myHeaders,
-                      body: formdata,
-                      redirect: 'follow'
-                    };
-
-                    fetch(`${ApiUrl}/set_bookmark`, requestOptions)
-                      .then(response => response.text())
-                      .then(result => setBookmark(!Bookmark))
-                      .catch(error => console.log('error', error));
-                  }}>
-                    {Bookmark ? <BsFillBookmarkFill size={23}/> : <BsBookmark size={23} />}
-                  </button>
-                  <p id="B_NV-function-text">Save</p>
-                </div>
-                <div id="B_NV-function-pair">
-                  <button id="B_NV-function" className="btn" onClick={()=>{
-                    
-                    var myHeaders = new Headers();
-                    myHeaders.append("Authorization", "Bearer "+BToken);
-                    
-                    var formdata = new FormData();
-                    formdata.append("access_key", "5670");
-                    formdata.append("user_id", JSON.parse(localStorage.getItem('user')).data.id);
-                    formdata.append("news_id", Nid);
-                    formdata.append("status", !Like?1:0);
-                    
-                    var requestOptions = {
-                      method: 'POST',
-                      headers: myHeaders,
-                      body: formdata,
-                      redirect: 'follow'
-                    };
-                    
-                    fetch(`${ApiUrl}/set_like_dislike`, requestOptions)
-                      .then(response => response.json())
-                      .then(result => setLike(!Like))
-                      .catch(error => console.log('error', error));
-                  }}>
-                    {Like ? <AiTwotoneLike size={23}/>:<AiOutlineLike size={23} />}
-                    
-                  </button>
-                  <p id="B_NV-function-text">Like</p>
-                </div> */}
+               
               </div>
             </nav>
               <p id="B_NV-description" style={{ fontSize: `${FontSize}px` }} dangerouslySetInnerHTML={{ __html: Data[0].description }}></p>
-           
-            {/* // <p id='B_NV-description' dangerouslySetInnerHTML={{__html: Data[0].description}}></p> */}
-            {/* <CommentSection Nid={Nid} /> */}
+
           </div>
         
 
