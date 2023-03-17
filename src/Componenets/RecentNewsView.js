@@ -1,5 +1,5 @@
 import React from 'react'
-import './recentnewsview.css';
+import '../CSS/recentnewsview.css';
 import { FiCalendar } from "react-icons/fi";
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import { useState } from 'react';

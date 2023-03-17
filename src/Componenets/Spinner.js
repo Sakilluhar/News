@@ -1,7 +1,7 @@
 import React from 'react'
 import spinner from '../images/Spinner16.gif'
 
-import  './Spinner.css'
+import  '../CSS/Spinner.css'
 
 
 function Spinner() {

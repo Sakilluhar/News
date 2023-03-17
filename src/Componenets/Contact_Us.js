@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
-// import Logo from '../images/Logo.png'
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
-import './Contact_Us.css'
+import '../CSS/Contact_Us.css'
 import emailjs from 'emailjs-com'
 import ReCAPTCHA from "react-google-recaptcha";
 import BreadcrumbNav from './BreadcrumbNav'
@@ -43,9 +41,9 @@ function ContactUs() {
     };
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // console.log(name)
+
         setFormValues({ ...formValues, [name]: value });
-        // console.log(formValues);
+
     };
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit);

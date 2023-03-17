@@ -1,5 +1,5 @@
 import React from 'react'
-import './BreakingNewsView.css';
+import '../CSS/BreakingNewsView.css';
 import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';

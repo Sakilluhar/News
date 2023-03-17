@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './Nav.css';
+import '../CSS/Nav.css';
 import { BiBell, BiSearch, BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';

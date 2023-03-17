@@ -1,11 +1,9 @@
 import React from 'react'
-import './videonewsview.css';
+import '../CSS/videonewsview.css';
 import { useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useEffect } from 'react';
-import { useQuery } from '../Hooks';
 import { ApiWrt, BearerToken } from '../Tokens';
-
 import no_image from "../images/no_image.jpeg";
 import { BsFillPlayFill } from "react-icons/bs";
 import VideoPlayerModal from "./VideoPlayerModal";
@@ -16,10 +14,7 @@ import { FiCalendar } from "react-icons/fi";
 function VideoNewsview() {
 
     const [Data, setData] = useState([]);
-    const { category_id } = useParams();
-    const query = useQuery();
-    const catid = query.get('id');
-    const user_id = query.get('uid');
+    
     const BToken = BearerToken();
     const [Video_url, setVideo_url] = useState();
     const [modalShow, setModalShow] = React.useState(false);
@@ -50,7 +45,7 @@ function VideoNewsview() {
         setData(result.data);
       })
       .catch((error) => console.log("error", error));
-  }, []);
+  });
 
     function handleLiveNewsVideoUrl(url) {
         setModalShow(true)
@@ -59,7 +54,6 @@ function VideoNewsview() {
   return (
     <div id='vnv-main'>
                 <div id='vnv-content' className="">
-                    <h1 className="text-center"></h1>
                     <div className="row">
                         <Link id='' to="/go"  ></Link>
 
@@ -74,7 +68,7 @@ function VideoNewsview() {
 
                                     <div id='vnv-card-body' className="card-body">
                                         {/* <button id='vnv-btnCatagory' className='btn btn-sm' type="button" >{element.category_name}</button> */}
-                                        <h5 id='vnv-card-title' className="card-title">{element.title.slice(0, 150)}...</h5>
+                                        <h5 id='vnv-card-title' className="card-title">{element.title.slice(0, 53)}...</h5>
                                         <p id="vnv-card-date"><FiCalendar size={18} id="vnv-logoCalendar" />{element.date.slice(0, 10)}</p>
                                         {/* <Link id='btnvnvRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link> */}
                                     </div>
@@ -83,7 +77,7 @@ function VideoNewsview() {
                                 <VideoPlayerModal
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-                                    backdrop="static"   
+                                    // backdrop="static"   
                                     keyboard={false}
                                     url={Video_url}
                                 // title={Data[0].title}

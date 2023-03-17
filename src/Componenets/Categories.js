@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './categories.css';
+import '../CSS/categories.css';
 import { Link } from 'react-router-dom';
 import sports3_ronaldo_jpg from '../images/sports3_static.jpg';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';

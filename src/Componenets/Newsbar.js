@@ -1,32 +1,19 @@
 
-import {GiHamburgerMenu} from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import React, { useEffect, useState, useRef } from 'react'
-import './Nav.css';
+import '../CSS/Nav.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Tooltip from 'react-bootstrap/Tooltip';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
-import { BiBell, BiSearch, BiUserCircle } from 'react-icons/bi';
+import { BiBell, BiUserCircle } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Collapse from 'react-bootstrap/Collapse';
 import SignIn_Modal from './SignIn_Modal';
 // import Categories from './Categories';
 import { getAuth, signOut, sendPasswordResetEmail } from 'firebase/auth';
 import News_main_Logo from '../images/News_main_Logo.png';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { ApiWrt, BearerToken } from '../Tokens';
-
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CatNav from './CatNav';
-import { Spinner } from 'react-bootstrap';
 
 const Newsbar = (props) => {
 
@@ -38,14 +25,14 @@ const Newsbar = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
     const [islogout, setIsLogout] = useState(false)
     const [isloginloading, setisloginloading] = useState(true)
-    const [ShowManu,setShowManu]= useState();
+    const [ShowManu, setShowManu] = useState();
     const ApiUrl = ApiWrt();
-  
+
     const navigate = useNavigate()
     const closeRef = useRef()
-    useEffect(()=>{
+    useEffect(() => {
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer "+BToken);
+        myHeaders.append("Authorization", "Bearer " + BToken);
 
         var formdata = new FormData();
         formdata.append("access_key", "5670");
@@ -54,20 +41,20 @@ const Newsbar = (props) => {
         formdata.append("language_id", "14");
 
         var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: formdata,
-          redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
         };
 
         fetch(`${ApiUrl}/get_category`, requestOptions)
-          .then(response => response.json())
-          .then(result => {
-            setData(result.data)
-          })
-          .catch(error => console.log('error', error));
-        },[])
-
+            .then(response => response.json())
+            .then(result => {
+                setData(result.data)
+            })
+            .catch(error => console.log('error', error));
+    }, [])
+    
     useEffect(() => {
         if (localStorage.getItem('token') !== null || localStorage.getItem('user') !== null) {
             setIsLogout(true)
@@ -82,6 +69,8 @@ const Newsbar = (props) => {
 
 
     const logout = () => {
+        handleClose()
+        
 
         confirmAlert({
             title: 'Logout',
@@ -95,6 +84,7 @@ const Newsbar = (props) => {
                             // alert("Sign-out successful.")
                             localStorage.removeItem('token')
                             localStorage.removeItem('user')
+                        
                             setIsLogout(false)
                             navigate('/')
 
@@ -120,56 +110,59 @@ const Newsbar = (props) => {
     const changePassword = () => {
         sendPasswordResetEmail(auth, JSON.parse(localStorage.getItem('user')).data.email)
             .then((userCredential) => {
-                // Signed in s
-               alert("email sent Successfully")
+               
+                // Signed in s    
+                alert("email sent Successfully")
+                handleClose()
                 // ...
 
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
                 console.log(error)
                 // ..
             });
     }
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => {
+        setShow(true)
+    };
 
     function OffCanvasExample({ name, ...props }) {
-        const [show, setShow] = useState(false);
-      
-        const handleClose = () => setShow(false);
-        const handleShow = () => {
-            console.log('click')
-            setShow(true)
-        };
-      
+
+
         return (
-          <>
-                  <button className='btn' onClick={handleShow} >
-                  <GiHamburgerMenu/>
-                      </button>
-                      
-                      <Offcanvas id="Nav-Offcanvas" show={show} onHide={handleClose} {...props}>
-                      <Offcanvas.Header closeButton ref={closeRef}>
-                          <Offcanvas.Title><li id='Nav-btns'>
-                            
+            <>
+                <button className='btn' onClick={handleShow} >
+                    <GiHamburgerMenu />
+                </button>
+
+                <Offcanvas id="Nav-Offcanvas" show={show} onHide={handleClose} {...props}>
+                    <Offcanvas.Header closeButton ref={closeRef}>
+                        <Offcanvas.Title><li id='Nav-btns'>
+
                             {!islogout ?
-                                <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
+                                <Button variant="danger" onClick={() => {
+                                    setModalShow(true)
+                                    handleClose()
+                                }} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
                                 :
-                                
+
                                 <Dropdown>
                                     <Dropdown.Toggle id="btnSignIn" className=''>
                                         <BiUserCircle size={23} id='btnLogo' />
                                         {!isloginloading ?
-                                            JSON.parse(localStorage.getItem('user')).data.name
+                                            JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).data.name
                                             : ''
                                         }
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
-                                    <Dropdown.Item id='btnLogout' onClick={handleClose}>
-                                    <Link id='btnBookmark' to="/Bookmark" >S
-                                            Bookmark
-                                        </Link>
+                                        <Dropdown.Item id='btnLogout' onClick={handleClose}>
+                                            <Link id='btnBookmark' to="/Bookmark" >
+                                                Bookmark
+                                            </Link>
                                         </Dropdown.Item>
                                         <Dropdown.Item id='btnLogout' onClick={changePassword}>
                                             Change Password
@@ -180,8 +173,8 @@ const Newsbar = (props) => {
                                 </Dropdown>
                             }
                             {islogout ?
-                            <Link to="/notification" id='btnNotification' type="button" className="btn"><BiBell size={23} /></Link>
-                                :null
+                                <Link to="/notification" id='btnNotification' type="button" className="btn"><BiBell size={23} /></Link>
+                                : null
                             }
                             {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
                             {/* {['bottom-end'].map((placement) => (
@@ -207,110 +200,110 @@ const Newsbar = (props) => {
                                 </OverlayTrigger>
                             ))} */}
                         </li></Offcanvas.Title>
-                      </Offcanvas.Header>
-                      <Offcanvas.Body>
-                      <ul className="">
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <ul className="">
 
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>HOME</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/about_us" onClick={handleClose}>ABOUT US</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews" onClick={handleClose}>LIVE NEWS</Link></b>
-                        </li>
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/" onClick={handleClose}>HOME</Link></b>
+                            </li>
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/about_us" onClick={handleClose}>ABOUT US</Link></b>
+                            </li>
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/LiveNews" onClick={handleClose}>LIVE NEWS</Link></b>
+                            </li>
 
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews  " onClick={handleClose}>BREAKING NEWS</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CONTACT US</Link></b>
-                        </li>
-                        <li className="nav-item">
-                        <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CATAGORIES</Link></b>
-                            <ul >
-                                {!Data ? "Loading..."
-                                :Data.map((element)=>(
-                                <li className="nav-item">
-                                    <Link id='catNav-links' key={element.id}  to={"/CategoryView?id="+element.id+"&uid=1"} onClick={handleClose}> <b>{element.category_name}</b> </Link>
-                                </li>
-                                ))}
-                            </ul>
-                        </li>
-                        
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/BreakingNews  " onClick={handleClose}>BREAKING NEWS</Link></b>
+                            </li>
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CONTACT US</Link></b>
+                            </li>
+                            <li className="nav-item">
+                                <b><Link id='nav-links' className="" aria-current="page" to="/Contact_us" onClick={handleClose}>CATAGORIES</Link></b>
+                                <ul >
+                                    {!Data ? "Loading..."
+                                        : Data.map((element) => (
+                                            <li className="nav-item">
+                                                <Link id='catNav-links' key={element.id} to={"/CategoryView?id=" + element.id + "&uid=1"} onClick={handleClose}> <b>{element.category_name}</b> </Link>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </li>
+
                         </ul>
-                      </Offcanvas.Body>
-                      </Offcanvas>
-                      </>
+                    </Offcanvas.Body>
+                </Offcanvas>
+            </>
         );
-      }
+    }
 
-  return (
-    <div>
-      <nav className="Newsbar">
+    return (
+        <div>
+            <nav className="Newsbar">
 
-        <div id='News-logo' className="News-logo">
-            <Link to="/"><img id='NewsLogo' src={News_main_Logo} alt="" /></Link>
-        </div>
+                <div id='News-logo' className="News-logo">
+                    <Link to="/"><img id='NewsLogo' src={News_main_Logo} alt="" /></Link>
+                </div>
 
-        <div className="Manu-links">
-            <ul className="">
+                <div className="Manu-links">
+                    <ul className="">
 
-            <li id='NavHover' className="nav-item">
-                
-                <b><Link id='nav-links' className="link-color" aria-current="page" to="/">HOME</Link></b>
-            </li>
-            <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="link-color" aria-current="page" to="/about_us">ABOUT US</Link></b>
-            </li>
-            <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="link-color" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
-            </li>
+                        <li id='NavHover' className="nav-item">
 
-            <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="link-color" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
-            </li>
-            <li id='NavHover' className="nav-item">
-                <b><Link id='nav-links' className="link-color" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
-            </li>
-            <li id='Nav-btns'>
-                
-                {!islogout ?
-                    <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
-                    :
-                    
-                    <Dropdown>
-                        <Dropdown.Toggle id="btnSignIn" className=''>
-                            <BiUserCircle size={23} id='btnLogo' />
-                            {!isloginloading ?
-                                JSON.parse(localStorage.getItem('user')).data.name
-                                : ''
+                            <b><Link id='nav-links' className="link-color" aria-current="page" to="/">HOME</Link></b>
+                        </li>
+                        <li id='NavHover' className="nav-item">
+                            <b><Link id='nav-links' className="link-color" aria-current="page" to="/about_us">ABOUT US</Link></b>
+                        </li>
+                        <li id='NavHover' className="nav-item">
+                            <b><Link id='nav-links' className="link-color" aria-current="page" to="LiveNews">LIVE NEWS</Link></b>
+                        </li>
+
+                        <li id='NavHover' className="nav-item">
+                            <b><Link id='nav-links' className="link-color" aria-current="page" to="/BreakingNews">BREAKING NEWS</Link></b>
+                        </li>
+                        <li id='NavHover' className="nav-item">
+                            <b><Link id='nav-links' className="link-color" aria-current="page" to="/Contact_us">CONTACT US</Link></b>
+                        </li>
+                        <li id='Nav-btns'>
+
+                            {!islogout ?
+                                <Button variant="danger" onClick={() => setModalShow(true)} id='btnSignIn' className='' type="button" ><BiUserCircle size={23} id='btnLogo' />Sign In</Button>
+                                :
+
+                                <Dropdown>
+                                    <Dropdown.Toggle id="btnSignIn" className=''>
+                                        <BiUserCircle size={23} id='btnLogo' />
+                                        {!isloginloading ?
+                                            JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).data.name
+                                            : ''
+                                        }
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
+                                        <Dropdown.Item id='btnLogout' >
+                                            <Link id='btnBookmark' to="/Bookmark" >
+                                                Bookmark
+                                            </Link>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item id='btnLogout' onClick={changePassword}>
+                                            Change Password
+                                        </Dropdown.Item>
+                                        <Dropdown.Divider />
+                                        <Dropdown.Item onClick={logout} id='btnLogout' className=''>Log Out</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             }
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu style={{ backgroundColor: "#1A2E51" }}>
-                        <Dropdown.Item id='btnLogout' >
-                        <Link id='btnBookmark' to="/Bookmark" >
-                                Bookmark
-                            </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item id='btnLogout' onClick={changePassword}>
-                                Change Password
-                            </Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item onClick={logout} id='btnLogout' className=''>Log Out</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                }
 
                             {islogout ?
-                            <Link to="/notification" id='btnNotification' type="button" className="btn"><BiBell size={23} /></Link>
-                                :null
+                                <Link to="/notification" id='btnNotification' type="button" className="btn"><BiBell size={23} /></Link>
+                                : null
                             }
 
-                {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
-                {/* {['bottom-end'].map((placement) => (
+                            {/* <button id='btnSerch' type="button" onClick={handleSearchModel} className="btn"><BiSearch size={23} /></button> */}
+                            {/* {['bottom-end'].map((placement) => (
                     <OverlayTrigger
                     trigger="click"
                     key={placement}
@@ -329,28 +322,28 @@ const Newsbar = (props) => {
                     <Button id='btnSerch' className="btn" variant="secondary"><BiSearch size={23} /></Button>
                     </OverlayTrigger>
                 ))} */}
-            </li>
-            </ul>
+                        </li>
+                    </ul>
 
-                        
 
-<SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
 
+                    <SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
+
+                </div>
+                <div className="hamburger-manu">
+
+                    {['end'].map((placement, idx) => (
+                        <OffCanvasExample key={idx} placement={placement} name={placement} />
+                    ))}
+                </div>
+            </nav>
+            <div className={ShowManu ? "mobile-manu2" : "mobile-manu"} >
+
+
+
+            </div>
         </div>
-        <div className="hamburger-manu">
-
-                {['end'].map((placement, idx) => (
-                    <OffCanvasExample key={idx} placement={placement} name={placement} />
-                ))}
-            </div>
-      </nav>
-      <div className={ShowManu ? "mobile-manu2" :"mobile-manu"} >
- 
-
-                
-            </div>
-    </div>
-  )
+    )
 }
 
 export default Newsbar

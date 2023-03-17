@@ -1,4 +1,4 @@
-import './Register.css';
+import '../CSS/Register.css';
 import photo from '../images/Login.jpg'
 import Logo from '../images/Logo.png'
 import React, { useState, useEffect } from 'react';

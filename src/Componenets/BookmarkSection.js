@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import "./bookmarksection.css";
+import "../CSS/bookmarksection.css";
 import { ApiWrt, BearerToken } from '../Tokens';
 import bookmarkIMG from '../images/bookmark (4).png';
 import { useQuery } from "../Hooks";

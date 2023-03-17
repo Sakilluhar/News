@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import './OtpModal.css';
+import '../CSS/OtpModal.css';
 import photo from '../images/Login.jpg'
 import Logo from '../images/Logo.png'
 import React, { useEffect, useState } from 'react'

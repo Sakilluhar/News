@@ -1,6 +1,6 @@
 import React from 'react'
 import HealthNewsSection from './HealthNewsSection'
-import './Home.css'
+import '../CSS/Home.css'
 import BreakingNewsSection from './BreakingNewsSection'
 import FirstSection from './FirstSection'
 import RecentNewsSection from './RecentNewsSection'

@@ -1,10 +1,9 @@
-import './ForgotPassword.css';
+import '../CSS/ForgotPassword.css';
 import photo from '../images/Login.jpg'
 import Logo from '../images/Logo.png'
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { Link } from 'react-router-dom';
-import { getAuth, sendPasswordResetEmail, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail} from "firebase/auth";
 
 
 
@@ -16,7 +15,7 @@ function Forgot_Password2(props) {
             setFormErrors("")
     }, 5000));
     const [isSubmit, setIsSubmit] = useState(false);
-    const [type, setType] = useState("password");
+   
 
 
     const handleChange = (e) => {
@@ -33,15 +32,13 @@ function Forgot_Password2(props) {
         const auth = getAuth();
         await sendPasswordResetEmail(auth, formValues.email)
             .then((userCredential) => {
-                // Signed in s
+
                 alert("Email sent Succesfully")
                 // ...
                 props.onHide();
                 props.setLoginModalShow(true);
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
                 console.log(error)
                 // ..
             });

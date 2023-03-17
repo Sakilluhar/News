@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./breaking_newsview.css";
+import "../CSS/breaking_newsview.css";
 import Form from "react-bootstrap/Form";
 import {AiOutlineLike,AiTwotoneLike,AiOutlineDislike,AiTwotoneDislike,} from "react-icons/ai";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";

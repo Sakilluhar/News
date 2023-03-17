@@ -1,5 +1,5 @@
 import React from 'react'
-import './weathercard.css';
+import '../CSS/weathercard.css';
 import { BsSun } from 'react-icons/bs';
 import breakingNews2_jpg from '../images/earthImage.png';
 import DetailedWeatherCard from './DetailedWeatherCard';

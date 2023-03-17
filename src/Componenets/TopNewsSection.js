@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Home.css'
+import '../CSS/Home.css'
 import { useEffect } from 'react'
 import { ApiWrt, BearerToken } from '../Tokens';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ function TopNewsSection() {
         setData(result.data)
       })
       .catch(error => console.log('error', error));
-  }, [])
+  })
 
   const tnshandleReadMore = () => {
     // console.log('Read More');
@@ -161,7 +161,7 @@ function TopNewsSection() {
                   <img id='tns-news-image' src={Data[3].image} className="card-img" alt="..." />
                   <div id='tns-text' className="card-img-overlay">
                     <button id='btnTnsCatagory' className='btn' type="button" >{Data[3].category_name}</button>
-                    <p id='tns-Title' className="card-text">{Data[3] .title.slice(0,60)}</p>
+                    <p id='tns-Title' className="card-text">{Data[3].title.slice(0,60)}</p>
                   </div>
                 </div></Link>
 
