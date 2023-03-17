@@ -107,7 +107,7 @@ function NewsCardFS() {
                 <p id='Top-Title'><b>{Title}</b></p>
                 <p id='Top-Description' dangerouslySetInnerHTML={{__html: Description}}></p>
                 <div>
-                {/* <Link id='btnReadMore' className='btn' type="button" to='' ><b>READ MORE</b></Link> */}
+                <Link id='btnReadMore' className='btn' type="button" to='Breaking_NewsView' ><b>READ MORE</b></Link>
                 <a id='btnpaly'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={40}/></a>
                 <a id='btnpaly-mobile'  href={Video_url}><BsPlayCircle id='btnpaly-logo' size={30}/></a>
                 </div>

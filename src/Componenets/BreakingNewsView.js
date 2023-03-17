@@ -49,8 +49,9 @@ function BreakingNewsView() {
 
                         {Data && Data.map((element) => (
                             <div className="col-md-4 " key={element.id}>
-                                {/* <Link id='Link-all' to={"/NewsView?Nid=" + element.id + "&Cid=" + element.category_id}> */}
+                                <Link id='Link-all' to={"/Breaking_NewsView?BNid=" + element.id}> 
                                 <div id='BNV-card' className="card">
+                                
                                     <img id='BNV-card-image' src={element.image ? element.image : no_image} className="card-img" alt="..." />
 
                                     <div id='BNV-card-body' className="card-body">
@@ -58,11 +59,9 @@ function BreakingNewsView() {
                                         <h5 id='BNV-card-title' className="card-title">{element.title.slice(0, 150)}...</h5>
                                         {/* <p id="BNV-card-date"><FiCalendar size={18} id="BNV-logoCalendar" />{element.date.slice(0, 10)}</p> */}
                                         {/* <Link id='btnBNVRead' className='btn overlay' type="button" to="/NewsView" ><IoArrowForwardCircleSharp size={50}/></Link> */}
-                                    </div>
-
+                                    </div>                              
                                 </div>
-
-                                {/* </Link> */}
+                                </Link>
                             </div>
 
                         ))}

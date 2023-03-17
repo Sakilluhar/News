@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
 
-#nv-main{
+#B_NV-main{
     display: grid;
     grid-template-columns: 7% 1fr 7%;
     /* width: 100%; */
@@ -9,7 +9,7 @@
     color: #1A2E51;
 }
 
-#nv-page{
+#B_NV-page{
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -17,31 +17,31 @@
     margin-top: 5rem;
 }
 
-#btnnvCatagory{
+#btnB_NVCatagory{
     color: #ffffff; 
     background:#EE2934;
     width: fit-content;
   }
 
-#nv-right-section{
+#B_NV-right-section{
     display: flex;
     flex-direction: column;
     gap: 1%;
 }
 
-#nv-body{
+#B_NV-body{
     width: 100%;
 max-width: 100%;
 }
 
-#nv-title{
+#B_NV-title{
     margin-top: 1%;
 }
 
 
 /* ------------------------------------------------------------------- */
 
-#nv-Header{
+#B_NV-Header{
     display: flex;
     justify-content: space-between;
     height: 3rem;
@@ -53,7 +53,7 @@ max-width: 100%;
     gap: 32%;
 }
 
-#nv-left-head{
+#B_NV-left-head{
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -61,14 +61,14 @@ max-width: 100%;
     
 }
 
-#nv-right-head{
+#B_NV-right-head{
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
 }
 
-#nv-Share-Label{
+#B_NV-Share-Label{
     margin-top: 6%;
 }
 
@@ -99,7 +99,7 @@ max-width: 100%;
     background-color: #909090;
 }
 
-#nv-image{
+#B_NV-image{
     margin-top: 1%;
     margin-bottom: 1%;
     object-fit: cover;
@@ -109,28 +109,28 @@ max-width: 100%;
     height: auto;
 }
 
-#nv-functions{
+#B_NV-functions{
     border: 1px solid #C0C5D0;
     border-radius: 10px;
     background-color: #f5f5f5;
     height: 6rem;
     display: grid;
-    grid-template-columns: 3% 3fr 2fr 3%;
+    grid-template-columns: 3% 3fr 3%;
 }
 
-#nv-functions-left{
+#B_NV-functions-left{
     grid-column: 2/3;
     display: flex;
     flex-direction: column;
 }
 
-#nv-function-pair{
+#B_NV-function-pair{
     margin-left: 10%;
     margin-top: 1.7rem;
     justify-content: center;
 }
 
-#nv-function{
+#B_NV-function{
     border: none;
     padding: 0%;
     color: #1A2E51;
@@ -139,70 +139,70 @@ max-width: 100%;
 
 }
 
-#nv-function-text{
+#B_NV-function-text{
     font-size: small;
 }
 
-#nv-font-lable{
+#B_NV-font-lable{
     margin-top: 0.5rem;
 }
 
-#nv-FontRange{
+#B_NV-FontRange{
     color: #1A2E51;
     width: 100%;
 }
 
-#nv-FontRange-labels{
+#B_NV-FontRange-labels{
     /* margin-right: 10%; */
     font-size: small;
 
 }
 
-#nv-functions-right{
-    display: flex;
+#B_NV-functions-right{
+    display: none;
     flex-direction: row;
     justify-content: right;
 }
 
-#nv-description{
+#B_NV-description{
     margin-top: 3%;
     /* width: 20rem; */
     width: 100%;
     /* max-width: 100%; */
 }
 
-.nv-description-14{
+.B_NV-description-14{
     font-size: 14px;
 }
-.nv-description-16{
+.B_NV-description-16{
     font-size: 16px;
 }
-.nv-description-18{
+.B_NV-description-18{
     font-size: 18px;
 }
-.nv-description-20{
+.B_NV-description-20{
     font-size: 20px;
 }
-.nv-description-22{
+.B_NV-description-22{
     font-size: 22px;
 }
-.nv-description-24{
+.B_NV-description-24{
     font-size: 24px;
 }
 
-#nv-description img{
+#B_NV-description img{
     max-width: 100% !important;
     height: auto;
 }
 
-#nv-description video{    
+#B_NV-description video{    
     max-width: 100%;
     max-height: 40rem;
     height: auto;
 }
 
 @media (max-width: 1200px) {
-    #nv-main{
+    #B_NV-main{
         display: grid;
         grid-template-columns: 7% 1fr 7%;
         /* width: 100%; */
@@ -211,7 +211,7 @@ max-width: 100%;
         color: #1A2E51;
     }
     
-    #nv-page{
+    #B_NV-page{
         grid-column: 2/3;
         display: grid;
         grid-template-columns:1fr;
@@ -219,13 +219,13 @@ max-width: 100%;
         margin-top: 5rem;
     }
     
-    #btnnvCatagory{
+    #btnB_NVCatagory{
         color: #ffffff; 
         background:#EE2934;
         width: fit-content;
       }
     
-    #nv-right-section{
+    #B_NV-right-section{
 
         display: none;
         flex-direction: column;
@@ -235,7 +235,7 @@ max-width: 100%;
 
 @media (max-width: 800px) {
 
-    #nv-Header{
+    #B_NV-Header{
     
         height: 3rem;
         background-color: #ffffff ;
@@ -254,7 +254,7 @@ max-width: 100%;
 
 @media (max-width: 660px) {
 
-    #nv-Header{
+    #B_NV-Header{
     
         height: 3rem;
         background-color: #ffffff ;
@@ -268,7 +268,7 @@ max-width: 100%;
 
 @media (max-width: 570px) {
 
-        #nv-Header{
+        #B_NV-Header{
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -283,7 +283,7 @@ max-width: 100%;
 }
 
 @media (max-width: 425px) {
-    #nv-FontRange-labels{
+    #B_NV-FontRange-labels{
         /* margin-right: 10%; */
         font-size: 10px;
     
@@ -394,3 +394,4 @@ max-width: 100%;
     width: 74%;
 }
 
+       
