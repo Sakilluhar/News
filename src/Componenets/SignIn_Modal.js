@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import photo from '../images/Login.jpg'
@@ -23,7 +23,7 @@ function SignIn_Modal(props) {
     const [modalShow, setModalShow] = React.useState(false);
     const [ForgotModalShow, setForgotModalShow] = React.useState(false);
     const [PhoneModalShow, setPhoneModalShow] = React.useState(false);
-    const handleClose = () => props.setPrivacy(false);
+    // const handleClose = () => props.setPrivacy(false);
     const ApiUrl = ApiWrt();
 
     const initialValues = { email: "", password: "" };

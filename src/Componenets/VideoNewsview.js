@@ -54,7 +54,6 @@ function VideoNewsview() {
   return (
     <div id='vnv-main'>
                 <div id='vnv-content' className="">
-                    <h1 className="text-center"></h1>
                     <div className="row">
                         <Link id='' to="/go"  ></Link>
 

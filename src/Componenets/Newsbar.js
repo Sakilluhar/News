@@ -54,7 +54,7 @@ const Newsbar = (props) => {
             })
             .catch(error => console.log('error', error));
     }, [])
-
+    
     useEffect(() => {
         if (localStorage.getItem('token') !== null || localStorage.getItem('user') !== null) {
             setIsLogout(true)

@@ -32,7 +32,7 @@ function Terms_Condition(props) {
                 setData(result.data)
             })
             .catch(error => console.log('error', error));
-    }, [])
+    })
     return (
         <div>
             {Data.length === 0
