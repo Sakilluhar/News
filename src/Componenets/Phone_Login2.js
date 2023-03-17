@@ -55,7 +55,7 @@ function Phone_Login2(props) {
                                 <img src={Logo} alt="" id='logo4' />
                             </div>
                             <div className='logo-text4'>
-                            <h4> This beautiful theam yours!</h4>
+                            <h4> This beautiful theme yours!</h4>
                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
                         </div>
                         </div>

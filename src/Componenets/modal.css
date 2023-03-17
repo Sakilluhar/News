@@ -8,7 +8,8 @@
     font: "small-caption";
     font-family: "Zilla Slab", serif;
     float: right;
-    cursor: pointer
+    cursor: pointer;
+    padding-top: 2%;
    }
   .bordert {
     border-top: 1px solid #aaa;
@@ -140,9 +141,9 @@
   }
   .password-icon {
     position: relative;
-    bottom: 50px;
+    bottom: 43px;
     float: right;
-    right: 10px;
+    right: 20px;
     cursor: pointer;
   }
   #loginbutton {
@@ -238,8 +239,8 @@
     content: "OR";
     position: absolute;
     top: 78%;
-    left: 43%;
-    background-color: #f5f5f5;
+    left: 46%;
+    background-color: #ffffff;
     padding: 0px 8px;
   }
 }

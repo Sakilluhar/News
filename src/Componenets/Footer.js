@@ -4,6 +4,7 @@ import { FaFacebookSquare, FaInstagram, FaLinkedin, FaTwitterSquare } from 'reac
 import Terms_Condition from './Terms_Condition';
 import Privacy_Policy from './Privacy_Policy';
 import { Link } from 'react-router-dom';
+import { ApiWrt, BearerToken } from '../Tokens';
 
 
 
@@ -14,7 +15,10 @@ function Footer() {
 
     const [Privacy, setPrivacy] = useState(false);
     const handlePrivacy = () => setPrivacy(true);
-
+    const [Data, setData] = useState([]);
+    const BToken = BearerToken();
+    const ApiUrl = ApiWrt();
+  
     const initialValues = { email: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState("", setTimeout(() => {
@@ -51,6 +55,30 @@ function Footer() {
 
         return errors;
     };
+    useEffect(()=>{
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer "+BToken);
+
+        var formdata = new FormData();
+        formdata.append("access_key", "5670");
+        formdata.append("offset", "0");
+        formdata.append("limit", "16");
+        formdata.append("language_id", "14");
+
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: formdata,
+          redirect: 'follow'
+        };
+
+        fetch(`${ApiUrl}/get_category`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            setData(result.data)
+          })
+          .catch(error => console.log('error', error));
+        },[])
 
 
     return (
@@ -61,12 +89,12 @@ function Footer() {
                     <div className="card" id="cB">
                         <div className="card-body d-flex justify-content-between" id='card-footer'>
                             <div className='newsLetter'>
-                                <strong><h3> Subcribe our news Letter</h3></strong>
+                                <strong><h3> Subcribe our Newsletter</h3></strong>
                                 <p>
                                     Lorem ipsum, dolor sit amet consectetur <br />adipisicing elit. Quaerat porro incidunt officiis <br /> mollitia fugit suscipit architecto ex quibusdam rerum totam.
                                 </p>
                             </div>
-                            <div className='d-flex flex-column justify-content-center'>
+                            <div className='d-flex flex-column'>
 
                                 <div className='' id='news_letter'>
 
@@ -89,29 +117,27 @@ function Footer() {
                                     <h3 >E-News</h3>
                                 </div>
                                 <div className='my-5 Lorem-text'>
-                                    <p className='lorem'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit a minus nesciunt veniam ipsam molestiae asperiores soluta et. Et est, dolor, dicta libero vero quis sit<br /></p>
-                                    <p className='lorem'> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab saepe aliquam rem velit vitae provident possimus quaerat facere reiciendis veritatis.</p>
+                                    <p className='lorem'>An Enews website is an online platform that provides news and information about various topics, including current events, entertainment, politics, sports, technology, and more. <br /></p>
+                                    <p className='lorem'> Enews websites often use multimedia elements such as photos, videos, and infographics to enhance the reader's experience and provide more context and understanding of the news.</p>
                                 </div>
 
                             </div>
                             <div className="col-xs-3 col-sm-3 col-md-3" >
                                 <p id='footer-nav'> News Categories</p>
+                                {Data.length > 0 ?
                                 <ul className='newscate'>
-                                    <li><Link to="/">Politics</Link></li>
-                                    <li><Link to="/">Technology</Link></li>
-                                    <li><Link to="/">Business</Link></li>
-                                    <li><Link to="/">Health</Link></li>
-                                    <li><Link to="/">Entertainment</Link></li>
-
-
-                                    <li><Link to="/">Education</Link></li>
-                                    <li><Link to="/">Obituaries</Link></li>
-                                    <li><Link to="/">Corrections</Link></li>
-                                    <li><Link to="/">Foods</Link></li>
-                                    <li><Link to="/">Soprts</Link></li>
-
-
-                                </ul>
+                                    <li><Link to={"/CategoryView?id="+Data[0].id} >{Data[0].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[1].id} >{Data[1].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[2].id} >{Data[2].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[3].id} >{Data[3].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[4].id} >{Data[4].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[5].id} >{Data[5].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[6].id} >{Data[6].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[7].id} >{Data[7].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[8].id} >{Data[8].category_name}</Link></li>
+                                    <li><Link to={"/CategoryView?id="+Data[9].id} >{Data[9].category_name}</Link></li>
+                                </ul>:null
+                                }
 
 
                             </div>

@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import { useQuery } from '../Hooks';
 import { ApiWrt, BearerToken } from '../Tokens';
 
-import BreadcrumbSection from './BreadcrumbSection';
 
 function SearchNewsView() {
 

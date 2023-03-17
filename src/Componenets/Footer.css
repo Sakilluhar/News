@@ -94,7 +94,7 @@ ul.newscate > li {
   height: 2rem;
 }
 ul.newscate > li:before {
-  content: "-";
+  content: "⁍";
   font-size: 2rem;
   color: #ee2934;
   text-indent: -5px;
@@ -111,7 +111,7 @@ ul.useL > li {
   font-size: 14px;
 }
 ul.useL > li:before {
-  content: "-";
+  content: "⁍";
   font-size: 2rem;
   color: #ee2934;
   text-indent: -5px;
@@ -153,6 +153,8 @@ ul.useL > li:before {
 #e-f {
   height: 60px;
   width: 500px;
+  position: relative;
+  top: 2rem;
 }
 
 #copyright1 {
@@ -165,7 +167,8 @@ border: 2px; */
   font-size: small;
 }
 .error-msg-sub {
-  padding-top: 2%;
+  padding-top: 0%;
+  color: #ee2934;
   /* font-size: ; */
 }
 @media only screen and (max-width: 1200px) and (min-width: 1100px)   {
@@ -185,14 +188,11 @@ border: 2px; */
     display: none;
   }
 }
-#news_letter{
-  padding-top: 10%;
- }
 #ES {
   position: relative;
   float: right;
   right: 10px;
-  top: -55px;
+  top: -22px;
   margin: 5px;
   color: #fff;
   background-color: #ee2934;

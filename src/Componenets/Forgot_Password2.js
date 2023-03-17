@@ -78,7 +78,7 @@ function Forgot_Password2(props) {
                             <img src={Logo} alt="" id='logo2' />
                         </div>
                         <div className='logo-text2'>
-                            <h4> This beautiful theam yours!</h4>
+                            <h4> This beautiful theme yours!</h4>
                             <p> " Best investment i made for a long time. Can recommend for other users."</p>
                         </div>
                     </div>
