@@ -4,8 +4,7 @@ import { ApiWrt, BearerToken } from '../Tokens';
 import bookmarkIMG from '../images/bookmark (4).png';
 import { useQuery } from "../Hooks";
 import { FiCalendar } from "react-icons/fi";
-import { IoArrowForwardCircleSharp } from 'react-icons/io5';
-import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
+import { BsFillBookmarkFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import BreadcrumbNav from './BreadcrumbNav'
 

@@ -5,7 +5,7 @@ import { AiOutlineLike, AiTwotoneLike, AiOutlineDislike, AiTwotoneDislike, } fro
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import { FiCalendar } from "react-icons/fi";
 import { ApiWrt, BearerToken } from '../Tokens';
-
+import React from "react";
 import { useQuery } from "../Hooks";
 import RelatedNewsSection from "./RelatedNewsSection";
 import { Link } from "react-router-dom";
@@ -23,6 +23,7 @@ import {
   FacebookShareButton,
 
 } from "react-share";
+import SignIn_Modal from "./SignIn_Modal";
 // import { useLocation } from 'react-router-dom';
 
 function NewsView() {
@@ -38,6 +39,9 @@ function NewsView() {
   const BToken = BearerToken();
   const shareUrl = window.location.href
   const ApiUrl = ApiWrt();
+  const [modalShow, setModalShow] = React.useState(false);
+  const [islogout, setIsLogout] = useState(false)
+  const [isloginloading, setisloginloading] = useState(true)
 
 
   useEffect(() => {
@@ -155,7 +159,8 @@ function NewsView() {
                   <div id="nv-function-pair">
                     <button id="nv-function" className="btn" onClick={() => {
 
-                      var myHeaders = new Headers();
+                      if (localStorage.getItem('user') !== null) {
+                        var myHeaders = new Headers();
                       myHeaders.append("Authorization", "Bearer " + BToken);
 
                       var formdata = new FormData();
@@ -175,6 +180,11 @@ function NewsView() {
                         .then(response => response.text())
                         .then(result => setBookmark(!Bookmark))
                         .catch(error => console.log('error', error));
+                      }else{
+                        setModalShow(true)
+                      }
+
+                      
                     }}>
                       {Bookmark ? <BsFillBookmarkFill size={23} /> : <BsBookmark size={23} />}
                     </button>
@@ -183,6 +193,7 @@ function NewsView() {
                   <div id="nv-function-pair">
                     <button id="nv-function" className="btn" onClick={() => {
 
+                    if (localStorage.getItem('user') !== null) {
                       var myHeaders = new Headers();
                       myHeaders.append("Authorization", "Bearer " + BToken);
 
@@ -203,6 +214,9 @@ function NewsView() {
                         .then(response => response.json())
                         .then(result => setLike(!Like))
                         .catch(error => console.log('error', error));
+                      }else{
+                        setModalShow(true)
+                      }
                     }}>
                       {Like ? <AiTwotoneLike size={23} /> : <AiOutlineLike size={23} />}
 
@@ -223,6 +237,9 @@ function NewsView() {
             <TagsSection />
           </div>
         </div>
+
+<SignIn_Modal setIsLogout={setIsLogout} setisloginloading={setisloginloading} show={modalShow} setLoginModalShow={setModalShow} onHide={() => setModalShow(false)} />
+
       </div>
       </>
       )}
