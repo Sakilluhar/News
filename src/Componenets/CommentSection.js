@@ -6,6 +6,7 @@ import { ApiWrt, BearerToken } from '../Tokens';
 
 function CommentSection(props) {
   const [Comment,setComment] = useState("");
+  const [LoadComments,setLoadComments] = useState(false);
   const Nid = props.Nid
   const [Data,setData] = useState([]);
   const BToken = BearerToken();
@@ -40,6 +41,10 @@ function CommentSection(props) {
             .then(response => response.json())
             .then(result => {
               setData(result.data);
+              setLoadComments(true);
+              setTimeout(() => {
+                setLoadComments(false);
+              },1000)
             })
             .catch(error => console.log('error', error));
                 console.log(Comment)
@@ -51,8 +56,7 @@ function CommentSection(props) {
         <button id='cs-btnsub' type='submit' className='btn'>Submit Post</button>
         
         </form>
-        <h2>Comment</h2>
-        <CommentsView Nid={Nid}/>
+        <CommentsView Nid={Nid} LoadComments={LoadComments}/>
     </div>
   )
 }

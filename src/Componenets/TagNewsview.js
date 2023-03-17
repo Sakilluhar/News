@@ -28,7 +28,7 @@ function TagNewsview() {
         
         var formdata = new FormData();
         formdata.append("access_key", "5670");
-        formdata.append("user_id", JSON.parse(localStorage.getItem("user")).data.id);
+        formdata.append("user_id", localStorage.getItem('user') !== null  ? JSON.parse(localStorage.getItem('user')).data.id : "1");
         formdata.append("tag_id", Tid);
         formdata.append("language_id", "14");
         

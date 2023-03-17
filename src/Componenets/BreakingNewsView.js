@@ -39,7 +39,7 @@ function BreakingNewsView() {
     }, [])
     return (
         <>
-        <BreadcrumbNav SecondElement="Breaking News"/>
+        <BreadcrumbNav SecondElement="Breaking News" ThirdElement="0"/>
 
             <div id='BNV-main'>
                 <div id='BNV-content' className="">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 import {
   AiOutlineLike,
   AiTwotoneLike,
@@ -6,7 +6,7 @@ import {
   AiTwotoneDislike,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { ApiWrt, BearerToken } from '../Tokens';
+import { ApiWrt, BearerToken , Noimage } from '../Tokens';
 
 import no_image from "../images/no_image.jpeg";
 import Button from 'react-bootstrap/Button';
@@ -17,6 +17,7 @@ import { useQuery } from "../Hooks";
 
 function CommentsView(props) {
   const BToken = BearerToken();
+  const [LoadComments,setLoadComments] = useState(false);
   const [Data, setData] = useState([]);
   const [Comment,setComment] = useState("");
   const query = useQuery();
@@ -24,7 +25,7 @@ function CommentsView(props) {
   const catid = query.get("Cid");
   const user_id = query.get("Uid");
   const ApiUrl = ApiWrt();
- 
+ const replyRef = useRef()
   
 
   useEffect(() => {
@@ -48,14 +49,22 @@ function CommentsView(props) {
      fetch(`${ApiUrl}/get_comment_by_news`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        setData(result.data);
+        if(result.data=== undefined){
+          setData([])
+        }else{
+          setData(result.data);
+        }
+        console.log(result.data)
       })
       .catch((error) => console.log("error", error));
-  }, [props.Nid]);
+  }, [props.Nid,props.LoadComments,LoadComments]);
  
 
   return (
     <div id="">
+    { Data .length === 0 ? null :
+    <h2>Comment</h2>}
+      
       {Data &&
         Data.map((element) => (
           <div key={element.id}>
@@ -64,26 +73,16 @@ function CommentsView(props) {
                 id="cs-profile"
                 src={element.profile ? element.profile : no_image}
                 alt=""
+                onerror={no_image}
               />
               <div id="cs-card" className="card">
                 <b>
                   <h5>{element.name}</h5>
                 </b>
-                <Link id="cdbtnReport">Report</Link>
+                {/* <Link id="cdbtnReport">Report</Link> */}
                 <p id="cs-card-text" className="card-text">
                   {element.message}
                 </p>
-                {/* <div id="cs-like-dis">
-                  <button id="csbtnLike" className="btn">
-                    <AiOutlineLike size={18} />
-                  </button>
-                  <button id="csbtnLike" className="btn">
-                    <AiOutlineDislike size={18} />
-                  </button>
-                </div> */}
-                {/* <button id="cdbtnReplay" className="btn">
-                  REPLAY
-                </button> */}
                 {['bottom-end'].map((placement) => (
                   <OverlayTrigger
                     trigger="click"
@@ -91,9 +90,9 @@ function CommentsView(props) {
                     placement={placement}
                     overlay={
                       <Popover id={`popover-positioned-${placement}`}>
-                        <Popover.Header as="h3">Add replay here</Popover.Header>
+                        <Popover.Header as="h3">Add reply here</Popover.Header>
                         <Popover.Body id="cv-replay-propover">
-                        <form method="post" onSubmit={(e)=>{
+                        <form id="cv-replay-form" method="post" onSubmit={(e)=>{
                               e.preventDefault();
                               var myHeaders = new Headers();
                               myHeaders.append("Authorization", "Bearer "+BToken);
@@ -115,10 +114,17 @@ function CommentsView(props) {
 
                               fetch(`${ApiUrl}/set_comment`, requestOptions)
                                 .then(response => response.json())
-                                .then(result => console.log(result))
+                                .then(result => {
+                                  setLoadComments(true);
+                                  // replyRef.current.click()
+                                  document.getElementById(`cdbtnRepla${element.id}`).click()
+                                  setTimeout(() => {
+                                    setLoadComments(false);
+                                  },1000)
+                                })
                                 .catch(error => console.log('error', error));
                             }}>
-                        <textarea name="" id="cs-input" cols="30" rows="5" onChange={(e)=>{
+                        <textarea name="" id="cs-reply-input" cols="30" rows="5" onChange={(e)=>{
                           setComment(e.target.value)
                         }} placeholder='Share Your reply...'></textarea>
                         <button id="cdbtnsubReplay" type="submit" className="btn">
@@ -129,7 +135,7 @@ function CommentsView(props) {
                       </Popover>
                     }
                   >
-                    <Button id="cdbtnReplay" variant="secondary">Reply</Button>
+                    <Button id={`cdbtnRepla${element.id}`} variant="secondary" ref={replyRef}>Reply</Button>
                   </OverlayTrigger>
                 ))}
               </div>
@@ -145,7 +151,7 @@ function CommentsView(props) {
                     <b>
                       <h5>{ele.name}</h5>
                     </b>
-                    <Link id="cdbtnReport">Report</Link>
+                    {/* <Link id="cdbtnReport">Report</Link> */}
                     <p id="cs-card-text" className="card-text">
                       {ele.message}
                     </p>
@@ -170,7 +176,7 @@ function CommentsView(props) {
                         <Popover.Header as="h3">Add replay here</Popover.Header>
                         <Popover.Body id="cv-replay-propover">
                         <form method="post" onSubmit={(e)=>{
-                              e.preventDefault();
+                              e.preventDefault(); 
                               var myHeaders = new Headers();
                               myHeaders.append("Authorization", "Bearer "+BToken);
 
@@ -191,7 +197,12 @@ function CommentsView(props) {
 
                               fetch(`${ApiUrl}/set_comment`, requestOptions)
                                 .then(response => response.json())
-                                .then(result => console.log(result))
+                                .then(result => {
+                                  setLoadComments(true);
+                                  setTimeout(() => {
+                                    setLoadComments(false);
+                                  },1000)
+                                })
                                 .catch(error => console.log('error', error));
                             }}>
                         <textarea name="" id="cs-input" cols="30" rows="5" onChange={(e)=>{
