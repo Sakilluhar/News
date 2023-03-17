@@ -35,7 +35,7 @@ function AboutUs() {
             <img src={about3}  alt="..." id="image2"/>
           </div>
           <div id='i3'>
-            <img src={about2}  alt="..." style={{}} id="image3"/>
+            <img src={about2}  alt="..." id="image3"/>
           </div>
         </div>
         <div className='container A3'>

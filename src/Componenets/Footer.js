@@ -183,7 +183,6 @@ function Footer() {
                         <p id='footer-tearms' className="h6 p-2" variant="primary" onClick={handleShow}>
                             Terms & Conditions
                         </p>
-                        {/* <Button className=" btn h6 p-2"> Terms & Conditions</Button>  */}
                         <p className="h6 p-2"> | </p>
                         <p id='footer-pri-pol' className="h6 p-2" variant="primary" onClick={handlePrivacy}> Privacy Policy </p>
                     </div>

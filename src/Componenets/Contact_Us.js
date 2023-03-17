@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
-// import Logo from '../images/Logo.png'
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import './Contact_Us.css'
@@ -43,9 +41,9 @@ function ContactUs() {
     };
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // console.log(name)
+
         setFormValues({ ...formValues, [name]: value });
-        // console.log(formValues);
+
     };
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit);

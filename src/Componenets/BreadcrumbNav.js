@@ -20,7 +20,6 @@ function BreadcrumbNav(props) {
       <Breadcrumb.Item active id='bcb-third-item'>
         {props.ThirdElement}
       </Breadcrumb.Item>
-      {/* <Breadcrumb.Item active>Data</Breadcrumb.Item> */}
     </Breadcrumb>
   )
 }

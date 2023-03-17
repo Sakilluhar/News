@@ -1,9 +1,9 @@
 @media screen and (min-width: 700px) {
-  .otp-container{
+  .otp-container {
     align-items: center;
     justify-content: center;
   }
-  .otp-container input[type=password]{
+  .otp-container input[type="password"] {
     min-width: 50px;
     min-height: 50px;
     text-align: center;
@@ -87,8 +87,8 @@
     color: #1b2d51;
     border: #1b2d51 solid 3px;
     font-weight: bold;
-}
-  #resendbutton{
+  }
+  #resendbutton {
     color: #1b2d51;
     /* background: #1b2d51; */
     width: fit-content;
@@ -101,7 +101,7 @@
     background-color: #fff;
     color: #ee2934;
     border: #ee2934 solid 1px;
-}
+  }
   .error-msg {
     font-size: smaller;
     color: rgb(250, 50, 50);
@@ -130,10 +130,39 @@
   }
 }
 @media screen and (max-width: 700px) {
+  .otp-container {
+    align-items: center;
+    justify-content: center;
+  }
+  .otp-container input[type="password"] {
+    min-width: 25px;
+    min-height: 25px;
+    text-align: center;
+    margin-right: 20px;
+  }
   #login_img5 {
     display: none;
   }
   .modal-content {
     border-radius: 20px;
+  }
+  .PhoneInput {
+    display: flex;
+    align-items: center;
+    margin-top: 17%;
+  }
+  #resendbutton {
+    color: #1b2d51;
+    /* background: #1b2d51; */
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+  }
+  #resendbutton:hover {
+    background-color: #fff;
+    color: #ee2934;
+    border: #ee2934 solid 1px;
   }
 }

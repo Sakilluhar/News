@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './Componenets/Header';
 import HomePage from './Componenets/HomePage';
-import Navbar from './Componenets/Navbar';
 import Footer from './Componenets/Footer';
 import { Route, Routes } from 'react-router';
 import AboutUs from './Componenets/AboutUs';
@@ -17,7 +16,7 @@ import Newsbar from './Componenets/Newsbar';
 
 // import Spinner from './Componenets/Spinner';
 import { useEffect, useState } from 'react';
-import Hello from './Componenets/Hello';
+
 import BookmarkSection from './Componenets/BookmarkSection';
 import TagNewsview from './Componenets/TagNewsview';
 import LiveNews from './Componenets/LiveNews';
